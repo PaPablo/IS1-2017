@@ -606,11 +606,6 @@
                     \textbf{Tipo}: Primario\\
                     \textbf{Descripción}: Se crea un nuevo tipo de empleado asignable a un empleado
             
-            \item 	\textbf{Nombre del Caso de uso}: Modificar Rol de Empleado\\
-                    \textbf{Actores}: Gerente\\
-                    \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: Se modifica la información pertinente de un rol de empleado existente.
-            
             \item 	\textbf{Nombre del Caso de uso}: Eliminar Rol de Empleado\\
                     \textbf{Actores}: Gerente\\
                     \textbf{Tipo}: Primario\\
@@ -621,16 +616,6 @@
                     \textbf{Tipo}: Secundario\\
                     \textbf{Descripción}: Se muestra un listado de todos los roles de empleados con su información asociada. Se los puede filtrar por las distintas actividades que tengan asociadas.
             
-            \item 	\textbf{Nombre del Caso de uso}: Asignar Rol a Empleado\\
-                    \textbf{Actores}: Empleado, Gerente\\
-                    \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: Se asigna un Rol de Empleado dado de alta a un Empleado dado de alta
-            
-            \item 	\textbf{Nombre del Caso de uso}: Eliminar Rol de un Empleado\\
-                    \textbf{Actores}: Empleado, Gerente\\
-                    \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: Se remueve el Rol de Empleado de un Empleado.
-
 
 
             \subsubsection{Equipos}
@@ -708,16 +693,6 @@
                     \textbf{Tipo}: Empleado\\
                     \textbf{Descripcion}: Se listan todos los artículos dados de alta. Se puede ordenar el listado para que los muestre según el proveedor que tengan asociado, según las cantidades que tenga cada artículo. 
 
-            \item 	\textbf{Nombre del Caso de Uso}: Agregar Proveedor a un artículo\\
-                    \textbf{Actores}: Primario\\
-                    \textbf{Tipo}: Jefe de Taller\\
-                    \textbf{Descripcion}: Se vincula un proveedor dado de alta con un artículo dado de alta
-
-            \item 	\textbf{Nombre del Caso de Uso}: Eliminar Proveedor a un artículo\\
-                    \textbf{Actores}: Primario\\
-                    \textbf{Tipo}: Jefe de Taller\\
-                    \textbf{Descripcion}: Se desvincula un proveedor dado de alta con un artículo dado de alta
-
             \item 	\textbf{Nombre del Caso de Uso}: Ver detalle de artículo\\
                     \textbf{Actores}: Secundario\\
                     \textbf{Tipo}: Empleado\\
@@ -775,11 +750,6 @@
                     \textbf{Tipo}: Primario\\
                     \textbf{Descripción}: El cliente pide un servicio a la organización; el Jefe de Taller abre una nueva Orden de Trabajo para manejar el servicio a realizar
 
-            \item 	\textbf{Nombre del Caso de uso}: Cerrar OT\\
-                    \textbf{Actores}: Jefe de taller\\
-                    \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: el jefe de taller decide que se ha terminado el trabajo y cambia el estado de una orden de trabajo abierta a ``pendiente de facturación''. No se le pueden agregar más ítems
-
             \item 	\textbf{Nombre del Caso de uso}: Listar OT\\
                     \textbf{Actores}: Jefe de taller\\
                     \textbf{Tipo}: Primario\\
@@ -790,36 +760,6 @@
                     \textbf{Tipo}: Primario\\
                     \textbf{Descripción}: se realiza una modificación sobre la información de una OT existente.
 
-            \item 	\textbf{Nombre del Caso de uso}: Crear Item en OT\\
-                    \textbf{Actores}: Jefe de Taller\\
-                    \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: el Jefe de Taller registra una actividad a realizar en una orden de trabajo.
-
-            \item 	\textbf{Nombre del Caso de uso}: Modificar Item en OT\\
-                    \textbf{Actores}: Jefe de Taller\\
-                    \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: el Jefe de Taller decide modificar una actividad a realizar sobre un trabajo.
-            
-            \item 	\textbf{Nombre del Caso de uso}: Finalizar Item\\
-                    \textbf{Actores}: Jefe de Taller\\
-                    \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: el Jefe de Taller decide finalizar una actividad realizada sobre un trabajo.
-
-            \item 	\textbf{Nombre del Caso de Uso}: Reservar artículo de Stock a ítem\\
-                    \textbf{Actores}: Primario\\
-                    \textbf{Tipo}: Empleado\\
-                    \textbf{Descripcion}: Se reserva del stock un artículo para el ítem (la cantidad del artículo desciende virtualmente)
-
-            \item 	\textbf{Nombre del Caso de Uso}: Modificar reserva de artículo de Stock para ítem\\
-                    \textbf{Actores}: Primario\\
-                    \textbf{Tipo}: Empleado\\
-                    \textbf{Descripcion}: Se modifica la reserva de un artículo de stock en un ítem
-
-            \item 	\textbf{Nombre del Caso de Uso}: Eliminar reserva de artículo de Stock para ítem\\
-                    \textbf{Actores}: Primario\\
-                    \textbf{Tipo}: Empleado\\
-                    \textbf{Descripcion}: Se cancela la reserva de un artículo para un ítem (la cantidad del artículo incrementa virtualmente	)
-            
             \item 	\textbf{Nombre del Caso de uso}: Ver detalle de Orden de Trabajo\\
                     \textbf{Actores}: Empleado\\
                     \textbf{Tipo}: Primario\\
@@ -955,7 +895,7 @@
                 & \inc El sistema vincula la actividad con el ítem. \\ 
 
                 \hline
-                \inc El Jefe de Taller le solicita al sistema que busque un empleado & \\
+                \inc El Jefe de Taller le solicita al sistema que busque un empleado por el nombre & \\
                 \hline
                 & \inc Busca el empleado ingresado \\
                 \hline
@@ -965,8 +905,11 @@
                 \hline
                 & \inc El sistema asigna el Emplado al ítem \\ 
                 \hline
+                & \inc El sistema le asigna el estado de ``Asignado'' al ítem\\ 
+                \hline
 
-                \inc El Jefe de Taller le solicita al sistema que busque un repuesto & \\
+
+                \inc El Jefe de Taller le solicita al sistema que busque un repuesto por su código interno& \\
                 \hline
                 & \inc Busca el repuesto ingresado \\
                 \hline
@@ -976,27 +919,29 @@
                 \hline
                 & \inc El sistema asigna el repuesto al ítem \\ 
                 \hline
-                \inc Repetir los pasos 22-26 hasta que el Jefe de Taller no desee reservar más artículos para el ítem & \\
+                \inc Repetir los pasos 23-27 hasta que el Jefe de Taller no desee reservar más artículos para el ítem & \\
                 \hline
 
 
-                \inc El Jefe de Taller le solicita al sistema que busque un estado de ítem&\\
+                & \inc Si en la actividad seleccionada interviene un equipo, ir al paso 30 del curso normal. Si no, ir al paso 35.\\
                 \hline
-                & \inc El sistema busca el estado de ítem\\
+
+
+                \inc El Jefe de Taller le solicita al sistema ingresar un equipo por su número de serie&\\
                 \hline
-                & \inc El sistema muestra la información del estado de ítem\\
+                &\inc Busca el equipo\\
                 \hline
-                \inc El Jefe de Taller le pide al sistema que vincule el estado de ítem al ítem &\\
+                & \inc El sistema muestra los datos del equipo\\
                 \hline
-                & \inc El sistema le asigna el estado de ítem al ítem\\
+                \inc El Jefe de Taller le solicita al sistema vincular el equipo al ítem&\\
+                \hline
+                & \inc El sistema vincula el equipo con el ítem\\
                 \hline
 
 
                 \inc El Jefe de Taller ingresa una fecha de vencimiento para el ítem&\\
                 \hline
                 & \inc El sistema muestra la fecha de vencimiento ingresada\\
-                \hline
-                \inc El Jefe de Taller le pide al sistema que vincule la fecha de vencimiento al ítem &\\
                 \hline
                 & \inc El sistema asigna la fecha de vencimiento al ítem\\
                 \hline
@@ -1008,7 +953,7 @@
                 & \inc El sistema vincula el ítem creado a la OT\\
                 \hline
 
-                \inc Repetir pasos 10-39 hasta que el Jefe de Taller desee dejar de agregar ítems & \\
+                \inc Repetir pasos 10-40 hasta que el Jefe de Taller desee dejar de agregar ítems & \\
                 \hline
                 \inc Fin CU. & \\
             \hline
@@ -1016,29 +961,29 @@
             \hline
             \multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema indica que el cliente no se encuentra dado de alta (includes ``Alta cliente''). Ir al paso 8 del curso normal.}\\
             \hline
-            \multicolumn{2}{|p{16cm}|}{\textbf{14. }El sistema informa que la actividad no existe. Si el Jefe de Taller desea crear la actividad, includes: ``Crear nueva actividad''. Si no, sigue el curso normal.}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{14. }El sistema informa que la actividad no existe. Si el Jefe de Taller desea crear la actividad, includes: ``Crear nueva actividad''. Si no, volver al paso 12 del curso normal.}\\
             \hline  
-            \multicolumn{2}{|p{16cm}|}{\textbf{17. }El Jefe de Taller no desea asignar ningún empleado al ítem. Ir al paso 22 del curso normal}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{17. }El Jefe de Taller no desea asignar ningún empleado al ítem. El sistema el asigna el estado de ``Creado al ítem''. Ir al paso 23 del curso normal}\\
             \hline  
-            \multicolumn{2}{|p{16cm}|}{\textbf{19a. }El sistema informa que el empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo empleado''. Si no, fin CU.}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{19a. }El sistema informa que el empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo empleado''. Si no, ir al paso 41 del curso normal.}\\
             \hline  
-            \multicolumn{2}{|p{16cm}|}{\textbf{19b. }El sistema informa que el empleado está sobrecargado. Si el Jefe de Taller decide cambiar de empleado, volver al paso 17 del curso normal. Si no, seguir el curso normal}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{19b. }El sistema informa que el empleado está sobrecargado. Si el Jefe de Taller decide cambiar de empleado, volver al paso 17 del curso normal. Si no, ir al paso 41 curso normal}\\
             \hline  
             \multicolumn{2}{|p{16cm}|}{\textbf{19c. }El sistema informa que el rol del empleado asignado no corresponde con la actividad del ítem. Volver al paso 17 del curso normal.}\\
             \hline  
             \multicolumn{2}{|p{16cm}|}{\textbf{22. }El Jefe de Taller no desea reservar ningún repuesto. Ir al paso 28 del curso normal}\\
             \hline
-            \multicolumn{2}{|p{16cm}|}{\textbf{24. }El sistema informa que el repuesto ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo artículo de stock''. Si no, fin CU.}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{25. }El sistema informa que el repuesto ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo artículo de stock''. Si no, volver al paso 22 del curso normal}\\
             \hline
-            \multicolumn{2}{|p{16cm}|}{\textbf{26a. }El sistema informa que el repuesto ingresado ya está reservado para el ítem. Si el Jefe de Taller desea reservar otra unidad más, continuar con el curso normal. Si no, volver al paso 22.}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{27a. }El sistema informa que el repuesto ingresado ya está reservado para el ítem. Si el Jefe de Taller desea reservar otra unidad más, continuar con el curso normal. Si no, volver al paso 23.}\\
             \hline
-            \multicolumn{2}{|p{16cm}|}{\textbf{26b. }El sistema informa que el repuesto ingresado no tiene cantidad suficiente para cumplir la reserva. Si el Jefe de Taller desea reservar otro artículo más, volver al paso 22. Si no, ir al paso 28.}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{27b. }El sistema informa que el repuesto ingresado no tiene cantidad suficiente para cumplir la reserva. Si el Jefe de Taller desea reservar otro artículo más, volver al paso 23. Si no, ir al paso 28.}\\
             \hline
-
-
-            \multicolumn{2}{|p{16cm}|}{\textbf{30. }El sistema informa que el estado de ítem ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo estado de ítem''. Si no, fin CU.}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{32a. }El sistema informa que el equipo ingresado no existe. Si el Jefe de Talle decide ingresarlo, includes: ``Agregar nuevo equipo''. Si no, volver al paso 30}\\
             \hline
-            \multicolumn{2}{|p{16cm}|}{\textbf{34. }El sistema informa que la fecha de vencimiento ingresada es incorrecta. Si desea ingresar una nueva, volver al paso 33. Si no, fin CU.}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{32b. }El sistema informa que el equipo ingresado ya está vinculado con otro ítem abierto. Volver al paso 30.}\\
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{34. }El sistema informa que la fecha de vencimiento ingresada es incorrecta. Si desea ingresar una nueva, volver al paso 33. Si no, ir al paso 41}\\
             \hline  
             \multicolumn{2}{|p{16cm}|}{\textbf{37. }El sistema informa que el ítem a vincular con la OT ya existe. Volver al paso 10 del curso normal}\\
         \hline  
@@ -1069,10 +1014,6 @@
 			\hline
 			& \inc El sistema busca el código\\
 			\hline
-			& \inc El sistema muestra el código ingresado\\
-			\hline
-            \inc El Jefe de Taller confirma el ingreso del código& \\
-            \hline
             &\inc El sistema crea un nuevo artículo de stock.\\
             \hline
             \inc El Jefe de Taller ingresa la marca del artículo& \\
@@ -1093,29 +1034,25 @@
 			\hline
 			& \inc El sistema vincula el precio con el artículo\\ 
             \hline
-			\inc Repetir pasos 9 al 10 hasta que el Jefe de Taller no quiera ingresar más precios del artículo& \\
+			\inc Repetir pasos 10 al 13 hasta que el Jefe de Taller no quiera ingresar más precios del artículo& \\
 			\hline
-			\inc El Jefe de Taller solicita al sistema buscar un proveedor& \\
+			\inc El Jefe de Taller solicita al sistema buscar un proveedor por nombre`& \\
 			\hline
             &\inc El sistema busca el proveedor. \\
 			\hline 
             &\inc El sistema muestra los datos del proveedor.\\
 			\hline 
-            \inc El Jefe de Taller confirma el ingreso del proveedor&\\
-			\hline
             &\inc El sistema vincula el proveedor con el artículo.\\
 			\hline 
             \inc El Jefe de Taller ingresa el código del artículo propio del proveedor&\\
 			\hline
             &\inc El sistema almacena el código del artículo propio del proveedor junto con el registro del proveedor vinculado.\\
 			\hline
-            \inc Repetir pasos 17-23 hasta que el Jefe de Taller no desee vincular más proveedores al artículo & \\
+            \inc Repetir pasos 15-20 hasta que el Jefe de Taller no desee vincular más proveedores al artículo & \\
             \hline
 			\inc El Jefe de Taller ingresa el plazo de la garantía del artículo& \\
 			\hline
 			& \inc Muestra el detalle de la garantia\\
-			\hline
-			\inc El Jefe de Taller confirma el plazo de la garantía& \\
 			\hline
 			& \inc Se vincula la garantía con el artículo\\
 			\hline
@@ -1127,19 +1064,19 @@
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el código interno de artículo ya existe. Si se desea ingresar un código nuevo, ir al paso 2 del curso normal. Si no, fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{9. }El sistema informa que la marca no existe. Si se desea ingresar una marca nueva, includes: ``Agregar marca de artículo''. Si no, fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que la marca no existe. Si se desea ingresar una marca nueva, includes: ``Agregar marca de artículo''. Si no, fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que el precio es negativo. Ir al paso 12 del curso normal}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{11. }El sistema informa que el precio es negativo. Ir al paso 10 del curso normal}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{19. }El sistema informa que el proveedor no existe. Si se desea agregar un nuevo proveedor, includes ``Agregar Proveedor''. Si no, Fin CU}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{17. }El sistema informa que el proveedor no existe. Si se desea agregar un nuevo proveedor, includes ``Agregar Proveedor''. Si no, Fin CU}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{21. }El sistema informa que el proveedor ya está vinculado con el artículo. Volver al paso 17 del curso normal.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{18. }El sistema informa que el proveedor ya está vinculado con el artículo. Volver al paso 17 del curso normal.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{24. }El sistema informa que el código de artículo propio del vendedor ya existe. Volver al paso 22 del curso normal.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{20. }El sistema informa que el código de artículo propio del vendedor ya existe. Volver al paso 19 del curso normal.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{25. }El artículo no tiene garantía. Continuar con el Curso Normal.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{22. }El artículo no tiene garantía. Continuar con el paso 25 Curso Normal.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{26. }El sistema informa que se ingresó una garantía negativa. Volver al paso 24 del Curso Normal.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{23. }El sistema informa que se ingresó una garantía negativa. Volver al paso 22 del Curso Normal.}\\
 		\hline
 	\end{longtable}
 
