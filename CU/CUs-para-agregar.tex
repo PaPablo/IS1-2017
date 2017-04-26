@@ -1,0 +1,177 @@
+
+
+	%Este ya está como parte del CU "Agregar nuevo artículo de stock"
+	%también tendría que ir como sección de "Modificar artículo de stock"
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Proveedor a un Artículo}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se vincula un proveedor dado de alta con un artículo dado de alta}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Artículo existente con referencia a proveedor existente}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\textbf{1. }Este CU comienza cuando el Jefe de Taller desea a un artículo la referencia de un proveedor que lo distribuye& \\
+			\hline
+			\textbf{2. }El Jefe de Taller le indica al sistema qué artículo desea modificar & \\
+			\hline
+			& \textbf{3. }Busca el artículo \\
+			\hline
+			& \textbf{4. }Muestra la información del artículo \\
+			\hline
+			\textbf{5. }Selecciona un proveedor para vincular con el artículo &\\
+			\hline
+			& \textbf{6. }Busca el proveedor deseado \\
+			\hline
+			& \textbf{7. }Muestra los datos del proveedor \\
+			\hline
+			& \textbf{8. }Vincula el proveedor con el artículo\\
+			\hline
+			\textbf{9. }Ingresa código del artículo propio del proveedor & \\
+			\hline
+			\textbf{10. }Repetir pasos 5-9 hasta que no se deseen agregar más proveedores al artículo &  \\
+			\hline
+			& \textbf{11. }Almacena el artículo modificado \\
+			\hline
+			\textbf{12. }Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }Artículo no existe. Si se lo desea agregar, includes: ``Agregar artículo de Stock''. Si no, fin CU }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }Proveedor no existe. Si se lo desea agregar, includes ``Agregar Proveedor''. Si no, fin CU}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }Proveedor ya está vinculado con el artículo. Ir al paso 10 del curso normal}\\
+		\hline	
+	\end{longtable}
+
+
+	%Lo mismo que con el de arriba, este CU ya es parte de "Abrir OT"
+	%Tambíén tendría que ir como sección de "Modiciar OT"
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Crear ítem en OT}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: el Jefe de taller agrega un nuevo ítem a una Orden de Trabajo ya existente y de ser necesario le asigna repuestos.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nuevo ítem en la Orden de Trabajo}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\textbf{1. }Este Caso de uso comienza cuando el Jefe de Taller de Taller desea agregar un ítem a una OT. & \\
+			\hline
+			\textbf{2. }El Jefe de Taller ingresa el número de Orden y le solicita al sistema que la busque &  \\
+			\hline
+			& \textbf{3. }Busca la Orden de Trabajo \\
+			\hline
+			& \textbf{4. }Muestra los datos de la Orden \\
+			\hline
+			\textbf{5. }El Jefe de Taller solicita al sistema crear un nuevo ítem & \\
+			\hline
+			& \textbf{6. }Crea un nuevo ítem en la Orden\\
+			\hline
+			\textbf{7. }El Jefe de Taller ingresa al sistema la actividad a realizar en el ítem indicando su código. & \\
+			\hline
+			& \textbf{8. }El sistema busca la actividad \\
+			\hline
+			& \textbf{9. }Muestra los datos de la actividad \\
+			\hline
+			& \textbf{10. }El sistema vincula la actividad con el ítem \\
+			\hline
+			\textbf{11. }El Jefe de Taller selecciona un empleado a asignar al ítem & \\
+			\hline
+			& \textbf{12. }Busca el empleado ingresado  \\
+			\hline
+			& \textbf{13. }El sistema muestra los datos del Empleado \\
+			\hline
+			& \textbf{14. }Asigna el Emplado al ítem \\
+			\hline
+			\textbf{15. }El Jefe de Taller decide si:
+			\begin{enumerate}[label=(\alph*)]
+			 	\item Resevar artículo de Stock para el ítem (includes: ``Reservar Artículo de Stock para ítem'').
+			 	\item No reservar repuesto para el ítem. Ir al paso 17 del Curso Normal
+			\end{enumerate} & \\
+			\hline
+			\textbf{16. }Repetir paso 15 hasta que no se deseen reservar más artículos de Stock & \\
+			\hline
+			\textbf{17. }El Jefe de Taller agrega observaciones en el ítem sobre la tarea a realizar. & \\
+			\hline
+			& \textbf{18. }Guarda las observaciones ingresadas \\
+			\hline
+			\textbf{19. }Repetir pasos 19-20 hasta que no se deseen ingresar más observaciones al ítem & \\
+			\hline
+			\textbf{20. }Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }La Orden de Trabajo no existe. Si desea ingresar otro número de orden, ir al paso 2 del Curso normal. Si no, Fin CU}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9. }La Actividad no está dada de alta. Si el Jefe de Taller desea agregarla, includes ``Agregar una Nueva Actividad''. Si no, Fin CU}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{14. }El Empleado no está dado de alta. Si el Jefe de Taller desea agregar uno inludes ``Agregar Empleado''. Si no, Fin CU.}\\
+		\hline	
+	\end{longtable}
+
+
+	%Este no sé si tendría que ir también en "Abrir OT" en la parte que creamos el ítem
+	%lo que sí tiene que ir en "Modificar OT" o "Modificar ítem", según cómo nos quede
+	
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Reservar artículo de Stock a ítem}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Empleado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se reserva del stock un artículo para el ítem (la cantidad del artículo desciende virtualmente)}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: ítem con artículo asociado. Stock del artículo involucrado decrementado virtualmente}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\textbf{1. }Este CU comienza cuando se considera que un trabajo conllevará un repuesto& \\
+			\hline
+			\textbf{2. }El Empleado busca la Orden de Trabajo que contiene el ítem necesario & \\
+			\hline
+			& \textbf{3. }Busca la Orden \\
+			\hline
+			& \textbf{4. }Muestra los datos de la Orden \\
+			\hline
+			\textbf{5. }El Empleado selecciona el ítem correspondiente & \\
+			\hline
+			& \textbf{6. }Busca el ítem \\
+			\hline
+			& \textbf{7. }Muestra el detalle del ítem \\
+			\hline
+			\textbf{8. }El Empleado le indica al sistema qué artículo de stock asociar al ítem & \\
+			\hline
+			& \textbf{9. }Busca el artículo de stock\\
+			\hline
+			& \textbf{10. }Asocia el artículo al ítem\\
+			\hline
+			& \textbf{11. }Actualiza el stock del artículo involucrado (includes: ``Actualizar Stock'')\\
+			\hline
+			\textbf{12. }Repetir pasos 7-9 hasta que el Jefe de Taller decida no asociar más artículos al ítem&\\
+			\hline
+			\textbf{13. }Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }Orden no existe. Fin CU}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }Ítem no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9a. }El artículo no existe. Fin CU}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9b. }El artículo no tiene cantidad suficiente para la reserva. Fin CU}\\
+		\hline
+	\end{longtable}

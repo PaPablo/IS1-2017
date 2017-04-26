@@ -1,0 +1,65 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: }\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando & \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc  \\
+			\hline
+			\inc  & \inc   \\
+			\hline
+			\inc  & \inc   \\
+			\hline
+			\inc  & \inc   \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline	
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}

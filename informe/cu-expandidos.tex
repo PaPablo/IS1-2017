@@ -1,0 +1,1243 @@
+    \documentclass[12pt]{extarticle}
+    \usepackage[utf8]{inputenc}
+    \usepackage{caption}
+    \usepackage{subcaption}
+    \usepackage[spanish]{babel}
+    \usepackage{multicol}
+    \usepackage{listings}
+    \usepackage{fancyhdr}
+
+    \usepackage{longtable}
+    \usepackage{enumitem}
+
+    \usepackage{url}
+    \usepackage[a4paper]{geometry}
+    \usepackage{float}
+    \usepackage{setspace}
+    \usepackage{color}   %May be necessary if you want to color links
+    \usepackage{hyperref}
+    \hypersetup{
+        colorlinks=true, %set true if you want colored links
+        linktoc=all,     %set to all if you want both sections and subsections linked
+        linkcolor=blue,  %choose some color if you want links to stand out
+    }
+    \usepackage{graphicx}
+    \graphicspath{ {images/} }
+
+
+    \begin{document}
+
+        \title{Ingeniería de Software I - T - Análisis y Diseño de Sistemas\\
+        ISFPP\\
+        \large{C\'atedera:\\
+        Profesor: Lic. Marta Saenz López\\
+        JTP: Lic. Sebastián Schanz\\
+        Ayudante de Segunda: Guillermo Urrutia}}
+        \author{KRMPOTIC, Lucas\\
+        MURILLO, Alexis\\
+        SERRUYA ALOISI, Luciano Sebastián\\
+        SOTO, Kevin\\
+        TOLEDO MARGALEF, Pablo Adrián}
+        \date{}
+        \maketitle
+        \pagebreak
+
+        \pagestyle{fancy}
+        \fancyhf{}
+        \lhead{ISFPP}
+        \chead{IS I - T - AyDS}
+        \rhead{\includegraphics[scale=0.15]{images/logoUnpsjb.png}}
+        \lfoot{\thepage}
+        \cfoot []{Krmpotic - Murillo - Serruya Aloisi - Soto - Toledo Margalef} 
+
+        %indice
+        \tableofcontents
+
+
+        \clearpage
+
+
+        %COMIENZO INTERLINEADO
+        \begin{spacing}{1.2}
+
+
+
+        \section{Entrevista}
+        \begin{enumerate}
+            \item ¿Qué actividades realiza la empresa?
+            \item ¿Existen distintas jerarquías dentro la organización? ¿Manejan todos la misma información?
+            \item ¿Cómo se realizan las actividades? ¿Cuáles son los estados que se atraviesan?
+            \item Dentro de esas actividades, ¿Qué información relevante a cada una requiere ser almacenada?
+            \item ¿Cómo se recepcionan los pedidos de servicios de los clientes?
+            \item ¿Hay alguna forma de priorización de los trabajos?
+            \item ¿Cómo se realiza la asignacion de trabajo a cada empleado? 
+            \item ¿Los empleados se especializan en alguna cuestión particular? ¿Hay empleados especializados en reparaciones y otros en servicios? 
+            \item ¿Existe uso de información producida por una actividad para la realización de otra? Siendo así, qué actividades, hacia cuáles y qué información.
+            \item Con respecto a clientes ¿Se da una diferencia en el registro del mismo cuando se trata de un cliente particular o una empresa?
+            \item ¿Cómo es el flujo de información entre la organización y un cliente afectado a un servicio?
+            \item ¿De qué manera se realiza el seguimiento o registro de lo realizado en un servicio?
+            \item ¿Cómo se realiza la cotización de un servicio realizado?
+            \item ¿Cómo funciona el cobro por ventas o servicios y cómo se registra éste?
+            \item ¿Existen diferencias con respecto al cobro cuando se trata de un cliente particular o una empresa?
+            \item ¿Existe alguna forma de seguimiento de aquellas actividad que requieren de más de un día (más de lo habitual) para su conclusión?
+            \item ¿Con qué cantidad de proveedores se trabaja? ¿Cómo se realizan las compras? ¿Trabaja con distintos tipos de proveedores?
+            \item ¿Cómo se registra el pago a proveedores, el encargo de mercadería, y su recepción?
+            \item ¿Se mantiene el mismo stock para ventas que para reparaciones?
+            \item ¿Brindan servicio técnico en calidad de agente oficial? ¿Se lleva registro? ¿Cambia con respecto al servicio técnico habitual?
+            \item ¿Se lleva registro de cada equipo en particular? ¿Cómo se tratan los equipos reincidentes?
+            \item ¿En qué momento se da por finalizado un servicio?
+            \item ¿Cómo se maneja el vencimiento de las órdenes y la garantía que las órdenes tienen luego de cerradas?
+        \end{enumerate}
+
+        \pagebreak
+
+
+
+
+
+
+
+
+
+        \section{Relevamiento de la Organización}
+        A.T. Informática es una empresa residente en la ciudad de Puerto Madryn y se dedica principalmente al soporte y mantenimiento tanto software como de hardware.
+
+        Brindan servicios de instalación de cámaras y redes, asistencia on-site (soporte a domicilio o en el lugar), asistencia por teléfono, asistencia remota, reparación de PC tanto domésticas como para empresas, mantenimiento a impresoras láser, de matriz de punto, fiscales, y plotters; también realizan reparaciones en tablets.  Los objetivos de la empresa son los de brindar un servicio de mantenimiento de calidad a la comunidad y además maximizar ganancias.\\
+
+        \pagebreak
+        \subsection{Clientes}
+
+        Entre los distintos clientes que atiende la organización se puede realizar la siguiente división:
+        \begin{itemize}
+            \item Clientes particulares: personas que requieren algún servicio o reparación por cuenta propia.
+            \item Clientes comerciales: aquellos que son parte de un negocio u organización que no excede las 5 o 10 computadoras.
+            \item Clientes empresariales: superan las 10 computadoras y generan un volumen de trabajo mayor a los clientes comerciales. Suelen contar con distintos sectores, complejizando la comunicación con la organización.
+            \item Clientes corporativos: Son clientes que tercerizan trabajos para la organización. Estos trabajos incluyen la atención a servidores, reparación de impresoras fiscales, instalación y mantenimiento de redes.Dichos trabajos tercerizados pueden ser realizados a clientes particulares, comerciales o empresariales.
+        \end{itemize}
+
+        De cada cliente se registran los siguientes datos:
+        \begin{itemize}
+            \item Nombre o Razón Social
+            \item DNI/CUIT/CUIL
+            \item Dirección de Facturación
+            \item Teléfono/s (en clientes comerciales o empresariales se almacena más de uno para poder tener comunicación directa con distintos sectores dentro de las organizaciones cliente)
+            \item Correo Eléctronico (más de uno en clientes comerciales o empresariales)\\
+            NOTA: la modalidad a seguir en los clientes comerciales o empresariales es que para cada miembro de la organización cliente se registra un nombre, un teléfono o interno, y una dirección de correo eléctronico.
+        \end{itemize}
+
+        Los clientes se comunican con la organización en ocasión de requerir algún servicio o para chequear el estado de algún pedido. Si el cliente tiene un equipo en taller puede llamar para verificar si tiene arreglo o no; suele darse que los clientes se comuniquen cuando las reparaciones tardan más de lo habitual. Dicha consulta por parte del cliente se deja asentada en la orden.\\
+
+        Los datos de un cliente se pueden modificar cuando el cliente avisa a la organización que ha cambiado, por ejemplo, de teléfono de contacto o de dirección de correo electrónico. En ese caso se realiza la modificación sin ningún problema.
+
+        Si por alguna razón se debiera eliminar un cliente, se lo da de baja en el sistema. No se podrá realizar trabajos a su nombre, pero se pueden consultar los registros de sus trabajos realizados. La baja de cliente se podrá realizar sólo en aquellos clientes que no tengan un saldo negativo en su cuenta corriente.
+        
+        \subsubsection{Cuenta Corriente}
+            Los clientes poseen cuenta corriente dentro de la organización donde se detallan las facturas y notas de crédito emitidas a su nombre y los pagos que realizó.\\
+            Se registra:
+            \begin{itemize}
+                \item Fecha del movimiento
+                \item Concepto
+                \item Si se debitó o se acreditó
+                \item Monto
+                \item Saldo actual del cliente
+            \end{itemize}
+
+            La cuenta corriente de un cliente sólo puede ser vista por personal contable de la organización. Pero su estado (saldo a favor o en contra) es tenido en cuenta al momento de decidir si prestarle o no servicio. Si el gerente considera que el cliente tiene un saldo negativo demasiado grande puede decidir negarle el servicio.
+
+
+        \pagebreak
+        \subsection{Integrantes de la Organización}
+        Actualmente dentro de la organización se establece la siguiente jerarquía:
+        \begin{itemize}
+            \item Técnico Fiscal: Realiza las reparaciones de tiqueadoras. Dichos trabajos provienen de los clientes corporativos.
+            \item Técnico de Taller: Encargado de realizar las reparaciones dentro del taller.
+            \item Técnico On-site: Encargado de realizar los trabajos en los domicilios de los clientes, ya sean reparaciones o instalaciones.
+            \item Jefe de Taller: Encargado de realizar la asignación de trabajo a cada técnico. Decide cuándo abrir una orden, a qué técnico asignarla y cuándo cerrarla.
+            \item Operario Contable: Encargado de realizar la facturación de una orden de trabajo cerrada.
+            \item Cajero: Atiende a los clientes que deseen realizar compras en el local.
+            \item Gerente: Máximo cargo en la organización. Encargado de las decisiones estratégicas. Decide qué clientes reciben servicio y cuáles no, proveedores a los cuáles comprarle mercadería. 
+        \end{itemize}
+        
+
+        Cabe aclarar que debido al tamaño de la organización, los empleados desempeñan varios roles a la vez, como ser técnico de taller y técnico on-site.
+
+        En cuanto a la información manejada por cada miembro de la organización, hay una diferencia entre la que manejan los técnicos y el operario contable. Mientras que los técnicos manejan los datos pertinentes al trabajo a realizar, tales como el problema a solucionar, el domicilio adónde se debe realizar una instalación o un teléfono de contacto, el operario contable debe conocer los valores a facturar por cada actividad precisada en una orden y algún medio de comunicación para transmitirle el presupuesto al cliente. El Jefe de Taller también se puede encargar de notificar sobre presupuestos a los clientes.
+
+        Cuando un empleado deja de trabajar para la organización, se lo da de baja en el sistema imposibilitándolo para figurar como técnico asociado a una Orden de Trabajo. Asimismo no se pierde registro de sus actividades en OT anteriores. 
+
+        A cada empleado se le asigna el trabajo dependiendo de varias cosas:
+        \begin{itemize}
+            \item El nivel de experiencia en la reparación del equipo.
+            \item El papel que cumpla dentro de la jerarquía (a un empleado de taller no se le va a encargar que realice una instalación).
+            \item El trabajo acumulado que tenga en el momento y la demora que tenga para atender el trabajo nuevo que se le pueda asignar. 
+        \end{itemize}
+
+        Hay empleados especializados, en general por tener más experiencia, en ciertos tipos de equipos (por ejemplo: impresoras láser) o en ciertos tipos de instalaciones (por ejemplo: redes inalámbricas); por lo tanto se les suele asignar esos tipos de trabajo específicos.
+
+        \pagebreak
+        \subsection{Proveedores}
+        Para reparaciones y mantenimientos de distintos equipos, la organización dispone siempre de un stock de partes (engranajes de impresoras, mecanismos de tiqueadoras, memorias fiscales, cables de datos, cables de alimentación) y componentes (discos duros, memorias, placas madres, lecto-grabadoras de CD-DVD, teclados, mouses).\\
+
+        Trabajan con empresas proveedoras de estos insumos con las cuales actualizan y reponen su inventario cuando es necesario (on-demand). Sin embargo, se intenta mantener una cantidad básica de cada uno de los elementos.\\
+
+        Al momento de agregar un proveedor se lo registra con la siguiente información.
+            \begin{itemize}
+                \item Razón Social
+                \item Dirección
+                \item Localidad
+                \item Teléfono (puede ser más de uno)
+                \item e-mail
+                \item Observaciones varias como el horario de atención o interno de contacto con distintos integrantes de la organización proveedora
+            \end{itemize}
+        En cualquier momento se pueden modificar los datos del proveedor para reflejar algún cambio de teléfono, e-mail, dirección que se produzca.
+
+        De la misma forma, si se considera necesario se puede dar de baja un proveedor. No va a poder ser referenciado en ningún nuevo pedido u otra actividad, pero los registros que lo mencionen quedarán intactos y se podrán consultar sin ningún problema.
+
+        \subsubsection{Stock y Pedidos}
+
+        La organización cuenta con un listado de los repuestos detallando 
+        \begin{itemize}
+            \item Marca
+            \item Código interno de referencia
+            \item Distintos precios según el margen de ganancia deseado (por reparación de taller, por venta directa, por utilización en visita)
+            \item Referencia a uno o más proveedores del artículo, teniendo como primer opción al favorito (más usual), o el cliente corporativo del cual proviene
+            \item Código propio del proveedor
+            \item Si tiene o no garantía, y en caso de que la tenga de cuánto tiempo.
+        \end{itemize}
+
+        Cuando se detecta que el stock se encuentra por debajo de los niveles mínimos, se le comunica al Operario Contable y éste realiza un pedido. Registra a qué proveedor se hizo, qué artículos y a qué precio, fecha en la que se hizo y fecha probable de llegada. 
+
+        Si un artículo recibido ya forma parte de la lista de repuestos, se actualiza el stock con la nueva cantidad. En caso de ser una parte o componente que se adquiere por primera vez se lo ingresa al sistema con su información pertinente y la cantidad que ingresó. 
+            
+        En cualquier momento se pueden modificar los datos del registro de artículos (su código interno o del proveedor, los distintos precios, o algún otro dato).
+
+        En caso de tener que realizar una eliminación, se da de baja el artículo y ya no podrá formar parte de pedidos a proveedores ni de presupuestos o detalles de trabajos realizados, pero se mantienen las referencias hechas al artículo eliminado.
+
+        Cuando se realiza el pago al proveedor por un pedido se lo registra con fecha, monto, medio de pago y en caso de ser por transferencia o pago eléctrónico, el número de transacción. Si se paga con cheque, se deja asentado el número de cheque, fecha de cobro y monto.
+
+        También se piden repuestos que no se posean en existencia para algún trabajo en específico (por ejemplo, una placa madre de notebook).\\
+
+        Los clientes coporativos proveen de repuestos especializados para sus trabajos encomendados. Éstos forman parte del stock, pero sólo se los utiliza en los trabajos de dichos clientes. Se los registra de igual manera que una parte o componente habitual, pero se especifica de qué cliente proviene; no se los puede utilizar en pedidos a proveedores convencionales ni ser usados en trabajos que no sean de clientes corporativos.\\
+
+        Los pedidos se realizan via e-mail o por sitios de venta online, indicando los artículos necesarios. La cuenta de los pedidos, la recepción y los pago se realiza a través de una planilla de cálculo. 
+
+        La recepción de un pedido la realiza el Operario Contable, verificando que lo que llegó coincida con lo registrado en la planilla; de ser así el pedido se marca como ``satisfecho'' y se actualiza el stock. En caso contrario (no llegó el pedido completo o llegó en mal estado), el stock se actualiza con los artículos disponibles pero el pedido se marca como ``pendiente'' detallando qué artículos faltaron. Luego se comunica con el proveedor y se acuerda una solución.
+
+        Si no se puede completar el pedido debido a que ninguno de los proveedores tiene los artículos en existencia, se lo marca como ``satisfecho incompleto'' con el detalle de los artículos faltantes. Se mantiene un listado de estos artículos para que al momento de realizar pedidos a otros proveedores se los tenga en cuenta. Cuando llegan los artículos faltantes, se remueven de la lista.
+
+        En el caso de que lleguen artículos de más el Operario Contable notifica al Gerente y se decide si se abonan los artículos de más al proveedor y la organización se los queda, o si se los envía de regreso.\\
+
+        Una gran mayoría de los artículos tienen sus precios dolarizados, por lo tanto la lista de precios se mantiene actualizada en base a la valuación del dólar. Con respecto a los artículos con precios no dolarizados, se realiza una actualización mensual de sus precios.
+
+        \pagebreak
+        \subsection{Órdenes de Trabajo}
+        La información de todas las actividades que realiza la empresa se registra bajo un mismo tipo de Orden de Trabajo (de ahora en más OT).
+        Se almacena:
+        \begin{itemize}
+            \item Fecha de rececepción
+            \item Cliente
+            \item Pedido del cliente. Sea una falla o lo requerido en una instalación.
+            \item Tipo de Equipo. Marca, modelo y número de serie (en caso de ser una reparación).
+            \item Técnico que recibió. 
+            \item Técnico asignado para el trabajo.
+            \item Vencimiento, manualmente asignado.
+        \end{itemize}
+
+        En la orden de trabajo, además de toda la información requerida al momento de crearla, se registra con fecha y nombre de técnico las tareas que se han ido realizando.
+        Por ejemplo:\\ 
+        \textit{
+        12-03 (Pablo) El equipo no encendía. Se lo abrió y se encontró que la memoria estaba quemada. Se colocó una nueva de 4Gb. Código: 1234.
+        }\\
+
+        El seguimiento se registra en el campo de observaciones de la orden de trabajo, indicando los avances, problemas y comentarios referentes a lo realizado.\\
+
+        Si el técnico asociado a la OT considera que el trabajo necesita de un repuesto, se lo detalla en la orden. Dicho repuesto es reservado del stock (la cantidad del artículo disminuye virtualmente). Los artículos reservados todavía no dejan de existir en el stock, pero no se los puede considerar para otros trabajos. 
+
+        Llegado el caso de que un repuesto reservado del stock no se utilice en el trabajo, se detalla en la orden, se cancela la reserva del stock, y no se factura.
+
+        El Gerente o el Jefe de Taller puede ignorar dicha reserva y reordenar las asignaciones de repuestos a los presupuestos manualmente, haciendo que ciertas OT se retrasen o aceleren su paso.
+
+        Si no hubiera la cantidad necesaria para satisfacer la demanda del trabajo se puede cambiar la fecha de vencimiento de la orden, contemplando el tiempo que tardaría conseguir el repuesto. Esta demora en el cumplimento del trabajo se le comunica al cliente, que puede aceptar o no que se continue. Si no acepta se cancela la reparación o la visita.
+
+        Toda OT es creada y cerrada manualmente.\\
+
+        El vencimiento incluido en una OT se utiliza como \textbf{sugerencia de prioridad}. Se tiene en cuenta la fecha de vencimiento, a qué cliente pertenece y qué equipo es al momento de realizar los trabajos. 
+
+        Un servicio puede darse por finalizado por dos razones:
+        \begin{itemize}
+            \item Porque se ha completado el trabajo y se cierra la orden.
+            \item Porque no se puede completar, lo cual constituye una orden fallida.
+        \end{itemize}
+
+        \subsubsection{Estados}
+
+        \begin{enumerate}
+            \item \textbf{Asignada}: estado inicial de la orden. Cuenta con un técnico asociado.
+            \item \textbf{Revisada}: el técnico asociado realizó un primer diagnóstico del equipo ingresado (se lo anexa a la OT; incluye el problema que describió el cliente y lo que descubrió el técnico).
+            \item \textbf{Cotizada}: equipo ya diagnosticado. Presupuesto elaborado.
+            \item \textbf{Notificada de cotización}: el cliente ya fue notificado del presupuesto. En caso de que el cliente no acepte, la orden pasa al estado \textbf{No se repara} o bien a \textbf{Fallida} (en caso de tratarse de una visita). 
+            \item \textbf{Presupuesto aceptado}: el cliente aceptó el presupuesto indicado para realizar el trabajo.
+            \item \textbf{Espera de repuestos}: se pidieron repuestos necesarios para realizar el trabajo. No se puede reanudar hasta su arribo.
+            \item \textbf{En trámite}: se está realizando el trabajo; durante esta etapa, varios técnicos pueden participar en el trabajo y realizar observaciones en la orden. En caso de que el trabajo requiera algún servicio más, la OT vuelve a pasar por los estados \textbf{Cotizada}, \textbf{Notificada de cotización}, y en caso de aceptarse el presupuesto, \textbf{Presupuesto aceptado}. En caso de no aceptarse, se pasa a \textbf{No se repara} o a \textbf{Falllida} (si es una visita).
+            \item \textbf{Reparada/Lista}: trabajo terminado. Se encuentra pendiente de facturación.
+            \item \textbf{Notificada de reparación}: se le avisa al cliente que su equipo está listo para ser retirado.
+            \item \textbf{Cumplido}: se realizó la visita exitosamente. La orden se encuentra pendiete de facturación.
+            \item \textbf{No se repara}: no se completó la reparación porque el cliente no aceptó el presupuesto.
+            \item \textbf{Fallida}: no se pudo completar el trabajo on-site.
+            \item \textbf{Entregada}: se entregó el equipo reparado al cliente. El trabajo fue facturado.
+            \item \textbf{SCRAP}: el cliente no retiró el equipo pasados los 60 (sesenta) días hábiles. Se encuentra a disposición de la organización.
+        \end{enumerate}
+
+        \subsubsection{Facturación y cobros}
+        Para la facturación se cuentan las tareas realizadas de una Orden de Trabajo cerrada (pendiente de facturación), como ser reparaciones hechas, cantidad de horas técnico, repuestos utilizados, traslados, instalaciones. Se realiza el cálculo contando con los valores expuestos en el tarifario y se emite la factura. En caso de ser un equipo que no esté en el tarifario, se lo cotiza y se lo asienta en el campo de observaciones de la OT correspondiente.
+
+        Al momento de realizar la factura no se pueden contabilizar Órdenes de Trabajo que no se encuentren cerradas.
+
+        La factura se emite a nombre del cliente que figura en la Orden de Trabajo correspondiente con el monto calculado y se la registra en su Cuenta Corriente, registrado como ``débito'', decrementando su saldo. Si se trata de un cliente comercial o empresarial, se le entrega la factura a mes vencido (se le envían vía e-mail todas las facturas correspondientes a trabajos realizados en el mes anterior). Para clientes particulares, se le entrega la factura y se cobra cuando se retira el equipo del local o, una vez terminado el trabajo on-site, se le informa al cliente que su factura ya está emitida y que debe acercarse la local para saldarla.
+
+        El cobro de los servicios realizados puede gestionarse en una sola factura o llegado el caso, una factura abarcar varias Órdenes de Trabajo. Asimismo, un pago puede saldar una o más facturas. Se deja constancia en la Cuenta Corriente cuando se ha realizado un pago, registrado como ``crédito'', aumentando su saldo. Actualmente la organización acepta pago en efectivo, cheques y transferencias bancarias, notas de crédito (también acepta el pago de una factura con saldo pendiente en la cuenta corriente), pero aspira incluir pagos con tarjetas. El pago se registra en la cuenta corriente del cliente con fecha, monto y factura o facturas saldadas. No existen diferencias entre el registro de cobro a empresas y particulares.\\
+
+        \subsubsection*{Cancelación de una Factura}
+        Si por algún motivo se debe cancelar una factura porque hubo un error en su confección o algún otro reclamo, la organización procede a reflejar la devolución del monto de la factura en una nota de crédito con la siguiente información: \\
+        \begin{itemize}
+            \item Fecha de emisión
+            \item Fecha de vencimiento (30 días hábiles de la fecha de emición)
+            \item Monto
+            \item Número de orden de trabajo facturada
+            \item Número de factura anulada
+        \end{itemize}
+
+        \pagebreak
+        \subsection{Actividades}
+
+        \subsubsection{Reparación de Equipos}
+        El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. Se verifica si el cliente está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Una vez cargado, el integrante de la organización que esté atendiendo al cliente toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia. De no ser así se lo carga registrando marca y modelo. Cada equipo que ingresa al taller es serializado, de modo que un cliente puede tener asociado varios equipos, contando cada equipo con su historial de reparaciones.\\
+
+        Recibido el equipo, el cliente abona por adelantado el importe de la tarifa de Revisión, Diagnóstico y Presupuesto (de ahora en más RDyP) y se le entrega el comprobante del ingreso del equipo y, en un plazo de dos a cinco días hábiles (según el tipo de equipo), se le va a dar un diagnóstico sobre el estado del mismo; si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. El equipo entra en una cola de espera. Si el presupuesto planteado al cliente se acepta, se procede a repararlo. En caso contrario se le devuelve el equipo.\\
+
+        Luego de completada, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo (se abre una nueva orden de trabajo, indicando en el campo de observaciones que el trabajo está cubierto por una garantía). \\
+        
+        En cualquier momento de la reparación el cliente puede solicitar la cancelación del servicio. En ese caso la orden se cierra y quedan pendientes de facturación las tareas que hayan sido completadas en la OT.\\
+
+        Cuando un equipo reingresa al taller se revisa su historial dentro del taller, viendo si reingresó por la misma falla o por una nueva. Esta información proviene de órdenes anteriores. \\
+
+        Los datos pertenecientes a un equipo se pueden modificar en cualquier momento, puediendo hacerse correción de errores en el ingreso inicial de los datos.
+
+        Cuando un se considera SCRAP u obsoleto se le da de baja en el sistema; el equipo ya no puede formar parte de ninguna Orden de Trabajo ni trabajo realizado. De cualquier manera, no se pierden las referencias al equipo hechas en las órdenes de trabajo en las que aparezca.
+
+        Las bajas se pueden deshacer, para subsanar errores en el uso del sistema.
+
+        Con respecto a los clientes, al momento de realizar alguna instalación o reparación que requiera configuraciones especiales, se vuelve constantemente a las órdenes anteriores por la información requerida (por ejemplo: programas específicos a instalar).
+
+        \subsubsection{Visitas a clientes}
+
+        Existen tareas que realiza la organización que no pueden realizarse en el taller. Es por eso que se suelen dar las visitas o trabajos On-Site. Esta modalidad se utiliza en el caso de tener que realizar instalaciones de redes, cámaras o equipos con configuraciones especiales, así como soporte de software o reparaciones en equipo cuyo tamaño no permite su acarreo al taller.\\
+
+        Comienza cuando el cliente se comunica con la empresa solicitando una visita. Se verifica si el cliente está en el sistema, en caso de no estarlo se lo ingresa.
+
+        Si el que recibió el llamado era el Jefe de Taller, abre una nueva Orden de Trabajo, correspondiente a la visita a realizar; caso contrario se deja constancia de la situación para notificar al Jefe de Taller cuando esté disponible. 
+        Una vez abierta se detalla la tarea a realizar (instalación, servicio, revisión, relevamiento). En la mayoría de los casos los clientes ya saben el servicio que desean recibir, aunque se los puede asesorar.
+
+        Se puede dar que el técnico deba pasar por donde se va a realizar el trabajo para relevar el estado de las instalaciones y poder hacer un cálculo de insumos a utilizar; dicha visita no forma parte de la cotización. La visita que se realiza al lugar para llevar a cabo el trabajo sí se cotiza y cuenta como una tarea dentro de la Orden.\\
+
+        Cuando ya se decidió lo que se va a hacer, se realiza un presupuesto que se le entrega al cliente. Si se lo acepta se procede a la instalación. En caso contrario, se debe abonar sólo la tarifa de RDyP.
+
+        Una vez realizada la instalación o el servicio on-site, se cierra la orden y queda como Pendiente de Facturación. Si el servicio no se pudo realizar, la visita se considera fallida y se debe acordar con el cliente si se realizará otra o no. En caso de que se acuerde por hacer otra visita, se tratará de una nueva Orden de Trabajo.\\ 
+
+        En el marco de una visita puede ser que al técnico se le pida que revise equipos presentes en el lugar. En ese caso, los retira y los ingresa al taller como una reparación habitual (creando su OT correspondiente).
+
+        \subsubsection{Trabajos tercerizados}
+        Si bien no se lleva adelante ningún servicio en calidad de agente oficial, la organización cuenta en su cartera de clientes con diferentes empresas que sí realizan trabajos de reparación e instalación como agente oficial, pero que, al no contar con sucursales en la zona, tercerizan dichos trabajos.
+
+        Su registro no cambia con respecto a los trabajos habituales, pero se detalla en la orden que proviene de una tercerización.
+        En general, están sujetos a contratos que especifican condiciones de tiempo de respuesta.\\
+
+        Las solicitudes llegan vía e-mail detallando la tarea y el lugar a acudir; se detalla también el plazo de vencimiento.
+        Una vez realizada la tarea en tiempo y forma, se debe notificar a la empresa tercerizadora que se la completó exitosamente, primero por teléfono (llamando a la mesa de ayuda, indicando el número de orden y fecha y hora de cierre), y luego vía e-mail se detallan tareas realizadas y repuestos utilizados.
+        En caso de que no se hayan cumplido los plazos de vencimiento, se realiza el mismo procedimiento de notificación pero la empresa tercerizadora aplica una penalización al momento de facturar el trabajo.
+
+        Los repuestos especializados utilizados son provistos por la empresa tercerizadora, manteniendo un stock básico. Luego de cada trabajo que consuma repuestos, la empresa realiza envíos de reposición de los artículos utilizados para mantener las cantidades actualizadas. 
+        Internamente, estos artículo son tratados de igual manera que las partes y componentes del stock (a diferencia que sólo se utilizan para los trabajos tercerizados y no están disponibles para la venta al público).
+        Por lo general, no se usan repuestos más allá de los provistos por la empresa, pero en caso de usar otros, se los detalla en el e-mail (al momento de la facturación, son tomados en cuenta y reintegrados).\\
+
+        Si no se puede completar el trabajo dentro de los plazos establecidos, se avisa a la empresa de la situación, pidiendo una prórroga de tiempo. Esta situación se puede dar por falta de repuestos, o por la complejidad del problema.
+
+        A principio de mes la empresa tercerizadora realiza el pago de los trabajo realizados durante el mes anterior, entregando un comprobante que indica las tareas facturadas. La forma de pago fue acordada cuando se firmó el contrato con la empresa tercerizadora.
+
+        \subsubsection*{Priorización de Trabajos}|
+
+        Ya sea una reparación de equipo o de un servicio On-Site, el orden en que se van a ir realizando depende de varios factores. Uno de ellos es el \textbf{tipo de cliente}; a los empresariales o comerciales se les otorga una prioridad mayor que a los particulares.
+
+        Dentro de un mismo cliente se le da mayor prioridad a aquellos equipos que atañen al funcionamiento del cliente. Por ejemplo: una máquina de mostrador que factura va a tener mayor prioridad que una máquina de una oficina interna.
+
+        También se tiene en cuenta el \textbf{tipo de equipo}, siendo de mayor prioridad un equipo que imposibilite trabajar al cliente. Por ejemplo: la computadora personal del cliente tiene mayor prioridad que unos parlantes.
+        De todas maneras, el cliente puede indicar en forma particular que cuál de sus equipos atender primero.
+
+        Otro factor importante para la priorización de trabajos es el \textbf{vencimiento} de la OT. La organización mantiene un listado con las órdenes listadas por vencimiento.
+
+        \subsubsection{Venta al Público}
+        La organización también realiza venta al público de partes, componentes y accesorios. Si bien no es su actividad principal, igualmente realizan ventas a particulares. Se utiliza el mismo stock que en las reparaciones (luego de una venta, se actualiza el stock). 
+        Las ventas se dan solamente en el local de la organización, sin contar con ningún medio de venta on-line ni a distancia. Al igual que las otras actividades que realiza la empresa, sólo se podrán realizar ventas a clientes registrados.
+
+        Se lleva registro de las ventas realizadas en una planilla de cálculo, para luego ser entregado al operario contable. Se detallan los siguientes datos:
+        \begin{itemize}
+            \item Fecha de emisión
+            \item Cliente
+            \item Empleado que realizó en la venta
+            \item Número de factura
+            \item Monto
+            \item Artículos vendidos
+        \end{itemize}
+
+        Cuando se realiza una venta, el cliente se acerca al local de la organización, dónde están expuestos los productos a vender. Si se encuentra uno o varios de su agrado, los lleva al mostrador donde es atendido por el Operario Contable. 
+        El cliente puede preguntar por algún producto que no se encuentre expuesto; en caso de que haya en existencia, se le pregunta qué cantidad desea, se lo busca en el stock y se lo ofrece si es que cuenta con la cantidad pedida. Caso contrario se le informa que no hay disponible. El cliente decide si ver algún artículo distinto, o retirarse del local.
+
+        El Operario Contable procede a hacer la suma de los importes de los productos, buscándolos por código en el sistema y calcula el total de la venta. Se le informa el total de la venta; si el cliente lo acepta, abona el importe, se le emite una factura a su nombre, la cual queda asentada en el registro. Se modifica el stock de los artículos vendidos. 
+        Si el monto no es aceptado, no se concreta la venta (no se emite factura ni se modifica el stock); el cliente puede modificar su pedido, o no comprar nada.
+        Para las ventas al público, la empresa sólo acepta pago en efectivo y notas de crédito.
+
+        Cuando se desea cancelar una venta ya concretada, el Operario Contable emite una nota de crédito a nombre del cliente indicando:
+        \begin{itemize}
+            \item Fecha de emisión
+            \item Fecha de vencimiento (30 días hábiles de la fecha de emición)
+            \item Monto
+            \item Artículos devueltos y cantidad
+            \item Número de factura que registra la venta de los artículos devueltos
+        \end{itemize}
+        De cualquiera manera, una venta se puede cancelar dentro de los 30 días hábiles de emitida la factura y si los artículos a devolver están en garantía. Si la venta es cancelada, el stock se actualiza con los artículos que volvieron a ingresar (si no fueron devueltos por fallos).
+
+        La nota de crédito puede ser utilizada sólo por el cliente al cual se le extendió dentro del plazo del vencimiento, tanto en compra de artículos como en servicios o giros a su cuenta corriente.
+
+        Si el cliente desea realizar un cambio, los artículos tienen que estar en garantía. Si se realiza el cambio con éxito, se debe actualizar el stock con los artículos que se dieron en garantía (no con los devueltos).
+
+        \clearpage
+        \section{Casos de uso}
+        \subsection{Listado de Casos de uso}
+        \begin{multicols}{2}
+        \begin{enumerate}	
+            \subsubsection*{Clientes}
+            
+            %As you can see, las notificaciones volaron a la goma
+            \item Agregar Cliente
+            \item Modificar Cliente
+            \item Eliminar Cliente
+            \item Listar Clientes
+            \item Agregar movimiento en Cuenta Corriente
+            \item Eliminar movimiento en Cuenta Corriente
+            \item Ver resumen de Cuenta Corriente
+            \subsubsection*{Proveedores}
+            \item Agregar Proveedor
+            \item Modificar Proveedor
+            \item Eliminar Proveedor
+            \item Listar Proveedores	
+            \subsubsection*{Empleados}
+            \item Agregar Empleado
+            \item Modificar Empleado
+                %secciones:
+                    %asignar rol empleado
+                    %eliminar rol empleado
+            \item Eliminar Empleado
+            \item Listar Empleados	
+            \item Crear Rol de Empleado
+            \item Eliminar Rol de Empleado
+            \item Listar Roles de Empleado
+            \subsubsection*{Equipos}
+            \item Agregar tipo de Equipo
+            \item Modificar tipo de Equipo
+            \item Eliminar tipo de Equipo
+            \item Listar tipo de Equipo
+            \item Agregar Equipo
+            \item Modificar Equipo
+            \item Eliminar Equipo
+            \item Listar Equipos
+            \subsubsection*{Stock}
+            \item Agregar artículo de Stock
+            \item Modificar artículo de Stock
+                %secciones:
+                    %\item Agregar Proveedor a un artículo
+                    %\item Eliminar Proveedor de artículo
+            \item Eliminar artículo de Stock
+            \item Actualizar stock
+            \item Listar Stock
+            \item Ver detalle de artículo
+            \item Agregar marca de artículo
+            \item Eliminar marca de artículo
+            \item Listar marcas de artículos existentes
+            \subsubsection*{Actividades}
+            \item Agregar nueva actividad
+            \item Modificar actividad
+                %secciones:
+                    %agregar rol de empleado a actividad
+                    %eliminar rol de empleado de tarea
+            \item Eliminar actividad
+            \item Listar actividades
+            \subsubsection*{Órdenes de trabajo}
+            \item Abrir nueva Orden de Trabajo
+            \item Listar OT
+            \item Modificar OT 
+            %secciones:
+                % Crear Item 
+                % Modificar item 
+                % Finalizar Item
+                % Baja item 
+                 %\item Reservar artículo de Stock para Item
+                %\item Modificar reserva de artículo de Stock para Item
+                %\item Eliminar reserva de artículo de Stock para Item
+                %ABM observaciones en item
+            \item Ver detalle de Orden de Trabajo
+            \item Ver detalle de un ítem
+            \subsubsection*{Facturas, Cobros y Ventas}
+            \item Generar factura 
+            \item Registrar pago de factura
+            \item Realizar Venta
+            \item Generar Nota de Crédito
+            \subsubsection*{Pedidos a proveedores}
+            \item Crear pedido a proveedor
+            \item Modificar pedido %Esto abarca marcar el pedido como enviado,y como pago
+            \item Eliminar pedido a proveedor
+            \item Listar pedidos
+            \item Registrar recepción de pedido
+            \item Registrar pago a proveedor
+        \end{enumerate}
+        \end{multicols}
+
+        \clearpage
+
+        \subsection{Casos de uso breves}
+
+
+        \begin{enumerate}
+
+
+
+            \subsubsection{Clientes}
+
+
+
+            \item 	\textbf{Caso de uso}: Agregar Cliente\\
+                    \textbf{Actores}: Persona, Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Una persona solicita un servicio. El empleado le toma los datos y se crea un nuevo cliente con sus datos en el sistema.
+
+            \item 	\textbf{Caso de uso}: Modificar Cliente\\
+                    \textbf{Actores}: Cliente, Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Un cliente dado de alta indica al empleado cuáles de sus datos desea cambiar. El empleado registra los cambios en su registro.
+
+            \item 	\textbf{Caso de uso}: Eliminar Cliente\\
+                    \textbf{Actores}: Cliente, Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se da de baja un cliente (no se pueden registrar nuevas órdenes de trabajo a su nombre ni registrar nuevos movimientos en su Cuenta Corriente).
+
+            \item 	\textbf{Caso de uso}: Listar Clientes\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: Se muestran los clientes dados de alta con sus datos
+
+            \item 	\textbf{Caso de uso}: Agregar movimiento de Cuenta Corriente\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se ingresa un nuevo movimiento en la Cuenta Corriente de un cliente
+
+            \item   \textbf{Caso de uso}: Eliminar movimiento de Cuenta Corriente\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se elimina movimiento de la Cuenta Corriente de un cliente
+
+            \item   \textbf{Caso de uso}: Ver resumen de Cuenta Corriente\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: Se muestran los distintos movimientos de una Cuenta Corriente, podiendo ordenar por fecha, monto, si son de crédito o débito
+
+
+
+            \subsubsection{Proveedores}
+
+
+
+            \item 	\textbf{Nombre del Caso de uso}: Agregar Proveedor\\
+                    \textbf{Actores}: Proveedor, Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El empleado registra los datos del proveedor y su información de contacto. Se crea un proveedor nuevo en el sistema.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Modificar Proveedor\\
+                    \textbf{Actores}: Proveedor, Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se modifica el registro de un proveedor dado de alta con sus datos nuevos
+            
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar Proveedor\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se da de baja un proveedor (no se le pueden realizar más pedidos)
+            
+            \item 	\textbf{Nombre del Caso de uso}: Listar Proveedores\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: Se muestran los proveedores dados de alta con sus datos. Se pueden ordenar por orden alfabético, por ciudad de origen
+
+
+
+            \subsubsection{Empleados}
+
+
+
+            \item 	\textbf{Nombre del Caso de uso}: Agregar Empleado\\
+                    \textbf{Actores}: Persona, Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se registra un nuevo empleado con sus datos asociados.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Modificar Empleado\\
+                    \textbf{Actores}: Empleado, Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se actualiza el registro del empleado dado de alta con sus nuevos datos
+            
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar Empleado\\
+                    \textbf{Actores}: Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se da de baja un empleado (no se lo puede asociar en nuevas órdenes de trabajo)
+            
+            \item 	\textbf{Nombre del Caso de uso}: Listar Empleados\\
+                    \textbf{Actores}: Gerente\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: Se muestra un listado de todos los empleados dados de alta con sus datos. Se puede ordenar el listado para mostrarlos por orden alfabético, por los ítems de OT en los que aparecen.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Crear Rol de Empleado\\
+                    \textbf{Actores}: Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se crea un nuevo tipo de empleado asignable a un empleado
+            
+            \item 	\textbf{Nombre del Caso de uso}: Modificar Rol de Empleado\\
+                    \textbf{Actores}: Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se modifica la información pertinente de un rol de empleado existente.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar Rol de Empleado\\
+                    \textbf{Actores}: Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se da de baja un rol de empleado (no se puede asignar nuevamente a algún empleado)
+            
+            \item 	\textbf{Nombre del Caso de uso}: Listar Roles de Empleado\\
+                    \textbf{Actores}: Gerente\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: Se muestra un listado de todos los roles de empleados con su información asociada. Se los puede filtrar por las distintas actividades que tengan asociadas.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Asignar Rol a Empleado\\
+                    \textbf{Actores}: Empleado, Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se asigna un Rol de Empleado dado de alta a un Empleado dado de alta
+            
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar Rol de un Empleado\\
+                    \textbf{Actores}: Empleado, Gerente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se remueve el Rol de Empleado de un Empleado.
+
+
+
+            \subsubsection{Equipos}
+
+
+
+            \item 	\textbf{Nombre del Caso de uso}: Agregar tipo de Equipo\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se realiza una alta de la tipificacion de tipo equipo que podrá ingresar al taller 
+            
+            \item 	\textbf{Nombre del Caso de uso}: Modificar tipo de Equipo\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se realiza una modificación a un tipo de equipo dado de alta.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar tipo de Equipo\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se da de baja un tipo de equipo (no se pueden ingresar un nuevo equipo de ese tipo)
+            
+            \item 	\textbf{Nombre del Caso de uso}: Listar tipos de Equipo\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: Se listan todos los tipos de equipo dados de alta
+            
+            \item 	\textbf{Nombre del Caso de uso}: Agregar Equipo\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se agrega un nuevo equipo con un tipo de equipo dado de alta y cliente dado de alta asociado
+            
+            \item 	\textbf{Nombre del Caso de uso}: Modificar Equipo\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se modifican los datos asociados de un equipo dado de alta
+            
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar Equipo\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se da de baja un equipo (no se le puede asociar en nuevos trabajos)
+            
+            \item 	\textbf{Nombre del Caso de uso}: Listar equipos\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: Se listan todos los equipos dados de alta con su información correspondiente. Se pueden ordenar según el dueño, según la última orden de trabajo en la que aparecieron, según si son SCRAP.
+
+
+
+            \subsubsection{Stock}
+
+
+
+            \item 	\textbf{Nombre del Caso de Uso}: Agregar artículo de Stock\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripcion}: Se realiza un alta a un artículo del stock
+
+            \item 	\textbf{Nombre del Caso de Uso}: Modificar articulo de Stock\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripcion}: Se modifica la información de un artículo dado de alta
+
+            \item 	\textbf{Nombre del Caso de Uso}: Eliminar articulo de Stock\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripcion}: Se realiza una baja de un articulo del stock (no se podrá referenciar nuevamente)
+
+            \item 	\textbf{Nombre del Caso de Uso}: Actualizar stock\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripcion}: Se acutualizan las cantidades de los distintos productos seleccionados del stock
+
+            \item 	\textbf{Nombre del Caso de Uso}: Listado Stock\\
+                    \textbf{Actores}: Secundario\\
+                    \textbf{Tipo}: Empleado\\
+                    \textbf{Descripcion}: Se listan todos los artículos dados de alta. Se puede ordenar el listado para que los muestre según el proveedor que tengan asociado, según las cantidades que tenga cada artículo. 
+
+            \item 	\textbf{Nombre del Caso de Uso}: Agregar Proveedor a un artículo\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Jefe de Taller\\
+                    \textbf{Descripcion}: Se vincula un proveedor dado de alta con un artículo dado de alta
+
+            \item 	\textbf{Nombre del Caso de Uso}: Eliminar Proveedor a un artículo\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Jefe de Taller\\
+                    \textbf{Descripcion}: Se desvincula un proveedor dado de alta con un artículo dado de alta
+
+            \item 	\textbf{Nombre del Caso de Uso}: Ver detalle de artículo\\
+                    \textbf{Actores}: Secundario\\
+                    \textbf{Tipo}: Empleado\\
+                    \textbf{Descripcion}: Se listan todos los datos pertenecientes a un artículo dado de alta, con los distintos proveedores asociados, sus precios y garantía que posea (si que es tiene).
+
+            \item 	\textbf{Nombre del Caso de Uso}: Agregar marca de artículo\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripcion}: Se crea una nueva marca de artículo
+
+            \item 	\textbf{Nombre del Caso de Uso}: Eliminar marca de artículo\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripcion}: Se elimina una marca de artículo (no se podrá vincular para nuevos artículos)
+
+            \item 	\textbf{Nombre del Caso de Uso}: Listar marcas de artículo\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripcion}: Se listan todas las marcas de artículos registradas	
+
+
+
+            \subsubsection{Actividades}
+
+
+
+            \item 	\textbf{Nombre del Caso de Uso}: Agregar nueva actividad\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Jefe de Taller\\
+                    \textbf{Descripcion}: Se registra una nueva actividad que realiza la empresa (figurarán en las OT)
+
+            \item 	\textbf{Nombre del Caso de Uso}: Modificar actividad\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Jefe de Taller\\
+                    \textbf{Descripcion}: Se modifica una actividad dada de alta
+
+            \item 	\textbf{Nombre del Caso de Uso}: Eliminar actividad\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Jefe de Taller\\
+                    \textbf{Descripcion}: Se da de baja una actividad existente (no se podrá referenciar más en nueva OT)
+
+            \item 	\textbf{Nombre del Caso de Uso}: Listar actividades\\
+                    \textbf{Actores}: Secundario\\
+                    \textbf{Tipo}: Empleado\\
+                    \textbf{Descripcion}: Se listan actividades dadas de alta
+
+
+
+            \subsubsection{Órdenes de trabajo}
+
+
+
+            \item 	\textbf{Nombre del Caso de uso}: Abrir nueva Orden de Trabajo\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El cliente pide un servicio a la organización; el Jefe de Taller abre una nueva Orden de Trabajo para manejar el servicio a realizar
+
+            \item 	\textbf{Nombre del Caso de uso}: Cerrar OT\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: el jefe de taller decide que se ha terminado el trabajo y cambia el estado de una orden de trabajo abierta a ``pendiente de facturación''. No se le pueden agregar más ítems
+
+            \item 	\textbf{Nombre del Caso de uso}: Listar OT\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: se muestra un listado con las órdenes de trabajo.
+
+            \item 	\textbf{Nombre del Caso de uso}: Modificar OT\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: se realiza una modificación sobre la información de una OT existente.
+
+            \item 	\textbf{Nombre del Caso de uso}: Crear Item en OT\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: el Jefe de Taller registra una actividad a realizar en una orden de trabajo.
+
+            \item 	\textbf{Nombre del Caso de uso}: Modificar Item en OT\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: el Jefe de Taller decide modificar una actividad a realizar sobre un trabajo.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Finalizar Item\\
+                    \textbf{Actores}: Jefe de Taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: el Jefe de Taller decide finalizar una actividad realizada sobre un trabajo.
+
+            \item 	\textbf{Nombre del Caso de Uso}: Reservar artículo de Stock a ítem\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Empleado\\
+                    \textbf{Descripcion}: Se reserva del stock un artículo para el ítem (la cantidad del artículo desciende virtualmente)
+
+            \item 	\textbf{Nombre del Caso de Uso}: Modificar reserva de artículo de Stock para ítem\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Empleado\\
+                    \textbf{Descripcion}: Se modifica la reserva de un artículo de stock en un ítem
+
+            \item 	\textbf{Nombre del Caso de Uso}: Eliminar reserva de artículo de Stock para ítem\\
+                    \textbf{Actores}: Primario\\
+                    \textbf{Tipo}: Empleado\\
+                    \textbf{Descripcion}: Se cancela la reserva de un artículo para un ítem (la cantidad del artículo incrementa virtualmente	)
+            
+            \item 	\textbf{Nombre del Caso de uso}: Ver detalle de Orden de Trabajo\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: se muestra un listado de ítems sobre una orden de trabajo particular.
+
+            \item 	\textbf{Nombre del Caso de uso}: Ver detalle de un ítem\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: el empleado solicita un listado de observaciones y artículos reservados para un item sobre una orden de trabajo.
+
+
+
+            \subsubsection{Facturas, Cobros y Ventas}
+
+
+
+            \item 	\textbf{Nombre del Caso de Uso}: Generar Factura\\
+                    \textbf{Actores}: Operario Contable, Cliente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable solicita al sistema generar una factura con una OT cerrada o con artículos vendidos
+
+            \item 	\textbf{Nombre del Caso de Uso}: Registrar Pago de Factura\\
+                    \textbf{Actores}: Operario Contable, Cliente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El cliente realiza el pago de una factura
+            
+            \item 	\textbf{Nombre del Caso de Uso}: Realizar venta\\
+                    \textbf{Actores}: Operario Contable, Cliente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable solicita al sistema actualizar el stock de los artículos involucrados en una venta, y emitir una factura a nombre del cliente dado de alta
+
+            \item 	\textbf{Nombre del Caso de Uso}: Generar Nota de Crédito\\
+                    \textbf{Actores}: Operario Contable, Cliente\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable genera un Nota de Crédito anulando uno o más renglones de una o más facturas a nombre de un cliente. La Nota es emitida y entregada al cliente.
+
+
+
+            \subsubsection{Pedidos a proveedores}
+
+
+
+            \item 	\textbf{Nombre del Caso de Uso}: Crear pedido a proveedor\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable arma el pedido de los productos de stock dados de alta y lo almacena en el sistema.
+
+            \item 	\textbf{Nombre del Caso de Uso}: Modificar pedido a Proveedor\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable modifica un pedido a proveedor guardado en el sistema antes de que éste sea cerrado para envío.
+
+            \item 	\textbf{Nombre del Caso de Uso}: Eliminar pedido a proveedor\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable elimina del sistema un pedido a un proveedor que no ha sido enviado.
+
+            %Ver que pasa si se quiere cancelar un pedido que ya fue cerrado para su envio
+
+            \item 	\textbf{Nombre del Caso de Uso}: Listar pedidos \\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: El Operario Contable solicita el listado de los pedidos registrados.
+
+            \item 	\textbf{Nombre del Caso de Uso}: Registrar recepción de pedido\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable registra que un pedido guardado en el sistema se recibió y en qué estado. 
+
+            \item 	\textbf{Nombre del Caso de Uso}: Registrar pago a proveedor\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se registra un pago a un proveedor dado de alta con un pedido realizado.
+        \end{enumerate}
+        \clearpage
+        \subsection{Casos de Uso expandidos}
+
+
+
+        %DEFINIMOS UN CONTADOR
+        \newcounter{step}
+        \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+
+        \begin{longtable}{ |p{8cm}|p{8cm}| }
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Abrir Orden de Trabajo}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, Esencial}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Cliente, Jefe de Taller}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El cliente pide un servicio a la organización; el Jefe de Taller abre una nueva Orden de Trabajo para manejar el servicio a realizar}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+            \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Orden de Trabajo creada}\\
+            \hline
+            \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+            \hline
+            \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+                \inc Este caso de uso comienza cuando el cliente se comunica con la empresa para pedir un servicio. & \\
+                \hline
+
+                \inc El Jefe de Taller le solicita al sistema abrir una nueva Orden de Trabajo. &  \\
+                \hline
+                & \inc El sistema crea la Orden de Trabajo  \\
+
+                \hline
+                \inc El Jefe de Taller le pide el nombre al cliente, el cliente se lo da. &  \\
+                \hline
+                \inc El Jefe de Taller le solicita al sistema buscar el cliente. &  \\
+                \hline
+                & \inc El sistema busca el cliente\\
+                \hline
+                & \inc El sistema muestra los datos del cliente\\
+                \hline
+                \inc El Jefe de Taller le ordena al sistema que vincule al cliente con la Orden& \\
+                \hline
+                & \inc El sistema asocia el cliente a la Orden\\
+
+                \hline
+                \inc El Jefe de Taller le solicita al sistema crear un nuevo ítem& \\
+                \hline
+                & \inc El sistema crea un ítem \\
+
+                \hline
+                \inc El Jefe de Taller ingresa al sistema la actividad a realizar en el ítem. &\\
+                \hline
+                & \inc El sistema busca la actividad \\
+                \hline
+                & \inc El sistema muestra los datos de la actividad \\ 
+                \hline
+                \inc El Jefe de Taller le solicita al sistema que vincule la actividad con el ítem & \\
+                \hline
+                & \inc El sistema vincula la actividad con el ítem. \\ 
+
+                \hline
+                \inc El Jefe de Taller le solicita al sistema que busque un empleado & \\
+                \hline
+                & \inc Busca el empleado ingresado \\
+                \hline
+                & \inc El sistema muestra los datos del Empleado \\
+                \hline
+                \inc El Jefe de Taller le solicita al sistema que vincule el empleado al ítem & \\
+                \hline
+                & \inc El sistema asigna el Emplado al ítem \\ 
+                \hline
+
+                \inc El Jefe de Taller le solicita al sistema que busque un repuesto & \\
+                \hline
+                & \inc Busca el repuesto ingresado \\
+                \hline
+                & \inc El sistema muestra los datos del repuesto \\
+                \hline
+                \inc El Jefe de Taller le solicita al sistema que vincule el repuesto al ítem & \\
+                \hline
+                & \inc El sistema asigna el repuesto al ítem \\ 
+                \hline
+                \inc Repetir los pasos 22-26 hasta que el Jefe de Taller no desee reservar más artículos para el ítem & \\
+                \hline
+
+
+                \inc El Jefe de Taller le solicita al sistema que busque un estado de ítem&\\
+                \hline
+                & \inc El sistema busca el estado de ítem\\
+                \hline
+                & \inc El sistema muestra la información del estado de ítem\\
+                \hline
+                \inc El Jefe de Taller le pide al sistema que vincule el estado de ítem al ítem &\\
+                \hline
+                & \inc El sistema le asigna el estado de ítem al ítem\\
+                \hline
+
+
+                \inc El Jefe de Taller ingresa una fecha de vencimiento para el ítem&\\
+                \hline
+                & \inc El sistema muestra la fecha de vencimiento ingresada\\
+                \hline
+                \inc El Jefe de Taller le pide al sistema que vincule la fecha de vencimiento al ítem &\\
+                \hline
+                & \inc El sistema asigna la fecha de vencimiento al ítem\\
+                \hline
+
+                & \inc El sistema muestra la información del ítem creado\\
+                \hline
+                \inc El Jefe de Taller le solicita al sistema que vincule el ítem a la OT & \\
+                \hline
+                & \inc El sistema vincula el ítem creado a la OT\\
+                \hline
+
+                \inc Repetir pasos 10-39 hasta que el Jefe de Taller desee dejar de agregar ítems & \\
+                \hline
+                \inc Fin CU. & \\
+            \hline
+            \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema indica que el cliente no se encuentra dado de alta (includes ``Alta cliente''). Ir al paso 8 del curso normal.}\\
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{14. }El sistema informa que la actividad no existe. Si el Jefe de Taller desea crear la actividad, includes: ``Crear nueva actividad''. Si no, sigue el curso normal.}\\
+            \hline  
+            \multicolumn{2}{|p{16cm}|}{\textbf{17. }El Jefe de Taller no desea asignar ningún empleado al ítem. Ir al paso 22 del curso normal}\\
+            \hline  
+            \multicolumn{2}{|p{16cm}|}{\textbf{19a. }El sistema informa que el empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo empleado''. Si no, fin CU.}\\
+            \hline  
+            \multicolumn{2}{|p{16cm}|}{\textbf{19b. }El sistema informa que el empleado está sobrecargado. Si el Jefe de Taller decide cambiar de empleado, volver al paso 17 del curso normal. Si no, seguir el curso normal}\\
+            \hline  
+            \multicolumn{2}{|p{16cm}|}{\textbf{19c. }El sistema informa que el rol del empleado asignado no corresponde con la actividad del ítem. Volver al paso 17 del curso normal.}\\
+            \hline  
+            \multicolumn{2}{|p{16cm}|}{\textbf{22. }El Jefe de Taller no desea reservar ningún repuesto. Ir al paso 28 del curso normal}\\
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{24. }El sistema informa que el repuesto ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo artículo de stock''. Si no, fin CU.}\\
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{26a. }El sistema informa que el repuesto ingresado ya está reservado para el ítem. Si el Jefe de Taller desea reservar otra unidad más, continuar con el curso normal. Si no, volver al paso 22.}\\
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{26b. }El sistema informa que el repuesto ingresado no tiene cantidad suficiente para cumplir la reserva. Si el Jefe de Taller desea reservar otro artículo más, volver al paso 22. Si no, ir al paso 28.}\\
+            \hline
+
+
+            \multicolumn{2}{|p{16cm}|}{\textbf{30. }El sistema informa que el estado de ítem ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo estado de ítem''. Si no, fin CU.}\\
+            \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{34. }El sistema informa que la fecha de vencimiento ingresada es incorrecta. Si desea ingresar una nueva, volver al paso 33. Si no, fin CU.}\\
+            \hline  
+            \multicolumn{2}{|p{16cm}|}{\textbf{37. }El sistema informa que el ítem a vincular con la OT ya existe. Volver al paso 10 del curso normal}\\
+        \hline  
+    \end{longtable}
+
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar artículo de Stock}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se crea un artículo nuevo de stock}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nuevo artículo de stock creado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Talle decide agregar un nuevo artículo al Stock& \\
+			\hline
+			\inc El Jefe de Taller ingresa el código interno del artículo& \\
+			\hline
+			& \inc El sistema busca el código\\
+			\hline
+			& \inc El sistema muestra el código ingresado\\
+			\hline
+            \inc El Jefe de Taller confirma el ingreso del código& \\
+            \hline
+            &\inc El sistema crea un nuevo artículo de stock.\\
+            \hline
+            \inc El Jefe de Taller ingresa la marca del artículo& \\
+            \hline
+			& \inc El sistema busca la marca ingresada\\
+            \hline
+			& \inc El sistema muestra los datos la marca\\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema vincular la marca con el artículo& \\
+			\hline
+			& \inc El sistema vincula la marca con el artículo.\\
+			\hline
+			\inc El Jefe de Taller ingresa un precio del artículo & \\
+			\hline
+			& \inc Muestra el precio ingresado \\ 
+            \hline
+            \inc El Jefe de Taller solicita al sistema vincular el precio con el artículo.&\\
+			\hline
+			& \inc El sistema vincula el precio con el artículo\\ 
+            \hline
+			\inc Repetir pasos 9 al 10 hasta que el Jefe de Taller no quiera ingresar más precios del artículo& \\
+			\hline
+			\inc El Jefe de Taller solicita al sistema buscar un proveedor& \\
+			\hline
+            &\inc El sistema busca el proveedor. \\
+			\hline 
+            &\inc El sistema muestra los datos del proveedor.\\
+			\hline 
+            \inc El Jefe de Taller confirma el ingreso del proveedor&\\
+			\hline
+            &\inc El sistema vincula el proveedor con el artículo.\\
+			\hline 
+            \inc El Jefe de Taller ingresa el código del artículo propio del proveedor&\\
+			\hline
+            &\inc El sistema almacena el código del artículo propio del proveedor junto con el registro del proveedor vinculado.\\
+			\hline
+            \inc Repetir pasos 17-23 hasta que el Jefe de Taller no desee vincular más proveedores al artículo & \\
+            \hline
+			\inc El Jefe de Taller ingresa el plazo de la garantía del artículo& \\
+			\hline
+			& \inc Muestra el detalle de la garantia\\
+			\hline
+			\inc El Jefe de Taller confirma el plazo de la garantía& \\
+			\hline
+			& \inc Se vincula la garantía con el artículo\\
+			\hline
+			& \inc Almacena el artículo como un nuevo artículo de stock\\			
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el código interno de artículo ya existe. Si se desea ingresar un código nuevo, ir al paso 2 del curso normal. Si no, fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9. }El sistema informa que la marca no existe. Si se desea ingresar una marca nueva, includes: ``Agregar marca de artículo''. Si no, fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que el precio es negativo. Ir al paso 12 del curso normal}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{19. }El sistema informa que el proveedor no existe. Si se desea agregar un nuevo proveedor, includes ``Agregar Proveedor''. Si no, Fin CU}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{21. }El sistema informa que el proveedor ya está vinculado con el artículo. Volver al paso 17 del curso normal.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{24. }El sistema informa que el código de artículo propio del vendedor ya existe. Volver al paso 22 del curso normal.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{25. }El artículo no tiene garantía. Continuar con el Curso Normal.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{26. }El sistema informa que se ingresó una garantía negativa. Volver al paso 24 del Curso Normal.}\\
+		\hline
+	\end{longtable}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	\end{spacing}
+
+	\pagebreak
+
+	\section{Anexo}
+
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.3]{images/atinformatica-facturaB.jpg}
+	\caption{Factura}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/atinformatica-orden_de_trabajo.jpg}
+	\caption{Orden de trabajo}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.4]{images/atinformatica-recibo.jpg}
+	\caption{Recibo}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.4]{images/atinformatica-remito.jpg}
+	\caption{Remito}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.275]{images/atinformatica-sticker.jpg}
+	\caption{Sticker}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/atinformatica-tarifario-pixel.jpg}
+	\caption{Tarifario}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/cliente_ingreso.jpg}
+	\caption{Factura}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/equipo_e_ingreso.jpg}
+	\caption{Listado de equipos e ingreso}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/estados_orden.jpg}
+	\caption{Estados de una orden}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/listado_clientes.jpg}
+	\caption{Listado de clientes}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/listado_ordenes.jpg}
+	\caption{Listado de órdenes}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/orden.jpg}
+	\caption{Orden de trabajo}
+	\end{figure}
+
+	\begin{figure}[h]
+	\includegraphics[scale=0.5]{images/pantalla_principal.jpg}
+	\caption{Pantalla principal}
+	\end{figure}
+
+\end{document}
