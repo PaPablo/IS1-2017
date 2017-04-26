@@ -1,7 +1,0 @@
-Sería correcto si desde un CU que tiene como Actor a un empleado de la organización, se haga un "includes" a un CU que tiene como actor al Jefe de Taller? o el primer CU tiene que tener como Actor al Jefe de Taller también?
-
-Por ejemplo, al momento de reservar un repuesto con un ítem en una OT (CU "Reservar artículo para ítem", tiene como actor a un Empleado"), puede ser que el repuesto no exista, por lo tanto se hace el "includes" al CU "Agregar artículo de Stock" que tiene como actores al Jefe de Taller (que es de mayor jerarquía dentro de la organización que el empleado).
-
-cuando se emite una factura por una venta a nombre de consumidor final (una persona que no esta registrada como cliente), y depueés hay que anular la factura por devolución o lo que sea. Qué onda con la nota de crédito? a quién se emite?
-
-VER MODIFICAR OT, QUEDA MOOOOOOOOOOOY GIGANTE. Capaz que la posta es hacer que modificar item sea un CU con una precondicion de que la OT exista y se manejen ahi todo el tema de las reserva de articulo y el ABM de las observaciones

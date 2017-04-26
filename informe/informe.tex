@@ -537,7 +537,7 @@
             \item 	\textbf{Caso de uso}: Agregar movimiento de Cuenta Corriente\\
                     \textbf{Actores}: Operario Contable\\
                     \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: Se ingresa un nuevo movimiento en la Cuenta Corriente de un cliente
+                    \textbf{Descripción}: Se ingresa un nuevo movimiento en la Cuenta Corriente de un cliente indicando fecha, monto, si es de crédito o débito, y el saldo actual del cliente.
 
             \item   \textbf{Caso de uso}: Eliminar movimiento de Cuenta Corriente\\
                     \textbf{Actores}: Operario Contable\\
@@ -1080,7 +1080,202 @@
 		\hline
 	\end{longtable}
 
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
 
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Registrar Pago de Factura}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable, Cliente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El cliente realiza el pago de una factura}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Una o más facturas pagas}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el cliente se acerca al local para pagar una factura.& \\
+            \hline
+			\inc El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta cuál. & \\
+            \hline
+			\inc El Operario Contable le solicita al sistema que busque la factura. & \\
+            \hline
+			& \inc El sistema busca la factura. \\
+            \hline
+			& \inc El sistema muestra los datos de la factura. \\
+            \hline
+			\inc El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
+                \begin{enumerate}[label=(\alph*)]
+                    \item Pagar en efectivo: ir a sección \textit{Pago en Efectivo}.
+                    \item Pagar con Nota de Crédito: ir a sección \textit{Pago con Nota de Crédito}.
+                    \item Pagar con Transferencia Bancaria: ir a sección \textit{Pago con Transferencia Bancaria}.
+                    \item Pagar con Cheque: ir a sección \textit{Pago con Cheque}.
+                    \item No paga. Ir al paso 8.
+                \end{enumerate}
+            & \\
+            \hline
+            & \inc El sistema muestra el subtotal de lo pagado y el total de lo adeudado.\\
+            \hline
+            & \inc Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
+            \hline
+			\inc El Operario Contable solicita al sistema buscar el Cliente que figura en la factura.& \\
+            \hline
+            & \inc El sistema busca el cliente.\\
+            \hline
+            & \inc El sistema muestra los datos del cliente.\\
+            \hline
+            \inc El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
+            \hline
+            & \inc El sistema calcula y almacena el saldo actual del cliente que figura en la factura.\\
+            \hline
+			\inc El Operario Contable le extiende al cliente un comprobante de pago & \\
+            \hline
+            & \inc Si la factura fue pagada en su totalidad, el sistema la marca como pagada. Si no, el sistema la marca como pagada parcialmente.\\
+            \hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{5a. } El sistema informa que la factura no existe, fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{5b. } El sistema informa que la factura ya fue pagada, fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{13. } El sistema le informa al Operario Contable que el cliente dispone de saldo a favor en su cuenta corriente. El Operario Contable genera una Nota de Crédito a nombre del Cliente con dicho saldo. Se la entrega al Cliente. Continuar con el paso 14 del Curso Normal.}\\
+		\hline	
+	\end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago en efectivo}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+        \hline
+            \inc  El cliente da un pago en efectivo& \\
+            \hline
+            \inc  El Operario Contable le solicita al sistema el registro del cobro del importe a pagar ingresando el monto del efectivo entregado por el cliente& \\
+            \hline
+            & \inc  El sistema registra el pago en efectivo\\
+            \hline
+            & \inc  El sistema calcula y muestra el vuelto\\
+            \hline
+            \inc  El Operario Contable deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
+            \hline
+            \inc Fin Sección. & \\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{1. } El cliente no tiene suficiente efectivo como para pagar el importe. Ir a paso 5 del curso principal de CU.}\\
+        \hline
+    \end{longtable}
+    
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Nota de Crédito}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+        \hline
+            \inc  El cliente le entrega al Operario Contable la Nota de Crédito con la que desea abonar.& \\
+            \hline
+            \inc  El Operario Contable contable busca en el sistema la Nota de Crédito, ingresando su número.& \\
+            \hline
+            & \inc  El sistema busca la Nota de Crédito.\\
+            \hline
+            & \inc  El sistema muestra los datos de la Nota de Crédito.\\
+            \hline
+            \inc  El Operario Contable registra en el sistema el uso de la Nota de Credito como cobro del importe a pagar.&\\
+            \hline
+            & \inc El Sistema registra el pago con el monto de la Nota de Crédito.\\
+            \hline
+            & \inc El sistema marca la nota de crédito como ya usada.\\
+            \hline
+            \inc Fin Sección.&\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. } La Nota de Crédito no existe. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
+            
+            \begin{itemize}
+                \item Si desea usar otra Nota de Crédito, ir a paso 1.
+                \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
+            \end{itemize}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. } La Nota de Crédito ya fue usada. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
+        
+            \begin{itemize}
+                \item Si desea usar otra Nota de Crédito, ir a paso 1.
+                \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
+            \end{itemize}}\\
+        \hline
+    \end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Cheque}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+            \inc  El Cliente le entrega al Operario Contable el cheque con el que desea abonar & \\
+            \hline
+            \inc  El Operario Contable solicita al sistema el registro del cobro del importe a pagar con el monto que figura en el cheque &  \\
+            \hline
+            & \inc El sistema registra el pago con monto del cheque. \\
+            \hline
+            \inc Fin Sección. & \\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+    \end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Transferencia Bancaria}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+            \inc El cliente le entrega el comprobante de la Transferencia Bancaria al Operario Contable& \\
+            \hline
+            \inc El Operario contable busca en el registro de la organización la transferencia &\\
+            \hline
+            \inc El Operario Contable confirma la acreditación de la transferencia & \\
+            \hline
+            \inc El Operario Contable solicita al sistema que registre el cobro del importe a pagar con el monto que figura en la Transferencia& \\
+            \hline
+            & \inc  El sistema registra el pago con monto de la transferencia\\
+            \hline
+            \inc Fin Sección &\\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. } La transferencia no se ha acreditado. El Operario Contable le infoma la situación al Cliente y le da la posibilidad de elegir otra forma de pago. El cliente decide:
+        \begin{enumerate}[label=(\alph*)]
+            \item Indicar otra transferencia. Ir a paso 1.
+            \item Elegir otra forma de pago. Ir al paso 5 del Curso Normal de CU. 
+        \end{enumerate}}\\
+        \hline
+    \end{longtable}
 
 
 
