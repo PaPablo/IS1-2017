@@ -53,13 +53,13 @@
             \hline
 			& \textbf{4. }El sistema muestra los datos de la factura. \\
             \hline
-			\textbf{5. }El Operario le solicita al cliente el importe indicado en el total de la factura. El cliente decide:
+			\textbf{5. }El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
                 \begin{enumerate}[label=(\alph*)]
                     \item Pagar en efectivo: ir a sección \textit{Pago en Efectivo}.
                     \item Pagar con Nota de Crédito: ir a sección \textit{Pago con Nota de Crédito}.
                     \item Pagar con Transferencia Bancaria: ir a sección \textit{Pago con Transferencia Bancaria}.
                     \item Pagar con Cheque: ir a sección \textit{Pago con Cheque}.
-                    \item No pagar. Fin CU.
+                    \item No paga. Ir al paso 8.
                 \end{enumerate}
             & \\
             \hline
@@ -67,23 +67,21 @@
             \hline
             & \textbf{7. }Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
             \hline
-			\textbf{8. }El Operario Contable busca al Cliente que titular de la factura pagada.& \\
+			\textbf{8. }El Operario Contable solicita al sistema buscar el Cliente que figura en la factura.& \\
             \hline
             & \textbf{9. }El sistema busca el cliente.\\
             \hline
             & \textbf{10. }El sistema muestra los datos del cliente.\\
             \hline
-            \textbf{11. }El Operario Contable registra el monto total pagado en la Cuenta Corriente de dicho cliente.&\\
+            \textbf{11. }El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
             \hline
-            & \textbf{12. }El sistema calcula y muestra el saldo actual del cliente.\\
+            & \textbf{12. }El sistema calcula y almacena el saldo actual del cliente que figura en la factura.\\
             \hline
-			\textbf{13. }El Operario Contable registra el pago de la factura.& \\
+			\textbf{13. }El Operario Contable le extiende al cliente un comprobante de pago & \\
             \hline
-            & \textbf{14. }El sistema marca la factura como pagada.\\
+            & \textbf{14. }Si la factura fue pagada en su totalidad, el sistema la marca como pagada. Si no, el sistema la marca como pagada parcialmente.\\
             \hline
-			\textbf{15. }El Operario Contable le extiende al cliente un comprobante de pago & \\
-            \hline
-			\textbf{16. }Fin CU. & \\
+			\textbf{15. }Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
