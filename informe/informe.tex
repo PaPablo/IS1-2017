@@ -474,6 +474,7 @@
             \subsubsection*{Órdenes de trabajo}
             \item Abrir nueva Orden de Trabajo
             \item Listar OT
+            \item Listar ítems
             \item Modificar OT 
             %secciones:
                 % Crear Item 
@@ -488,6 +489,7 @@
             \item Ver detalle de un ítem
             \subsubsection*{Facturas, Cobros y Ventas}
             \item Generar factura 
+            \item Listar facturas
             \item Registrar pago de factura
             \item Realizar Venta
             \item Generar Nota de Crédito
@@ -737,7 +739,7 @@
             \item 	\textbf{Nombre del Caso de Uso}: Listar actividades\\
                     \textbf{Actores}: Secundario\\
                     \textbf{Tipo}: Empleado\\
-                    \textbf{Descripcion}: Se listan actividades dadas de alta
+                    \textbf{Descripcion}: Se listan actividades dadas de alta. Se podrán ordenar las actividades por roles que tengan asociadas
 
 
 
@@ -751,9 +753,14 @@
                     \textbf{Descripción}: El cliente pide un servicio a la organización; el Jefe de Taller abre una nueva Orden de Trabajo para manejar el servicio a realizar
 
             \item 	\textbf{Nombre del Caso de uso}: Listar OT\\
-                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Actores}: Empleado\\
                     \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: se muestra un listado con las órdenes de trabajo.
+                    \textbf{Descripción}: se muestra un listado con las órdenes de trabajo. El listado se puede ordenar según cliente que tengan asociada, fecha de creación.
+
+            \item 	\textbf{Nombre del Caso de uso}: Listar ítems\\
+                    \textbf{Actores}: Empleado\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: se muestra un listado con los ítems creado. El listado se puede mostrar según orden a la que pertenezcan, empleado vinculado, por actividad que tenga asociada, por fecha de vencimiento, por repuestos reservados, por equipo que tengan.
 
             \item 	\textbf{Nombre del Caso de uso}: Modificar OT\\
                     \textbf{Actores}: Jefe de taller\\
@@ -780,6 +787,11 @@
                     \textbf{Actores}: Operario Contable, Cliente\\
                     \textbf{Tipo}: Primario\\
                     \textbf{Descripción}: El Operario Contable solicita al sistema generar una factura con una OT cerrada o con artículos vendidos
+
+            \item 	\textbf{Nombre del Caso de Uso}: Listar facturas\\
+                    \textbf{Actores}: Operario Contable\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: El Operario Contable solicita al sistema mostrar las facturas existentes, pudiéndolas ordenar por monto, por fecha de emisión, por cliente al cual se emitió, por si están pagadas totalmente, pagadas parcialmente, o sin pagar.
 
             \item 	\textbf{Nombre del Caso de Uso}: Registrar Pago de Factura\\
                     \textbf{Actores}: Operario Contable, Cliente\\
@@ -822,7 +834,7 @@
             \item 	\textbf{Nombre del Caso de Uso}: Listar pedidos \\
                     \textbf{Actores}: Operario Contable\\
                     \textbf{Tipo}: Secundario\\
-                    \textbf{Descripción}: El Operario Contable solicita el listado de los pedidos registrados.
+                    \textbf{Descripción}: El Operario Contable solicita el listado de los pedidos registrados. El listado se podrá desplegar de manera que se muestren primero los pedidos enviados y los no enviados, los pedidos recibidos y por su estado.
 
             \item 	\textbf{Nombre del Caso de Uso}: Registrar recepción de pedido\\
                     \textbf{Actores}: Operario Contable\\
