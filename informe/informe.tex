@@ -1126,7 +1126,7 @@
 
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Registrar Pago de Factura}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Registrar Pago diferido de Factura}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable, Cliente}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El cliente realiza el pago de una factura}\\
@@ -1139,13 +1139,15 @@
 		\hline
 			\inc Este CU comienza cuando el cliente se acerca al local para pagar una factura.& \\
             \hline
-			\inc El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta cuál. & \\
+            \inc El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta el número de factura. & \\
             \hline
 			\inc El Operario Contable le solicita al sistema que busque la factura. & \\
             \hline
 			& \inc El sistema busca la factura. \\
             \hline
 			& \inc El sistema muestra los datos de la factura. \\
+            \hline
+            & \inc El sistema busca el cliente que figura en la factura.\\
             \hline
 			\inc El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
                 \begin{enumerate}[label=(\alph*)]
@@ -1160,12 +1162,6 @@
             & \inc El sistema muestra el subtotal de lo pagado y el total de lo adeudado.\\
             \hline
             & \inc Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
-            \hline
-			\inc El Operario Contable solicita al sistema buscar el Cliente que figura en la factura.& \\
-            \hline
-            & \inc El sistema busca el cliente.\\
-            \hline
-            & \inc El sistema muestra los datos del cliente.\\
             \hline
             \inc El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
             \hline
@@ -1183,7 +1179,7 @@
 		\hline	
         \multicolumn{2}{|p{16cm}|}{\textbf{5b. } El sistema informa que la factura ya fue pagada, fin CU.}\\
 		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{13. } El sistema le informa al Operario Contable que el cliente dispone de saldo a favor en su cuenta corriente. El Operario Contable genera una Nota de Crédito a nombre del Cliente con dicho saldo. Se la entrega al Cliente. Continuar con el paso 14 del Curso Normal.}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{9. } El sistema le informa al Operario Contable que el cliente dispone de saldo a favor en su cuenta corriente. El Operario Contable genera una Nota de Crédito a nombre del Cliente con dicho saldo. Se la entrega al Cliente. Continuar con el paso 14 del Curso Normal.}\\
 		\hline	
 	\end{longtable}
 
