@@ -14,16 +14,19 @@
 
 -Abrir OT (ya está en el informe)
 
--Modificar OT (ufffff... ese tiene muuuuuchas cosas)
+-Modificar OT 
             %secciones:
                 % Crear Item 
-                % Modificar item 
-                % Finalizar Item
                 % Baja item 
-                 %\item Reservar artículo de Stock para Item
-                %\item Modificar reserva de artículo de Stock para Item
-                %\item Eliminar reserva de artículo de Stock para Item
-                %ABM observaciones en item
+
+-Modificar ítem
+    secciones:
+        % Cambiar estado de ítem
+        %Reservar artículo de Stock para Item
+        %Modificar reserva de artículo de Stock para Item
+        %Eliminar reserva de artículo de Stock para Item
+        % Modificar fecha de vencimiento
+        %ABM observaciones en item
 
 -Generar factura
 -Registrar pago de factura (este es el que hizo pablo)

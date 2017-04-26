@@ -301,7 +301,7 @@
         Si por algún motivo se debe cancelar una factura porque hubo un error en su confección o algún otro reclamo, la organización procede a reflejar la devolución del monto de la factura en una nota de crédito con la siguiente información: \\
         \begin{itemize}
             \item Fecha de emisión
-            \item Fecha de vencimiento (30 días hábiles de la fecha de emición)
+            \item Fecha de vencimiento (30 días hábiles de la fecha de emisión)
             \item Monto
             \item Número de orden de trabajo facturada
             \item Número de factura anulada
@@ -416,90 +416,94 @@
         \begin{multicols}{2}
         \begin{enumerate}	
             \subsubsection*{Clientes}
-            
-            %As you can see, las notificaciones volaron a la goma
-            \item Agregar Cliente
-            \item Modificar Cliente
-            \item Eliminar Cliente
-            \item Listar Clientes
-            \item Agregar movimiento en Cuenta Corriente
-            \item Eliminar movimiento en Cuenta Corriente
-            \item Ver resumen de Cuenta Corriente
+                %As you can see, las notificaciones volaron a la goma
+                \item Agregar Cliente
+                \item Modificar Cliente
+                \item Eliminar Cliente
+                \item Listar Clientes
+                \item Agregar movimiento en Cuenta Corriente
+                \item Eliminar movimiento en Cuenta Corriente
+                \item Ver resumen de Cuenta Corriente
             \subsubsection*{Proveedores}
-            \item Agregar Proveedor
-            \item Modificar Proveedor
-            \item Eliminar Proveedor
-            \item Listar Proveedores	
-            \subsubsection*{Empleados}
-            \item Agregar Empleado
-            \item Modificar Empleado
-                %secciones:
-                    %asignar rol empleado
-                    %eliminar rol empleado
-            \item Eliminar Empleado
-            \item Listar Empleados	
-            \item Crear Rol de Empleado
-            \item Eliminar Rol de Empleado
-            \item Listar Roles de Empleado
+                \item Agregar Proveedor
+                \item Modificar Proveedor
+                \item Eliminar Proveedor
+                \item Listar Proveedores	
+                \subsubsection*{Empleados}
+                \item Agregar Empleado
+                \item Modificar Empleado
+                    %secciones:
+                        %asignar rol empleado
+                        %eliminar rol empleado
+                \item Eliminar Empleado
+                \item Listar Empleados	
+                \item Crear Rol de Empleado
+                \item Eliminar Rol de Empleado
+                \item Listar Roles de Empleado
             \subsubsection*{Equipos}
-            \item Agregar tipo de Equipo
-            \item Modificar tipo de Equipo
-            \item Eliminar tipo de Equipo
-            \item Listar tipo de Equipo
-            \item Agregar Equipo
-            \item Modificar Equipo
-            \item Eliminar Equipo
-            \item Listar Equipos
+                \item Agregar tipo de Equipo
+                \item Modificar tipo de Equipo
+                \item Eliminar tipo de Equipo
+                \item Listar tipo de Equipo
+                \item Agregar Equipo
+                \item Modificar Equipo
+                \item Eliminar Equipo
+                \item Listar Equipos
             \subsubsection*{Stock}
-            \item Agregar artículo de Stock
-            \item Modificar artículo de Stock
-                %secciones:
-                    %\item Agregar Proveedor a un artículo
-                    %\item Eliminar Proveedor de artículo
-            \item Eliminar artículo de Stock
-            \item Actualizar stock
-            \item Listar Stock
-            \item Ver detalle de artículo
-            \item Agregar marca de artículo
-            \item Eliminar marca de artículo
-            \item Listar marcas de artículos existentes
+                \item Agregar artículo de Stock
+                \item Modificar artículo de Stock
+                    %secciones:
+                        %\item Agregar Proveedor a un artículo
+                        %\item Eliminar Proveedor de artículo
+                \item Eliminar artículo de Stock
+                \item Actualizar stock
+                \item Listar Stock
+                \item Ver detalle de artículo
+                \item Agregar marca de artículo
+                \item Eliminar marca de artículo
+                \item Listar marcas de artículos existentes
             \subsubsection*{Actividades}
-            \item Agregar nueva actividad
-            \item Modificar actividad
-                %secciones:
-                    %agregar rol de empleado a actividad
-                    %eliminar rol de empleado de tarea
-            \item Eliminar actividad
-            \item Listar actividades
+                \item Agregar nueva actividad
+                \item Modificar actividad
+                    %secciones:
+                        %agregar rol de empleado a actividad
+                        %eliminar rol de empleado de tarea
+                \item Eliminar actividad
+                \item Listar actividades
             \subsubsection*{Órdenes de trabajo}
-            \item Abrir nueva Orden de Trabajo
-            \item Listar OT
-            \item Listar ítems
-            \item Modificar OT 
-            %secciones:
-                % Crear Item 
-                % Modificar item 
-                % Finalizar Item
-                % Baja item 
-                 %\item Reservar artículo de Stock para Item
-                %\item Modificar reserva de artículo de Stock para Item
-                %\item Eliminar reserva de artículo de Stock para Item
-                %ABM observaciones en item
-            \item Ver detalle de Orden de Trabajo
-            \item Ver detalle de un ítem
+                \item Abrir nueva Orden de Trabajo
+                \item Listar OT
+                \item Listar ítems
+                \item Modificar OT 
+                %secciones:
+                    % Crear Item 
+                    % Baja item 
+                \item Modificar ítem
+                    % Cambiar estado de ítem
+                    %Reservar artículo de Stock para Item
+                    %Modificar reserva de artículo de Stock para Item
+                    %Eliminar reserva de artículo de Stock para Item
+                    % Modificar fecha de vencimiento
+                    %ABM observaciones en item
+                \item Eliminar OT
+                \item Agregar nuevo estado de ítem
+                \item Eliminar estado de ítem
+                \item Listar estados de ítem
+                \item Ver detalle de Orden de Trabajo
+                \item Ver detalle de un ítem
             \subsubsection*{Facturas, Cobros y Ventas}
-            \item Generar factura 
-            \item Listar facturas
-            \item Registrar pago de factura
-            \item Realizar Venta
-            \item Generar Nota de Crédito
+                \item Generar factura 
+                \item Listar facturas
+                \item Registrar pago de factura
+                \item Realizar Venta
+                \item Generar Nota de Crédito
             \subsubsection*{Pedidos a proveedores}
-            \item Crear pedido a proveedor
-            \item Modificar pedido %Esto abarca marcar el pedido como enviado,y como pago
-            \item Eliminar pedido a proveedor
-            \item Listar pedidos
-            \item Registrar recepción de pedido
-            \item Registrar pago a proveedor
+                \item Crear pedido a proveedor
+                \item Modificar pedido %Esto abarca marcar el pedido como enviado,y como pago
+                \item Eliminar pedido a proveedor
+                \item Listar pedidos
+                \item Registrar recepción de pedido
+                \item Registrar pago a proveedor
         \end{enumerate}
         \end{multicols}
 
@@ -724,7 +728,7 @@
             \item 	\textbf{Nombre del Caso de Uso}: Agregar nueva actividad\\
                     \textbf{Actores}: Primario\\
                     \textbf{Tipo}: Jefe de Taller\\
-                    \textbf{Descripcion}: Se registra una nueva actividad que realiza la empresa (figurarán en las OT)
+                    \textbf{Descripcion}: Se registra una nueva actividad que realiza la empresa (figurarán en el ítem)
 
             \item 	\textbf{Nombre del Caso de Uso}: Modificar actividad\\
                     \textbf{Actores}: Primario\\
@@ -766,6 +770,31 @@
                     \textbf{Actores}: Jefe de taller\\
                     \textbf{Tipo}: Primario\\
                     \textbf{Descripción}: se realiza una modificación sobre la información de una OT existente.
+
+            \item 	\textbf{Nombre del Caso de uso}: Modificar ítem\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: se realiza una modificación de la información de un ítem en una OT existente. 
+
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar OT\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: Se elimina una OT.
+
+            \item 	\textbf{Nombre del Caso de uso}: Agregar nuevo estado de ítem\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: se crea un nuevo estado que puede tomar un ítem.
+
+            \item 	\textbf{Nombre del Caso de uso}: Eliminar estados de un ítem\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Primario\\
+                    \textbf{Descripción}: se elimina un estado de ítem.
+            
+            \item 	\textbf{Nombre del Caso de uso}: Listar estados de ítem\\
+                    \textbf{Actores}: Jefe de taller\\
+                    \textbf{Tipo}: Secundario\\
+                    \textbf{Descripción}: se listan todos los estados de ítem dados de alta.
 
             \item 	\textbf{Nombre del Caso de uso}: Ver detalle de Orden de Trabajo\\
                     \textbf{Actores}: Empleado\\
@@ -1289,12 +1318,160 @@
         \hline
     \end{longtable}
 
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar nueva actividad}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se registra una nueva actividad que realiza la empresa (figurarán en el ítem)}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva actividad creada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide agregar una nueva actividad& \\
+			\hline
+			\inc El Jefe de Taller le pide al sistema ingresar una nueva actividad, dándole su nombre & \\
+			\hline
+			& \inc El sistema crea la nueva actividad \\
+			\hline
+			\inc El Jefe de Taller ingresa al sistema un Rol de Empleado para vincular con la actividad & \\
+			\hline
+			& \inc El sistema busca el Rol de Empleado ingresado \\
+			\hline
+			& \inc El sistema muestra la información del Rol de Empleado buscado \\
+			\hline
+			\inc El Jefe de Taller confirma el Rol de Empleado seleccionado & \\
+			\hline
+			& \inc El sistema vincula el Rol con la actividad \\
+			\hline
+			\inc  Repetir pasos 4-8 hasta que el Jefe de Taller no desee vincular más Roles de Empleado con la actividad& \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que la actividad ingresada ya existe. Si se desea ingresar otra, volver al paso 2 del curso normal. Si no, fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{6. }El sistema informa que el Rol de Empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo Rol de Empleado''. Si no, fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{7. }El Jefe de Taller no confirma el Rol de Empleado. Volver al paso 4 del curso normal.}\\
+		\hline
+	\end{longtable}
 
 
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
 
 
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar actividad}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se modifica una actividad}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Actividad modificada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide modificar una actividad& \\
+			\hline
+			\inc El Jefe de Taller le pide al sistema buscar una actividad, dándole su nombre & \\
+			\hline
+			& \inc El sistema busca la actividad \\
+			\hline
+			& \inc El sistema muestra los datos de la actividad \\
+			\hline
+			\inc El Jefe de Taller decide si:
+            \begin{enumerate}[label=(\alph*)]
+                \item Si desea vincular un nuevo rol de empleado, ir a sección \textit{Vincular Rol de Empleado a actividad}
+                \item Si desea eliminar un rol de empleado de la actividad, ir a sección \textit{Desvincular Rol de Empleado a actividad}
+            \end{enumerate}        & \\
+			\hline
+			\inc  Repetir paso 5 hasta que el Jefe de Taller no desee modificar más la actividad& \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que la actividad ingresada no existe. Si se la quiere crear, includes: ``Agregar nueva actividad''. Si no, fin CU.}\\
+		\hline
+	\end{longtable}
 
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
 
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Vincular Rol de Empleado a actividad}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+			\inc El Jefe de Taller ingresa al sistema un Rol de Empleado para vincular con la actividad & \\
+			\hline
+			& \inc El sistema busca el Rol de Empleado ingresado \\
+			\hline
+			& \inc El sistema muestra la información del Rol de Empleado buscado \\
+			\hline
+			\inc El Jefe de Taller confirma el Rol de Empleado seleccionado & \\
+			\hline
+			& \inc El sistema vincula el Rol con la actividad \\
+			\hline
+            \inc Fin Sección &\\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. } El sistema informa que el Rol de Empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo Rol de Empleado''. Si no, ir al paso 6 del curso normal.}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Jefe de Taller no confirma el Rol de Empleado. Volver al paso 1.}\\
+		\hline
+    \end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Desvincular Rol de Empleado a actividad}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+			\inc El Jefe de Taller ingresa al sistema un Rol de Empleado para desvincular de la actividad & \\
+			\hline
+			& \inc El sistema busca el Rol de Empleado ingresado \\
+			\hline
+			& \inc El sistema muestra la información del Rol de Empleado buscado \\
+			\hline
+			\inc El Jefe de Taller confirma el Rol de Empleado seleccionado & \\
+			\hline
+			& \inc El sistema vincula el Rol con la actividad \\
+			\hline
+            \inc Fin Sección &\\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3a. } El sistema informa que el Rol de Empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo Rol de Empleado''. Si no, ir al paso 6 del curso normal.}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3b. } El sistema informa que el Rol de Empleado no está vinculado con el ítem. Ir al paso 6 del curso normal.}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Jefe de Taller no confirma el Rol de Empleado. Volver al paso 1 del curso normal.}\\
+		\hline
+    \end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
 
 
 
