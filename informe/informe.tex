@@ -480,11 +480,21 @@
                     % Baja item 
                 \item Modificar ítem
                     % Cambiar estado de ítem
-                    %Reservar artículo de Stock para Item
-                    %Modificar reserva de artículo de Stock para Item
-                    %Eliminar reserva de artículo de Stock para Item
+                    % Reservar artículo de Stock para Item
+                    % Modificar reserva de artículo de Stock para Item (llaman al CU de modifar reserva)
+                    % Eliminar reserva de artículo de Stock para Item
                     % Modificar fecha de vencimiento
-                    %ABM observaciones en item
+                    % Vincular empleado con ítem
+                    % Desvincular empleado con ítem
+                    % Vincular equipo con ítem
+                    % Desvincular equipo con ítem
+                    % ABM observaciones en item (llaman a los CU de observaciones en item)
+                \item Agregar observación a un ítem
+                \item Modificar observación en un ítem
+                \item Eliminar observación en un ítem
+                    % TIENEN PRECONDICIÓN 
+                \item Modificar reserva de artículo de Stock en ítem
+                    % se puede cambiar el artículo o la reserva, y marcar como que se usó el artículo reservado
                 \item Eliminar OT
                 \item Agregar nuevo estado de ítem
                 \item Eliminar estado de ítem
@@ -764,7 +774,7 @@
             \item 	\textbf{Nombre del Caso de uso}: Listar ítems\\
                     \textbf{Actores}: Empleado\\
                     \textbf{Tipo}: Primario\\
-                    \textbf{Descripción}: se muestra un listado con los ítems creado. El listado se puede mostrar según orden a la que pertenezcan, empleado vinculado, por actividad que tenga asociada, por fecha de vencimiento, por repuestos reservados, por equipo que tengan.
+                    \textbf{Descripción}: se muestra un listado con los ítems creado. El listado se puede mostrar según orden a la que pertenezcan, empleado vinculado, por actividad que tenga asociada, por fecha de vencimiento, por repuestos reservados, por equipo que tengan, por el estado en que se encuentren.
 
             \item 	\textbf{Nombre del Caso de uso}: Modificar OT\\
                     \textbf{Actores}: Jefe de taller\\
@@ -876,9 +886,23 @@
                     \textbf{Descripción}: Se registra un pago a un proveedor dado de alta con un pedido realizado.
         \end{enumerate}
         \clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         \subsection{Casos de Uso expandidos}
-
-
 
         %DEFINIMOS UN CONTADOR
         \newcounter{step}
@@ -1020,6 +1044,8 @@
             \hline
             \multicolumn{2}{|p{16cm}|}{\textbf{27b. }El sistema informa que el repuesto ingresado no tiene cantidad suficiente para cumplir la reserva. Si el Jefe de Taller desea reservar otro artículo más, volver al paso 23. Si no, ir al paso 28.}\\
             \hline
+            \multicolumn{2}{|p{16cm}|}{\textbf{30. }El Jefe de Taller no desea vincular ningún equipo con el ítem. Ir al paso 35 del curso normal}\\
+            \hline
             \multicolumn{2}{|p{16cm}|}{\textbf{32a. }El sistema informa que el equipo ingresado no existe. Si el Jefe de Talle decide ingresarlo, includes: ``Agregar nuevo equipo''. Si no, volver al paso 30}\\
             \hline
             \multicolumn{2}{|p{16cm}|}{\textbf{32b. }El sistema informa que el equipo ingresado ya está vinculado con otro ítem abierto. Volver al paso 30.}\\
@@ -1031,6 +1057,7 @@
     \end{longtable}
 
 
+    \noindent\rule{169mm}{0.8mm}\\
 
     %LO RESETEAMOS A 0
     \setcounter{step}{0}
@@ -1121,6 +1148,7 @@
 		\hline
 	\end{longtable}
 
+    \noindent\rule{169mm}{0.8mm}\\
     %LO RESETEAMOS A 0
     \setcounter{step}{0}
 
@@ -1314,6 +1342,7 @@
         \hline
     \end{longtable}
 
+    \noindent\rule{169mm}{0.8mm}\\
     %LO RESETEAMOS A 0
     \setcounter{step}{0}
 
@@ -1361,6 +1390,7 @@
 	\end{longtable}
 
 
+    \noindent\rule{169mm}{0.8mm}\\
     %LO RESETEAMOS A 0
     \setcounter{step}{0}
 
@@ -1466,14 +1496,241 @@
 		\hline
     \end{longtable}
 
+    \noindent\rule{169mm}{0.8mm}\\
     %LO RESETEAMOS A 0
     \setcounter{step}{0}
 
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar OT}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se modifica una OT}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Orden de trabajo modificada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide modificar una Orden de Trabajo& \\
+			\hline
+			\inc El Jefe de Taller le pide al sistema buscar una Orden de Trabajo, dándole su número & \\
+			\hline
+			& \inc El sistema busca la Orden de Trabajo \\
+			\hline
+			& \inc El sistema muestra los datos de la Orden \\
+			\hline
+			\inc El Jefe de Taller decide:
+            \begin{enumerate}[label=(\alph*)]
+                \item Si desea crear un ítem nuevo, ir a sección \textit{Crear ítem}
+                \item Si desea eliminar un ítem, ir a sección \textit{Eliminar ítem}
+                \item Si desea modificar un ítem, includes: ``Modificar ítem'' 
+            \end{enumerate}        & \\
+			\hline
+			\inc  Repetir paso 5 hasta que el Jefe de Taller no desee modificar más la Orden de Trabajo& \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que la Orden de Trabajo ingresada no existe. Si se la quiere crear, includes: ``Abrir nueva Orden de Trabajo''. Si no, fin CU.}\\
+		\hline
+	\end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Crear ítem}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+            \inc El Jefe de Taller le solicita al sistema crear un nuevo ítem& \\
+            \hline
+            & \inc El sistema crea un ítem \\
+
+            \hline
+            \inc El Jefe de Taller ingresa al sistema la actividad a realizar en el ítem. &\\
+            \hline
+            & \inc El sistema busca la actividad \\
+            \hline
+            & \inc El sistema muestra los datos de la actividad \\ 
+            \hline
+            \inc El Jefe de Taller le solicita al sistema que vincule la actividad con el ítem & \\
+            \hline
+            & \inc El sistema vincula la actividad con el ítem. \\ 
+
+            \hline
+            \inc El Jefe de Taller le solicita al sistema que busque un empleado por el nombre & \\
+            \hline
+            & \inc Busca el empleado ingresado \\
+            \hline
+            & \inc El sistema muestra los datos del Empleado \\
+            \hline
+            \inc El Jefe de Taller le solicita al sistema que vincule el empleado al ítem & \\
+            \hline
+            & \inc El sistema asigna el Emplado al ítem \\ 
+            \hline
+            & \inc El sistema le asigna el estado de ``Asignado'' al ítem\\ 
+            \hline
 
 
+            \inc El Jefe de Taller le solicita al sistema que busque un repuesto por su código interno& \\
+            \hline
+            & \inc Busca el repuesto ingresado \\
+            \hline
+            & \inc El sistema muestra los datos del repuesto \\
+            \hline
+            \inc El Jefe de Taller le solicita al sistema que vincule el repuesto al ítem & \\
+            \hline
+            & \inc El sistema asigna el repuesto al ítem \\ 
+            \hline
+            \inc Repetir los pasos 14-18 hasta que el Jefe de Taller no desee reservar más artículos para el ítem & \\
+            \hline
 
 
+            \inc Si en la actividad seleccionada interviene un equipo, ir al paso 21. Si no, ir al paso 26. &\\
+            \hline
 
+
+            \inc El Jefe de Taller le solicita al sistema ingresar un equipo por su número de serie&\\
+            \hline
+            &\inc Busca el equipo\\
+            \hline
+            & \inc El sistema muestra los datos del equipo\\
+            \hline
+            \inc El Jefe de Taller le solicita al sistema vincular el equipo al ítem&\\
+            \hline
+            & \inc El sistema vincula el equipo con el ítem\\
+            \hline
+
+
+            \inc El Jefe de Taller ingresa una fecha de vencimiento para el ítem&\\
+            \hline
+            & \inc El sistema muestra la fecha de vencimiento ingresada\\
+            \hline
+            & \inc El sistema asigna la fecha de vencimiento al ítem\\
+            \hline
+
+            & \inc El sistema muestra la información del ítem creado\\
+            \hline
+            \inc El Jefe de Taller le solicita al sistema que vincule el ítem a la OT & \\
+            \hline
+            & \inc El sistema vincula el ítem creado a la OT\\
+            \hline
+            \inc Fin Sección &\\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que la actividad no existe. Si el Jefe de Taller desea crear la actividad, includes: ``Crear nueva actividad''. Si no, volver al paso 6 del curso normal.}\\
+        \hline  
+        \multicolumn{2}{|p{16cm}|}{\textbf{8. }El Jefe de Taller no desea asignar ningún empleado al ítem. El sistema el asigna el estado de ``Creado al ítem''. Ir al paso 14 del curso normal}\\
+        \hline  
+        \multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo empleado''. Si no, ir al paso 6 del curso normal.}\\
+        \hline  
+        \multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el empleado está sobrecargado. Si el Jefe de Taller decide cambiar de empleado, volver al paso 8. Si no, ir al paso 6 curso normal}\\
+        \hline  
+        \multicolumn{2}{|p{16cm}|}{\textbf{10c. }El sistema informa que el rol del empleado asignado no corresponde con la actividad del ítem. Volver al paso 8.}\\
+        \hline  
+        \multicolumn{2}{|p{16cm}|}{\textbf{14. }El Jefe de Taller no desea reservar ningún repuesto. Ir al paso 20}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{16. }El sistema informa que el repuesto ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo artículo de stock''. Si no, volver al paso 6 del curso normal}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{18a. }El sistema informa que el repuesto ingresado ya está reservado para el ítem. Si el Jefe de Taller desea reservar otra unidad más, continuar con el paso 19. Si no, volver al paso 14.}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{18b. }El sistema informa que el repuesto ingresado no tiene cantidad suficiente para cumplir la reserva. Si el Jefe de Taller desea reservar otro artículo más, volver al paso 14. Si no, ir al paso 19.}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{21. }El Jefe de Taller no desea vincular ningún equipo con el ítem. Ir al paso 26 del curso normal}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{23a. }El sistema informa que el equipo ingresado no existe. Si el Jefe de Talle decide ingresarlo, includes: ``Agregar nuevo equipo''. Si no, volver al paso 21}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{23b. }El sistema informa que el equipo ingresado ya está vinculado con otro ítem abierto. Volver al paso 21.}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{27. }El sistema informa que la fecha de vencimiento ingresada es incorrecta. Si desea ingresar una nueva, volver al paso 26. Si no, ir al paso 6 del curso normal}\\
+        \hline  
+        \multicolumn{2}{|p{16cm}|}{\textbf{29. }El sistema informa que el ítem a vincular con la OT ya existe. Volver al paso 6 del curso normal}\\
+        \hline  
+    \end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Eliminar ítem}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+            \inc El Jefe de Taller le indica un ítem a eliminar& \\
+            \hline
+            & \inc El sistema busca el ítem\\
+            \hline
+            & \inc El sistema muestra la información del ítem\\
+            \hline
+            \inc El Jefe de Taller confirma la eliminación del ítem& \\
+            \hline
+            & \inc El sistema elimina el ítem de la Orden de Trabajo\\
+            \hline
+            \inc Fin Sección &\\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3a. }El sistema informa que el ítem no existe. Si el Jefe de Taller desea indicar otro ítem, volver al paso 1. Si no, volver al paso 6 del curso normal.}\\
+        \hline  
+        \multicolumn{2}{|p{16cm}|}{\textbf{3b. }El sistema indica que el ítem está en relación con un empleado, un equipo, o un repuesto. Si el Jefe de Taller desea indicar otro ítem, volver al paso 1. Si no, volver al paso 6 del curso normal.}\\
+        \hline  
+    \end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+    \noindent\rule{169mm}{0.8mm}\\
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar ítem}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se modifica un ítem de una Orden de Trabajo existente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: Orden de Trabajo está creada}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Ítem modificado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide modificar un ítem& \\
+			\hline
+			\inc El Jefe de Taller le pide al sistema modificar un ítem por su número& \\
+			\hline
+			& \inc El sistema busca el ítem \\
+			\hline
+			& \inc El sistema muestra los datos del ítem\\
+			\hline
+			\inc El Jefe de Taller decide:
+            \begin{enumerate}[label=(\alph*)]
+                \item Si desea crear un ítem nuevo, ir a sección \textit{Crear ítem}
+                \item Si desea eliminar un ítem, ir a sección \textit{Eliminar ítem}
+                \item Si desea modificar un ítem, includes: ``Modificar ítem'' 
+            \end{enumerate}        & \\
+			\hline
+			\inc  Repetir paso 5 hasta que el Jefe de Taller no desee modificar más la Orden de Trabajo& \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que la Orden de Trabajo ingresada no existe. Si se la quiere crear, includes: ``Abrir nueva Orden de Trabajo''. Si no, fin CU.}\\
+		\hline
+	\end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
 
 
 
