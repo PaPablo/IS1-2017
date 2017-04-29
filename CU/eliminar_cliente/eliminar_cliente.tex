@@ -1,0 +1,84 @@
+    \documentclass[12pt]{extarticle}
+    \usepackage[utf8]{inputenc}
+    \usepackage{caption}
+    \usepackage{subcaption}
+    \usepackage[spanish]{babel}
+    \usepackage{multicol}
+    \usepackage{listings}
+    \usepackage{fancyhdr}
+
+    \usepackage{longtable}
+    \usepackage{enumitem}
+
+    \usepackage{url}
+    \usepackage[a4paper]{geometry}
+    \usepackage{float}
+    \usepackage{setspace}
+    \usepackage{color}   %May be necessary if you want to color links
+    \usepackage{hyperref}
+    \hypersetup{
+        colorlinks=true, %set true if you want colored links
+        linktoc=all,     %set to all if you want both sections and subsections linked
+        linkcolor=blue,  %choose some color if you want links to stand out
+    }
+    \usepackage{graphicx}
+    \graphicspath{ {images/} }
+
+
+    \begin{document}
+	%DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar Cliente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se da de baja un cliente (no se pueden registrar nuevas órdenes de trabajo a su nombre ni registrar nuevos movimientos en su Cuenta Corriente).}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Cliente dado de baja}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Operario Contable decide dar de baja un cliente & \\
+			\hline
+			\inc El Operario ingresa en el sitema el nombre del cliente a eliminar.&\\
+			\hline
+			& \inc El sistema busca el cliente. \\
+			\hline
+			& \inc El sistema muestra los datos del cliente. \\
+			\hline
+			\inc  El Operario Contable le solicita al sistema dar de baja al cliente.& \\
+			\hline
+			& \inc El sistema marca al cliente como dado de baja. \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el cliente no existe. Si el Operario Contable desea indicar otro cliente, ir al paso 2. Si no, fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{6a. }El sistema informa que el cliente posee Órdenes de Trabajo abiertas a su nombre.Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{6b. }El sistema informa que el saldo de la Cuenta Corriente del cliente es distinto de cero. Fin CU.}\\
+		\hline	
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
+\end{document}
