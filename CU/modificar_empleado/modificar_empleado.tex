@@ -1,0 +1,90 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage[a4paper]{geometry}
+
+%DEFINIMOS UN CONTADOR
+\newcounter{step}
+\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+\newcommand\resetinc{\setcounter{step}{0}}
+
+\begin{document}
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar empleado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se actualiza el registro del empleado dado de alta con sus nuevos datos}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Empleado modificado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide modificar un empleado& \\
+			\hline
+			\inc El Jefe de Taller le pide al sistema buscar un empleado por su nombre & \\
+			\hline
+		    & \inc El sistema busca el empleado \\
+			\hline
+		    & \inc El sistema muestra los datos del empleado \\
+			\hline
+			\inc El Jefe de Taller decide si: &  \\
+                \begin{enumerate}[label=(\alph*)]
+                    \item Si desea asignarle un nuevo rol, ir a sección \textit{Asignar rol a empleado}
+                    \item Si desea revocarle un rol, ir a sección \textit{Eliminar rol a empleado}
+                    \item Si desea modificar información personal, ir a sección \textit{Modificar información de empleado}
+                \end{enumerate}        & \\
+			\hline
+			\inc Repetir paso 5 hasta que el Jefe de Taller no desee modificar más los datos del empleado &\\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Agregar Empleado''. Si desea reintentar el ingreso, volver al paso 2 del curso normal. Si no, fin CU.}\\
+		\hline
+        %\multicolmn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+        %\hline
+        %\multicomn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+        %\hline	
+	\end{longtable}
+
+    \resetinc
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Asignar rol a empleado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc El Jefe de Taller le pide al sistema buscar un rol de empleado por su nombre& \\
+			\hline
+		    & \inc El sistema busca el rol ingresado \\
+			\hline
+		    & \inc El sistema muestra los datos del rol de empleado \\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema vincular el rol de empleado con el empleado &\\
+			\hline
+		    & \inc El sistema vincula el rol con el empleado\\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el empleado ya está vinculado con el rol de empleado ingresado. Si el Jefe de taller desea reintentar el ingreso, volver al paso 1. Si no, fin sección\\
+		\hline
+	\end{longtable}
+
+
+
+\end{document}
