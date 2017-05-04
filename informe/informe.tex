@@ -5,7 +5,6 @@
     \usepackage[spanish]{babel}
     \usepackage{multicol}
     \usepackage{fancyhdr}
-
     \usepackage{longtable}
     \usepackage{enumitem}
 
@@ -277,7 +276,7 @@
             \item \textbf{Notificada de cotización}: el cliente ya fue notificado del presupuesto. En caso de que el cliente no acepte, la orden pasa al estado \textbf{No se repara} o bien a \textbf{Fallida} (en caso de tratarse de una visita). 
             \item \textbf{Presupuesto aceptado}: el cliente aceptó el presupuesto indicado para realizar el trabajo.
             \item \textbf{Espera de repuestos}: se pidieron repuestos necesarios para realizar el trabajo. No se puede reanudar hasta su arribo.
-            \item \textbf{En trámite}: se está realizando el trabajo; durante esta etapa, varios técnicos pueden participar en el trabajo y realizar observaciones en la orden. En caso de que el trabajo requiera algún servicio más, la OT vuelve a pasar por los estados \textbf{Cotizada}, \textbf{Notificada de cotización}, y en caso de aceptarse el presupuesto, \textbf{Presupuesto aceptado}. En caso de no aceptarse, se pasa a \textbf{No se repara} o a \textbf{Falllida} (si es una visita).
+            \item \textbf{En trámite}: se está realizando el trabajo; durante esta etapa, varios técnicos pueden participar en el trabajo y realizar observaciones en la orden. En caso de que el trabajo requiera algún servicio más, la OT vuelve a pasar por los estados \textbf{Cotizada}, \textbf{Notificada de cotización}, y en caso de aceptarse el presupuesto, \textbf{Presupuesto aceptado}. En caso de no aceptarse, se pasa a \textbf{No se repara} o a \textbf{Fallida} (si es una visita).
             \item \textbf{Reparada/Lista}: trabajo terminado. Se encuentra pendiente de facturación.
             \item \textbf{Notificada de reparación}: se le avisa al cliente que su equipo está listo para ser retirado.
             \item \textbf{Cumplido}: se realizó la visita exitosamente. La orden se encuentra pendiete de facturación.
@@ -1730,9 +1729,11 @@
 			\hline
 			\inc El Jefe de Taller decide:
             \begin{enumerate}[label=(\alph*)]
-                \item Si desea crear un ítem nuevo, ir a sección \textit{Crear ítem}
-                \item Si desea eliminar un ítem, ir a sección \textit{Eliminar ítem}
-                \item Si desea modificar un ítem, includes: ``Modificar ítem'' 
+                \item Si desea ... , ir a sección \textit{ }
+                \item Si desea ... , ir a sección \textit{ }
+                \item Si desea ... , ir a sección \textit{ }
+                \item Si desea ... , ir a sección \textit{ }
+                \item Si desea ... , ir a sección \textit{ }
             \end{enumerate}        & \\
 			\hline
 			\inc  Repetir paso 5 hasta que el Jefe de Taller no desee modificar más la Orden de Trabajo& \\
