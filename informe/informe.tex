@@ -421,10 +421,10 @@
             \item Listar Clientes
 
                 %estos dos de Cuenta Corriente deberían volar también
-            \item Agregar movimiento en Cuenta Corriente
-            \item Eliminar movimiento en Cuenta Corriente
+            %\item Agregar movimiento en Cuenta Corriente
+            %\item Eliminar movimiento en Cuenta Corriente
                 %este debería ser "Ver saldo o deuda de cliente"
-            \item Ver resumen de Cuenta Corriente
+            \item Ver saldo del Cliente
         \subsubsection*{Proveedores}
             \item Agregar Proveedor
             \item Modificar Proveedor
@@ -487,10 +487,15 @@
                         %Cancelar ítem (este lo haría el Jefe de Taller, y sólo lo puede hacer si el ítem no tiene empleados vinculados ni stock reservado, para eso tenemos los de desvincular y eso)
 
                 %con eso tendríamos varios casos para que el sistema cambie el estado del ítem
+                    %Presupuestar ítem -> cambia estado a "cotizado"
                     %Iniciar ítem   -> cambia estado a "Iniciado" o "En trámite..."
                     %Finalizar ítem -> cambia estado a "Pendiente de facturación", idk
                     %Cancelar ítem  -> cambia estado a "No se repara" o directamente "cancelado"
 
+                % consideraciones:
+                    %cuando se reserva un artículo de stock y no hay suficiente, el item pasa a estado "Espera Artículo de Stock"
+                    %cuando se actualiza el stock, que te permita elegir a qué items en espera de respuesto asignarle los artículos actualizados, si se satisface la reserva el ítem pasa a "En trámite..." 
+                    %
                 % Reservar artículo de Stock para Item
                 % Modificar reserva de artículo de Stock para Item (llaman al CU de modifar reserva)
                 % Eliminar reserva de artículo de Stock para Item
@@ -507,7 +512,7 @@
             \item Modificar reserva de artículo de Stock en ítem
                 % se puede cambiar el artículo o la reserva, y marcar como que se usó el artículo reservado
             \item Eliminar OT
-            
+
                 %estos tres los tendríamos que volar, si vamos a hacer que la transición de estados la haga el sistema
             \item Agregar nuevo estado de ítem
             \item Eliminar estado de ítem
@@ -618,7 +623,7 @@
                 \textbf{Descripción}: Se registra un nuevo empleado con sus datos asociados.
         
         \item 	\textbf{Nombre del Caso de uso}: Modificar Empleado\\
-                \textbf{Actores}: Empleado, Gerente\\
+                \textbf{Actores}: Jefe de Taller\\
                 \textbf{Tipo}: Primario\\
                 \textbf{Descripción}: Se actualiza el registro del empleado dado de alta con sus nuevos datos
         
