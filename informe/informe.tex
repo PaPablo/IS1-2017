@@ -920,7 +920,7 @@
 
 
 
-
+    
 
     \subsection{Casos de Uso expandidos}
 
@@ -950,7 +950,6 @@
             \inc El Jefe de Taller le solicita al sistema abrir una nueva Orden de Trabajo. &  \\
             \hline
             & \inc El sistema crea la Orden de Trabajo  \\
-
             \hline
             \inc El Jefe de Taller le pide el nombre al cliente, el cliente se lo da. &  \\
             \hline
@@ -963,12 +962,10 @@
             \inc El Jefe de Taller le ordena al sistema que vincule al cliente con la Orden& \\
             \hline
             & \inc El sistema asocia el cliente a la Orden\\
-
             \hline
             \inc El Jefe de Taller le solicita al sistema crear un nuevo ítem& \\
             \hline
             & \inc El sistema crea un ítem \\
-
             \hline
             \inc El Jefe de Taller ingresa al sistema la actividad a realizar en el ítem. &\\
             \hline
@@ -979,7 +976,6 @@
             \inc El Jefe de Taller le solicita al sistema que vincule la actividad con el ítem & \\
             \hline
             & \inc El sistema vincula la actividad con el ítem. \\ 
-
             \hline
             \inc El Jefe de Taller le solicita al sistema que busque un empleado por el nombre & \\
             \hline
@@ -1394,9 +1390,19 @@
         \hline
         \inc El Jefe de Taller confirma el Rol de Empleado seleccionado & \\
         \hline
-        & \inc El sistema vincula el Rol con la actividad \\
+        & \inc El sistema vincula el Rol con la actividad. \\
         \hline
         \inc  Repetir pasos 4-8 hasta que el Jefe de Taller no desee vincular más Roles de Empleado con la actividad& \\
+        \hline
+        \inc El Jefe de Taller ingresa el precio de tarifario a la actividad. & \\
+        \hline
+        & \inc El sistema asigna el precio a la actividad. \\
+        \hline
+        \inc El Jefe de Taller ingresa un tipo de equipo para vincular con la actividad. & \\
+        \hline
+        & \inc El sistema busca el tipo de equipo. \\
+        \hline
+        & \inc El sistema vincula el tipo de equipo a la actividad. \\
         \hline
         \inc Fin CU. & \\
     \hline
@@ -1407,6 +1413,12 @@
     \multicolumn{2}{|p{16cm}|}{\textbf{6. }El sistema informa que el Rol de Empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo Rol de Empleado''. Si no, fin CU.}\\
     \hline
     \multicolumn{2}{|p{16cm}|}{\textbf{7. }El Jefe de Taller no confirma el Rol de Empleado. Volver al paso 4 del curso normal.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{11. }El sistema informa que el precio ingresado es incorrecto. Si el Jefe de Taller desea reingresar el precio, volver al paso 10. Si no, fin CU.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{12. }El Jefe de Taller no vincula un Tipo de Equipo con la actividad. Fin CU.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{14. }El sistema informa que el tipo de equipo ingresado no existe. Si el Jefe de Taller desea reingresar el tipo de equipo, volver al paso 12. Fin CU.}\\
     \hline
 \end{longtable}
 
@@ -1885,10 +1897,6 @@
     \multicolumn{2}{|p{16cm}|}{\textbf{3. }El Jefe de Taller no confirma la información. Si desea reingresar el ingreso, volver al paso 1. Si no, fin sección.}\\
     \hline
 \end{longtable}
-
-
-
-
 
 
 
