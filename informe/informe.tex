@@ -27,7 +27,7 @@
 
     \title{Ingeniería de Software I - T - Análisis y Diseño de Sistemas\\
     ISFPP\\
-    \large{C\'atedera:\\
+    \large{Cátedera:\\
     Profesor: Lic. Marta Saenz López\\
     JTP: Lic. Sebastián Schanz\\
     Ayudante de Segunda: Guillermo Urrutia}}
@@ -253,7 +253,7 @@
 
     Llegado el caso de que un repuesto reservado del stock no se utilice en el trabajo, se detalla en la orden, se cancela la reserva del stock, y no se factura.
 
-    El Gerente o el Jefe de Taller puede ignorar dicha reserva y reordenar las asignaciones de repuestos a los presupuestos manualmente, haciendo que ciertas OT se retrasen o aceleren su paso.
+    El Gerente o el Jefe de Taller puede i/orar dicha reserva y reordenar las asignaciones de repuestos a los presupuestos manualmente, haciendo que ciertas OT se retrasen o aceleren su paso.
 
     Si no hubiera la cantidad necesaria para satisfacer la demanda del trabajo se puede cambiar la fecha de vencimiento de la orden, contemplando el tiempo que tardaría conseguir el repuesto. Esta demora en el cumplimento del trabajo se le comunica al cliente, que puede aceptar o no que se continue. Si no acepta se cancela la reparación o la visita.
 
@@ -271,8 +271,8 @@
 
     \begin{enumerate}
         \item \textbf{Asignada}: estado inicial de la orden. Cuenta con un técnico asociado.
-        \item \textbf{Revisada}: el técnico asociado realizó un primer diagnóstico del equipo ingresado (se lo anexa a la OT; incluye el problema que describió el cliente y lo que descubrió el técnico).
-        \item \textbf{Cotizada}: equipo ya diagnosticado. Presupuesto elaborado.
+        \item \textbf{Revisada}: el técnico asociado realizó un primer dia/óstico del equipo ingresado (se lo anexa a la OT; incluye el problema que describió el cliente y lo que descubrió el técnico).
+        \item \textbf{Cotizada}: equipo ya dia/osticado. Presupuesto elaborado.
         \item \textbf{Notificada de cotización}: el cliente ya fue notificado del presupuesto. En caso de que el cliente no acepte, la orden pasa al estado \textbf{No se repara} o bien a \textbf{Fallida} (en caso de tratarse de una visita). 
         \item \textbf{Presupuesto aceptado}: el cliente aceptó el presupuesto indicado para realizar el trabajo.
         \item \textbf{Espera de repuestos}: se pidieron repuestos necesarios para realizar el trabajo. No se puede reanudar hasta su arribo.
@@ -311,7 +311,7 @@
     \subsubsection{Reparación de Equipos}
     El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. Se verifica si el cliente está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Una vez cargado, el integrante de la organización que esté atendiendo al cliente toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia. De no ser así se lo carga registrando marca y modelo. Cada equipo que ingresa al taller es serializado, de modo que un cliente puede tener asociado varios equipos, contando cada equipo con su historial de reparaciones.\\
 
-    Recibido el equipo, el cliente abona por adelantado el importe de la tarifa de Revisión, Diagnóstico y Presupuesto (de ahora en más RDyP) y se le entrega el comprobante del ingreso del equipo y, en un plazo de dos a cinco días hábiles (según el tipo de equipo), se le va a dar un diagnóstico sobre el estado del mismo; si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. El equipo entra en una cola de espera. Si el presupuesto planteado al cliente se acepta, se procede a repararlo. En caso contrario se le devuelve el equipo.\\
+    Recibido el equipo, el cliente abona por adelantado el importe de la tarifa de Revisión, Dia/óstico y Presupuesto (de ahora en más RDyP) y se le entrega el comprobante del ingreso del equipo y, en un plazo de dos a cinco días hábiles (según el tipo de equipo), se le va a dar un dia/óstico sobre el estado del mismo; si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. El equipo entra en una cola de espera. Si el presupuesto planteado al cliente se acepta, se procede a repararlo. En caso contrario se le devuelve el equipo.\\
 
     Luego de completada, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo (se abre una nueva orden de trabajo, indicando en el campo de observaciones que el trabajo está cubierto por una garantía). \\
     
@@ -927,8 +927,9 @@
     %DEFINIMOS UN CONTADOR
     \newcounter{step}
     \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
-
-
+    \newcommand\resetinc{\setcounter{step}{0}}
+    
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
 
     \begin{longtable}{ |p{8cm}|p{8cm}| }
         \hline
@@ -1077,10 +1078,10 @@
 \end{longtable}
 
 
-\noindent\rule{169mm}{0.8mm}\\
+\raya
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
@@ -1168,9 +1169,9 @@
     \hline
 \end{longtable}
 
-\noindent\rule{169mm}{0.8mm}\\
+\raya
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1232,7 +1233,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1262,7 +1263,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1307,7 +1308,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1330,7 +1331,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1362,9 +1363,9 @@
     \hline
 \end{longtable}
 
-\noindent\rule{169mm}{0.8mm}\\
+\raya
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1410,9 +1411,9 @@
 \end{longtable}
 
 
-\noindent\rule{169mm}{0.8mm}\\
+\raya
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
@@ -1453,7 +1454,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1484,7 +1485,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1516,9 +1517,9 @@
     \hline
 \end{longtable}
 
-\noindent\rule{169mm}{0.8mm}\\
+\raya
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1559,7 +1560,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1677,7 +1678,7 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1708,8 +1709,8 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
-\noindent\rule{169mm}{0.8mm}\\
+\resetinc
+\raya
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
@@ -1752,9 +1753,138 @@
 \end{longtable}
 
 %LO RESETEAMOS A 0
-\setcounter{step}{0}
+\resetinc
+\raya
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar empleado}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se actualiza el registro del empleado dado de alta con sus nuevos datos}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Empleado modificado}\\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+    \hline
+    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+    \hline
+        \inc Este CU comienza cuando el Jefe de Taller decide modificar un empleado& \\
+        \hline
+        \inc El Jefe de Taller le pide al sistema buscar un empleado por su nombre & \\
+        \hline
+        & \inc El sistema busca el empleado \\
+        \hline
+        & \inc El sistema muestra los datos del empleado \\
+        \hline
+        \inc El Jefe de Taller decide si: &  \\
+            \begin{enumerate}[label=(\alph*)]
+                \item Si desea asignarle un nuevo rol, ir a sección \textit{Asignar rol a empleado}
+                \item Si desea revocarle un rol, ir a sección \textit{Eliminar rol a empleado}
+                \item Si desea modificar información personal, ir a sección \textit{Modificar información de empleado}
+            \end{enumerate}        & \\
+        \hline
+        \inc Repetir paso 5 hasta que el Jefe de Taller no desee modificar más los datos del empleado &\\
+        \hline
+        \inc Fin CU. & \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Agregar Empleado''. Si desea reintentar el ingreso, volver al paso 2 del curso normal. Si no, fin CU.}\\
+    \hline
+    %\multicolmn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+    %\hline
+    %\multicomn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+    %\hline	
+\end{longtable}
+
+\resetinc
+
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Asignar rol a empleado}\\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+    \hline
+    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+    \hline
+        \inc El Jefe de Taller le pide al sistema buscar un rol de empleado por su nombre& \\
+        \hline
+        & \inc El sistema busca el rol ingresado \\
+        \hline
+        & \inc El sistema muestra los datos del rol de empleado \\
+        \hline
+        \inc El Jefe de Taller le solicita al sistema vincular el rol de empleado con el empleado &\\
+        \hline
+        & \inc El sistema vincula el rol con el empleado\\
+        \hline
+        \inc Fin Sección. & \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el empleado ya está vinculado con el rol de empleado ingresado. Si el Jefe de taller desea reintentar el ingreso, volver al paso 1. Si no, fin sección}\\
+    \hline
+\end{longtable}
 
 
+\resetinc
+
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Eliminar rol de un empleado}\\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+    \hline
+    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+    \hline
+        \inc El Jefe de Taller le pide al sistema buscar un rol de empleado por su nombre& \\
+        \hline
+        & \inc El sistema busca el rol ingresado \\
+        \hline
+        & \inc El sistema muestra los datos del rol de empleado \\
+        \hline
+        \inc El Jefe de Taller le solicita al sistema eliminar el rol de empleado del empleado &\\
+        \hline
+        & \inc El sistema eliminar el rol de empleado del empleado\\
+        \hline
+        \inc Fin Sección. & \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{3a. }El sistema informa que el rol de empleado no está vinculado con el empleado. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{3b. }El sistema informa que no se puede realizar la eliminación debido a que el empleado está asignado a un ítem con una actividad que requiere ese rol de empleado. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
+    \hline
+\end{longtable}
+
+\resetinc
+
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Modificar Información de Empleado}\\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+    \hline
+    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+    \hline
+        \inc El Jefe de Taller ingresa la nueva información del empleado.& \\
+        \hline
+        & \inc El sistema muestra la información\\
+        \hline
+        \inc El Jefe de Taller confima el ingreso de la nueva información &\\
+        \hline
+        & \inc El sistema vincula la nueva información con el empleado.\\
+        \hline
+        \inc Fin Sección. & \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{3. }El Jefe de Taller no confirma la información. Si desea reingresar el ingreso, volver al paso 1. Si no, fin sección.}\\
+    \hline
+\end{longtable}
 
 
 

@@ -75,16 +75,72 @@
 			\hline
 		    & \inc El sistema vincula el rol con el empleado\\
 			\hline
-			\inc Fin CU. & \\
+			\inc Fin Sección. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el empleado ya está vinculado con el rol de empleado ingresado. Si el Jefe de taller desea reintentar el ingreso, volver al paso 1. Si no, fin sección\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el empleado ya está vinculado con el rol de empleado ingresado. Si el Jefe de taller desea reintentar el ingreso, volver al paso 1. Si no, fin sección}\\
 		\hline
 	\end{longtable}
 
 
+    \resetinc
 
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Eliminar rol de un empleado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc El Jefe de Taller le pide al sistema buscar un rol de empleado por su nombre& \\
+			\hline
+		    & \inc El sistema busca el rol ingresado \\
+			\hline
+		    & \inc El sistema muestra los datos del rol de empleado \\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema eliminar el rol de empleado del empleado &\\
+			\hline
+		    & \inc El sistema eliminar el rol de empleado del empleado\\
+			\hline
+            \inc Fin Sección. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3a. }El sistema informa que el rol de empleado no está vinculado con el empleado. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3b. }El sistema informa que no se puede realizar la eliminación debido a que el empleado está asignado a un ítem con una actividad que requiere ese rol de empleado. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
+		\hline
+	\end{longtable}
+
+    \resetinc
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Modificar Información de Empleado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc El Jefe de Taller ingresa la nueva información del empleado.& \\
+			\hline
+		    & \inc El sistema muestra la información\\
+			\hline
+			\inc El Jefe de Taller confima el ingreso de la nueva información &\\
+			\hline
+		    & \inc El sistema vincula la nueva información con el empleado.\\
+			\hline
+			\inc Fin Sección. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. }El Jefe de Taller no confirma la información. Si desea reingresar el ingreso, volver al paso 1. Si no, fin sección.}\\
+		\hline
+	\end{longtable}
 \end{document}
