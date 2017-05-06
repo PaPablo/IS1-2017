@@ -306,12 +306,27 @@
     \end{itemize}
 
     \pagebreak
-    \subsection{Actividades}
+    \subsection{Servicios Ofrecidos}
 
     \subsubsection{Reparación de Equipos}
-    El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. Se verifica si el cliente está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Una vez cargado, el integrante de la organización que esté atendiendo al cliente toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia. De no ser así se lo carga registrando marca y modelo. Cada equipo que ingresa al taller es serializado, de modo que un cliente puede tener asociado varios equipos, contando cada equipo con su historial de reparaciones.\\
+    El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. El técnico que atiende al cliente verifica si está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Si el cliente ya estaba cargado y era moroso se debe considerar prestar o no el servicio (decisión tomada por el Gerente).
+    
+    Una vez cargado, el técnico abre una \textit{Orden de Trabajo} y se asigna a sí mismo como el que atendió la solicitud y encargado de la \textit{Orden de Trabajo}. La \textit{Orden de Trabajo} pasa a estado \textit{Asignada} (para ver los distintos estados de una \textit{Orden de Trabajo}, ver Anexo 2). 
+   
+    En la \textit{Orden de Trabajo} también se va a registrar:
+    \begin{itemize}
+        \item La fecha de solicitud de servicio
+        \item El cliente solicitante
+        \item Una descripción que dio el cliente con respecto al problema
+        \item Tipo de equipo de que se trate con marca, modelo y número de serie asignado
+        \item Vencimiento (tentativo, de la fecha de creación de la \textit{Orden de Trabajo})
+    \end{itemize}
 
-    Recibido el equipo, el cliente abona por adelantado el importe de la tarifa de Revisión, Dia/óstico y Presupuesto (de ahora en más RDyP) y se le entrega el comprobante del ingreso del equipo y, en un plazo de dos a cinco días hábiles (según el tipo de equipo), se le va a dar un dia/óstico sobre el estado del mismo; si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. El equipo entra en una cola de espera. Si el presupuesto planteado al cliente se acepta, se procede a repararlo. En caso contrario se le devuelve el equipo.\\
+    Toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia en el sistema. De no ser así se lo carga registrando marca y modelo. Cada equipo que ingresa al taller se le asigna un número de serie generado automáticamente por el sistema, de modo que un cliente puede tener asociado varios equipos, contando cada uno con su historial de reparaciones. Luego de que ya fue registrado, se vincula el equipo a la \textit{Orden de Trabajo}
+   %quién puede abrir OT??????????? 
+    Los datos pertenecientes a un equipo se pueden modificar en cualquier momento, puediendo hacerse correción de errores en el ingreso inicial de los datos.
+
+    Vinculado el equipo, el cliente abona por adelantado el importe de la tarifa de Revisión, Diagnóstico y Presupuesto (de ahora en más RDyP) y se le entrega el comprobante del ingreso del equipo y, en un plazo de dos a cinco días hábiles (según el tipo de equipo), se le va a dar un dia/óstico sobre el estado del mismo; si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. El equipo entra en una cola de espera. Si el presupuesto planteado al cliente se acepta, se procede a repararlo. En caso contrario se le devuelve el equipo.\\
 
     Luego de completada, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo (se abre una nueva orden de trabajo, indicando en el campo de observaciones que el trabajo está cubierto por una garantía). \\
     
@@ -319,7 +334,6 @@
 
     Cuando un equipo reingresa al taller se revisa su historial dentro del taller, viendo si reingresó por la misma falla o por una nueva. Esta información proviene de órdenes anteriores. \\
 
-    Los datos pertenecientes a un equipo se pueden modificar en cualquier momento, puediendo hacerse correción de errores en el ingreso inicial de los datos.
 
     Cuando un se considera SCRAP u obsoleto se le da de baja en el sistema; el equipo ya no puede formar parte de ninguna Orden de Trabajo ni trabajo realizado. De cualquier manera, no se pierden las referencias al equipo hechas en las órdenes de trabajo en las que aparezca.
 
