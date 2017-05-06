@@ -103,31 +103,70 @@
     Brindan servicios de instalación de cámaras y redes, asistencia on-site (soporte a domicilio o en el lugar), asistencia por teléfono, asistencia remota, reparación de PC tanto domésticas como para empresas, mantenimiento a impresoras láser, de matriz de punto, fiscales, y plotters; también realizan reparaciones en tablets.  Los objetivos de la empresa son los de brindar un servicio de mantenimiento de calidad a la comunidad y además maximizar ganancias.\\
 
     \pagebreak
+    \subsection{Roles dentro de la Organización}
+    Actualmente dentro de la organización existen los siguientes roles:
+    \begin{itemize}
+        \item Técnico Fiscal: Realiza las reparaciones de impresoras fiscales. Dichos trabajos provienen de los clientes corporativos (ver sección 2.2).
+        \item Técnico de Taller: Encargado de realizar las reparaciones dentro del taller.
+        \item Técnico On-site: Encargado de realizar los trabajos en los domicilios de los clientes, ya sean reparaciones o instalaciones.
+        \item Jefe de Taller: Encargado de realizar la asignación de trabajo a cada técnico. Decide cuándo abrir una \textit{orden de trabajo} (ver sección 2.4), a qué técnico asignarla y cuándo cerrarla.
+        \item Operario Contable: Encargado de realizar la facturación de una orden de trabajo cerrada.
+        \item Cajero: Atiende a los clientes que deseen realizar compras en el local.
+        \item Gerente: Máximo cargo en la organización. Encargado de las decisiones estratégicas. Decide qué clientes reciben servicio y cuáles no, a cuáles proveedores comprarle mercadería, toma todas las decisiones en relación a los recursos humanos, y cualquier otra resolución estratégica.  
+    \end{itemize}
+    
+
+    Debido al tamaño de la organización, un empleado puede desempeñar varios roles a la vez, como por ejemplo técnico de taller y técnico on-site.  
+
+    En cuanto a la información manejada por cada miembro de la organización, hay una diferencia entre la que manejan los técnicos y el operario contable. Mientras que los técnicos manejan los datos pertinentes al trabajo a realizar, tales como el problema a solucionar, el domicilio a dónde se debe realizar una instalación o un teléfono de contacto, el operario contable debe conocer los valores a facturar por cada actividad precisada en una \textit{orden de trabajo} y algún medio de comunicación para transmitirle el presupuesto (ver sección NO EXISTE) al cliente. El Jefe de Taller también se puede encargar de notificar sobre cotizaciones de servicios a los clientes que los han requerido.
+
+    Cuando un empleado deja de trabajar para la organización, se lo da de baja en el sistema de modo que ya no pueda figurar como técnico asociado a una \textit{orden de trabajo}. No obstante no se pierde registro de sus actividades en \textit{órdenes de trabajo} anteriores. 
+
+    A cada empleado se le asigna el trabajo dependiendo de varias cosas:
+    \begin{itemize}
+        \item El nivel de experiencia en la reparación de equipos.
+        \item El rol que cumpla (a un empleado de taller no se le va a encargar que realice una instalación).
+        \item El trabajo pendiente que tenga en el momento y la demora que tenga para atender el trabajo nuevo que se le pueda asignar. 
+    \end{itemize}
+
+    Hay empleados especializados, en general, por tener más experiencia en ciertos tipos de equipos (por ejemplo: impresoras láser) o en ciertos tipos de instalaciones (por ejemplo: redes inalámbricas); por lo tanto, se les suele asignar esos tipos de trabajo específicos.
+
+    \pagebreak
     \subsection{Clientes}
 
-    Entre los distintos clientes que atiende la organización se puede realizar la siguiente división:
+    Entre los distintos clientes que atiende la organización se puede realizar la siguiente clasificación:
     \begin{itemize}
         \item Clientes particulares: personas que requieren algún servicio o reparación por cuenta propia.
-        \item Clientes comerciales: aquellos que son parte de un negocio u organización que no excede las 5 o 10 computadoras.
+        \item Clientes comerciales: aquellos que son parte de un negocio u organización que no excede las 5 ó 10 computadoras.
         \item Clientes empresariales: superan las 10 computadoras y generan un volumen de trabajo mayor a los clientes comerciales. Suelen contar con distintos sectores, complejizando la comunicación con la organización.
-        \item Clientes corporativos: Son clientes que tercerizan trabajos para la organización. Estos trabajos incluyen la atención a servidores, reparación de impresoras fiscales, instalación y mantenimiento de redes.Dichos trabajos tercerizados pueden ser realizados a clientes particulares, comerciales o empresariales.
+        \item Clientes corporativos: son clientes que tercerizan trabajos para la organización. Estos trabajos incluyen la atención a servidores, reparación de impresoras fiscales, instalación y mantenimiento de redes. Dichos trabajos tercerizados pueden ser realizados a clientes particulares, comerciales o empresariales.
     \end{itemize}
 
     De cada cliente se registran los siguientes datos:
     \begin{itemize}
         \item Nombre o Razón Social
         \item DNI/CUIT/CUIL
-        \item Dirección de Facturación
-        \item Teléfono/s (en clientes comerciales o empresariales se almacena más de uno para poder tener comunicación directa con distintos sectores dentro de las organizaciones cliente)
-        \item Correo Eléctronico (más de uno en clientes comerciales o empresariales)\\
-        NOTA: la modalidad a seguir en los clientes comerciales o empresariales es que para cada miembro de la organización cliente se registra un nombre, un teléfono o interno, y una dirección de correo eléctronico.
+        \item Dirección de facturación
+        \item Teléfono
+        \item Correo electrónico
+        \item Contacto/s
+        	\begin{itemize}
+				\item Nombre	
+		        \item Teléfono/s
+		        \begin{itemize}
+			        \item Interno	        
+		        \end{itemize}
+		        \item Correo eléctronico (más de uno en clientes comerciales o empresariales)\\        	
+        	\end{itemize}
     \end{itemize}
 
-    Los clientes se comunican con la organización en ocasión de requerir algún servicio o para chequear el estado de algún pedido. Si el cliente tiene un equipo en taller puede llamar para verificar si tiene arreglo o no; suele darse que los clientes se comuniquen cuando las reparaciones tardan más de lo habitual. Dicha consulta por parte del cliente se deja asentada en la orden.\\
+        NOTA: Si bien es posible registrar contactos en clientes particulares, en el caso de los clientes comerciales o empresariales es más común que exista más de un interlocutor. Esto tiene que ver con que distintos sectores de la organización cliente pueden requerir servicios. En esos casos se registra un nombre, un teléfono o interno, y una dirección de correo electrónico del tal interlocutor. En ocasiones este interlocutor puede estar autorizado para el requerimiento de servicios, pero esa autorización sólo pueden darla el Gerente o el Jefe de Taller. Cualquier otro rol dentro de la organización puede registrar un cliente y contactos relacionados pero esos contactos no están autorizados para requerir servicios. \\
 
-    Los datos de un cliente se pueden modificar cuando el cliente avisa a la organización que ha cambiado, por ejemplo, de teléfono de contacto o de dirección de correo electrónico. En ese caso se realiza la modificación sin ningún problema.
+    Los datos de un cliente se pueden modificar cuando el cliente (NO sus contactos adicionales) avisa a la organización que ha cambiado, por ejemplo, de teléfono de contacto o de dirección de correo electrónico. En ese caso se realiza la modificación sin ningún problema.
 
-    Si por alguna razón se debiera eliminar un cliente, se lo da de baja en el sistema. No se podrá realizar trabajos a su nombre, pero se pueden consultar los registros de sus trabajos realizados. La baja de cliente se podrá realizar sólo en aquellos clientes que no tengan un saldo negativo en su cuenta corriente.
+    Generalmente los clientes se comunican con la organización en ocasión de requerir algún servicio o para chequear el estado de algún pedido. Si el cliente tiene un equipo en taller puede llamar para verificar si tiene arreglo o no; suele darse que los clientes se comuniquen cuando las reparaciones tardan más de lo habitual. Dicha consulta por parte del cliente se deja asentada en la orden de trabajo asociada a requerimiento de ese servicio.\\
+
+    Si por alguna razón se debiera eliminar un cliente, se lo da de baja en el sistema. No se podrá realizar trabajos a su nombre, pero se pueden consultar los registros de sus trabajos realizados. La baja de cliente se podrá realizar sólo para aquellos clientes que no registren deudas ni notas de crédito a su favor.
     
     \subsubsection{Cuenta Corriente}
         Los clientes poseen cuenta corriente dentro de la organización donde se detallan las facturas y notas de crédito emitidas a su nombre y los pagos que realizó.\\
@@ -140,47 +179,40 @@
             \item Saldo actual del cliente
         \end{itemize}
 
-        La cuenta corriente de un cliente sólo puede ser vista por personal contable de la organización. Pero su estado (saldo a favor o en contra) es tenido en cuenta al momento de decidir si prestarle o no servicio. Si el gerente considera que el cliente tiene un saldo negativo demasiado grande puede decidir negarle el servicio.
+        La cuenta corriente de un cliente sólo puede ser vista por personal contable de la organización. Pero su estado (saldo a favor o en contra) es tenido en cuenta al momento de decidir si prestarle o no servicio. Si el gerente considera que el cliente tiene adeuda un saldo significativo puede decidir negarle el servicio.
 
 
     \pagebreak
-    \subsection{Integrantes de la Organización}
-    Actualmente dentro de la organización se establece la siguiente jerarquía:
+    \subsection{Productos}
+    
+        Para las reparaciones, mantenimiento de equipos e instalaciones, la organización dispone de un stock de productos (insumos) necesarios para el desarrollo de esas actividades (var seccion 2.3.1).
+    
+    	Los productos se clasifican en partes (engranajes de impresoras, mecanismos de tiqueadoras, memorias fiscales, cables de datos, cables de alimentación) y componentes (discos duros, memorias, placas madres, lecto-grabadoras de CD-DVD, teclados, mouses).\\
+
+    La organización cuenta con un listado de productos en el que de cada producto se detalla 
     \begin{itemize}
-        \item Técnico Fiscal: Realiza las reparaciones de tiqueadoras. Dichos trabajos provienen de los clientes corporativos.
-        \item Técnico de Taller: Encargado de realizar las reparaciones dentro del taller.
-        \item Técnico On-site: Encargado de realizar los trabajos en los domicilios de los clientes, ya sean reparaciones o instalaciones.
-        \item Jefe de Taller: Encargado de realizar la asignación de trabajo a cada técnico. Decide cuándo abrir una orden, a qué técnico asignarla y cuándo cerrarla.
-        \item Operario Contable: Encargado de realizar la facturación de una orden de trabajo cerrada.
-        \item Cajero: Atiende a los clientes que deseen realizar compras en el local.
-        \item Gerente: Máximo cargo en la organización. Encargado de las decisiones estratégicas. Decide qué clientes reciben servicio y cuáles no, proveedores a los cuáles comprarle mercadería. 
+    	\item Stock
+    	\item Stock mínimo
+        \item Marca
+        \item Código interno de referencia \footnote{Es una número de serie que el sistema crea automáticamente al momento de registrar un producto.}
+        \item Distintos precios según el margen de ganancia deseado (por reparación de taller, por venta directa, por utilización en visita)
+        \item proveedor/es (teniendo como primera opción al mas usual. \footnote{Es importante tener en cuenta que hay clientes corporativos que a la vez pueden ser proveedores. Un ejemplo de esto es EPSON ya que provee insumos para la reparación de las impresoras fiscales}. 
+		\begin{itemize}
+	        \item Código propio del proveedor \footnote{Algunos proveedores requieren que los pedidos que se les hacen contengan el código del producto, es decir el código con el cual el proveedor serializa ese producto en \textbf{su} catálogo.}
+    	    \item Si tiene o no garantía, y en caso de que la tenga de cuánto tiempo.
+    	    \item Precio (En general el último precio pagado por el producto)
+		\end{itemize}
     \end{itemize}
     
-
-    Cabe aclarar que debido al tamaño de la organización, los empleados desempeñan varios roles a la vez, como ser técnico de taller y técnico on-site.
-
-    En cuanto a la información manejada por cada miembro de la organización, hay una diferencia entre la que manejan los técnicos y el operario contable. Mientras que los técnicos manejan los datos pertinentes al trabajo a realizar, tales como el problema a solucionar, el domicilio adónde se debe realizar una instalación o un teléfono de contacto, el operario contable debe conocer los valores a facturar por cada actividad precisada en una orden y algún medio de comunicación para transmitirle el presupuesto al cliente. El Jefe de Taller también se puede encargar de notificar sobre presupuestos a los clientes.
-
-    Cuando un empleado deja de trabajar para la organización, se lo da de baja en el sistema imposibilitándolo para figurar como técnico asociado a una Orden de Trabajo. Asimismo no se pierde registro de sus actividades en OT anteriores. 
-
-    A cada empleado se le asigna el trabajo dependiendo de varias cosas:
-    \begin{itemize}
-        \item El nivel de experiencia en la reparación del equipo.
-        \item El papel que cumpla dentro de la jerarquía (a un empleado de taller no se le va a encargar que realice una instalación).
-        \item El trabajo acumulado que tenga en el momento y la demora que tenga para atender el trabajo nuevo que se le pueda asignar. 
-    \end{itemize}
-
-    Hay empleados especializados, en general por tener más experiencia, en ciertos tipos de equipos (por ejemplo: impresoras láser) o en ciertos tipos de instalaciones (por ejemplo: redes inalámbricas); por lo tanto se les suele asignar esos tipos de trabajo específicos.
-
-    \pagebreak
     \subsection{Proveedores}
-    Para reparaciones y mantenimientos de distintos equipos, la organización dispone siempre de un stock de partes (engranajes de impresoras, mecanismos de tiqueadoras, memorias fiscales, cables de datos, cables de alimentación) y componentes (discos duros, memorias, placas madres, lecto-grabadoras de CD-DVD, teclados, mouses).\\
+ 
 
-    Trabajan con empresas proveedoras de estos insumos con las cuales actualizan y reponen su inventario cuando es necesario (on-demand). Sin embargo, se intenta mantener una cantidad básica de cada uno de los elementos.\\
+    Los productos descriptos en el punto anterior son proveídos por diferentes empresas. El stock se actualiza cuando es necesario (on-demand). Sin embargo, se intenta mantener una cantidad básica de cada uno de los elementos.\\
 
     Al momento de agregar un proveedor se lo registra con la siguiente información.
         \begin{itemize}
             \item Razón Social
+            \item CUIT
             \item Dirección
             \item Localidad
             \item Teléfono (puede ser más de uno)
@@ -189,44 +221,35 @@
         \end{itemize}
     En cualquier momento se pueden modificar los datos del proveedor para reflejar algún cambio de teléfono, e-mail, dirección que se produzca.
 
-    De la misma forma, si se considera necesario se puede dar de baja un proveedor. No va a poder ser referenciado en ningún nuevo pedido u otra actividad, pero los registros que lo mencionen quedarán intactos y se podrán consultar sin ningún problema.
+    De la misma forma, si se considera necesario se puede dar de baja un proveedor. No va a poder ser referenciado en ningún nuevo pedido o compra, pero los registros que lo mencionen quedarán intactos y se podrán consultar sin ningún problema.
+    
+    
 
     \subsubsection{Stock y Pedidos}
+	Todos los empleados tienen autorización para mirar el stock de productos. Si algún empleado considera que no hay suficiente stock de algún/os producto/s, se le comunica al Gerente que es quien decide ordenar (o no) al Operario Contable que realice un pedido. Todos los pedidos son realizados por el Operario Contable vía correo electrónico o en sitios de venta online. Éste, al realizar el pedido, debe registrar a qué proveedor se hizo, qué artículos y a qué precio, fecha en la que se hizo y fecha probable de llegada. Este registro, al igual que las recepciones y los pagos, se hace en una hoja de cálculos.
 
-    La organización cuenta con un listado de los repuestos detallando 
-    \begin{itemize}
-        \item Marca
-        \item Código interno de referencia
-        \item Distintos precios según el margen de ganancia deseado (por reparación de taller, por venta directa, por utilización en visita)
-        \item Referencia a uno o más proveedores del artículo, teniendo como primer opción al favorito (más usual), o el cliente corporativo del cual proviene
-        \item Código propio del proveedor
-        \item Si tiene o no garantía, y en caso de que la tenga de cuánto tiempo.
-    \end{itemize}
-
-    Cuando se detecta que el stock se encuentra por debajo de los niveles mínimos, se le comunica al Operario Contable y éste realiza un pedido. Registra a qué proveedor se hizo, qué artículos y a qué precio, fecha en la que se hizo y fecha probable de llegada. 
-
-    Si un artículo recibido ya forma parte de la lista de repuestos, se actualiza el stock con la nueva cantidad. En caso de ser una parte o componente que se adquiere por primera vez se lo ingresa al sistema con su información pertinente y la cantidad que ingresó. 
+    Si un artículo recibido ya forma parte de la lista de productos, se actualiza el stock con la nueva cantidad. En caso de ser una parte o componente que se adquiere por primera vez se lo ingresa al sistema con su información pertinente y la cantidad que ingresó. 
         
-    En cualquier momento se pueden modificar los datos del registro de artículos (su código interno o del proveedor, los distintos precios, o algún otro dato).
+    En cualquier momento se pueden modificar los datos de registro de un producto (su código interno o del proveedor, los distintos precios, o algún otro dato). Salvo el stock que se actualiza automáticamente cuando el producto es involucrado en un servicio (ver sección 2.6). 
 
-    En caso de tener que realizar una eliminación, se da de baja el artículo y ya no podrá formar parte de pedidos a proveedores ni de presupuestos o detalles de trabajos realizados, pero se mantienen las referencias hechas al artículo eliminado.
+    En caso de tener que realizar una eliminación, se da de baja el artículo y ya no podrá formar parte de un pedido a proveedor ni de un presupuesto (VER SECCION NO EXISTE) o detalles de trabajos realizados (), pero se mantienen las referencias hechas al artículo eliminado.
 
-    Cuando se realiza el pago al proveedor por un pedido se lo registra con fecha, monto, medio de pago y en caso de ser por transferencia o pago eléctrónico, el número de transacción. Si se paga con cheque, se deja asentado el número de cheque, fecha de cobro y monto.
+    Cuando el Operario Contable realiza un pago a un proveedor, se lo registra con fecha, monto, medio de pago y en caso de ser por transferencia o pago eléctrónico, el número de transacción y el banco. Si se paga con cheque, se deja asentado el número de cheque.
 
-    También se piden repuestos que no se posean en existencia para algún trabajo en específico (por ejemplo, una placa madre de notebook).\\
+    Hay casos en los que se desea hacer un pedido de un artículo que no está en el stock de productos. Esta situación suele darse ante reparaciones de equipos específicos. En esos casos el Operario Contable realiza el pedido e incorpora el producto al stock cuando efectivamente es recibido.\\
 
-    Los clientes coporativos proveen de repuestos especializados para sus trabajos encomendados. Éstos forman parte del stock, pero sólo se los utiliza en los trabajos de dichos clientes. Se los registra de igual manera que una parte o componente habitual, pero se especifica de qué cliente proviene; no se los puede utilizar en pedidos a proveedores convencionales ni ser usados en trabajos que no sean de clientes corporativos.\\
+    Los clientes coporativos proveen de repuestos especializados para sus trabajos encomendados. Éstos forman parte del stock, pero sólo se los utiliza en los trabajos de dichos clientes. Se los registra de igual manera que una parte o componente habitual, pero se especifica de qué cliente proviene; no se los puede utilizar en pedidos a proveedores convencionales ni ser usados en trabajos que no sean del cliente corporativo del que provienen.\\
 
-    Los pedidos se realizan via e-mail o por sitios de venta online, indicando los artículos necesarios. La cuenta de los pedidos, la recepción y los pago se realiza a través de una planilla de cálculo. 
+    La recepción de un pedido la realiza el Operario Contable, verificando que lo que llegó coincida con lo registrado en la planilla; de ser así el pedido se marca como ``satisfecho'' y se actualiza el stock de los productos recibidos. En caso contrario (no llegó el pedido completo o llegó en mal estado), el stock se actualiza con los artículos disponibles pero el pedido se marca como ``pendiente'' detallando qué artículos faltaron. Luego se comunica con el proveedor y se acuerda una solución.
 
-    La recepción de un pedido la realiza el Operario Contable, verificando que lo que llegó coincida con lo registrado en la planilla; de ser así el pedido se marca como ``satisfecho'' y se actualiza el stock. En caso contrario (no llegó el pedido completo o llegó en mal estado), el stock se actualiza con los artículos disponibles pero el pedido se marca como ``pendiente'' detallando qué artículos faltaron. Luego se comunica con el proveedor y se acuerda una solución.
+    Si no se puede completar el pedido debido a que ninguno de los proveedores tiene los productos en existencia, se lo marca como ``satisfecho incompleto'' con el detalle de los productos faltantes. Se mantiene un listado de estos productos pendientes para que al momento de realizar nuevos pedidos a otros proveedores se los tenga en cuenta. Cuando llegan los artículos faltantes, se remueven de la lista de pendientes.
 
-    Si no se puede completar el pedido debido a que ninguno de los proveedores tiene los artículos en existencia, se lo marca como ``satisfecho incompleto'' con el detalle de los artículos faltantes. Se mantiene un listado de estos artículos para que al momento de realizar pedidos a otros proveedores se los tenga en cuenta. Cuando llegan los artículos faltantes, se remueven de la lista.
-
-    En el caso de que lleguen artículos de más el Operario Contable notifica al Gerente y se decide si se abonan los artículos de más al proveedor y la organización se los queda, o si se los envía de regreso.\\
+    En el caso de que lleguen productos de más, el Operario Contable notifica al Gerente y se decide si se abonan los artículos de más al proveedor y la organización se los queda, o si se los rechaza.\\
 
     Una gran mayoría de los artículos tienen sus precios dolarizados, por lo tanto la lista de precios se mantiene actualizada en base a la valuación del dólar. Con respecto a los artículos con precios no dolarizados, se realiza una actualización mensual de sus precios.
-
+    
+    ACA FALTA HABLAR DE LA DOCUMENTACION - ESCANEAR REMITO PROVEEDOR Y HOJA DE CALCULO 
+    
     \pagebreak
     \subsection{Órdenes de Trabajo}
     La información de todas las actividades que realiza la empresa se registra bajo un mismo tipo de Orden de Trabajo (de ahora en más OT).
