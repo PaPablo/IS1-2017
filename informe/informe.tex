@@ -252,63 +252,44 @@
     ACA FALTA HABLAR DE LA DOCUMENTACION - ESCANEAR REMITO PROVEEDOR Y HOJA DE CALCULO 
     
     \pagebreak
-    \subsection{Órdenes de Trabajo}
-    La información de todas las actividades que realiza la empresa se registra bajo un mismo tipo de Orden de Trabajo (de ahora en más OT).
-    Se almacena:
-    \begin{itemize}
-        \item Fecha de rececepción
-        \item Cliente
-        \item Pedido del cliente. Sea una falla o lo requerido en una instalación.
-        \item Tipo de Equipo. Marca, modelo y número de serie (en caso de ser una reparación).
-        \item Técnico que recibió. 
-        \item Técnico asignado para el trabajo.
-        \item Vencimiento, manualmente asignado.
-    \end{itemize}
+    %\subsection{Órdenes de Trabajo}
+    %La información de todas las actividades que realiza la empresa se registra bajo un mismo tipo de Orden de Trabajo (de ahora en más OT).
+    %e almacena:
+    %begin{itemize}
+    %   \item Fecha de rececepción
+    %   \item Cliente
+    %   \item Pedido del cliente. Sea una falla o lo requerido en una instalación.
+    %   \item Tipo de Equipo. Marca, modelo y número de serie (en caso de ser una reparación).
+    %   \item Técnico que recibió. 
+    %   \item Técnico asignado para el trabajo.
+    %   \item Vencimiento, manualmente asignado.
+    %end{itemize}
 
-    En la orden de trabajo, además de toda la información requerida al momento de crearla, se registra con fecha y nombre de técnico las tareas que se han ido realizando.
-    Por ejemplo:\\ 
-    \textit{
-    12-03 (Pablo) El equipo no encendía. Se lo abrió y se encontró que la memoria estaba quemada. Se colocó una nueva de 4Gb. Código: 1234.
-    }\\
+    %En la orden de trabajo, además de toda la información requerida al momento de crearla, se registra con fecha y nombre de técnico las tareas que se han ido realizando.
+    %Por ejemplo:\\ 
+    %\textit{
+    %12-03 (Pablo) El equipo no encendía. Se lo abrió y se encontró que la memoria estaba quemada. Se colocó una nueva de 4Gb. Código: 1234.
+    %\\
 
-    El seguimiento se registra en el campo de observaciones de la orden de trabajo, indicando los avances, problemas y comentarios referentes a lo realizado.\\
+    %El seguimiento se registra en el campo de observaciones de la orden de trabajo, indicando los avances, problemas y comentarios referentes a lo realizado.\\
 
-    Si el técnico asociado a la OT considera que el trabajo necesita de un repuesto, se lo detalla en la orden. Dicho repuesto es reservado del stock (la cantidad del artículo disminuye virtualmente). Los artículos reservados todavía no dejan de existir en el stock, pero no se los puede considerar para otros trabajos. 
+    %Si el técnico asociado a la OT considera que el trabajo necesita de un repuesto, se lo detalla en la orden. Dicho repuesto es reservado del stock (la cantidad del artículo disminuye virtualmente). Los artículos reservados todavía no dejan de existir en el stock, pero no se los puede considerar para otros trabajos. 
 
-    Llegado el caso de que un repuesto reservado del stock no se utilice en el trabajo, se detalla en la orden, se cancela la reserva del stock, y no se factura.
+    %Llegado el caso de que un repuesto reservado del stock no se utilice en el trabajo, se detalla en la orden, se cancela la reserva del stock, y no se factura.
 
-    El Gerente o el Jefe de Taller puede i/orar dicha reserva y reordenar las asignaciones de repuestos a los presupuestos manualmente, haciendo que ciertas OT se retrasen o aceleren su paso.
+    %El Gerente o el Jefe de Taller puede i/orar dicha reserva y reordenar las asignaciones de repuestos a los presupuestos manualmente, haciendo que ciertas OT se retrasen o aceleren su paso.
 
-    Si no hubiera la cantidad necesaria para satisfacer la demanda del trabajo se puede cambiar la fecha de vencimiento de la orden, contemplando el tiempo que tardaría conseguir el repuesto. Esta demora en el cumplimento del trabajo se le comunica al cliente, que puede aceptar o no que se continue. Si no acepta se cancela la reparación o la visita.
+    %Si no hubiera la cantidad necesaria para satisfacer la demanda del trabajo se puede cambiar la fecha de vencimiento de la orden, contemplando el tiempo que tardaría conseguir el repuesto. Esta demora en el cumplimento del trabajo se le comunica al cliente, que puede aceptar o no que se continue. Si no acepta se cancela la reparación o la visita.
 
-    Toda OT es creada y cerrada manualmente.\\
+    %Toda OT es creada y cerrada manualmente.\\
 
-    El vencimiento incluido en una OT se utiliza como \textbf{sugerencia de prioridad}. Se tiene en cuenta la fecha de vencimiento, a qué cliente pertenece y qué equipo es al momento de realizar los trabajos. 
+    %El vencimiento incluido en una OT se utiliza como \textbf{sugerencia de prioridad}. Se tiene en cuenta la fecha de vencimiento, a qué cliente pertenece y qué equipo es al momento de realizar los trabajos. 
 
-    Un servicio puede darse por finalizado por dos razones:
-    \begin{itemize}
-        \item Porque se ha completado el trabajo y se cierra la orden.
-        \item Porque no se puede completar, lo cual constituye una orden fallida.
-    \end{itemize}
-
-    \subsubsection{Estados}
-
-    \begin{enumerate}
-        \item \textbf{Asignada}: estado inicial de la orden. Cuenta con un técnico asociado.
-        \item \textbf{Revisada}: el técnico asociado realizó un primer dia/óstico del equipo ingresado (se lo anexa a la OT; incluye el problema que describió el cliente y lo que descubrió el técnico).
-        \item \textbf{Cotizada}: equipo ya dia/osticado. Presupuesto elaborado.
-        \item \textbf{Notificada de cotización}: el cliente ya fue notificado del presupuesto. En caso de que el cliente no acepte, la orden pasa al estado \textbf{No se repara} o bien a \textbf{Fallida} (en caso de tratarse de una visita). 
-        \item \textbf{Presupuesto aceptado}: el cliente aceptó el presupuesto indicado para realizar el trabajo.
-        \item \textbf{Espera de repuestos}: se pidieron repuestos necesarios para realizar el trabajo. No se puede reanudar hasta su arribo.
-        \item \textbf{En trámite}: se está realizando el trabajo; durante esta etapa, varios técnicos pueden participar en el trabajo y realizar observaciones en la orden. En caso de que el trabajo requiera algún servicio más, la OT vuelve a pasar por los estados \textbf{Cotizada}, \textbf{Notificada de cotización}, y en caso de aceptarse el presupuesto, \textbf{Presupuesto aceptado}. En caso de no aceptarse, se pasa a \textbf{No se repara} o a \textbf{Fallida} (si es una visita).
-        \item \textbf{Reparada/Lista}: trabajo terminado. Se encuentra pendiente de facturación.
-        \item \textbf{Notificada de reparación}: se le avisa al cliente que su equipo está listo para ser retirado.
-        \item \textbf{Cumplido}: se realizó la visita exitosamente. La orden se encuentra pendiete de facturación.
-        \item \textbf{No se repara}: no se completó la reparación porque el cliente no aceptó el presupuesto.
-        \item \textbf{Fallida}: no se pudo completar el trabajo on-site.
-        \item \textbf{Entregada}: se entregó el equipo reparado al cliente. El trabajo fue facturado.
-        \item \textbf{SCRAP}: el cliente no retiró el equipo pasados los 60 (sesenta) días hábiles. Se encuentra a disposición de la organización.
-    \end{enumerate}
+    %Un servicio puede darse por finalizado por dos razones:
+    %\begin{itemize}
+     %  \item Porque se ha completado el trabajo y se cierra la orden.
+      % \item Porque no se puede completar, lo cual constituye una orden fallida.
+   % \end{itemize}
 
     \subsubsection{Facturación y cobros}
     Para la facturación se cuentan las tareas realizadas de una Orden de Trabajo cerrada (pendiente de facturación), como ser reparaciones hechas, cantidad de horas técnico, repuestos utilizados, traslados, instalaciones. Se realiza el cálculo contando con los valores expuestos en el tarifario y se emite la factura. En caso de ser un equipo que no esté en el tarifario, se lo cotiza y se lo asienta en el campo de observaciones de la OT correspondiente.
@@ -362,6 +343,8 @@
     Si el cliente acepta el presupuesto, se procede a ingresar la \textit{Orden de Trabajo} en una cola de espera (de la cual se irán removiendo según se vayan iniciando sus respectivos trabajos); la \textit{Orden de Trabajo} se cambia a estado \textit{Presupuesto aceptado}). En caso contrario se le devuelve el equipo al cliente (se pasa al estado \textit{No se repara}); la \textit{Orden de Trabajo} se cierra imposibilitando agregar nuevas tareas.
     
     Una vez que la \textit{Orden de Trabajo} fue seleccionada de la cola de espera y su técnico asociado empezó a trabajar en ella, pasa al estado \textit{En trámite}. Llegado el caso de que los repuestos que se estipularon para realizar el trabajo no se encuentren en existencia en ese momento, se le notifica al Gerente sobre la situación y la \textit{Orden de Trabajo} pasa a estado \textit{Espera de repuestos} (se prosigue de la misma manera descripta en la sección 2.4.1).
+
+    A lo largo de la realización del trabajo, el técnico encargado se vale del campo de observaciones que tiene la \textit{Orden de Trabajo} utilizándolo a modo de bitácora para registrar la evolución de las tareas realizadas. A su vez, puede requerir ayuda de otros técnicos; su participación también se registra en el campo de observaciones (ver Anexo 1, Figura 12). 
     
     Si durante la reparación del equipo el técnico considera que se deben utilizar otros repuestos o realizar tareas adicionales, se confecciona un nuevo presupuesto sumando al anterior los valores de lo que se necesite. En esta situación la \textit{Orden de Trabajo}, vuelve primero al estado \textit{Cotizada}; generado el nuevo presupuesto y notificado al cliente sobre el mismo, se pasa al estado \textit{Notificada de cotización}. Puede suceder que el cliente no acepte este segundo presupuesto, por lo tanto se procede a completar las tareas indicadas en el presupuesto anterior (la \textit{Orden de Trabajo} vuelve al estado de \textit{En trámite}, con las tareas y repuestos del primer presupuesto). Si es aceptado el nuevo presupuesto, puede suceder que los repuestos previstos por el técnico no estén en existencia, pasando la \textit{Orden de Trabajo} al estado \textit{Espera de repuestos} (se actúa cómo se comentó previamente).
     
@@ -371,7 +354,7 @@
 
     Completadas exitosamente las tareas de la \textit{Orden de Trabajo}, se pasa al estado \textit{Pendiente de facturación}. Se le avisa al cliente de que el equipo ya está disponible para su retiro. Según la situación, puede suceder:
     \begin{itemize}
-        \item El cliente se acerca a la oficina de la organización a retirar el equipo. Se confecciona la factura (ver sección TAL) y la \textit{Orden de Trabajo} se cambia al estado \textit{Entregada}.
+        \item El cliente se acerca a la oficina de la organización a retirar el equipo. Se confecciona la factura (ver sección TAL). La \textit{Orden de Trabajo} se cambia al estado \textit{Entregada}.
         \item El equipo requiere de una instalación especial. Se confecciona la factura (ver sección TAL) y se abre una nueva \textit{Orden de Trabajo} para tratar el caso de la visita (ver sección 2.6.2).
     \end{itemize}
 
@@ -1966,72 +1949,90 @@
 
 \pagebreak
 
-\section{Anexo}
+\section{Anexo 1}
 
+    \begin{figure}[h]
+    \includegraphics[scale=0.3]{images/atinformatica-facturaB.jpg}
+    \caption{Factura}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.3]{images/atinformatica-facturaB.jpg}
-\caption{Factura}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/atinformatica-orden_de_trabajo.jpg}
+    \caption{Orden de trabajo}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/atinformatica-orden_de_trabajo.jpg}
-\caption{Orden de trabajo}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.4]{images/atinformatica-recibo.jpg}
+    \caption{Recibo}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.4]{images/atinformatica-recibo.jpg}
-\caption{Recibo}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.4]{images/atinformatica-remito.jpg}
+    \caption{Remito}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.4]{images/atinformatica-remito.jpg}
-\caption{Remito}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.275]{images/atinformatica-sticker.jpg}
+    \caption{Sticker}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.275]{images/atinformatica-sticker.jpg}
-\caption{Sticker}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/atinformatica-tarifario-pixel.jpg}
+    \caption{Tarifario}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/atinformatica-tarifario-pixel.jpg}
-\caption{Tarifario}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/cliente_ingreso.jpg}
+    \caption{Factura}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/cliente_ingreso.jpg}
-\caption{Factura}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/equipo_e_ingreso.jpg}
+    \caption{Listado de equipos e ingreso}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/equipo_e_ingreso.jpg}
-\caption{Listado de equipos e ingreso}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/estados_orden.jpg}
+    \caption{Estados de una orden}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/estados_orden.jpg}
-\caption{Estados de una orden}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/listado_clientes.jpg}
+    \caption{Listado de clientes}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/listado_clientes.jpg}
-\caption{Listado de clientes}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/listado_ordenes.jpg}
+    \caption{Listado de órdenes}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/listado_ordenes.jpg}
-\caption{Listado de órdenes}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/orden1.png}
+    \caption{Orden de trabajo}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/orden.jpg}
-\caption{Orden de trabajo}
-\end{figure}
+    \begin{figure}[h]
+    \includegraphics[scale=0.5]{images/pantalla_principal.jpg}
+    \caption{Pantalla principal}
+    \end{figure}
 
-\begin{figure}[h]
-\includegraphics[scale=0.5]{images/pantalla_principal.jpg}
-\caption{Pantalla principal}
-\end{figure}
+\section{Anexo 2 - Estados de las Órdenes de Trabajo}
+
+    \begin{enumerate}
+        \item \textbf{Asignada}: estado inicial de la orden. Cuenta con un técnico asociado.
+        \item \textbf{Revisada}: el técnico asociado realizó un primer diagnóstico del equipo ingresado (se lo anexa a la OT; incluye el problema que describió el cliente y lo que descubrió el técnico).
+        \item \textbf{Cotizada}: equipo ya diagnosticado. Presupuesto elaborado.
+        \item \textbf{Notificada de cotización}: el cliente ya fue notificado del presupuesto. En caso de que el cliente no acepte, la orden pasa al estado \textbf{No se repara} o bien a \textbf{Fallida} (en caso de tratarse de una visita). 
+        \item \textbf{Presupuesto aceptado}: el cliente aceptó el presupuesto indicado para realizar el trabajo.
+        \item \textbf{Espera de repuestos}: se pidieron repuestos necesarios para realizar el trabajo. No se puede reanudar hasta su arribo.
+        \item \textbf{En trámite}: se está realizando el trabajo; durante esta etapa, varios técnicos pueden participar en el trabajo y realizar observaciones en la orden. En caso de que el trabajo requiera algún servicio más, la OT vuelve a pasar por los estados \textbf{Cotizada}, \textbf{Notificada de cotización}, y en caso de aceptarse el presupuesto, \textbf{Presupuesto aceptado}. En caso de no aceptarse, se pasa a \textbf{No se repara} o a \textbf{Fallida} (si es una visita).
+        \item \textbf{Pendiente de facturación}: trabajo terminado. 
+        \item \textbf{Notificada de reparación}: se le avisa al cliente que su equipo está listo para ser retirado.
+        \item \textbf{Cumplido}: se realizó la visita exitosamente. La orden se encuentra pendiete de facturación.
+        \item \textbf{No se repara}: no se completó la reparación porque el cliente no aceptó el presupuesto.
+        \item \textbf{Fallida}: no se pudo completar el trabajo on-site.
+        \item \textbf{Entregada}: se entregó el equipo reparado al cliente. El trabajo fue facturado.
+        \item \textbf{SCRAP}: el cliente no retiró el equipo pasados los 60 (sesenta) días hábiles. Se encuentra a disposición de la organización.
+    \end{enumerate}
 
 \end{document}
