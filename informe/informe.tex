@@ -185,29 +185,28 @@
     \pagebreak
     \subsection{Productos}
     
-        Para las reparaciones, mantenimiento de equipos e instalaciones, la organización dispone de un stock de productos (insumos) necesarios para el desarrollo de esas actividades (var seccion 2.3.1).
+        Para las reparaciones, mantenimiento de equipos e instalaciones, la organización dispone de un stock de productos (insumos) necesarios para el desarrollo de esas actividades (ver seccion 2.3.1).
     
-    	Los productos se clasifican en partes (engranajes de impresoras, mecanismos de tiqueadoras, memorias fiscales, cables de datos, cables de alimentación) y componentes (discos duros, memorias, placas madres, lecto-grabadoras de CD-DVD, teclados, mouses).\\
+        Los productos se clasifican en \textit{partes} (engranajes de impresoras, mecanismos de tiqueadoras, memorias fiscales, cables de datos, cables de alimentación) y \textit{componentes} (discos duros, memorias, placas madres, lecto-grabadoras de CD-DVD, teclados, mouses).\\
 
-    La organización cuenta con un listado de productos en el que de cada producto se detalla 
+    La organización cuenta con un listado de productos en el que de cada producto se detalla: 
     \begin{itemize}
     	\item Stock
     	\item Stock mínimo
         \item Marca
         \item Código interno de referencia \footnote{Es una número de serie que el sistema crea automáticamente al momento de registrar un producto.}
         \item Distintos precios según el margen de ganancia deseado (por reparación de taller, por venta directa, por utilización en visita)
-        \item proveedor/es (teniendo como primera opción al mas usual. \footnote{Es importante tener en cuenta que hay clientes corporativos que a la vez pueden ser proveedores. Un ejemplo de esto es EPSON ya que provee insumos para la reparación de las impresoras fiscales}. 
+        \item Proveedor/es (teniendo como primera opción al mas usual). \footnote{Es importante tener en cuenta que hay clientes corporativos que a la vez pueden ser proveedores. Un ejemplo de esto es EPSON que provee insumos para la reparación de las impresoras fiscales}. 
 		\begin{itemize}
 	        \item Código propio del proveedor \footnote{Algunos proveedores requieren que los pedidos que se les hacen contengan el código del producto, es decir el código con el cual el proveedor serializa ese producto en \textbf{su} catálogo.}
     	    \item Si tiene o no garantía, y en caso de que la tenga de cuánto tiempo.
-    	    \item Precio (En general el último precio pagado por el producto)
+    	    \item Precio (en general el último precio pagado por el producto).
 		\end{itemize}
     \end{itemize}
     
     \subsection{Proveedores}
- 
 
-    Los productos descriptos en el punto anterior son proveídos por diferentes empresas. El stock se actualiza cuando es necesario (on-demand). Sin embargo, se intenta mantener una cantidad básica de cada uno de los elementos.\\
+    Los productos que maneja la empresa son proveídos por diferentes empresas; el stock se actualiza cuando es necesario (on-demand). Sin embargo, se intenta mantener una cantidad básica de cada uno de los elementos.\\
 
     Al momento de agregar un proveedor se lo registra con la siguiente información.
         \begin{itemize}
@@ -216,9 +215,10 @@
             \item Dirección
             \item Localidad
             \item Teléfono (puede ser más de uno)
-            \item e-mail
+            \item E-mail
             \item Observaciones varias como el horario de atención o interno de contacto con distintos integrantes de la organización proveedora
         \end{itemize}
+
     En cualquier momento se pueden modificar los datos del proveedor para reflejar algún cambio de teléfono, e-mail, dirección que se produzca.
 
     De la misma forma, si se considera necesario se puede dar de baja un proveedor. No va a poder ser referenciado en ningún nuevo pedido o compra, pero los registros que lo mencionen quedarán intactos y se podrán consultar sin ningún problema.
@@ -226,11 +226,12 @@
     
 
     \subsubsection{Stock y Pedidos}
-	Todos los empleados tienen autorización para mirar el stock de productos. Si algún empleado considera que no hay suficiente stock de algún/os producto/s, se le comunica al Gerente que es quien decide ordenar (o no) al Operario Contable que realice un pedido. Todos los pedidos son realizados por el Operario Contable vía correo electrónico o en sitios de venta online. Éste, al realizar el pedido, debe registrar a qué proveedor se hizo, qué artículos y a qué precio, fecha en la que se hizo y fecha probable de llegada. Este registro, al igual que las recepciones y los pagos, se hace en una hoja de cálculos.
+
+	Todos los empleados tienen autorización para mirar el stock de productos. Si algún empleado considera que no hay suficiente stock de algún/os producto/s, se le comunica al Gerente que es quién decide ordenar (o no) al Operario Contable que realice un pedido. Todos los pedidos son realizados por el Operario Contable vía correo electrónico o en sitios de venta online. Éste, al realizar el pedido, debe registrar a qué proveedor se hizo, qué artículos y a qué precio, fecha en la que se hizo y fecha probable de llegada. Este registro, al igual que las recepciones y los pagos, se hace en una hoja de cálculos.
 
     Si un artículo recibido ya forma parte de la lista de productos, se actualiza el stock con la nueva cantidad. En caso de ser una parte o componente que se adquiere por primera vez se lo ingresa al sistema con su información pertinente y la cantidad que ingresó. 
         
-    En cualquier momento se pueden modificar los datos de registro de un producto (su código interno o del proveedor, los distintos precios, o algún otro dato). Salvo el stock que se actualiza automáticamente cuando el producto es involucrado en un servicio (ver sección 2.6). 
+    En cualquier momento se pueden modificar los datos de registro de un producto (su código interno o del proveedor, los distintos precios, o algún otro dato), salvo el stock que se actualiza automáticamente cuando el producto es involucrado en un servicio (ver sección 2.6). 
 
     En caso de tener que realizar una eliminación, se da de baja el artículo y ya no podrá formar parte de un pedido a proveedor ni de un presupuesto (VER SECCION NO EXISTE) o detalles de trabajos realizados (), pero se mantienen las referencias hechas al artículo eliminado.
 
@@ -332,28 +333,50 @@
     \subsection{Servicios Ofrecidos}
 
     \subsubsection{Reparación de Equipos}
-    El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. El técnico que atiende al cliente verifica si está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Si el cliente ya estaba cargado y era moroso se debe considerar prestar o no el servicio (decisión tomada por el Gerente).
+    El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. El técnico que atiende al cliente verifica si está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Si el cliente ya estaba cargado y era moroso se debe considerar prestar o no el servicio \footnote{Decisión tomada por el Gerente}.
     
-    Una vez cargado, el técnico abre una \textit{Orden de Trabajo} y se asigna a sí mismo como el que atendió la solicitud y encargado de la \textit{Orden de Trabajo}. La \textit{Orden de Trabajo} pasa a estado \textit{Asignada} (para ver los distintos estados de una \textit{Orden de Trabajo}, ver Anexo 2). 
+    Una vez cargado, el técnico abre una \textit{Orden de Trabajo} y se asigna a sí mismo como el que atendió la solicitud y como encargado de la \textit{Orden de Trabajo} creada (de cualquier manera, el Jefe de Taller puede asignársela a otro técnico). La \textit{Orden de Trabajo} pasa a estado \textit{Asignada} \footnote{Para ver los distintos estados de una \textit{Orden de Trabajo}, ver Anexo 2}. 
+
+    El técnico toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia en el sistema. De no ser así se lo carga registrando marca y modelo. Cada equipo que ingresa al taller se le asigna un número de serie generado automáticamente por el sistema, de modo que un cliente puede tener asociado varios equipos, contando cada uno con su historial de reparaciones. Luego de que ya fue registrado, se vincula el equipo a la \textit{Orden de Trabajo}
+   %quién puede abrir OT??????????? 
+    Los datos pertenecientes a un equipo se pueden modificar en cualquier momento, puediendo hacerse correción de errores en el ingreso inicial de los datos.
    
     En la \textit{Orden de Trabajo} también se va a registrar:
     \begin{itemize}
         \item La fecha de solicitud de servicio
         \item El cliente solicitante
-        \item Una descripción que dio el cliente con respecto al problema
-        \item Tipo de equipo de que se trate con marca, modelo y número de serie asignado
-        \item Vencimiento (tentativo, de la fecha de creación de la \textit{Orden de Trabajo})
+        \item Una descripción que dio el cliente del problema
+        \item Vencimiento (plazo tentativo de finalización del trabajo; dos semanas a partir de la fecha de creación de la \textit{Orden de Trabajo})
     \end{itemize}
 
-    Toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia en el sistema. De no ser así se lo carga registrando marca y modelo. Cada equipo que ingresa al taller se le asigna un número de serie generado automáticamente por el sistema, de modo que un cliente puede tener asociado varios equipos, contando cada uno con su historial de reparaciones. Luego de que ya fue registrado, se vincula el equipo a la \textit{Orden de Trabajo}
-   %quién puede abrir OT??????????? 
-    Los datos pertenecientes a un equipo se pueden modificar en cualquier momento, puediendo hacerse correción de errores en el ingreso inicial de los datos.
+    Vinculado el equipo, el cliente abona en efectivo y por adelantado el importe de la tarifa de \textit{Revisión, Diagnóstico y Presupuesto} (de ahora en más \textit{RDyP}). Se le entrega el comprobante de la \textit{Orden de Trabajo} (ver Anexo 1, Figura 2) y un recibo por el pago de la \textit{RDyP} (ver Anexo 1, Figura 3). 
 
-    Vinculado el equipo, el cliente abona por adelantado el importe de la tarifa de Revisión, Diagnóstico y Presupuesto (de ahora en más RDyP) y se le entrega el comprobante del ingreso del equipo y, en un plazo de dos a cinco días hábiles (según el tipo de equipo), se le va a dar un dia/óstico sobre el estado del mismo; si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. El equipo entra en una cola de espera. Si el presupuesto planteado al cliente se acepta, se procede a repararlo. En caso contrario se le devuelve el equipo.\\
-
-    Luego de completada, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo (se abre una nueva orden de trabajo, indicando en el campo de observaciones que el trabajo está cubierto por una garantía). \\
+    La \textit{Orden de Trabajo} entra en una cola de cotización en la que están presentes todas las Órdenes de Trabajo que no están cotizadas todavía; las Órdenes de Trabajo no pueden permanecer en esta cola por más de cinco días hábiles.
     
-    En cualquier momento de la reparación el cliente puede solicitar la cancelación del servicio. En ese caso la orden se cierra y quedan pendientes de facturación las tareas que hayan sido completadas en la OT.\\
+    Cuando un técnico saca de la cola una \textit{Orden de Trabajo} de la cual está encargado, revisa el equipo asociado, lista los repuestos que cree necesarios para realizar la reparación y también las tareas que se requerirán para completar el trabajo. En este momento, la \textit{Orden de Trabajo} se encuentra en estado \textit{Revisada}.
+
+    Realizada esta revisión, se confecciona un presupuesto sumando los valores de los posibles repuestos a utilizar y los valores que figuran en el tarifario de la organización de las tareas (ver Anexo 1, Figura 6). La \textit{Orden de Trabajo} se pasa a estado \textit{Cotizada}
+    
+    El técnico se contacta con el cliente para informarle el diagnóstico sobre el equipo, si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. Una vez comunicado el presupuesto al cliente, la \textit{Orden de Trabajo} se pasa a estado \textit{Notificada de cotización}. 
+    
+    Si el cliente acepta el presupuesto, se procede a ingresar la \textit{Orden de Trabajo} en una cola de espera (de la cual se irán removiendo según se vayan iniciando sus respectivos trabajos); la \textit{Orden de Trabajo} se cambia a estado \textit{Presupuesto aceptado}). En caso contrario se le devuelve el equipo al cliente (se pasa al estado \textit{No se repara}); la \textit{Orden de Trabajo} se cierra imposibilitando agregar nuevas tareas.
+    
+    Una vez que la \textit{Orden de Trabajo} fue seleccionada de la cola de espera y su técnico asociado empezó a trabajar en ella, pasa al estado \textit{En trámite}. Llegado el caso de que los repuestos que se estipularon para realizar el trabajo no se encuentren en existencia en ese momento, se le notifica al Gerente sobre la situación y la \textit{Orden de Trabajo} pasa a estado \textit{Espera de repuestos} (se prosigue de la misma manera descripta en la sección 2.4.1).
+    
+    Si durante la reparación del equipo el técnico considera que se deben utilizar otros repuestos o realizar tareas adicionales, se confecciona un nuevo presupuesto sumando al anterior los valores de lo que se necesite. En esta situación la \textit{Orden de Trabajo}, vuelve primero al estado \textit{Cotizada}; generado el nuevo presupuesto y notificado al cliente sobre el mismo, se pasa al estado \textit{Notificada de cotización}. Puede suceder que el cliente no acepte este segundo presupuesto, por lo tanto se procede a completar las tareas indicadas en el presupuesto anterior (la \textit{Orden de Trabajo} vuelve al estado de \textit{En trámite}, con las tareas y repuestos del primer presupuesto). Si es aceptado el nuevo presupuesto, puede suceder que los repuestos previstos por el técnico no estén en existencia, pasando la \textit{Orden de Trabajo} al estado \textit{Espera de repuestos} (se actúa cómo se comentó previamente).
+    
+    En cualquier momento de la reparación, el cliente puede solicitar la cancelación del servicio. En ese caso, la \textit{Orden de Trabajo} se cambia de estado a \textit{Pendiente de facturación}, facturándose solamente las tareas realizadas hasta el momento de la cancelación.
+    
+    Otro caso posible durante la realización del trabajo es que el técnico llegue a la conclusión de que la reparación del equipo va más allá de las capacidades de la organización, por lo tanto se le notifica al cliente de la situación, y la \textit{Orden de Trabajo} se pasa a estado \textit{No se repara} (dándola por cerrada).\\
+
+    Completadas exitosamente las tareas de la \textit{Orden de Trabajo}, se pasa al estado \textit{Pendiente de facturación}. Se le avisa al cliente de que el equipo ya está disponible para su retiro. Según la situación, puede suceder:
+    \begin{itemize}
+        \item El cliente se acerca a la oficina de la organización a retirar el equipo. Se confecciona la factura (ver sección TAL) y la \textit{Orden de Trabajo} se cambia al estado \textit{Entregada}.
+        \item El equipo requiere de una instalación especial. Se confecciona la factura (ver sección TAL) y se abre una nueva \textit{Orden de Trabajo} para tratar el caso de la visita (ver sección 2.6.2).
+    \end{itemize}
+
+    Luego de completadas las tareas de la \textit{Orden de Trabajo}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo (se abre una nueva orden de trabajo, indicando en el campo de observaciones que el trabajo está cubierto por una garantía). \\
+    
 
     Cuando un equipo reingresa al taller se revisa su historial dentro del taller, viendo si reingresó por la misma falla o por una nueva. Esta información proviene de órdenes anteriores. \\
 
