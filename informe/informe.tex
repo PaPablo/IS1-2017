@@ -110,7 +110,7 @@
         \item Técnico de Taller: Encargado de realizar las reparaciones dentro del taller.
         \item Técnico On-site: Encargado de realizar los trabajos en los domicilios de los clientes, ya sean reparaciones o instalaciones.
         \item Jefe de Taller: Encargado de realizar la asignación de trabajo a cada técnico. Decide cuándo abrir una \textit{orden de trabajo} (ver sección 2.4), a qué técnico asignarla y cuándo cerrarla.
-        \item Operario Contable: Encargado de realizar la facturación de una orden de trabajo cerrada.
+        \item Operario Contable: Encargado de realizar la facturación de una \textit{Orden de Trabajo} cerrada, también realiza pedidos de productos a proveedores.
         \item Cajero: Atiende a los clientes que deseen realizar compras en el local.
         \item Gerente: Máximo cargo en la organización. Encargado de las decisiones estratégicas. Decide qué clientes reciben servicio y cuáles no, a cuáles proveedores comprarle mercadería, toma todas las decisiones en relación a los recursos humanos, y cualquier otra resolución estratégica.  
     \end{itemize}
@@ -233,7 +233,7 @@
         
     En cualquier momento se pueden modificar los datos de registro de un producto (su código interno o del proveedor, los distintos precios, o algún otro dato), salvo el stock que se actualiza automáticamente cuando el producto es involucrado en un servicio (ver sección 2.6). 
 
-    En caso de tener que realizar una eliminación, se da de baja el artículo y ya no podrá formar parte de un pedido a proveedor ni de un presupuesto (VER SECCION NO EXISTE) o detalles de trabajos realizados (), pero se mantienen las referencias hechas al artículo eliminado.
+    En caso de tener que realizar una eliminación, se da de baja el artículo y ya no podrá formar parte de un pedido a proveedor ni de un presupuesto (para ver cómo se confecciona un presupuesto, ver sección \textit{Servicios ofrecidos}) o detalles de trabajos realizados, pero se mantienen las referencias hechas al artículo eliminado.
 
     Cuando el Operario Contable realiza un pago a un proveedor, se lo registra con fecha, monto, medio de pago y en caso de ser por transferencia o pago eléctrónico, el número de transacción y el banco. Si se paga con cheque, se deja asentado el número de cheque.
 
@@ -336,11 +336,20 @@
     
     Cuando un técnico saca de la cola una \textit{Orden de Trabajo} de la cual está encargado, revisa el equipo asociado, lista los repuestos que cree necesarios para realizar la reparación y también las tareas que se requerirán para completar el trabajo. En este momento, la \textit{Orden de Trabajo} se encuentra en estado \textit{Revisada}.
 
-    Realizada esta revisión, se confecciona un presupuesto sumando los valores de los posibles repuestos a utilizar y los valores que figuran en el tarifario de la organización de las tareas (ver Anexo 1, Figura 6). La \textit{Orden de Trabajo} se pasa a estado \textit{Cotizada}
+    Realizada esta revisión, se confecciona un presupuesto sumando los valores de los posibles repuestos a utilizar y los valores que figuran en el tarifario de la organización de las tareas (ver Anexo 1, Figura 6). En caso de que se esté trabajando con un equipo que no esté presente en el tarifario, el Jefe de Taller decide el precio a presupuestar por ese equipo. La \textit{Orden de Trabajo} se pasa a estado \textit{Cotizada}
     
     El técnico se contacta con el cliente para informarle el diagnóstico sobre el equipo, si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. Una vez comunicado el presupuesto al cliente, la \textit{Orden de Trabajo} se pasa a estado \textit{Notificada de cotización}. 
     
     Si el cliente acepta el presupuesto, se procede a ingresar la \textit{Orden de Trabajo} en una cola de espera (de la cual se irán removiendo según se vayan iniciando sus respectivos trabajos); la \textit{Orden de Trabajo} se cambia a estado \textit{Presupuesto aceptado}). En caso contrario se le devuelve el equipo al cliente (se pasa al estado \textit{No se repara}); la \textit{Orden de Trabajo} se cierra imposibilitando agregar nuevas tareas.
+
+    El orden en que se van a ir trabajando en las Órdenes de Trabajo depende de varios factores. Uno de ellos es el \textbf{tipo de cliente}; a los empresariales o comerciales se les otorga una prioridad mayor que a los particulares.
+
+    Dentro de un mismo cliente se le da mayor prioridad a aquellos equipos que atañen al funcionamiento del cliente. Por ejemplo: una máquina de mostrador que factura va a tener mayor prioridad que una máquina de una oficina interna.
+
+    También se tiene en cuenta el \textbf{tipo de equipo}, siendo de mayor prioridad un equipo que imposibilite trabajar al cliente. Por ejemplo: la computadora personal del cliente tiene mayor prioridad que unos parlantes.
+    De todas maneras, el cliente puede indicar en forma particular que cuál de sus equipos atender primero.
+
+    Otro factor importante para la priorización de trabajos es el \textbf{vencimiento} de la \textit{Orden de Trabajo}\footnote{La organización mantiene un listado con las órdenes listadas por vencimiento.}. 
     
     Una vez que la \textit{Orden de Trabajo} fue seleccionada de la cola de espera y su técnico asociado empezó a trabajar en ella, pasa al estado \textit{En trámite}. Llegado el caso de que los repuestos que se estipularon para realizar el trabajo no se encuentren en existencia en ese momento, se le notifica al Gerente sobre la situación y la \textit{Orden de Trabajo} pasa a estado \textit{Espera de repuestos} (se prosigue de la misma manera descripta en la sección 2.4.1).
 
@@ -354,21 +363,15 @@
 
     Completadas exitosamente las tareas de la \textit{Orden de Trabajo}, se pasa al estado \textit{Pendiente de facturación}. Se le avisa al cliente de que el equipo ya está disponible para su retiro. Según la situación, puede suceder:
     \begin{itemize}
-        \item El cliente se acerca a la oficina de la organización a retirar el equipo. Se confecciona la factura (ver sección TAL). La \textit{Orden de Trabajo} se cambia al estado \textit{Entregada}.
-        \item El equipo requiere de una instalación especial. Se confecciona la factura (ver sección TAL) y se abre una nueva \textit{Orden de Trabajo} para tratar el caso de la visita (ver sección 2.6.2).
+        \item El cliente se acerca a la oficina de la organización a retirar el equipo. Se confecciona la factura (ver parte de facturación). La \textit{Orden de Trabajo} se cambia al estado \textit{Entregada}.
+        \item El equipo requiere de una instalación especial. Se confecciona la factura (ver parte de facturación) y se abre una nueva \textit{Orden de Trabajo} para tratar el caso de la visita (ver sección 2.6.2).
     \end{itemize}
 
-    Luego de completadas las tareas de la \textit{Orden de Trabajo}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo (se abre una nueva orden de trabajo, indicando en el campo de observaciones que el trabajo está cubierto por una garantía). \\
+    Luego de completadas las tareas de la \textit{Orden de Trabajo}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo; se abre una nueva orden de trabajo, referenciando la \textit{Orden de Trabajo}  anterior con su número de identificación. \\
     
+    Cuando un equipo se considera SCRAP u obsoleto se le da de baja en el sistema; el equipo ya no puede formar parte de ninguna \textit{Orden de Trabajo} nueva. De cualquier manera, no se pierden las referencias al equipo hechas en las órdenes de trabajo en las que aparezca.
 
-    Cuando un equipo reingresa al taller se revisa su historial dentro del taller, viendo si reingresó por la misma falla o por una nueva. Esta información proviene de órdenes anteriores. \\
-
-
-    Cuando un se considera SCRAP u obsoleto se le da de baja en el sistema; el equipo ya no puede formar parte de ninguna Orden de Trabajo ni trabajo realizado. De cualquier manera, no se pierden las referencias al equipo hechas en las órdenes de trabajo en las que aparezca.
-
-    Las bajas se pueden deshacer, para subsanar errores en el uso del sistema.
-
-    Con respecto a los clientes, al momento de realizar alguna instalación o reparación que requiera configuraciones especiales, se vuelve constantemente a las órdenes anteriores por la información requerida (por ejemplo: programas específicos a instalar).
+    Estas bajas se pueden deshacer, para subsanar errores en el uso del sistema.
 
     \subsubsection{Visitas a clientes}
 
@@ -376,16 +379,20 @@
 
     Comienza cuando el cliente se comunica con la empresa solicitando una visita. Se verifica si el cliente está en el sistema, en caso de no estarlo se lo ingresa.
 
-    Si el que recibió el llamado era el Jefe de Taller, abre una nueva Orden de Trabajo, correspondiente a la visita a realizar; caso contrario se deja constancia de la situación para notificar al Jefe de Taller cuando esté disponible. 
-    Una vez abierta se detalla la tarea a realizar (instalación, servicio, revisión, relevamiento). En la mayoría de los casos los clientes ya saben el servicio que desean recibir, aunque se los puede asesorar.
+    El técnico que atendió al cliente abre una nueva \textit{Orden de Trabajo}, correspondiente a la visita a realizar. La transición de los estados para una \textit{Orden de Trabajo} correspondiente a una visita a cliente es idéntica a una \textit{Orden de Trabajo} de una reparación. 
+    Una vez abierta el ténico detalla la tarea a realizar (instalación, servicio, revisión); en la mayoría de los casos los clientes ya saben el servicio que desean recibir, aunque se los puede asesorar.
 
-    Se puede dar que el técnico deba pasar por donde se va a realizar el trabajo para relevar el estado de las instalaciones y poder hacer un cálculo de insumos a utilizar; dicha visita no forma parte de la cotización. La visita que se realiza al lugar para llevar a cabo el trabajo sí se cotiza y cuenta como una tarea dentro de la Orden.\\
+    Puede suceder que el técnico deba pasar por donde se va a realizar el trabajo para relevar el estado de las instalaciones y poder hacer un cálculo de insumos a utilizar; dicha visita no forma parte de la cotización. La visita que se realiza al lugar para llevar a cabo el trabajo sí se cotiza y cuenta como una tarea dentro de la Orden.\\
 
-    Cuando ya se decidió lo que se va a hacer, se realiza un presupuesto que se le entrega al cliente. Si se lo acepta se procede a la instalación. En caso contrario, se debe abonar sólo la tarifa de RDyP.
+    Cuando ya se decidió lo que se va a hacer, se realiza un presupuesto que se le entrega al cliente (confeccionado de igual manera que una reparación de equipo). Si se lo acepta se procede a realizar el trabajo. En caso contrario, se debe abonar sólo la tarifa de \textit{RDyP}. En este último caso la \textit{Orden de Trabajo} pasa al estado \textit{Fallida}.\\
 
-    Una vez realizada la instalación o el servicio on-site, se cierra la orden y queda como Pendiente de Facturación. Si el servicio no se pudo realizar, la visita se considera fallida y se debe acordar con el cliente si se realizará otra o no. En caso de que se acuerde por hacer otra visita, se tratará de una nueva Orden de Trabajo.\\ 
+    Si durante la realización de la visita, el técnico no puede concluir con el trabajo que está realizando (ya sea porque el cliente no desea continuarlo, porque no tiene las herramientas o los medios necesarios para completarlo, o por algún imprevisto), la \textit{Orden de Trabajo} pasa a estado \textit{Fallida}; se debe acordar con el cliente si se realizará otra o no. En caso de que se acuerde por hacer otra visita, se tratará de una nueva \textit{Orden de Trabajo}.
+    
+    Si el técnico debe retirar un equipo para ingresarlo al taller, crea su respectiva \textit{Orden de Trabajo}.\\
 
-    En el marco de una visita puede ser que al técnico se le pida que revise equipos presentes en el lugar. En ese caso, los retira y los ingresa al taller como una reparación habitual (creando su OT correspondiente).
+    Una vez realizada la instalación o el servicio on-site (\textit{Orden de Trabajo} en estado \textit{Completada}), se cierra la \textit{Orden de Trabajo} y se pasa a estado \textit{Pendiente de Facturación}.\\
+
+    La facturación correspondiente a una visita se realiza de igual manera que una reparación de equipo. En una \textit{Orden de Trabajo} en estado \textit{Fallida}, se facturan solamente las tareas que se completaron.
 
     \subsubsection{Trabajos tercerizados}
     Si bien no se lleva adelante ningún servicio en calidad de agente oficial, la organización cuenta en su cartera de clientes con diferentes empresas que sí realizan trabajos de reparación e instalación como agente oficial, pero que, al no contar con sucursales en la zona, tercerizan dichos trabajos.
@@ -405,16 +412,6 @@
 
     A principio de mes la empresa tercerizadora realiza el pago de los trabajo realizados durante el mes anterior, entregando un comprobante que indica las tareas facturadas. La forma de pago fue acordada cuando se firmó el contrato con la empresa tercerizadora.
 
-    \subsubsection*{Priorización de Trabajos}|
-
-    Ya sea una reparación de equipo o de un servicio On-Site, el orden en que se van a ir realizando depende de varios factores. Uno de ellos es el \textbf{tipo de cliente}; a los empresariales o comerciales se les otorga una prioridad mayor que a los particulares.
-
-    Dentro de un mismo cliente se le da mayor prioridad a aquellos equipos que atañen al funcionamiento del cliente. Por ejemplo: una máquina de mostrador que factura va a tener mayor prioridad que una máquina de una oficina interna.
-
-    También se tiene en cuenta el \textbf{tipo de equipo}, siendo de mayor prioridad un equipo que imposibilite trabajar al cliente. Por ejemplo: la computadora personal del cliente tiene mayor prioridad que unos parlantes.
-    De todas maneras, el cliente puede indicar en forma particular que cuál de sus equipos atender primero.
-
-    Otro factor importante para la priorización de trabajos es el \textbf{vencimiento} de la OT. La organización mantiene un listado con las órdenes listadas por vencimiento.
 
     \subsubsection{Venta al Público}
     La organización también realiza venta al público de partes, componentes y accesorios. Si bien no es su actividad principal, igualmente realizan ventas a particulares. Se utiliza el mismo stock que en las reparaciones (luego de una venta, se actualiza el stock). 
@@ -2016,6 +2013,8 @@
     \caption{Pantalla principal}
     \end{figure}
 
+\clearpage
+
 \section{Anexo 2 - Estados de las Órdenes de Trabajo}
 
     \begin{enumerate}
@@ -2028,7 +2027,7 @@
         \item \textbf{En trámite}: se está realizando el trabajo; durante esta etapa, varios técnicos pueden participar en el trabajo y realizar observaciones en la orden. En caso de que el trabajo requiera algún servicio más, la OT vuelve a pasar por los estados \textbf{Cotizada}, \textbf{Notificada de cotización}, y en caso de aceptarse el presupuesto, \textbf{Presupuesto aceptado}. En caso de no aceptarse, se pasa a \textbf{No se repara} o a \textbf{Fallida} (si es una visita).
         \item \textbf{Pendiente de facturación}: trabajo terminado. 
         \item \textbf{Notificada de reparación}: se le avisa al cliente que su equipo está listo para ser retirado.
-        \item \textbf{Cumplido}: se realizó la visita exitosamente. La orden se encuentra pendiete de facturación.
+        \item \textbf{Cumplido}: se realizó la visita exitosamente. La orden se encuentra pendiente de facturación.
         \item \textbf{No se repara}: no se completó la reparación porque el cliente no aceptó el presupuesto.
         \item \textbf{Fallida}: no se pudo completar el trabajo on-site.
         \item \textbf{Entregada}: se entregó el equipo reparado al cliente. El trabajo fue facturado.
