@@ -291,17 +291,17 @@
       % \item Porque no se puede completar, lo cual constituye una orden fallida.
    % \end{itemize}
 
-    \subsubsection{Facturación y cobros}
-    Para la facturación se cuentan las tareas realizadas de una Orden de Trabajo cerrada (pendiente de facturación), como ser reparaciones hechas, cantidad de horas técnico, repuestos utilizados, traslados, instalaciones. Se realiza el cálculo contando con los valores expuestos en el tarifario y se emite la factura. En caso de ser un equipo que no esté en el tarifario, se lo cotiza y se lo asienta en el campo de observaciones de la OT correspondiente.
+    \subsubsection{Facturación}
+    La facturación es realizada por el Operario Contable, en base a las tareas detalladas en las Ordenes de Trabajo cerradas y pendientes de facturación (ver sección servicios ofrecidos). El Operario Contable debe calcular el importe total de cada factura en función de los valores de las reparaciones hechas, la cantidad de horas técnico, los repuestos utilizados, los traslados, las instalaciones, y cualquier otra actividad involucrada en el o los servicios que se pretenden facturar. Dichos valores se encuentran especificados en el tarifario (ver sección servicios ofrecidos). 
 
-    Al momento de realizar la factura no se pueden contabilizar Órdenes de Trabajo que no se encuentren cerradas.
+    La factura es emitida a nombre del cliente que figura en la o las Ordenes de Trabajo relacionadas. Si se trata de un cliente comercial o empresarial, se le entrega la factura a mes vencido (el Operario Contable le envía vía e-mail todas las facturas correspondientes a trabajos realizados en el mes anterior). Para clientes particulares, la factura es entregada al retirar el equipo del local o, en caso de tratarse de un trabajo on-site, el Operario Contable se comunica con el cliente luego de emitida la factura y le informa que debe acercarse al local para saldarla.
 
-    La factura se emite a nombre del cliente que figura en la Orden de Trabajo correspondiente con el monto calculado y se la registra en su Cuenta Corriente, registrado como ``débito'', decrementando su saldo. Si se trata de un cliente comercial o empresarial, se le entrega la factura a mes vencido (se le envían vía e-mail todas las facturas correspondientes a trabajos realizados en el mes anterior). Para clientes particulares, se le entrega la factura y se cobra cuando se retira el equipo del local o, una vez terminado el trabajo on-site, se le informa al cliente que su factura ya está emitida y que debe acercarse la local para saldarla.
+	\subsubsection{Cobros}
+	
+     Al recibir un pago, el Operario Contable deja constancia del mismo en la Cuenta Corriente del cliente. Un pago puede saldar una o más facturas. Actualmente la organización acepta pago en efectivo, cheques, transferencias bancarias y notas de crédito. No existen diferencias entre el registro de cobro a empresas y particulares.\\
 
-    El cobro de los servicios realizados puede gestionarse en una sola factura o llegado el caso, una factura abarcar varias Órdenes de Trabajo. Asimismo, un pago puede saldar una o más facturas. Se deja constancia en la Cuenta Corriente cuando se ha realizado un pago, registrado como ``crédito'', aumentando su saldo. Actualmente la organización acepta pago en efectivo, cheques y transferencias bancarias, notas de crédito (también acepta el pago de una factura con saldo pendiente en la cuenta corriente), pero aspira incluir pagos con tarjetas. El pago se registra en la cuenta corriente del cliente con fecha, monto y factura o facturas saldadas. No existen diferencias entre el registro de cobro a empresas y particulares.\\
-
-    \subsubsection*{Cancelación de una Factura}
-    Si por algún motivo se debe cancelar una factura porque hubo un error en su confección o algún otro reclamo, la organización procede a reflejar la devolución del monto de la factura en una nota de crédito con la siguiente información: \\
+    \subsubsection*{Anulación de una Factura}
+    Si por algún motivo se debe anular una factura porque hubo un error en su confección o algún otro reclamo, la organización procede a reflejar la devolución del monto de la factura en una nota de crédito con la siguiente información: \\
     \begin{itemize}
         \item Fecha de emisión
         \item Fecha de vencimiento (30 días hábiles de la fecha de emisión)
