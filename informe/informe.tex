@@ -316,10 +316,9 @@
     \subsubsection{Reparación de Equipos}
     El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. El técnico que atiende al cliente verifica si está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Si el cliente ya estaba cargado y era moroso se debe considerar prestar o no el servicio \footnote{Decisión tomada por el Gerente}.
     
-    Una vez cargado, el técnico abre una \textit{Orden de Trabajo} y se asigna a sí mismo como el que atendió la solicitud y como encargado de la \textit{Orden de Trabajo} creada (de cualquier manera, el Jefe de Taller puede asignársela a otro técnico). La \textit{Orden de Trabajo} pasa a estado \textit{Asignada} \footnote{Para ver los distintos estados de una \textit{Orden de Trabajo}, ver Anexo 2}. 
+    Una vez cargado, el técnico abre una \textit{Orden de Trabajo} y se asigna a sí mismo como el que atendió la solicitud y como encargado de la \textit{Orden de Trabajo} creada (de cualquier manera, el Jefe de Taller puede cambiar el encargado en otro momento). La \textit{Orden de Trabajo} pasa a estado \textit{Asignada} \footnote{Para ver los distintos estados de una \textit{Orden de Trabajo}, ver Anexo 2}. 
 
-    El técnico toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia en el sistema. De no ser así se lo carga registrando marca y modelo. Cada equipo que ingresa al taller se le asigna un número de serie generado automáticamente por el sistema, de modo que un cliente puede tener asociado varios equipos, contando cada uno con su historial de reparaciones. Luego de que ya fue registrado, se vincula el equipo a la \textit{Orden de Trabajo}
-   %quién puede abrir OT??????????? 
+    El técnico toma el equipo (ya sea PC, notebook, Tablet, impresora láser) y verifica si se encuentra en existencia en el sistema. De no ser así, lo carga registrando marca y modelo. A cada equipo que ingresa al taller se le asigna un número de serie generado automáticamente por el sistema, de modo que un cliente puede tener asociado varios equipos, contando cada uno con su historial de reparaciones. Luego de que ya fue registrado, se vincula el equipo a la \textit{Orden de Trabajo}.
     Los datos pertenecientes a un equipo se pueden modificar en cualquier momento, puediendo hacerse correción de errores en el ingreso inicial de los datos.
    
     En la \textit{Orden de Trabajo} también se va a registrar:
@@ -338,9 +337,9 @@
 
     Realizada esta revisión, se confecciona un presupuesto sumando los valores de los posibles repuestos a utilizar y los valores que figuran en el tarifario de la organización de las tareas (ver Anexo 1, Figura 6). En caso de que se esté trabajando con un equipo que no esté presente en el tarifario, el Jefe de Taller decide el precio a presupuestar por ese equipo. La \textit{Orden de Trabajo} se pasa a estado \textit{Cotizada}
     
-    El técnico se contacta con el cliente para informarle el diagnóstico sobre el equipo, si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. Una vez comunicado el presupuesto al cliente, la \textit{Orden de Trabajo} se pasa a estado \textit{Notificada de cotización}. 
+    El técnico se contacta con el cliente para informar el diagnóstico del equipo, si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. Una vez comunicado el presupuesto al cliente, la \textit{Orden de Trabajo} se pasa a estado \textit{Notificada de cotización}. 
     
-    Si el cliente acepta el presupuesto, se procede a ingresar la \textit{Orden de Trabajo} en una cola de espera (de la cual se irán removiendo según se vayan iniciando sus respectivos trabajos); la \textit{Orden de Trabajo} se cambia a estado \textit{Presupuesto aceptado}). En caso contrario se le devuelve el equipo al cliente (se pasa al estado \textit{No se repara}); la \textit{Orden de Trabajo} se cierra imposibilitando agregar nuevas tareas.
+    Si el cliente acepta el presupuesto, se procede a ingresar la \textit{Orden de Trabajo} en una cola de espera (de la cual se irán removiendo según se vayan iniciando sus respectivos trabajos); la \textit{Orden de Trabajo} se cambia a estado \textit{Presupuesto aceptado}. En caso contrario se le devuelve el equipo al cliente (se pasa al estado \textit{No se repara}); la \textit{Orden de Trabajo} se cierra imposibilitando agregar nuevas tareas.
 
     El orden en que se van a ir trabajando en las Órdenes de Trabajo depende de varios factores. Uno de ellos es el \textbf{tipo de cliente}; a los empresariales o comerciales se les otorga una prioridad mayor que a los particulares.
 
@@ -359,7 +358,7 @@
     
     En cualquier momento de la reparación, el cliente puede solicitar la cancelación del servicio. En ese caso, la \textit{Orden de Trabajo} se cambia de estado a \textit{Pendiente de facturación}, facturándose solamente las tareas realizadas hasta el momento de la cancelación.
     
-    Otro caso posible durante la realización del trabajo es que el técnico llegue a la conclusión de que la reparación del equipo va más allá de las capacidades de la organización, por lo tanto se le notifica al cliente de la situación, y la \textit{Orden de Trabajo} se pasa a estado \textit{No se repara} (dándola por cerrada).\\
+    Otro caso posible durante la realización del trabajo es que el técnico llegue a la conclusión de que la reparación del equipo va más allá de las capacidades de la organización, por lo tanto se le notifica al cliente de la situación, y la \textit{Orden de Trabajo} se pasa a estado \textit{No se repara} (dándola por cerrada, no se factura).\\
 
     Completadas exitosamente las tareas de la \textit{Orden de Trabajo}, se pasa al estado \textit{Pendiente de facturación}. Se le avisa al cliente de que el equipo ya está disponible para su retiro. Según la situación, puede suceder:
     \begin{itemize}
@@ -367,7 +366,7 @@
         \item El equipo requiere de una instalación especial. Se confecciona la factura (ver parte de facturación) y se abre una nueva \textit{Orden de Trabajo} para tratar el caso de la visita (ver sección 2.6.2).
     \end{itemize}
 
-    Luego de completadas las tareas de la \textit{Orden de Trabajo}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo; se abre una nueva orden de trabajo, referenciando la \textit{Orden de Trabajo}  anterior con su número de identificación. \\
+    Luego de completadas las tareas de la \textit{Orden de Trabajo}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo; se abre una nueva orden de trabajo, referenciando la \textit{Orden de Trabajo} anterior con su número de identificación (ver Anexo 1, Figura 12). \\
     
     Cuando un equipo se considera SCRAP u obsoleto se le da de baja en el sistema; el equipo ya no puede formar parte de ninguna \textit{Orden de Trabajo} nueva. De cualquier manera, no se pierden las referencias al equipo hechas en las órdenes de trabajo en las que aparezca.
 
