@@ -118,7 +118,7 @@
 
     Debido al tamaño de la organización, un empleado puede desempeñar varios roles a la vez, como por ejemplo técnico de taller y técnico on-site.  
 
-    En cuanto a la información manejada por cada miembro de la organización, hay una diferencia entre la que manejan los técnicos y el operario contable. Mientras que los técnicos manejan los datos pertinentes al trabajo a realizar, tales como el problema a solucionar, el domicilio a dónde se debe realizar una instalación o un teléfono de contacto, el operario contable debe conocer los valores a facturar por cada actividad precisada en una \textit{orden de trabajo} y algún medio de comunicación para transmitirle el presupuesto (ver sección NO EXISTE) al cliente. El Jefe de Taller también se puede encargar de notificar sobre cotizaciones de servicios a los clientes que los han requerido.
+    En cuanto a la información manejada por cada miembro de la organización, hay una diferencia entre la que manejan los técnicos y el operario contable. Mientras que los técnicos manejan los datos pertinentes al trabajo a realizar, tales como el problema a solucionar, el domicilio a dónde se debe realizar una instalación o un teléfono de contacto, el operario contable debe conocer los valores a facturar por cada actividad precisada en una \textit{orden de trabajo} y algún medio de comunicación para transmitirle el presupuesto (ver sección 2.5.1) al cliente. El Jefe de Taller también se puede encargar de notificar sobre cotizaciones de servicios a los clientes que los han requerido.
 
     Cuando un empleado deja de trabajar para la organización, se lo da de baja en el sistema de modo que ya no pueda figurar como técnico asociado a una \textit{orden de trabajo}. No obstante no se pierde registro de sus actividades en \textit{órdenes de trabajo} anteriores. 
 
@@ -142,7 +142,7 @@
         \item Clientes corporativos: son clientes que tercerizan trabajos para la organización. Estos trabajos incluyen la atención a servidores, reparación de impresoras fiscales, instalación y mantenimiento de redes. Dichos trabajos tercerizados pueden ser realizados a clientes particulares, comerciales o empresariales.
     \end{itemize}
 
-    De cada cliente se registran los siguientes datos:
+    Al momento de crear un nuevo el Jefe de Taller registra los siguientes datos:
     \begin{itemize}
         \item Nombre o Razón Social
         \item DNI/CUIT/CUIL
@@ -160,13 +160,11 @@
         	\end{itemize}
     \end{itemize}
 
-        NOTA: Si bien es posible registrar contactos en clientes particulares, en el caso de los clientes comerciales o empresariales es más común que exista más de un interlocutor. Esto tiene que ver con que distintos sectores de la organización cliente pueden requerir servicios. En esos casos se registra un nombre, un teléfono o interno, y una dirección de correo electrónico del tal interlocutor. En ocasiones este interlocutor puede estar autorizado para el requerimiento de servicios, pero esa autorización sólo pueden darla el Gerente o el Jefe de Taller. Cualquier otro rol dentro de la organización puede registrar un cliente y contactos relacionados pero esos contactos no están autorizados para requerir servicios. \\
+        NOTA: Si bien es posible registrar contactos en clientes particulares, en el caso de los clientes comerciales o empresariales es más común que exista más de un interlocutor. Esto tiene que ver con que distintos sectores de la organización cliente pueden requerir servicios. En esos casos se registra un nombre, un teléfono o interno, y una dirección de correo electrónico del tal interlocutor. \\
 
-    Los datos de un cliente se pueden modificar cuando el cliente (NO sus contactos adicionales) avisa a la organización que ha cambiado, por ejemplo, de teléfono de contacto o de dirección de correo electrónico. En ese caso se realiza la modificación sin ningún problema.
+    Los datos de un cliente pueden mser odificados solamente por el Jefe de Taller cuando el cliente avisa a la organización que ha cambiado, por ejemplo, de teléfono de contacto o de dirección de correo electrónico.
 
-    Generalmente los clientes se comunican con la organización en ocasión de requerir algún servicio o para chequear el estado de algún pedido. Si el cliente tiene un equipo en taller puede llamar para verificar si tiene arreglo o no; suele darse que los clientes se comuniquen cuando las reparaciones tardan más de lo habitual. Dicha consulta por parte del cliente se deja asentada en la orden de trabajo asociada a requerimiento de ese servicio.\\
-
-    Si por alguna razón se debiera eliminar un cliente, se lo da de baja en el sistema. No se podrá realizar trabajos a su nombre, pero se pueden consultar los registros de sus trabajos realizados. La baja de cliente se podrá realizar sólo para aquellos clientes que no registren deudas ni notas de crédito a su favor.
+    Si por alguna razón se debiera eliminar un cliente, el Jefe de Taller lo da de baja en el sistema. No se podrá realizar trabajos a su nombre, pero se pueden consultar los registros de sus trabajos realizados. La baja de cliente se podrá realizar sólo para aquellos clientes que no registren deudas ni notas de crédito a su favor.
     
     \subsubsection{Cuenta Corriente}
         Los clientes poseen cuenta corriente dentro de la organización donde se detallan las facturas y notas de crédito emitidas a su nombre y los pagos que realizó.\\
@@ -180,7 +178,6 @@
         \end{itemize}
 
         La cuenta corriente de un cliente sólo puede ser vista por personal contable de la organización. Pero su estado (saldo a favor o en contra) es tenido en cuenta al momento de decidir si prestarle o no servicio. Si el gerente considera que el cliente tiene adeuda un saldo significativo puede decidir negarle el servicio.
-
 
     \pagebreak
     \subsection{Productos}
@@ -235,7 +232,7 @@
 
     Los clientes coporativos proveen los repuestos especializados para sus trabajos encomendados. Éstos forman parte del stock, pero sólo se los utiliza en los trabajos de dichos clientes. Se los registra de igual manera que una parte o componente habitual, pero se especifica de qué cliente proviene; no se los puede utilizar en pedidos a proveedores convencionales ni ser usados en trabajos que no sean del cliente corporativo del que provienen.\\
 
-    La recepción de un pedido la realiza el Operario Contable, verificando que lo que llegó coincida con lo registrado en la planilla. De ser así, el pedido se marca como ``satisfecho'' y se procede a actualizar la lista de productos acorde a lo recibido. En caso contrario (no llegó el pedido completo, llegó en mal estado, o hubo algún error), el stock se actualiza con los artículos disponibles pero el pedido se marca como ``pendiente'' detallando qué artículos faltaron. Luego se comunica con el proveedor y se acuerda una solución.
+    La mayoría de los proveedores envían el remito y la factura junto con el pedido. La recepción de un pedido la realiza el Operario Contable, verificando que lo que llegó (detalle de remito) coincida con lo registrado en la planilla (ver Anexo 1, Figura 5 y 6). De ser así, el pedido se marca como ``satisfecho'' y se procede a actualizar la lista de productos acorde a lo recibido. En caso contrario (no llegó el pedido completo, llegó en mal estado, o hubo algún error), el stock se actualiza con los artículos disponibles pero el pedido se marca como ``pendiente'' detallando qué artículos faltaron. Luego se comunica con el proveedor y se acuerda una solución.
 
     Si no se puede completar el pedido debido a que ninguno de los proveedores tiene los productos en existencia, se lo marca como ``satisfecho incompleto'' con el detalle de los productos faltantes. Se mantiene un listado de estos productos pendientes para que al momento de realizar nuevos pedidos a otros proveedores se los tenga en cuenta. Cuando llegan los artículos faltantes, se remueven de la lista de pendientes.
 
@@ -285,27 +282,6 @@
       % \item Porque no se puede completar, lo cual constituye una orden fallida.
    % \end{itemize}
 
-    \subsection{Facturación}
-    La facturación es realizada por el Operario Contable, en base a las tareas detalladas en las \textit{Órdenes de Trabajo} cerradas y pendientes de facturación (ver sección Servicios Ofrecidos). El Operario Contable debe calcular el importe total de cada factura en función de los valores de las reparaciones hechas, la cantidad de horas técnico, los repuestos utilizados, los traslados, las instalaciones, y cualquier otra actividad involucrada en los servicios que se van a facturar. Dichos valores se encuentran especificados en el tarifario (ver Anexo 1, Figura 6).
-
-    La factura es emitida a nombre del cliente que figura en la o las Órdenes de Trabajo relacionadas. Si se trata de un cliente comercial o empresarial, el Operario Contable le envía a algún contacto asociado correspondiente (ver sección Clientes) vía e-mail todas las facturas de trabajos realizados en el mes anterior (es decir, la factura se entrega a mes vencido). Para clientes particulares, el Operario Contable se encarga de entregarles la factura al retirar el equipo del local. En caso de tratarse de un trabajo on-site, el Operario Contable se comunica con el cliente luego de emitida la factura y le informa que debe acercarse al local para saldarla.
-    
-    Cada factura se registra en la Cuenta Corriente del cliente a nombre de la cual se encuentra.\\
-
-    \subsubsection*{Anulación de una Factura}
-    Existe la posibilidad de que se deba anular una factura, ya sea porque hubo un error en su confección, por algún reclamo, u otros motivos. En ese caso, la organización procede a reflejar la devolución del monto de la factura en una nota de crédito con la siguiente información: \\
-    \begin{itemize}
-        \item Fecha de emisión
-        \item Fecha de vencimiento (30 días hábiles de la fecha de emisión)
-        \item Monto
-        \item Número de orden de trabajo facturada
-        \item Número de factura anulada
-    \end{itemize}
-
-	Las notas de crédito son entregadas a los clientes de la misma manera que las facturas.\\
-	
-	\subsubsection{Cobros}
-     Actualmente la organización acepta pagos en efectivo, cheques, transferencias bancarias y notas de crédito. Al recibirse un pago, el Operario Contable deja constancia del mismo en la Cuenta Corriente del cliente. Un pago puede saldar una o más facturas. No existen diferencias entre el registro de cobro a empresas y particulares.\\
 
     \pagebreak
     \subsection{Servicios Ofrecidos}
@@ -327,6 +303,8 @@
     \end{itemize}
 
     Vinculado el equipo, el cliente abona en efectivo y por adelantado el importe de la tarifa de \textit{Revisión, Diagnóstico y Presupuesto} (de ahora en más \textit{RDyP}). Se le entrega el comprobante de la \textit{Orden de Trabajo} (ver Anexo 1, Figura 2) y un recibo por el pago de la \textit{RDyP} (ver Anexo 1, Figura 3). 
+
+    Generalmente los clientes se comunican con la organización en ocasión de requerir algún servicio o para chequear el estado de algún pedido. Si el cliente tiene un equipo en taller puede llamar para verificar si tiene arreglo o no; suele darse que los clientes se comuniquen cuando las reparaciones tardan más de lo habitual. Dicha consulta por parte del cliente se deja asentada en la orden de trabajo asociada a requerimiento de ese servicio.\\
 
     La \textit{Orden de Trabajo} entra en una cola de cotización en la que están presentes todas las Órdenes de Trabajo que no están cotizadas todavía; las Órdenes de Trabajo no pueden permanecer en esta cola por más de cinco días hábiles.
     
@@ -444,6 +422,27 @@
 
     Si el cliente desea realizar un cambio, los artículos tienen que estar en garantía. Si se realiza el cambio con éxito, se debe actualizar el stock con los artículos que se dieron en garantía (no con los devueltos).
 
+    \subsection{Facturación}
+    La facturación es realizada por el Operario Contable, en base a las tareas detalladas en las \textit{Órdenes de Trabajo} cerradas y pendientes de facturación (ver sección Servicios Ofrecidos). El Operario Contable debe calcular el importe total de cada factura en función de los valores de las reparaciones hechas, la cantidad de horas técnico, los repuestos utilizados, los traslados, las instalaciones, y cualquier otra actividad involucrada en los servicios que se van a facturar. Dichos valores se encuentran especificados en el tarifario (ver Anexo 1, Figura 6).
+
+    La factura es emitida a nombre del cliente que figura en la o las Órdenes de Trabajo relacionadas. Si se trata de un cliente comercial o empresarial, el Operario Contable le envía a algún contacto asociado correspondiente (ver sección Clientes) vía e-mail todas las facturas de trabajos realizados en el mes anterior (es decir, la factura se entrega a mes vencido). Para clientes particulares, el Operario Contable se encarga de entregarles la factura al retirar el equipo del local. En caso de tratarse de un trabajo on-site, el Operario Contable se comunica con el cliente luego de emitida la factura y le informa que debe acercarse al local para saldarla.
+    
+    Cada factura se registra en la Cuenta Corriente del cliente a nombre de la cual se encuentra.\\
+
+    \subsubsection*{Anulación de una Factura}
+    Existe la posibilidad de que se deba anular una factura, ya sea porque hubo un error en su confección, por algún reclamo, u otros motivos. En ese caso, la organización procede a reflejar la devolución del monto de la factura en una nota de crédito con la siguiente información: \\
+    \begin{itemize}
+        \item Fecha de emisión
+        \item Fecha de vencimiento (30 días hábiles de la fecha de emisión)
+        \item Monto
+        \item Número de orden de trabajo facturada
+        \item Número de factura anulada
+    \end{itemize}
+
+	Las notas de crédito son entregadas a los clientes de la misma manera que las facturas.\\
+	
+	\subsubsection{Cobros}
+     Actualmente la organización acepta pagos en efectivo, cheques, transferencias bancarias y notas de crédito. Al recibirse un pago, el Operario Contable deja constancia del mismo en la Cuenta Corriente del cliente. Un pago puede saldar una o más facturas. No existen diferencias entre el registro de cobro a empresas y particulares.\\
     \clearpage
     \section{Casos de uso}
     \subsection{Listado de Casos de uso}
@@ -1962,6 +1961,16 @@
     \begin{figure}[h]
     \includegraphics[scale=0.4]{images/atinformatica-remito.jpg}
     \caption{Remito}
+    \end{figure}
+
+    \begin{figure}[h]
+    \includegraphics[scale=0.4]{images/atinformatica-remito1.jpg}
+        \caption{Remito (proveedor)}
+    \end{figure}
+
+    \begin{figure}[h]
+    \includegraphics[scale=0.4]{images/atinformatica-remito2.jpg}
+        \caption{Remito (proveedor)}
     \end{figure}
 
     \begin{figure}[h]
