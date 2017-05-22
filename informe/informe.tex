@@ -243,7 +243,7 @@
     
     El Operario Contable registra el nuevo pedido detallando que cubriría al pedido que se encuentra pendiente. Una vez que llega el nuevo pedido (y si es correcto), se marcan como satisfechos el pedido pendiente y el recién llegado. Caso contrario (el nuevo pedido es incorrecto), se repite el proceso descripto.
 
-    Otra posible situación es que el pedido que llegó concuerda con lo solicitado pero llegan artículos defectuosos o en mal estado. El Operario Contable se comunica con el proveedor y acuerdan enviar de vuelta al proveedor el o los defectuosos (el proveedor cubre el envío). Como en el caso anterior, se registra un nuevo pedido y el anterior se marca como ``pendiente''.
+    Otra posible situación es que el pedido que llegó concuerda con lo solicitado pero llegan artículos defectuosos o en mal estado. El Operario Contable se comunica con el proveedor y acuerdan enviar de vuelta al proveedor el o los productos defectuosos (el proveedor cubre el envío). Como en el caso anterior, se registra un nuevo pedido que incluirá el o los productos que deberá reponer el proveedor y el anterior se marca como ``pendiente''. Si el proveedor no puede reponer el o los productos faltantes, el pedido se marca como ``satisfecho incompleto'' y el proveedor emite una nota de crédito a nombre de la organización.
 
     %COMPLETAR CON LAS SOLUCIONES PARA LOS PEDIDOS PENDIENTES
     %La organización puede acordar con el proveedor 
@@ -304,8 +304,7 @@
 
 
     \subsection{Servicios Ofrecidos}
-    La organización cuenta con un \textit{tarifario} (ver Anexo 1, Figura 8), en el cual se establecen los precios para las distintas tareas requeridas para completar los servicios brindados. Se detallan los tipos de equipo con los que trabaja la empresa (están tipificados en el sistema, pudiendo ser PC, notebook, Tablet, impresora láser, etc.) y un precio de \textit{Revisión, Diagnóstico, y Presupuesto} (de ahora en más \textit{RDyP}). Por cada tipo de equipo, se incluyen las tareas que se le pueden realizar, indicando precio de \textit{hora técnico}. %\footnote{QUÉGOMAESUNAHORATÉCNICO}. 
-    También se puede incluir un plus por subtarea asociada (como puede ser, hacer un backup de un disco duro).
+    La organización cuenta con un \textit{tarifario} (ver Anexo 1, Figura 8), en el cual se establecen los precios para las distintas tareas requeridas para completar los servicios brindados. Se detallan los tipos de equipo con los que trabaja la empresa (están tipificados en el sistema, pudiendo ser PC, notebook, Tablet, impresora láser, etc.) y un precio de \textit{Revisión, Diagnóstico, y Presupuesto} (de ahora en más \textit{RDyP}). Por cada tipo de equipo, se incluyen las tareas que se le pueden realizar.
 
     \subsubsection{Reparación de Equipos}
     El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. El técnico que atiende al cliente verifica si está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Si el cliente ya estaba cargado y era moroso se debe considerar prestar o no el servicio \footnote{Decisión tomada por el Gerente}.
@@ -330,11 +329,11 @@
 
     La \OT{} queda en espera de ser revisada por su técnico encargado para luego ser cotizada (si es que se puede reparar). En caso de que el equipo no se pueda reparar, el técnico se comunica con el cliente para avisarle que no será posible llevar a cabo la reparación y queda a disposición del cliente retirar el equipo del local; la \OT{} pasa a estado ``No se repara''.
     
-    Cuando un técnico revisa el equipo de una \OT{}, lista las tareas y subtareas que cree necesarias para realizar la reparación y también los repuestos que se requerirán para completar el trabajo. En este momento, la \OT{} se encuentra en estado \textit{Revisada}. 
+    Cuando un técnico revisa el equipo de una \OT{}, lista las tareas que cree necesarias para realizar la reparación y también los repuestos que se requerirán para completar el trabajo. En este momento, la \OT{} se encuentra en estado \textit{Revisada}. 
     
     Los repuestos indicados por el técnico son reservados del stock (la cantidad del artículo disminuye virtualmente). Los artículos reservados todavía no dejan de existir en el stock, pero no se los puede considerar para otros trabajos. Cuando el técnico utiliza los artículos reservados, deja constancia en el campo de observaciones de la \OT{}.  Llegado el caso de que un repuesto reservado del stock no se utilice en el trabajo, se detalla en las observaciones de la \OT{}, se cancela la reserva del stock, y no se factura.
 
-    Realizada esta revisión, se confecciona un presupuesto sumando los valores de las tareas y subtareas a realizar y los valores de los posibles repuestos a utilizar. En caso de que se esté trabajando con un tipo de equipo que no esté presente en el tarifario, el Jefe de Taller decide el precio a cotizar por el equipo. La \OT{} se pasa a estado \textit{Cotizada}.
+    Realizada esta revisión, se confecciona un presupuesto sumando los valores de las tareas a realizar y los valores de los posibles repuestos a utilizar. En caso de que se esté trabajando con un tipo de equipo que no esté presente en el tarifario, el Jefe de Taller decide el precio a cotizar por el equipo. La \OT{} se pasa a estado \textit{Cotizada}.
     
     El técnico se contacta con el cliente para informar el diagnóstico del equipo, si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. Una vez comunicado el presupuesto al cliente, la \OT{} se pasa a estado \textit{Notificada de cotización}. 
     
@@ -367,7 +366,7 @@
 
     Para cualquiera de los dos casos descriptos previamente, el equipo será entregado al cliente una vez cubierta la factura en su totalidad.
 
-    Luego de completadas las tareas de la \OT{}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito el equipo se puede reingresar sin cargo; se abre una nueva \OT{}, referenciando la \OT{} anterior con su número de identificación (ver Anexo 1, Figura 12). \\
+    Luego de completadas las tareas de la \OT{}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito, el equipo se puede reingresar sin cargo; se abre una nueva \OT{}, referenciando la \OT{} anterior con su número de identificación (ver Anexo 1, Figura 12). En caso de que la nueva \OT{} requiera un repuesto, sí se va a facturar el repuesto (si es que se termina utilizando), pero no la mano de obra. \\
     
     Cuando un equipo se considera SCRAP o abandonado, el Jefe de Taller lo da de baja en el sistema; el equipo ya no puede formar parte de ninguna nueva \OT{}. De cualquier manera, no se pierde su historial en Órdenes de Trabajo anteriores.
 
@@ -450,12 +449,14 @@
 
     \subsection{Facturación}
 
-    %Falta incorporar cómo se cotizan y facturan las horas técnico, los traslados para las visitas
+    %Falta incorporar cómo se cotizan y facturan  los traslados para las visitas
 
-    La facturación es realizada por el Operario Contable, en base a las tareas detalladas en las \textit{Órdenes de Trabajo} cerradas (en estado ``pendiente de facturación''), y los repuestos utilizados. El Operario Contable debe calcular el importe total de cada factura en función de los valores de las reparaciones hechas, la cantidad de horas técnico, los repuestos utilizados, los traslados, las instalaciones, y cualquier otra actividad involucrada en los servicios que se van a facturar. Dichos valores se encuentran especificados en el tarifario (ver Anexo 1, Figura 6).
+    La facturación es realizada por el Operario Contable, en base a las tareas detalladas en las \textit{Órdenes de Trabajo} cerradas (en estado ``pendiente de facturación''), y los repuestos utilizados. El Operario Contable debe calcular el importe total de cada factura en función de los valores de las reparaciones hechas, los repuestos utilizados, los traslados, las instalaciones, y cualquier otra actividad involucrada en los servicios que se van a facturar. Dichos valores se encuentran especificados en el tarifario (ver Anexo 1, Figura 6).
+    
+    Los precios de las tareas que correspondan a una reparación dentro del taller se encuentran establecidas en el tarifario de la organización. Para las visitas, se mantiene una tarifa que incluye el traslado de los técnicos hacia el lugar.
 
     La factura es emitida a nombre del cliente que figura en la o las Órdenes de Trabajo relacionadas. Si se trata de un cliente comercial o empresarial, el Operario Contable le envía a algún contacto asociado correspondiente (ver sección 2.2) vía e-mail todas las facturas de trabajos realizados en el mes anterior (es decir, la factura se entrega a mes vencido). Para clientes particulares, se emitirá una factura por trabajo realizado; el Operario Contable se comunica con el cliente para avisarle que su factura ya está confeccionada y que deberá acercarse al local de la organización para abonarla.
-    
+   
     Cada factura se registra en la Cuenta Corriente del cliente titular como un movimiento de crédito. \\
 
     \subsubsection*{Anulación de una Factura}
