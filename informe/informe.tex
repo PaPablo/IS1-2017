@@ -517,8 +517,10 @@
             \item Listar tipo de Equipo
             \item Asignar tarea a tipo de Equipo
             \item Remover tarea de tipo de Equipo
+            \item Registrar salida de Equipo
+                %tiene que verificar que el equipo esté en el taller (jeje)
+                %y que la OT en la que aparezca esté cerrada (pendiente de facturación)
             \item Agregar Equipo
-            \item Modificar Equipo
             \item Eliminar Equipo
             \item Listar Equipos
         \subsubsection*{Productos}
@@ -545,12 +547,6 @@
             \item Listar tareas
             \item Asignar tarea a servicio
             \item Remover tarea de servicio
-            \item Cotizar tarea
-                %este se me ocurre para establecer el precio de una tarea
-                %teniendo en cuenta el servicio y al tipo de equipo que corresponda
-                %capaz que se lo podrá llamar de otra manera o que sea sección de algún otro CU
-            \item Modificar cotización de tarea
-                %no creo que se necesite un CU para baja de la tarifa de la tarea, sólo el modificar
         \subsubsection*{Órdenes de trabajo}
 
             %Bueno, a ver, acá vamos a tener que tomar una decisión sobre qué hacer con el tema del "detalle orden"
@@ -587,54 +583,20 @@
 
             %Los listados y ver detalles deberían quedar, capaz cambiarles el nombre o agregar algún otro
             %si vemos que hace falta
-
-
-
-
-
-
-
-            \item Abrir nueva Orden de Trabajo
-            \item Listar OT
-            \item Listar ítems
-            \item Modificar OT 
-            %secciones:
-                % Crear Item 
-                % Baja item 
-            \item Modificar ítem
-                % Cambiar estado de ítem
-                    %este lo podríamos desglosar en:
-                        %Iniciar ítem (como lo que decía guille, el empleado indica que arrancó el laburo del ítem. Como cursos alternos tendríamos que el ítem no tenga empleado, o que el empleado que desee iniciar el ítem no sea el que figura en el ítem, son los que se me ocurren)
-                        %Finalizar ítem (acá lo mismo que en el de arriba, cursos alternos van a ser que el ítem no existe, que no tenga empleados asociados, que el empleado que lo desee finalizar no sea el asignado)
-                        %Cancelar ítem (este lo haría el Jefe de Taller, y sólo lo puede hacer si el ítem no tiene empleados vinculados ni stock reservado, para eso tenemos los de desvincular y eso)
-
-                %con eso tendríamos varios casos para que el sistema cambie el estado del ítem
-                    %Presupuestar ítem -> cambia estado a "cotizado"
-                    %Iniciar ítem   -> cambia estado a "Iniciado" o "En trámite..."
-                    %Finalizar ítem -> cambia estado a "Pendiente de facturación", idk
-                    %Cancelar ítem  -> cambia estado a "No se repara" o directamente "cancelado"
-
-                % consideraciones:
-                    %cuando se reserva un artículo de stock y no hay suficiente, el item pasa a estado "Espera Artículo de Stock"
-                    %cuando se actualiza el stock, que te permita elegir a qué items en espera de respuesto asignarle los artículos actualizados, si se satisface la reserva el ítem pasa a "En trámite..." 
-                    %
-                % Reservar artículo de Stock para Item
-                % Modificar reserva de artículo de Stock para Item (llaman al CU de modifar reserva)
-                % Eliminar reserva de artículo de Stock para Item
-                % Modificar fecha de vencimiento
-                % Vincular empleado con ítem
-                % Desvincular empleado con ítem
-                % Vincular equipo con ítem
-                % Desvincular equipo con ítem
-                % ABM observaciones en item (llaman a los CU de observaciones en item)
+            \item Comenzar revisión
+            \item Finalizar revisión
+            \item Reasignar tarea a técnico
+            \item Confirmar presupuesto
+            \item Comenzar ítem 
+            \item Finalizar ítem
+            \item Registrar consulta de cliente
+            \item Abrir nueva \OT{}
+            \item Listar \OTs{}
+            \item Cambiar encargado de \OT{}
             \item Agregar observación a un ítem
-            \item Modificar observación en un ítem
             \item Eliminar observación en un ítem
-                % TIENEN PRECONDICIÓN, aunque son bastante triviales, por lo menos el agregar observación 
-            \item Modificar reserva de artículo de Stock en ítem
-                % se puede cambiar el artículo o la reserva, y marcar como que se usó el artículo reservado
-            \item Eliminar OT
-
+            \item Cerrar \OT{}
+            \item Finalizar \OT{}
             \item Ver detalle de Orden de Trabajo
             \item Ver detalle de un ítem
         \subsubsection*{Facturas, Cobros y Ventas}
@@ -645,8 +607,8 @@
             \item Realizar Venta
             \item Generar Nota de Crédito
         \subsubsection*{Pedidos a proveedores}
-            \item Crear pedido a proveedor
-            \item Modificar pedido %Esto abarca marcar el pedido como enviado,y como pago
+            \item Registrar pedido a proveedor
+            \item Modificar pedido 
             \item Eliminar pedido a proveedor
             \item Listar pedidos
             \item Registrar recepción de pedido
