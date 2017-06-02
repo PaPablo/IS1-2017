@@ -1,0 +1,102 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\usepackage{url}
+\usepackage[a4paper]{geometry}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\begin{document}
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+    %DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    \newcommand\resetinc{\setcounter{step}{0}}
+    
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Proveedor}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: }\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el jefe de taller se dispone a dar de alta un proveedor& \\
+			\hline
+			\inc  El gerente ingresa el CUIT del proveedor y le solicita al sistema que lo busque y lo cree\\
+			\hline
+			& \inc  El sistema busca el proveedor \\
+			\hline
+			&\inc  El sistema crea el proveedor \\
+			\hline
+			\inc El gerente ingresa la razón social, dirección, localidad, e-mail y observaciones y le solicita al sistema que los guarde  &  \\
+			\hline
+			& \inc El sistema guarda los datos  \\
+			\hline
+			\inc El gerente ingresa el número de telefono del proveedor y le solicita al sistema que lo guarde &  \\
+			\hline
+			& \inc  Guarda el número de telefono \\
+			\hline
+			\inc  Repetir pasos ..... al .... hasta que no desee ingresar mas números de teléfono & \\
+			\hline
+			\inc El gerente ingresa el código de un producto y le solicita al sistema que lo vincule con el proveedor  &  \\
+			\hline
+			 & \inc El sistema busca el producto \\
+			\hline
+			& \inc El sistema vincula el producto con el proveedor   \\
+			\hline
+			\inc Repetir pasos ..... al ..... hasta que el gerente no desee agregar mas productos & \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el proveedor ya se encuentra registrado. FIN CU}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{12. }El sistema informa que no existen productos con ese código. Ir al paso 13 del curso normal}\\
+		\hline
+		\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
+
+\end{document}
