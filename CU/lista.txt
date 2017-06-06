@@ -1,0 +1,79 @@
+Clientes
+1. Agregar Cliente
+Equipos
+2. Modificar Cliente
+3. Eliminar Cliente  ---
+4. Listar Clientes 
+5. Consultar saldo del Cliente 
+Proveedores
+6. Agregar Proveedor ---
+7. Modificar Proveedor
+8. Eliminar Proveedor ---
+9. Listar Proveedores
+Empleados
+10. Agregar Empleado ---
+11. Modificar Empleado
+12. Eliminar Empleado ---
+13. Listar Empleados 
+14. Asignar tarea a empleado  ---
+15. Remover tarea de empleado 
+16. Consultar Tipo tarea asignadas aempleado
+17. Agregar tipo de Equipo ---
+18. Modificar tipo de Empleado
+19. Eliminar tipo de Equipo
+20. Listar tipo de Equipo
+21. Eliminar Equipo ---
+22. Listar Equipos
+Productos
+23. Agregar producto
+24. Modificar producto
+25. Eliminar producto
+26. Listar productos
+27. Agregar Proveedor a un producto
+28. Eliminar Proveedor de producto
+29. Ver detalle de producto
+30. Actualizar stock
+Tipo servicios
+31. Agregar Tipo servicio 
+32. Modificar Tipo servicio 
+Orden de Trabajo
+33. Eliminar Tipo servicio
+34. Listar Tipo tarea de un Tipo servicio
+35. Listar Tipo servicios
+Tipo tarea
+36. Agregar tipo tarea
+37. Modificar tipo tarea
+38. Eliminar tipo tarea
+39. Listar Tipo tarea
+40. Crear tarifa
+41. Modificar tarifa
+Órdenes de trabajo
+42. Atender solicitud de servicio
+Pedidos a proveedores
+43. Comenzar revisión
+45. Reasignar tarea a técnico
+46. Confirmar presupuesto
+47. Comenzar tarea
+48. Finalizar tarea
+49. Cancelar tarea
+50. Registrar consulta de cliente
+51. Listar Órdenes de Trabajo
+52. Cambiar encargado de 
+53. Agregar observación a una tarea
+54. Eliminar observación en una tarea
+55. Cerrar Orden de Trabajo
+56. Finalizar Orden de Trabajo
+57. Ver detalle de Orden de Trabajo
+58. Ver detalle de una tarea
+Facturas, Cobros y Ventas
+59. Generar factura
+60. Listar facturas
+61. Registrar pago de factura
+62. Generar Nota de Crédito
+63. Registrar pedido a proveedor
+44. Finalizar revisión
+64. Modificar pedido
+65. Eliminar pedido a proveedor
+66. Listar pedidos
+67. Registrar recepción de pedido
+68. Registrar pago a proveedor
