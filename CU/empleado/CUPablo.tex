@@ -36,10 +36,10 @@
 
 \begin{longtable}{ |p{8cm}|p{8cm}| }
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Empleado}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Técnico}\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Encargado [Gerente | Jefe de Taller], Empleado}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente o Jefe de Taller agrega un nuevo empleado al sistema, si el Jefe de Taller lo desea, le puede agregar tareas que pueda realizar.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Encargado [Gerente | Jefe de Taller], Técnico}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente o Jefe de Taller agrega un nuevo Técnico al sistema, si el Jefe de Taller lo desea, le puede agregar tareas que pueda realizar.}\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: - }\\
     \hline
@@ -47,17 +47,17 @@
     \hline
     \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
     \hline
-        \inc Este CU comienza cuando el Encargado desea agregar un nuevo empleado.& \\
+        \inc Este CU comienza cuando el Encargado desea agregar un nuevo Técnico.& \\
         \hline
-        \inc  El Encargado le solicita el numero de documento al nuevo empleado, el empleado se lo da. Le solicita al Sistema agregar el empleado ingresando su número de documento.& \\
+        \inc  El Encargado le solicita el numero de documento al nuevo Técnico, el Técnico se lo da. Le solicita al Sistema agregar el Técnico ingresando su número de documento.& \\
         \hline
-        & \inc  Busca al empleado.\\
+        & \inc  Busca al Técnico.\\
         \hline
-        & \inc  Crea un nuevo empleado.\\
+        & \inc  Crea un nuevo Técnico.\\
         \hline
         \inc El Encargado le solicita el resto de sus datos: Nombre y Apellido completos, número de teléfono, domicilio y correo electrónico. Los ingresa en el sistema y le solicita que los guarde.& \\
         \hline
-        & \inc Registra los datos del empleado.\\
+        & \inc Registra los datos del Técnico.\\
         \hline
         \inc El Encargado ingresa un Tipo de Tarea al sistema indicando su nombre y le solicita al sistema que la busque.& \\
         \hline
@@ -71,19 +71,19 @@
         \hline
         & \inc Muestra los datos del Tipo de Equipo\\
         \hline
-        \inc El Encargado le solicita al sistema agregar al nuevo Empleado ese Tipo de Tarea para ese Tipo de Equipo.& \\
+        \inc El Encargado le solicita al sistema agregar al nuevo Técnico ese Tipo de Tarea para ese Tipo de Equipo.& \\
         \hline
-        & \inc Agrega al nuevo empleado ese tipo de Tarea para ese Tipo de Equipo\\
+        & \inc Agrega al nuevo Técnico ese tipo de Tarea para ese Tipo de Equipo\\
         \hline
-        \inc Repetir pasos x a x hasta que el Encargado no desee agregar más Tareas al Empleado.& \\
+        \inc Repetir pasos x a x hasta que el Encargado no desee agregar más Tareas al Técnico.& \\
         \hline
-        & \inc Muestra los datos personales del Empleado junto con sus nuevas tareas asociadas (si las hubiese).\\
+        & \inc Muestra los datos personales del Técnico junto con sus nuevas tareas asociadas (si las hubiese).\\
         \hline
         \inc Fin CU. & \\
     \hline
     \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Empleado ya existe. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico ya existe. Fin CU.}\\
     \hline
     \multicolumn{2}{|p{16cm}|}{\textbf{9a. } El Sistema informa que el Tipo de Tarea no existe. Si el Encargado desea ingresar un nuevo Tipo de Tarea, ir a paso x. Si no, ir a paso x.}\\
     \hline
@@ -106,24 +106,24 @@
     
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Asignar Tarea a Empleado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Asignar Tarea a Técnico}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al Sistema agregar nuevos Tipo de Tareas a un Empleado, pudiendo después ser elegido para Servicios que contengan Tareas de este tipo.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al Sistema agregar nuevos Tipo de Tareas a un Técnico, pudiendo después ser elegido para Servicios que contengan Tareas de este tipo.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Tarea Asignada a un empleado.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Tarea Asignada a un Técnico.}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-			\inc Este Caso de Uso comienza cuando el Jefe de Taller desea agregar una Tarea a un Empleado.& \\
+			\inc Este Caso de Uso comienza cuando el Jefe de Taller desea agregar una Tarea a un Técnico.& \\
 			\hline
-			\inc  El Jefe de Taller le solicita al sistema buscar al empleado ingresando su nombre.& \\
+			\inc  El Jefe de Taller le solicita al sistema buscar al Técnico ingresando su nombre.& \\
 			\hline
-			& \inc Busca al empleado. \\
+			& \inc Busca al Técnico. \\
 			\hline
-            & \inc Muestra los datos personales del Empleado. \\
+            & \inc Muestra los datos personales del Técnico. \\
 			\hline
 			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre. & \\
 			\hline
@@ -137,11 +137,11 @@
 			\hline
 			& \inc Muestra los datos del Tipo de Equipo. \\
 			\hline
-			\inc  El Jefe de Taller le solicita al sistema agregar ese Tipo de Tarea para ese Tipo de Equipo al Empleado. & \\
+			\inc  El Jefe de Taller le solicita al sistema agregar ese Tipo de Tarea para ese Tipo de Equipo al Técnico. & \\
 			\hline
-			& \inc Agrega el Tipo de Tarea para el Tipo de Equipo al Empleado. \\
+			& \inc Agrega el Tipo de Tarea para el Tipo de Equipo al Técnico. \\
 			\hline
-			& \inc Muestra los datos del Tipo de Tarea asociada el Empleado. \\
+			& \inc Muestra los datos del Tipo de Tarea asociada el Técnico. \\
 			\hline
 			\inc  & \inc   \\
 			\hline
@@ -153,7 +153,7 @@
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Empleado no existe. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico no existe. Fin CU.}\\
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{7. } El Sistema informa que el Tipo de Tarea no existe. Si el Jefe de Taller desea ingresar otra Tarea, ir a paso 5. Si no, Fin CU.}\\
 		\hline
@@ -171,24 +171,24 @@
 
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Asignar Tareas a Empleado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Asignar Tareas a Técnico}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al Sistema agregar nuevos Tipo de Tareas a un Empleado, pudiendo después ser elegido para Servicios que contengan Tareas de este tipo.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al Sistema agregar nuevos Tipo de Tareas a un Técnico, pudiendo después ser elegido para Servicios que contengan Tareas de este tipo.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Tarea Asignada a un empleado.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Tarea Asignada a un Técnico.}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-			\inc Este Caso de Uso comienza cuando el Jefe de Taller desea agregar una Tarea a un Empleado.& \\
+			\inc Este Caso de Uso comienza cuando el Jefe de Taller desea agregar una Tarea a un Técnico.& \\
 			\hline
-			\inc  El Jefe de Taller le solicita al sistema buscar al empleado ingresando su nombre.& \\
+			\inc  El Jefe de Taller le solicita al sistema buscar al Técnico ingresando su nombre.& \\
 			\hline
-			& \inc Busca al empleado. \\
+			& \inc Busca al Técnico. \\
 			\hline
-            & \inc Muestra los datos personales del Empleado. \\
+            & \inc Muestra los datos personales del Técnico. \\
 			\hline
 			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre. & \\
 			\hline
@@ -202,19 +202,19 @@
 			\hline
 			& \inc Muestra los datos del Tipo de Equipo. \\
 			\hline
-			\inc  El Jefe de Taller le solicita al sistema agregar ese Tipo de Tarea para ese Tipo de Equipo al Empleado. & \\
+			\inc  El Jefe de Taller le solicita al sistema agregar ese Tipo de Tarea para ese Tipo de Equipo al Técnico. & \\
 			\hline
-			& \inc Agrega el Tipo de Tarea para el Tipo de Equipo al Empleado. \\
+			& \inc Agrega el Tipo de Tarea para el Tipo de Equipo al Técnico. \\
 			\hline
-			\inc  Repetir pasos 5 a 12 hasta que el Jefe de Taller no desee agregar más tareas al Empleado. & \\
+			\inc  Repetir pasos 5 a 12 hasta que el Jefe de Taller no desee agregar más tareas al Técnico. & \\
 			\hline
-			& \inc Muestra los nuevos Tipos Tareas para Tipos de Equipos agregados al empleado. \\
+			& \inc Muestra los nuevos Tipos Tareas para Tipos de Equipos agregados al Técnico. \\
 			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Empleado no existe. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico no existe. Fin CU.}\\
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{7. } El Sistema informa que el Tipo de Tarea no existe. Si el Jefe de Taller desea ingresar otra Tarea, ir a paso 5. Si no, Fin CU.}\\
 		\hline
@@ -223,6 +223,8 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{10b. } El Sistema informa que el Tipo de Equipo no corresponde con el Tipo de Tarea ingresado anteriormente. Si el Jefe de Taller desea ingresar otro, ir a paso 8. Si no, Fin CU.}\\
 		\hline	
 	\end{longtable}
+
+    \resetinc
 \noindent\rule{169mm}{0.8mm}\\
 
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
@@ -256,6 +258,101 @@
 		\hline	
 	\end{longtable}
 
+    \resetinc
+\noindent\rule{169mm}{0.8mm}\\
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Remover Tarea de un Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al sistema remover uno o más Tipos de Tarea para un Tipo de Equipo de un Técnico en particular.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Una o más Tareas menos de las que dispone un Técnico.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc  Este Caso de Uso comienza el Jefe de Taller decide remover una Tarea de las Tareas que tiene disponible un Técnico para realizar.& \\
+			\hline
+			\inc El Jefe de Taller se solicita al sistema buscar un Técnico ingresando su nombre. & \\
+			\hline
+			& \inc Busca el Técnico.\\
+			\hline
+			& \inc Muestra los datos personales del Técnico.\\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre & \\
+			\hline
+			& \inc Busca el Tipo de Tarea. \\
+			\hline
+			& \inc Muestar el Nombre y la Descripción del Tipo de Tarea. \\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Equipo, ingresando su nombre.& \\
+			\hline
+			& \inc Busca el Tipo de Equipo.\\
+			\hline
+			& \inc Muestra el Nombre y Descripción del Tipo de Equipo.\\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema que remueva del Técnico el Tipo de Tarea para el Tipo de Equipo seleccionados anteriormente. & \\
+			\hline
+			& \inc Busca el Tipo de Tarea para ese Tipo de Equipo en las Tareas que puede realizar el Técnico.\\
+			\hline
+			& \inc Elimina el Tipo de Tarea para el Tipo de Equipo de las Tareas que puede realizar el Técnico.\\
+			\hline
+			\inc Repetir pasos x a x hasta que el Jefe de Taller no desee remover más Tipos de Tareas para Tipos de Equipos asignadas a un Técnico.&\\
+			\hline
+			& \inc Muestra el listado de tareas que puede realizar el Técnico\\
+			\hline
+			\inc Fin CU.& \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El sistema informa que}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline	
+	\end{longtable}
+
+    \resetinc
+\noindent\rule{169mm}{0.8mm}\\
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}:}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}:  }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: }\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc  & \inc   \\
+			\hline
+			\inc  & \inc   \\
+			\hline
+			\inc & \inc   \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline	
+	\end{longtable}
 \pagebreak
 
 \end{document}
