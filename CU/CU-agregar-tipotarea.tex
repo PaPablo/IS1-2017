@@ -44,23 +44,29 @@
 			\hline
 
 
-			\inc El Jefe de Taller ingresa el nombre de un tipo de equipo para vincular con el tipo de tarea & \\
+			\inc El Jefe de Taller ingresa el nombre de un tipo de equipo para agregar a una tarifa & \\
 			\hline
 			& \inc El sistema busca el tipo de equipo \\
 			\hline
-            & \inc Vincula el tipo de equipo con el tipo de tarea \\
+            & \inc Agrega el tipo de equipo a la tarifa \\
 			\hline
-            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio para vincular con el tipo de tarea &\\
+            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio para agregar a la tarifa&\\
 			\hline
+
+
             & \inc El sistema busca el tipo de servicio \\
 			\hline
-            & \inc Vincula el tipo de servicio con el tipo de tarea \\
+            & \inc Agrega el tipo de servicio a la tarea\\
 			\hline
-            \inc El Jefe de Taller ingresa un precio de tarifa para el tipo de tarea con el tipo de equipo y el tipo de servicio &\\
+            \inc El Jefe de Taller ingresa un precio para la tarifa &\\
 			\hline
-            & \inc El sistema asigna la tarifa ingresada al tipo de tarea con el tipo de equipo y el tipo de servicio \\
+            & \inc El sistema crea la tarifa con el tipo de tarea, tipo de equipo, tipo de serivicio y el precio ingresados\\
 			\hline
-            \inc Repetir pasos 5 al 12 hasta que el Jefe de Taller no desee crear más tarifas & \\
+
+
+            & \inc El sistema muestra los datos de la tarifa creada\\
+			\hline
+            \inc Repetir pasos 5 al 13 hasta que el Jefe de Taller no desee crear más tarifas para el tipo de tarea creado& \\
 			\hline
 			\inc Fin CU. & \\
 		\hline
@@ -70,13 +76,11 @@
 		\hline
         \multicolumn{2}{|p{16cm}|}{\textbf{5. }El Jefe de Taller no desea crear tarifas. Fin CU}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que el tipo de equipo ingresado no existe. Ir al paso 13}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de equipo ingresado no existe. Ir al paso 14}\\
 		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que el tipo de tarea no está vinculado con el tipo de equipo. Ir al paso 13}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 13}\\
-		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que ya existe una tarifa para ese tipo de tarea con ese tipo de equipo y tipo de servicio. Ir al paso 13}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que ya existe una tarifa para ese tipo de tarea de ese tipo de equipo con ese tipo de servicio. Ir al paso 14}\\
 		\hline	
 	\end{longtable}
 
