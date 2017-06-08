@@ -34,18 +34,18 @@ Productos
 29. Ver detalle de producto
 30. Actualizar stock
 Tipo servicios
-31. Agregar Tipo servicio 
+31. Agregar Tipo servicio ---
 32. Modificar Tipo servicio 
 Orden de Trabajo
 33. Eliminar Tipo servicio
 34. Listar Tipo tarea de un Tipo servicio
 35. Listar Tipo servicios
 Tipo tarea
-36. Agregar tipo tarea
+36. Agregar tipo tarea ---
 37. Modificar tipo tarea
 38. Eliminar tipo tarea
 39. Listar Tipo tarea
-40. Crear tarifa
+40. Crear tarifa ---
 41. Modificar tarifa
 Órdenes de trabajo
 42. Atender solicitud de servicio
