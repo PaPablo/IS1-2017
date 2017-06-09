@@ -1,0 +1,98 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\usepackage{url}
+\usepackage[a4paper]{geometry}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\begin{document}
+
+    \subsection{Casos de Uso expandidos}
+
+    %DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    \newcommand\resetinc{\setcounter{step}{0}}
+    
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Técnico}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Encargado [Gerente | Jefe de Taller], Técnico}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente o Jefe de Taller agrega un nuevo Técnico al sistema, si el Jefe de Taller lo desea, le puede agregar tareas que pueda realizar.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: - }\\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+    \hline
+    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+    \hline
+        \inc Este CU comienza cuando el Encargado desea agregar un nuevo Técnico.& \\
+        \hline
+        \inc  El Encargado le solicita el numero de documento al nuevo Técnico, el Técnico se lo da. Le solicita al Sistema agregar el Técnico ingresando su número de documento.& \\
+        \hline
+        & \inc  Crea un nuevo Técnico.\\
+        \hline
+        & \inc  Muestra los datos del Técnico.\\
+        \hline
+        \inc El Encargado le solicita el resto de sus datos: Nombre y Apellido completos, número de teléfono, domicilio y correo electrónico. Los ingresa en el sistema y le solicita que los guarde.& \\
+        \hline
+        & \inc Registra los datos del Técnico.\\
+        \hline
+        \inc El Encargado ingresa un Tipo de Tarea al sistema indicando su nombre y le solicita al sistema que la busque.& \\
+        \hline
+        & \inc Busca la Tarea. \\
+        \hline
+        & \inc  Muestra los datos del Tipo de Tarea.\\
+        \hline
+        \inc El Encargado ingresa el nombre del Tipo de Equipo para el Tipo de Tarea & \\
+        \hline
+        & \inc Busca el Tipo de Equipo.\\
+        \hline
+        & \inc Muestra los datos del Tipo de Equipo\\
+        \hline
+        \inc El Encargado le solicita al sistema agregar al nuevo Técnico ese Tipo de Tarea para ese Tipo de Equipo.& \\
+        \hline
+        & \inc Agrega al nuevo Técnico ese tipo de Tarea para ese Tipo de Equipo\\
+        \hline
+        \inc Repetir pasos x a x hasta que el Encargado no desee agregar más Tareas al Técnico.& \\
+        \hline
+        & \inc Muestra los datos personales del Técnico junto con sus nuevas tareas asociadas (si las hubiese).\\
+        \hline
+        \inc Fin CU. & \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico ya existe. Fin CU.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{9a. } El Sistema informa que el Tipo de Tarea no existe. Si el Encargado desea ingresar un nuevo Tipo de Tarea, ir a paso x. Si no, ir a paso x.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{12a. } El Sistema informa que el Tipo de Equipo no existe. Si el encargado desea ingresar un nuevo Tipo de Equipo, ir a paso x. Si no, ir a paso x.}\\
+    \hline	
+    \multicolumn{2}{|p{16cm}|}{\textbf{12b. } El Sistema informa que el Tipo de Equipo no se encuentra en ninguna tarifa con el Tipo de Tarea seleccionada. Fin CU.}\\
+    \hline	
+\end{longtable}
+
+
+
+\end{document}

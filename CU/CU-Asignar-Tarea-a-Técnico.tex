@@ -1,0 +1,127 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\usepackage{url}
+\usepackage[a4paper]{geometry}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\begin{document}
+
+    \subsection{Casos de Uso expandidos}
+
+    %DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    \newcommand\resetinc{\setcounter{step}{0}}
+    
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Asignar Tarea a Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al Sistema agregar nuevos Tipo de Tareas a un Técnico, pudiendo después ser elegido para Servicios que contengan Tareas de este tipo.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Tarea Asignada a un Técnico.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este Caso de Uso comienza cuando el Jefe de Taller desea agregar una Tarea a un Técnico.& \\
+			\hline
+			\inc  El Jefe de Taller le solicita al sistema buscar al Técnico ingresando su nombre.& \\
+			\hline
+			& \inc Busca al Técnico. \\
+			\hline
+            & \inc Muestra los datos personales del Técnico. \\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre. & \\
+			\hline
+			& \inc Busca el Tipo de Tarea. \\
+			\hline
+			& \inc Muestra los datos del Tipo de Tarea. \\
+			\hline
+			\inc  El Jefe de Taller le solicita al sistema buscar un Tipo de Equipo ingresando su nombre. & \\
+			\hline
+			& \inc Busca el Tipo de Equipo.\\
+			\hline
+			& \inc Muestra los datos del Tipo de Equipo. \\
+			\hline
+			\inc  El Jefe de Taller le solicita al sistema agregar ese Tipo de Tarea para ese Tipo de Equipo al Técnico. & \\
+			\hline
+			& \inc Agrega el Tipo de Tarea para el Tipo de Equipo al Técnico. \\
+			\hline
+			\inc  Repetir pasos 5 a 12 hasta que el Jefe de Taller no desee agregar más tareas al Técnico. & \\
+			\hline
+			& \inc Muestra los nuevos Tipos Tareas para Tipos de Equipos agregados al Técnico. \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. } El Sistema informa que el Tipo de Tarea no existe. Si el Jefe de Taller desea ingresar otra Tarea, ir a paso 5. Si no, Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. } El Sistema informa que el Tipo de Equipo no existe. Si el Jefe de Taller desea ingresar otro, ir a paso 8. Si no, Fin CU.}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. } El Sistema informa que el Tipo de Equipo no corresponde con el Tipo de Tarea ingresado anteriormente. Si el Jefe de Taller desea ingresar otro, ir a paso 8. Si no, Fin CU.}\\
+		\hline	
+	\end{longtable}
+
+    \resetinc
+\noindent\rule{169mm}{0.8mm}\\
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}:}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}:  }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: }\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc  & \inc   \\
+			\hline
+			\inc  & \inc   \\
+			\hline
+			\inc & \inc   \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline	
+	\end{longtable}
+
+
+\end{document}
