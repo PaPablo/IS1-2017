@@ -23,19 +23,19 @@
 	%/******************************************************/
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar tarifa}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Secundario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller modifica el precio de una tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller elimina tarifa}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa modificada}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa eliminada}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
 
-			\inc Este CU comienza cuando el Jefe de Taller desea modificar una tarifa& \\
+			\inc Este CU comienza cuando el Jefe de Taller desea eliminar una tarifa& \\
 			\hline
             \inc El Jefe de Taller ingresa el nombre del tipo de equipo de la tarifa & \\
 			\hline
@@ -59,15 +59,13 @@
 			\hline
 			& \inc Muestra los datos del tipo de servicio \\
 			\hline
-            \inc El Jefe de Taller ingresa un nuevo precio para la tarifa&\\
+            & \inc Busca la tarifa \\
 			\hline
-            & \inc Modifica la tarifa \\
-			\hline
+            & \inc Elimina la tarifa \\
 
 
-            & \inc Muestra los datos de la tarifa\\
 			\hline
-            \inc Repetir pasos 5 al 13 hasta que el Jefe de Taller no desee modificar más tarifas para el tipo de equipo ingresado & \\
+            \inc Repetir pasos 5 al 12 hasta que el Jefe de Taller no desee eliminar más tarifas para el tipo de equipo ingresado & \\
 			\hline
 			\inc Fin CU. & \\
 
