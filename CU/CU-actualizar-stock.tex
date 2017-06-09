@@ -1,0 +1,58 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Actualizar stock}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: el Jefe de Taller modifica el stock de un producto manualmente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Stock de un producto modificado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller desea modificar manualmente el stock de un producto& \\
+			\hline
+			\inc  El Jefe de Taller ingresa el código de referencia interna del producto& \\
+			\hline
+			\inc  & Busca el producto \\
+			\hline
+			\inc  & Muestra los datos del producto\\
+			\hline
+
+
+			\inc El Jefe de Taller ingresa una nueva cantidad de stock para el producto & \\
+			\hline
+			\inc  & Registra la nueva cantidad en el producto\\
+			\hline
+			\inc  Repetir pasos 2 al 6 hasta que no desee actualizar más stocks de productos& \\
+			\hline
+			\inc Fin CU. & \\
+
+
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el producto no existe. Ir al paso 7}\\
+		\hline
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
