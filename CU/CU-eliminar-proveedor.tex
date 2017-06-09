@@ -1,0 +1,83 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\usepackage{url}
+\usepackage[a4paper]{geometry}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\begin{document}
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+    %DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    \newcommand\resetinc{\setcounter{step}{0}}
+    
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar proveedor}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Esencial, primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller da de baja un proveedor, de modo que no pueden hacerse nuevos pedidos a éste.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Proveedor dado de baja.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide dar de baja un proveedor.& \\
+			\hline
+			\inc  El Jefe de Taller le solicita al sistema buscar al proveedor, ingresando su CUIT. & \\
+			\hline
+			& \inc Busca al proveedor.\\
+			\hline
+			& \inc Busca los pedidos pendientes de entrega. \\
+			\hline
+			& \inc Muestra los datos del proveedor. \\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema eliminar al proveedor.&\\
+			\hline
+			& \inc Da de baja al proveedor.\\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el proveedor no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el proveedor tiene pedidos pendientes de entrega. Fin CU.}\\
+		\hline	
+	\end{longtable}
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
+
+\end{document}
