@@ -33,7 +33,7 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar tipo de equipo}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea un nuevo tipo de equipo, indicando los tipos de equipo que se le podrán realizar, en qué tipo de servicio podrá ser incluído, y creando tarifas con el tipo de equipo creado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea un nuevo tipo de equipo, indicando los tipos de tarea que se le podrán realizar, en qué tipo de servicio podrá ser incluído, y creando tarifas con el tipo de equipo creado}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tipo de equipo creado}\\
 		\hline
@@ -98,11 +98,15 @@
 		\hline	
 		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el tipo de equipo y el tipo de tarea ya están vinculados. Ir al paso 9}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{17. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 18}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{12a. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 19}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{20. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 18}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{12b. }El sistema informa que el tipo de tarea ingresado no se puede realizar para el tipo de equipo. Ir al paso 19}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{23. }El sistema informa que ya existe una tarifa con el tipo de equipo, tipo de equipo y tipo de servicio ingresados. Ir al paso 18}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{15a. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 19}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{15b. }El sistema informa que el tipo de tarea ingresado no se puede realizar bajo el tipo de servicio ingresado. Ir al paso 19}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{18. }El sistema informa que ya existe una tarifa con el tipo de equipo, tipo de equipo y tipo de servicio ingresados. Ir al paso 19}\\
 		\hline	
 	\end{longtable}
 
