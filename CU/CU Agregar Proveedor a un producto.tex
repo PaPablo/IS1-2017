@@ -1,0 +1,46 @@
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}:Agregar Proveedor a un producto }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}:Primario }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}:Jefe de Taller }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le pide al sistema que a un producto le agregue todos los proveedores que lo venden con su informacion }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: El Producto esta relacionado con todos los proveedores que preveen ese producto  }\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide vincular un Proveedor con un Producto & \\
+			\hline
+			\inc El Jefe de Taller ingresa el Codigo Interno del Producto y le pide al sistema que lo busque &   \\
+			\hline
+			& \inc Busca el Producto \\
+			\hline
+			& \inc Muestra los datos del Producto \\
+			\hline
+			\inc El Jefe de Taller Ingresa el Cuil del Proveedor y le pide al sistema que lo busque &  \\
+			\hline
+			& \inc Busca al Proveedor \\
+			\hline
+			& \inc Vincula el Producto con el Proveedor \\
+			\hline
+			\inc El jefe de Taller ingresa el Codigo Propio del Vendedor, la garantia y el precio y le pide al sistema que agregue los datos &   \\
+			\hline
+			& \inc Agrega los datos  \\
+			\hline
+			& \inc Muestra los datos del Producto relacionado con el proveedor  \\
+			\hline
+			\inc Repetir del 5 al 10 hasta que el Jefe de Taller no desee Vincular mas el Producto con los Proveedores &   \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }4_El sistema informa que el Codigo Interno del Producto no existe Fin CU }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }7_El sistema informa que el Cuil ingresado no existe ir al paso 11 del Curso Normal }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline	
+	\end{longtable}
