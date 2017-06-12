@@ -24,9 +24,9 @@
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Crear tarifa}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea una nueva tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea una nueva tarifa indicando qué tipo de incluirá, para qué tipo de equipo, bajo qué tipo de servicio, y un precio.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa creada}\\
 		\hline
@@ -76,11 +76,15 @@
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo ingresado no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 14}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 14}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que el tipo de tarea ingresado no se puede realizar para el tipo de equipo ingresado. Ir al paso 14}\\
 		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que ya existe una tarifa para ese tipo de tarea con ese tipo de equipo y tipo de servicio. Ir al paso 14}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el tipo de tarea ingresado no se puede realizar bajo el tipo de servicio ingresado. Ir al paso 14}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que ya existe una tarifa con el tipo de tarea, tipo de equipo, y tipo de servicio ingresados. Ir al paso 14}\\
 		\hline	
 	\end{longtable}
 
