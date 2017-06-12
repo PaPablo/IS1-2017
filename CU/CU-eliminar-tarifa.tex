@@ -26,7 +26,7 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar tarifa}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Secundario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller elimina tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller ingresa un tipo de equipo, tipo de tarea, y tipo de servicio que constituyan una tarifa. El sistema da de baja la tarifa}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa eliminada}\\
 		\hline
@@ -74,11 +74,13 @@
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo ingresado no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 14}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 13}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 13}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que la tarifa no existe. Ir al paso 14}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{12a. }El sistema informa que la tarifa no existe. Ir al paso 13}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{12b. }El sistema informa que la tarifa está presente en un presupuesto de una \OT{} sin finalizar. Ir al paso 13}\\
 		\hline	
 	\end{longtable}
 
