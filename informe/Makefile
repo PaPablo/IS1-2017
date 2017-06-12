@@ -1,4 +1,4 @@
-SRC=informe
+SRC=informe.tex
 
 all: pdf pdf
 
