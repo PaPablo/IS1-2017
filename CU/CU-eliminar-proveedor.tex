@@ -34,7 +34,7 @@
     \newcounter{step}
     \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
     \newcommand\resetinc{\setcounter{step}{0}}
-    
+
     \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
 
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
@@ -62,6 +62,8 @@
 			\hline
 			\inc El Jefe de Taller le solicita al sistema eliminar al proveedor.&\\
 			\hline
+      & \inc Verifica que el proveedor no esté asociado a algún producto. \\
+      \hline
 			& \inc Da de baja al proveedor.\\
 			\hline
 			\inc Fin CU. & \\
@@ -71,7 +73,9 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el proveedor no existe. Fin CU.}\\
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el proveedor tiene pedidos pendientes de entrega. Fin CU.}\\
-		\hline	
+		\hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el proveedor está actualmente asociado a algún producto. Fin CU.}\\
+    \hline
 	\end{longtable}
 
     %LO RESETEAMOS A 0
