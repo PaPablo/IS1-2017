@@ -37,17 +37,17 @@
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Remover Tarea de un Técnico}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al sistema remover uno o más Tipos de Tarea para un Tipo de Equipo de un Técnico en particular.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Una o más Tareas menos de las que dispone un Técnico.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tipo de Tarea removida de un técnico.}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-            \inc  Este Caso de Uso comienza el Jefe de Taller decide remover una Tarea de las Tareas que tiene disponible un Técnico para realizar.& \\
+            \inc Este Caso de Uso comienza el Jefe de Taller decide remover de un técnico un Tipo de Tarea de los Tipos de Tarea está capacitado para realizar.& \\
 			\hline
 			\inc El Jefe de Taller se solicita al sistema buscar un Técnico ingresando su nombre. & \\
 			\hline
@@ -55,41 +55,45 @@
 			\hline
 			& \inc Muestra los datos personales del Técnico.\\
 			\hline
+
+
 			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre & \\
 			\hline
 			& \inc Busca el Tipo de Tarea. \\
 			\hline
-			& \inc Muestar el Nombre y la Descripción del Tipo de Tarea. \\
+			& \inc Muestra los datos del Tipo de Tarea. \\
 			\hline
 			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Equipo, ingresando su nombre.& \\
 			\hline
+
+
 			& \inc Busca el Tipo de Equipo.\\
 			\hline
-			& \inc Muestra el Nombre y Descripción del Tipo de Equipo.\\
+			& \inc Muestra los datos del Tipo de Equipo.\\
 			\hline
-			\inc El Jefe de Taller le solicita al sistema que remueva del Técnico el Tipo de Tarea para el Tipo de Equipo seleccionados anteriormente. & \\
-			\hline
-			& \inc Busca el Tipo de Tarea para ese Tipo de Equipo en las Tareas que puede realizar el Técnico.\\
+			\inc El Jefe de Taller le solicita al sistema que remueva del Técnico el Tipo de Tarea para el Tipo de Equipo ingresados. & \\
 			\hline
 			& \inc Elimina el Tipo de Tarea para el Tipo de Equipo de las Tareas que puede realizar el Técnico.\\
 			\hline
-			\inc Repetir pasos x a x hasta que el Jefe de Taller no desee remover más Tipos de Tareas para Tipos de Equipos asignadas a un Técnico.&\\
+
+
+			& \inc Muestra los datos del técnico.\\
 			\hline
-			& \inc Muestra el listado de tareas que puede realizar el Técnico\\
+			\inc Repetir pasos 5 a 13 hasta que el Jefe de Taller no desee remover más Tipos de Tareas asignados a un Técnico.&\\
 			\hline
 			\inc Fin CU.& \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El sistema informa que}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el técnico no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el Tipo de Tarea ingresado no existe. Ir al paso 14.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el Tipo de Equipo ingresado no existe. Ir al paso 14. }\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el Tipo de Tarea ingresado no se puede realizar para el Tipo de Equipo ingresado. Ir al paso 14. }\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que el técnico no está capacitado para realizar el Tipo de Tarea ingresado para el Tipo de Equipo ingresado, por lo tanto no puede realizar la eliminación. Ir al paso 14.}\\
+		\hline
 	\end{longtable}
 \end{document}
