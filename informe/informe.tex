@@ -996,1037 +996,925 @@
     %DEFINIMOS UN CONTADOR
     \newcounter{step}
     \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+    %para resetear el contador del curso normal
     \newcommand\resetinc{\setcounter{step}{0}}
-    
+
+    %raya para separar CUs
     \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+    %CUANDO SE TERMINA UN CU, PONER ESTE
+    %\finCU{}
+    \newcommand\finCU{\resetinc{}\raya{}}
+
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Actualizar stock}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: el Gerente modifica el stock de un producto manualmente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Stock de un producto modificado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Gerente desea modificar manualmente el stock de un producto& \\
+			\hline
+			\inc  El Gerente ingresa el código de referencia interna del producto& \\
+			\hline
+		    & \inc Busca el producto \\
+			\hline
+			& \inc Muestra los datos del producto\\
+			\hline
+
+
+			\inc El Gerente ingresa una nueva cantidad de stock para el producto & \\
+			\hline
+			& \inc Registra la nueva cantidad en el producto\\
+			\hline
+			\inc  Repetir pasos 2 al 6 hasta que no desee actualizar más stocks de productos& \\
+			\hline
+			\inc Fin CU. & \\
+
+
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el producto no existe. Ir al paso 7}\\
+		\hline
+	\end{longtable}
+
+
+    \finCU{}
 
     \begin{longtable}{ |p{8cm}|p{8cm}| }
         \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Abrir Orden de Trabajo}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, Esencial}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Cliente, Jefe de Taller}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El cliente pide un Tipo servicio a la organización; el Jefe de Taller abre una nueva Orden de Trabajo para manejar el Tipo servicio a realizar}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Orden de Trabajo creada}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Técnico}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente, Técnico}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente agrega un nuevo Técnico al sistema, y si lo desea, le indica al sistema las tareas que está capacitado para realizar.}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Técnico creado}\\
         \hline
         \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
         \hline
         \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
         \hline
-            \inc Este caso de uso comienza cuando el cliente se comunica con la empresa para pedir un Tipo servicio. & \\
+            \inc Este CU comienza cuando el Gerente desea agregar un nuevo Técnico.& \\
             \hline
-
-            \inc El Jefe de Taller le solicita al sistema abrir una nueva Orden de Trabajo. &  \\
+            \inc  El Gerente le solicita el numero de documento al nuevo Técnico, el Técnico se lo da. El Gerente le solicita al Sistema agregar el Técnico ingresando su número de documento.& \\
             \hline
-            & \inc El sistema crea la Orden de Trabajo  \\
+            & \inc  Crea un nuevo Técnico.\\
             \hline
-            \inc El Jefe de Taller le pide el nombre al cliente, el cliente se lo da. &  \\
-            \hline
-            \inc El Jefe de Taller le solicita al sistema buscar el cliente. &  \\
-            \hline
-            & \inc El sistema busca el cliente\\
-            \hline
-            & \inc El sistema muestra los datos del cliente\\
-            \hline
-            \inc El Jefe de Taller le ordena al sistema que vincule al cliente con la Orden& \\
-            \hline
-            & \inc El sistema asocia el cliente a la Orden\\
-            \hline
-            \inc El Jefe de Taller le solicita al sistema crear un nuevo ítem& \\
-            \hline
-            & \inc El sistema crea un ítem \\
-            \hline
-            \inc El Jefe de Taller ingresa al sistema la actividad a realizar en el ítem. &\\
-            \hline
-            & \inc El sistema busca la actividad \\
-            \hline
-            & \inc El sistema muestra los datos de la actividad \\ 
-            \hline
-            \inc El Jefe de Taller le solicita al sistema que vincule la actividad con el ítem & \\
-            \hline
-            & \inc El sistema vincula la actividad con el ítem. \\ 
-            \hline
-            \inc El Jefe de Taller le solicita al sistema que busque un empleado por el nombre & \\
-            \hline
-            & \inc Busca el empleado ingresado \\
-            \hline
-            & \inc El sistema muestra los datos del Empleado \\
-            \hline
-            \inc El Jefe de Taller le solicita al sistema que vincule el empleado al ítem & \\
-            \hline
-            & \inc El sistema asigna el Emplado al ítem \\ 
-            \hline
-            & \inc El sistema le asigna el estado de ``Asignado'' al ítem\\ 
+            & \inc  Muestra los datos del Técnico.\\
             \hline
 
 
-            \inc El Jefe de Taller le solicita al sistema que busque un repuesto por su código interno& \\
+            \inc El Gerente le solicita el resto de sus datos: nombre y apellido completos, número de teléfono, domicilio y correo electrónico. Los ingresa en el sistema y le solicita que los guarde.& \\
             \hline
-            & \inc Busca el repuesto ingresado \\
+            & \inc Registra los datos del Técnico.\\
             \hline
-            & \inc El sistema muestra los datos del repuesto \\
+            \inc El Gerente ingresa un Tipo de Tarea al sistema indicando su nombre y le solicita al sistema que lo busque.& \\
             \hline
-            \inc El Jefe de Taller le solicita al sistema que vincule el repuesto al ítem & \\
-            \hline
-            & \inc El sistema asigna el repuesto al ítem \\ 
-            \hline
-            \inc Repetir los pasos 23-27 hasta que el Jefe de Taller no desee reservar más artículos para el ítem & \\
+            & \inc Busca el Tipo de Tarea. \\
             \hline
 
 
-            & \inc Si en la actividad seleccionada interviene un equipo, ir al paso 30 del curso normal. Si no, ir al paso 35.\\
+            & \inc Muestra los datos del Tipo de Tarea.\\
+            \hline
+            \inc El Gerente ingresa el nombre del Tipo de Equipo para el Tipo de Tarea & \\
+            \hline
+            & \inc Busca el Tipo de Equipo.\\
+            \hline
+            & \inc Muestra los datos del Tipo de Equipo\\
             \hline
 
 
-            \inc El Jefe de Taller le solicita al sistema ingresar un equipo por su número de serie&\\
+            \inc El Gerente le solicita al sistema agregar al nuevo Técnico ese Tipo de Tarea para ese Tipo de Equipo.& \\
             \hline
-            &\inc Busca el equipo\\
+            & \inc Agrega al nuevo Técnico ese tipo de Tarea para ese Tipo de Equipo\\
             \hline
-            & \inc El sistema muestra los datos del equipo\\
-            \hline
-            \inc El Jefe de Taller le solicita al sistema vincular el equipo al ítem&\\
-            \hline
-            & \inc El sistema vincula el equipo con el ítem\\
-            \hline
-
-
-            \inc El Jefe de Taller ingresa una fecha de vencimiento para el ítem&\\
-            \hline
-            & \inc El sistema muestra la fecha de vencimiento ingresada\\
-            \hline
-            & \inc El sistema asigna la fecha de vencimiento al ítem\\
-            \hline
-
-            & \inc El sistema muestra la información del ítem creado\\
-            \hline
-            \inc El Jefe de Taller le solicita al sistema que vincule el ítem a la OT & \\
-            \hline
-            & \inc El sistema vincula el ítem creado a la OT\\
-            \hline
-
-            \inc Repetir pasos 10-40 hasta que el Jefe de Taller desee dejar de agregar ítems & \\
+            \inc Repetir pasos 7 a 14 hasta que el Gerente no desee agregar más Tareas al Técnico.& \\
             \hline
             \inc Fin CU. & \\
         \hline
         \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
         \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema indica que el cliente no se encuentra dado de alta (includes ``Alta cliente''). Ir al paso 8 del curso normal.}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el Técnico ya existe. Fin CU.}\\
         \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{14. }El sistema informa que la actividad no existe. Si el Jefe de Taller desea crear la actividad, includes: ``Crear nueva actividad''. Si no, volver al paso 12 del curso normal.}\\
-        \hline  
-        \multicolumn{2}{|p{16cm}|}{\textbf{17. }El Jefe de Taller no desea asignar ningún empleado al ítem. El sistema el asigna el estado de ``Creado al ítem''. Ir al paso 23 del curso normal}\\
-        \hline  
-        \multicolumn{2}{|p{16cm}|}{\textbf{19a. }El sistema informa que el empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo empleado''. Si no, ir al paso 41 del curso normal.}\\
-        \hline  
-        \multicolumn{2}{|p{16cm}|}{\textbf{19b. }El sistema informa que el empleado está sobrecargado. Si el Jefe de Taller decide cambiar de empleado, volver al paso 17 del curso normal. Si no, ir al paso 41 curso normal}\\
-        \hline  
-        \multicolumn{2}{|p{16cm}|}{\textbf{19c. }El sistema informa que el rol del empleado asignado no corresponde con la actividad del ítem. Volver al paso 17 del curso normal.}\\
-        \hline  
-        \multicolumn{2}{|p{16cm}|}{\textbf{22. }El Jefe de Taller no desea reservar ningún repuesto. Ir al paso 28 del curso normal}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{9. }El Sistema informa que el Tipo de Tarea no existe. Ir a paso 15.}\\
         \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{25. }El sistema informa que el repuesto ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo artículo de stock''. Si no, volver al paso 22 del curso normal}\\
-        \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{27a. }El sistema informa que el repuesto ingresado ya está reservado para el ítem. Si el Jefe de Taller desea reservar otra unidad más, continuar con el curso normal. Si no, volver al paso 23.}\\
-        \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{27b. }El sistema informa que el repuesto ingresado no tiene cantidad suficiente para cumplir la reserva. Si el Jefe de Taller desea reservar otro artículo más, volver al paso 23. Si no, ir al paso 28.}\\
-        \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{30. }El Jefe de Taller no desea vincular ningún equipo con el ítem. Ir al paso 35 del curso normal}\\
-        \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{32a. }El sistema informa que el equipo ingresado no existe. Si el Jefe de Talle decide ingresarlo, includes: ``Agregar nuevo equipo''. Si no, volver al paso 30}\\
-        \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{32b. }El sistema informa que el equipo ingresado ya está vinculado con otro ítem abierto. Volver al paso 30.}\\
-        \hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{34. }El sistema informa que la fecha de vencimiento ingresada es incorrecta. Si desea ingresar una nueva, volver al paso 33. Si no, ir al paso 41}\\
-        \hline  
-        \multicolumn{2}{|p{16cm}|}{\textbf{37. }El sistema informa que el ítem a vincular con la OT ya existe. Volver al paso 10 del curso normal}\\
-    \hline  
-\end{longtable}
+        \multicolumn{2}{|p{16cm}|}{\textbf{12a. }El Sistema informa que el Tipo de Equipo no existe. Ir a paso 15.}\\
+        \hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{12b. }El Sistema informa que el Tipo de Tarea no se puede realizar para el Tipo de Equipo ingresado. Ir al paso 15.}\\
+        \hline	
+    \end{longtable}
+
+    \finCU{}
 
 
-\raya
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar tipo de equipo}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea un nuevo tipo de equipo, indicando los tipos de tarea que se le podrán realizar, en qué tipo de servicio podrá ser incluído, y creando tarifas con el tipo de equipo creado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tipo de equipo creado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller desea agregar un nuevo tipo de equipo & \\
+			\hline
+            \inc El Jefe de Taller ingresa un nombre y una descripción del tipo de equipo a dar de alta y le solicita al sistema que lo cree & \\
+			\hline
+			& \inc Crea el tipo de equipo \\
+			\hline
+			& \inc Muestra los datos del tipo de equipo creado\\
+			\hline
 
-%LO RESETEAMOS A 0
-\resetinc
+
+			\inc El Jefe de Taller ingresa el nombre de un tipo de tarea para indicar que ese tipo de tarea se podrá realizar para el tipo de equipo & \\
+			\hline
+			& \inc Busca el tipo de tarea \\
+			\hline
+            & \inc Vincula el tipo de equipo con el tipo de tarea \\
+			\hline
+            & \inc Muestra los nuevos del tipo de equipo\\
+			\hline
 
 
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar artículo de Stock}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se crea un artículo nuevo de stock}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nuevo artículo de stock creado}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el Jefe de Talle decide agregar un nuevo artículo al Stock& \\
-        \hline
-        \inc El Jefe de Taller ingresa el código interno del artículo& \\
-        \hline
-        & \inc El sistema busca el código\\
-        \hline
-        &\inc El sistema crea un nuevo artículo de stock.\\
-        \hline
-        \inc El Jefe de Taller ingresa la marca del artículo& \\
-        \hline
-        & \inc El sistema busca la marca ingresada\\
-        \hline
-        & \inc El sistema muestra los datos la marca\\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema vincular la marca con el artículo& \\
-        \hline
-        & \inc El sistema vincula la marca con el artículo.\\
-        \hline
-        \inc El Jefe de Taller ingresa un precio del artículo & \\
-        \hline
-        & \inc Muestra el precio ingresado \\ 
-        \hline
-        \inc El Jefe de Taller solicita al sistema vincular el precio con el artículo.&\\
-        \hline
-        & \inc El sistema vincula el precio con el artículo\\ 
-        \hline
-        \inc Repetir pasos 10 al 13 hasta que el Jefe de Taller no quiera ingresar más precios del artículo& \\
-        \hline
-        \inc El Jefe de Taller solicita al sistema buscar un proveedor por nombre`& \\
-        \hline
-        &\inc El sistema busca el proveedor. \\
-        \hline 
-        &\inc El sistema muestra los datos del proveedor.\\
-        \hline 
-        &\inc El sistema vincula el proveedor con el artículo.\\
-        \hline 
-        \inc El Jefe de Taller ingresa el código del artículo propio del proveedor&\\
-        \hline
-        &\inc El sistema almacena el código del artículo propio del proveedor junto con el registro del proveedor vinculado.\\
-        \hline
-        \inc Repetir pasos 15-20 hasta que el Jefe de Taller no desee vincular más proveedores al artículo & \\
-        \hline
-        \inc El Jefe de Taller ingresa el plazo de la garantía del artículo& \\
-        \hline
-        & \inc Muestra el detalle de la garantia\\
-        \hline
-        & \inc Se vincula la garantía con el artículo\\
-        \hline
-        & \inc Almacena el artículo como un nuevo artículo de stock\\			
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el código interno de artículo ya existe. Si se desea ingresar un código nuevo, ir al paso 2 del curso normal. Si no, fin CU.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que la marca no existe. Si se desea ingresar una marca nueva, includes: ``Agregar marca de artículo''. Si no, fin CU.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{11. }El sistema informa que el precio es negativo. Ir al paso 10 del curso normal}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{17. }El sistema informa que el proveedor no existe. Si se desea agregar un nuevo proveedor, includes ``Agregar Proveedor''. Si no, Fin CU}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{18. }El sistema informa que el proveedor ya está vinculado con el artículo. Volver al paso 17 del curso normal.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{20. }El sistema informa que el código de artículo propio del vendedor ya existe. Volver al paso 19 del curso normal.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{22. }El artículo no tiene garantía. Continuar con el paso 25 Curso Normal.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{23. }El sistema informa que se ingresó una garantía negativa. Volver al paso 22 del Curso Normal.}\\
-    \hline
-\end{longtable}
+            \inc Repetir pasos 5 a 8 hasta que el Jefe de Taller no desee indicar más tipos de tarea para el tipo de equipo&\\
+			\hline
+            %creamos tarifas
+			%\inc El Jefe de Taller ingresa el nombre de un tipo de tarea para agregar a una tarifa & \\
+			%\hline
+			%& \inc Busca el tipo de tarea \\
+			%\hline
+            %& \inc Muestra los datos del tipo de tarea\\
+			%\hline
 
-\raya
-%LO RESETEAMOS A 0
-\resetinc
 
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Registrar Pago diferido de Factura}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable, Cliente}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El cliente realiza el pago de una factura}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Una o más facturas pagas}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el cliente se acerca al local para pagar una factura.& \\
-        \hline
-        \inc El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta el número de factura. & \\
-        \hline
-        \inc El Operario Contable le solicita al sistema que busque la factura. & \\
-        \hline
-        & \inc El sistema busca la factura. \\
-        \hline
-        & \inc El sistema muestra los datos de la factura. \\
-        \hline
-        & \inc El sistema busca el cliente que figura en la factura.\\
-        \hline
-        \inc El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
-            \begin{enumerate}[label=(\alph*)]
-                \item Pagar en efectivo: ir a sección \textit{Pago en Efectivo}.
-                \item Pagar con Nota de Crédito: ir a sección \textit{Pago con Nota de Crédito}.
-                \item Pagar con Transferencia Bancaria: ir a sección \textit{Pago con Transferencia Bancaria}.
-                \item Pagar con Cheque: ir a sección \textit{Pago con Cheque}.
-                \item No paga. Ir al paso 8.
-            \end{enumerate}
-        & \\
-        \hline
-        & \inc El sistema muestra el subtotal de lo pagado y el total de lo adeudado.\\
-        \hline
-        & \inc Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
-        \hline
-        \inc El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
-        \hline
-        & \inc El sistema calcula y almacena el saldo actual del cliente que figura en la factura.\\
-        \hline
-        \inc El Operario Contable le extiende al cliente un comprobante de pago & \\
-        \hline
-        & \inc Si la factura fue pagada en su totalidad, el sistema la marca como pagada. Si no, el sistema la marca como pagada parcialmente.\\
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{5a. } El sistema informa que la factura no existe, fin CU.}\\
-    \hline	
-    \multicolumn{2}{|p{16cm}|}{\textbf{5b. } El sistema informa que la factura ya fue pagada, fin CU.}\\
-    \hline	
-    \multicolumn{2}{|p{16cm}|}{\textbf{9. } El sistema le informa al Operario Contable que el cliente dispone de saldo a favor en su cuenta corriente. El Operario Contable genera una Nota de Crédito a nombre del Cliente con dicho saldo. Se la entrega al Cliente. Continuar con el paso 14 del Curso Normal.}\\
-    \hline	
-\end{longtable}
+            %\inc El Jefe de Taller ingresa el nombre de un tipo de servicio para agregar a la tarifa&\\
+			%\hline
+            %& \inc Busca el tipo de servicio \\
+			%\hline
+            %& \inc Muestra los datos del tipo de servicio\\
+			%\hline
+            %\inc El Jefe de Taller ingresa un precio para la tarifa &\\
+			%\hline
 
-%LO RESETEAMOS A 0
-\resetinc
 
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
+            %& \inc Crea la tarifa con el tipo de equipo, tipo de tarea, tipo de serivicio y el precio ingresados\\
+			%\hline
+            %& \inc Muestra los datos de la tarifa creada\\
+			%\hline
+            %\inc Repetir pasos 10 al 18 hasta que el Jefe de Taller no desee crear más tarifas para el tipo de equipo creado& \\
+			%\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo ingresado ya existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 9}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el tipo de equipo y el tipo de tarea ya están vinculados. Ir al paso 9}\\
+		\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{12a. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{12b. }El sistema informa que el tipo de tarea ingresado no se puede realizar para el tipo de equipo. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{15a. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{15b. }El sistema informa que el tipo de tarea ingresado no se puede realizar bajo el tipo de servicio ingresado. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{18. }El sistema informa que ya existe una tarifa con el tipo de equipo, tipo de equipo y tipo de servicio ingresados. Ir al paso 19}\\
+		%\hline	
+	\end{longtable}
     
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago en efectivo}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc  El cliente da un pago en efectivo& \\
-        \hline
-        \inc  El Operario Contable le solicita al sistema el registro del cobro del importe a pagar ingresando el monto del efectivo entregado por el cliente& \\
-        \hline
-        & \inc  El sistema registra el pago en efectivo\\
-        \hline
-        & \inc  El sistema calcula y muestra el vuelto\\
-        \hline
-        \inc  El Operario Contable deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
-        \hline
-        \inc Fin Sección. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{1. } El cliente no tiene suficiente efectivo como para pagar el importe. Ir a paso 5 del curso principal de CU.}\\
-    \hline
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Nota de Crédito}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc  El cliente le entrega al Operario Contable la Nota de Crédito con la que desea abonar.& \\
-        \hline
-        \inc  El Operario Contable contable busca en el sistema la Nota de Crédito, ingresando su número.& \\
-        \hline
-        & \inc  El sistema busca la Nota de Crédito.\\
-        \hline
-        & \inc  El sistema muestra los datos de la Nota de Crédito.\\
-        \hline
-        \inc  El Operario Contable registra en el sistema el uso de la Nota de Credito como cobro del importe a pagar.&\\
-        \hline
-        & \inc El Sistema registra el pago con el monto de la Nota de Crédito.\\
-        \hline
-        & \inc El sistema marca la nota de crédito como ya usada.\\
-        \hline
-        \inc Fin Sección.&\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4a. } La Nota de Crédito no existe. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
-        
-        \begin{itemize}
-            \item Si desea usar otra Nota de Crédito, ir a paso 1.
-            \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
-        \end{itemize}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4b. } La Nota de Crédito ya fue usada. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
-    
-        \begin{itemize}
-            \item Si desea usar otra Nota de Crédito, ir a paso 1.
-            \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
-        \end{itemize}}\\
-    \hline
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Cheque}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-        \hline
-        \inc  El Cliente le entrega al Operario Contable el cheque con el que desea abonar & \\
-        \hline
-        \inc  El Operario Contable solicita al sistema el registro del cobro del importe a pagar con el monto que figura en el cheque &  \\
-        \hline
-        & \inc El sistema registra el pago con monto del cheque. \\
-        \hline
-        \inc Fin Sección. & \\
-        \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Transferencia Bancaria}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-        \hline
-        \inc El cliente le entrega el comprobante de la Transferencia Bancaria al Operario Contable& \\
-        \hline
-        \inc El Operario contable busca en el registro de la organización la transferencia &\\
-        \hline
-        \inc El Operario Contable confirma la acreditación de la transferencia & \\
-        \hline
-        \inc El Operario Contable solicita al sistema que registre el cobro del importe a pagar con el monto que figura en la Transferencia& \\
-        \hline
-        & \inc  El sistema registra el pago con monto de la transferencia\\
-        \hline
-        \inc Fin Sección &\\
-        \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3. } La transferencia no se ha acreditado. El Operario Contable le infoma la situación al Cliente y le da la posibilidad de elegir otra forma de pago. El cliente decide:
-    \begin{enumerate}[label=(\alph*)]
-        \item Indicar otra transferencia. Ir a paso 1.
-        \item Elegir otra forma de pago. Ir al paso 5 del Curso Normal de CU. 
-    \end{enumerate}}\\
-    \hline
-\end{longtable}
-
-\raya
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar nueva actividad}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se registra una nueva actividad que realiza la empresa (figurarán en el ítem)}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva actividad creada}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el Jefe de Taller decide agregar una nueva actividad& \\
-        \hline
-        \inc El Jefe de Taller le pide al sistema ingresar una nueva actividad, dándole su nombre & \\
-        \hline
-        & \inc El sistema crea la nueva actividad \\
-        \hline
-        \inc El Jefe de Taller ingresa al sistema un Rol de Empleado para vincular con la actividad & \\
-        \hline
-        & \inc El sistema busca el Rol de Empleado ingresado \\
-        \hline
-        & \inc El sistema muestra la información del Rol de Empleado buscado \\
-        \hline
-        \inc El Jefe de Taller confirma el Rol de Empleado seleccionado & \\
-        \hline
-        & \inc El sistema vincula el Rol con la actividad. \\
-        \hline
-        \inc  Repetir pasos 4-8 hasta que el Jefe de Taller no desee vincular más Roles de Empleado con la actividad& \\
-        \hline
-        \inc El Jefe de Taller ingresa el precio de tarifario a la actividad. & \\
-        \hline
-        & \inc El sistema asigna el precio a la actividad. \\
-        \hline
-        \inc El Jefe de Taller ingresa un tipo de equipo para vincular con la actividad. & \\
-        \hline
-        & \inc El sistema busca el tipo de equipo. \\
-        \hline
-        & \inc El sistema vincula el tipo de equipo a la actividad. \\
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que la actividad ingresada ya existe. Si se desea ingresar otra, volver al paso 2 del curso normal. Si no, fin CU.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{6. }El sistema informa que el Rol de Empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo Rol de Empleado''. Si no, fin CU.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{7. }El Jefe de Taller no confirma el Rol de Empleado. Volver al paso 4 del curso normal.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{11. }El sistema informa que el precio ingresado es incorrecto. Si el Jefe de Taller desea reingresar el precio, volver al paso 10. Si no, fin CU.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{12. }El Jefe de Taller no vincula un Tipo de Equipo con la actividad. Fin CU.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{14. }El sistema informa que el tipo de equipo ingresado no existe. Si el Jefe de Taller desea reingresar el tipo de equipo, volver al paso 12. Fin CU.}\\
-    \hline
-\end{longtable}
+    \finCU{}
 
 
-\raya
-%LO RESETEAMOS A 0
-\resetinc
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar tipo de servicio}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea un nuevo tipo de servicio, indicando los tipos de tarea que abarcará, y creando tarifas con el tipo de servicio creado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tipo de servicio creado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller desea agregar un nuevo tipo de servicio & \\
+			\hline
+            \inc El Jefe de Taller ingresa un nombre y una descripción del tipo de servicio a dar de alta y le solicita al sistema que lo cree & \\
+			\hline
+			& \inc Crea el tipo de servicio \\
+			\hline
+			& \inc Muestra los datos del tipo de servicio creado\\
+			\hline
 
 
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar actividad}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se modifica una actividad}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Actividad modificada}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el Jefe de Taller decide modificar una actividad& \\
-        \hline
-        \inc El Jefe de Taller le pide al sistema buscar una actividad, dándole su nombre & \\
-        \hline
-        & \inc El sistema busca la actividad \\
-        \hline
-        & \inc El sistema muestra los datos de la actividad \\
-        \hline
-        \inc El Jefe de Taller decide si:
-        \begin{enumerate}[label=(\alph*)]
-            \item Si desea vincular un nuevo rol de empleado, ir a sección \textit{Vincular Rol de Empleado a actividad}
-            \item Si desea eliminar un rol de empleado de la actividad, ir a sección \textit{Desvincular Rol de Empleado a actividad}
-        \end{enumerate}        & \\
-        \hline
-        \inc  Repetir paso 5 hasta que el Jefe de Taller no desee modificar más la actividad& \\
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que la actividad ingresada no existe. Si se la quiere crear, includes: ``Agregar nueva actividad''. Si no, fin CU.}\\
-    \hline
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Vincular Rol de Empleado a actividad}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-        \hline
-        \inc El Jefe de Taller ingresa al sistema un Rol de Empleado para vincular con la actividad & \\
-        \hline
-        & \inc El sistema busca el Rol de Empleado ingresado \\
-        \hline
-        & \inc El sistema muestra la información del Rol de Empleado buscado \\
-        \hline
-        \inc El Jefe de Taller confirma el Rol de Empleado seleccionado & \\
-        \hline
-        & \inc El sistema vincula el Rol con la actividad \\
-        \hline
-        \inc Fin Sección &\\
-        \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3. } El sistema informa que el Rol de Empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo Rol de Empleado''. Si no, ir al paso 6 del curso normal.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Jefe de Taller no confirma el Rol de Empleado. Volver al paso 1.}\\
-    \hline
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Desvincular Rol de Empleado a actividad}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-        \hline
-        \inc El Jefe de Taller ingresa al sistema un Rol de Empleado para desvincular de la actividad & \\
-        \hline
-        & \inc El sistema busca el Rol de Empleado ingresado \\
-        \hline
-        & \inc El sistema muestra la información del Rol de Empleado buscado \\
-        \hline
-        \inc El Jefe de Taller confirma el Rol de Empleado seleccionado & \\
-        \hline
-        & \inc El sistema vincula el Rol con la actividad \\
-        \hline
-        \inc Fin Sección &\\
-        \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3a. } El sistema informa que el Rol de Empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo Rol de Empleado''. Si no, ir al paso 6 del curso normal.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3b. } El sistema informa que el Rol de Empleado no está vinculado con el ítem. Ir al paso 6 del curso normal.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Jefe de Taller no confirma el Rol de Empleado. Volver al paso 1 del curso normal.}\\
-    \hline
-\end{longtable}
-
-\raya
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar OT}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se modifica una OT}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Orden de trabajo modificada}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el Jefe de Taller decide modificar una Orden de Trabajo& \\
-        \hline
-        \inc El Jefe de Taller le pide al sistema buscar una Orden de Trabajo, dándole su número & \\
-        \hline
-        & \inc El sistema busca la Orden de Trabajo \\
-        \hline
-        & \inc El sistema muestra los datos de la Orden \\
-        \hline
-        \inc El Jefe de Taller decide:
-        \begin{enumerate}[label=(\alph*)]
-            \item Si desea crear un ítem nuevo, ir a sección \textit{Crear ítem}
-            \item Si desea eliminar un ítem, ir a sección \textit{Eliminar ítem}
-            \item Si desea modificar un ítem, includes: ``Modificar ítem'' 
-        \end{enumerate}        & \\
-        \hline
-        \inc  Repetir paso 5 hasta que el Jefe de Taller no desee modificar más la Orden de Trabajo& \\
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que la Orden de Trabajo ingresada no existe. Si se la quiere crear, includes: ``Abrir nueva Orden de Trabajo''. Si no, fin CU.}\\
-    \hline
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Crear ítem}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema crear un nuevo ítem& \\
-        \hline
-        & \inc El sistema crea un ítem \\
-
-        \hline
-        \inc El Jefe de Taller ingresa al sistema la actividad a realizar en el ítem. &\\
-        \hline
-        & \inc El sistema busca la actividad \\
-        \hline
-        & \inc El sistema muestra los datos de la actividad \\ 
-        \hline
-        \inc El Jefe de Taller le solicita al sistema que vincule la actividad con el ítem & \\
-        \hline
-        & \inc El sistema vincula la actividad con el ítem. \\ 
-
-        \hline
-        \inc El Jefe de Taller le solicita al sistema que busque un empleado por el nombre & \\
-        \hline
-        & \inc Busca el empleado ingresado \\
-        \hline
-        & \inc El sistema muestra los datos del Empleado \\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema que vincule el empleado al ítem & \\
-        \hline
-        & \inc El sistema asigna el Emplado al ítem \\ 
-        \hline
-        & \inc El sistema le asigna el estado de ``Asignado'' al ítem\\ 
-        \hline
+			\inc El Jefe de Taller ingresa el nombre de un tipo de tarea para indicar que ese tipo de tarea se podrá realizar bajo el tipo de servicio & \\
+			\hline
+			& \inc Busca el tipo de tarea \\
+			\hline
+            & \inc Vincula el tipo de servicio con el tipo de tarea \\
+			\hline
+            & \inc Muestra los datos del tipo de servicio\\
+			\hline
 
 
-        \inc El Jefe de Taller le solicita al sistema que busque un repuesto por su código interno& \\
-        \hline
-        & \inc Busca el repuesto ingresado \\
-        \hline
-        & \inc El sistema muestra los datos del repuesto \\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema que vincule el repuesto al ítem & \\
-        \hline
-        & \inc El sistema asigna el repuesto al ítem \\ 
-        \hline
-        \inc Repetir los pasos 14-18 hasta que el Jefe de Taller no desee reservar más artículos para el ítem & \\
-        \hline
+            \inc Repetir pasos 5 a 8 hasta que el Jefe de Taller no desee indicar más tipos de tarea para el tipo de servicio&\\
+			\hline
+            %creamos tarifas. PASO 10
+			%\inc El Jefe de Taller ingresa el nombre de un tipo de tarea para agregar a una tarifa & \\
+			%\hline
+			%& \inc Busca el tipo de tarea \\
+			%\hline
+            %& \inc Muestra los datos del tipo de tarea\\
+			%\hline
 
 
-        \inc Si en la actividad seleccionada interviene un equipo, ir al paso 21. Si no, ir al paso 26. &\\
-        \hline
+            %\inc El Jefe de Taller ingresa el nombre de un tipo de equipo para agregar a la tarifa&\\
+			%\hline
+            %& \inc Busca el tipo de equipo \\
+			%\hline
+            %& \inc Muestra los datos del tipo de equipo\\
+			%\hline
+            %\inc El Jefe de Taller ingresa un precio para la tarifa &\\
+			%\hline
 
 
-        \inc El Jefe de Taller le solicita al sistema ingresar un equipo por su número de serie&\\
-        \hline
-        &\inc Busca el equipo\\
-        \hline
-        & \inc El sistema muestra los datos del equipo\\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema vincular el equipo al ítem&\\
-        \hline
-        & \inc El sistema vincula el equipo con el ítem\\
-        \hline
+            %& \inc Crea la tarifa con el tipo de servicio, tipo de tarea, tipo de equipo y el precio ingresados\\
+			%\hline
+            %& \inc Muestra los datos de la tarifa creada\\
+			%\hline
+            %\inc Repetir pasos 10 al 18 hasta que el Jefe de Taller no desee crear más tarifas para el tipo de servicio creado& \\
+			%\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de servicio ingresado ya existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 9}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el tipo de servicio y el tipo de tarea ya están vinculados. Ir al paso 9}\\
+		\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{12a. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{12b. }El sistema informa que el tipo de tarea ingresado no se puede realizar bajo el tipo de servicio. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{15a. }El sistema informa que el tipo de equipo ingresado no existe. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{15b. }El sistema informa que el tipo de tarea ingresado no se puede realizar para el tipo de equipo ingresado. Ir al paso 19}\\
+		%\hline	
+		%\multicolumn{2}{|p{16cm}|}{\textbf{18. }El sistema informa que ya existe una tarifa con el tipo de servicio, tipo de servicio y tipo de servicio ingresados. Ir al paso 19}\\
+		%\hline	
+	\end{longtable}
+
+    \finCU{}
 
 
-        \inc El Jefe de Taller ingresa una fecha de vencimiento para el ítem&\\
-        \hline
-        & \inc El sistema muestra la fecha de vencimiento ingresada\\
-        \hline
-        & \inc El sistema asigna la fecha de vencimiento al ítem\\
-        \hline
-
-        & \inc El sistema muestra la información del ítem creado\\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema que vincule el ítem a la OT & \\
-        \hline
-        & \inc El sistema vincula el ítem creado a la OT\\
-        \hline
-        \inc Fin Sección &\\
-        \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que la actividad no existe. Si el Jefe de Taller desea crear la actividad, includes: ``Crear nueva actividad''. Si no, volver al paso 6 del curso normal.}\\
-    \hline  
-    \multicolumn{2}{|p{16cm}|}{\textbf{8. }El Jefe de Taller no desea asignar ningún empleado al ítem. El sistema el asigna el estado de ``Creado al ítem''. Ir al paso 14 del curso normal}\\
-    \hline  
-    \multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el empleado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo empleado''. Si no, ir al paso 6 del curso normal.}\\
-    \hline  
-    \multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el empleado está sobrecargado. Si el Jefe de Taller decide cambiar de empleado, volver al paso 8. Si no, ir al paso 6 curso normal}\\
-    \hline  
-    \multicolumn{2}{|p{16cm}|}{\textbf{10c. }El sistema informa que el rol del empleado asignado no corresponde con la actividad del ítem. Volver al paso 8.}\\
-    \hline  
-    \multicolumn{2}{|p{16cm}|}{\textbf{14. }El Jefe de Taller no desea reservar ningún repuesto. Ir al paso 20}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{16. }El sistema informa que el repuesto ingresado no existe. Si el Jefe de Taller desea crearlo, includes: ``Agregar nuevo artículo de stock''. Si no, volver al paso 6 del curso normal}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{18a. }El sistema informa que el repuesto ingresado ya está reservado para el ítem. Si el Jefe de Taller desea reservar otra unidad más, continuar con el paso 19. Si no, volver al paso 14.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{18b. }El sistema informa que el repuesto ingresado no tiene cantidad suficiente para cumplir la reserva. Si el Jefe de Taller desea reservar otro artículo más, volver al paso 14. Si no, ir al paso 19.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{21. }El Jefe de Taller no desea vincular ningún equipo con el ítem. Ir al paso 26 del curso normal}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{23a. }El sistema informa que el equipo ingresado no existe. Si el Jefe de Talle decide ingresarlo, includes: ``Agregar nuevo equipo''. Si no, volver al paso 21}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{23b. }El sistema informa que el equipo ingresado ya está vinculado con otro ítem abierto. Volver al paso 21.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{27. }El sistema informa que la fecha de vencimiento ingresada es incorrecta. Si desea ingresar una nueva, volver al paso 26. Si no, ir al paso 6 del curso normal}\\
-    \hline  
-    \multicolumn{2}{|p{16cm}|}{\textbf{29. }El sistema informa que el ítem a vincular con la OT ya existe. Volver al paso 6 del curso normal}\\
-    \hline  
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Eliminar ítem}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-        \hline
-        \inc El Jefe de Taller le indica un ítem a eliminar& \\
-        \hline
-        & \inc El sistema busca el ítem\\
-        \hline
-        & \inc El sistema muestra la información del ítem\\
-        \hline
-        \inc El Jefe de Taller confirma la eliminación del ítem& \\
-        \hline
-        & \inc El sistema elimina el ítem de la Orden de Trabajo\\
-        \hline
-        \inc Fin Sección &\\
-        \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3a. }El sistema informa que el ítem no existe. Si el Jefe de Taller desea indicar otro ítem, volver al paso 1. Si no, volver al paso 6 del curso normal.}\\
-    \hline  
-    \multicolumn{2}{|p{16cm}|}{\textbf{3b. }El sistema indica que el ítem está en relación con un empleado, un equipo, o un repuesto. Si el Jefe de Taller desea indicar otro ítem, volver al paso 1. Si no, volver al paso 6 del curso normal.}\\
-    \hline  
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-\raya
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar ítem}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se modifica un ítem de una Orden de Trabajo existente}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: Orden de Trabajo está creada}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Ítem modificado}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el Jefe de Taller decide modificar un ítem& \\
-        \hline
-        \inc El Jefe de Taller le pide al sistema modificar un ítem por su número& \\
-        \hline
-        & \inc El sistema busca el ítem \\
-        \hline
-        & \inc El sistema muestra los datos del ítem\\
-        \hline
-        \inc El Jefe de Taller decide:
-        \begin{enumerate}[label=(\alph*)]
-            \item Si desea ... , ir a sección \textit{ }
-            \item Si desea ... , ir a sección \textit{ }
-            \item Si desea ... , ir a sección \textit{ }
-            \item Si desea ... , ir a sección \textit{ }
-            \item Si desea ... , ir a sección \textit{ }
-        \end{enumerate}        & \\
-        \hline
-        \inc  Repetir paso 5 hasta que el Jefe de Taller no desee modificar más la Orden de Trabajo& \\
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que la Orden de Trabajo ingresada no existe. Si se la quiere crear, includes: ``Abrir nueva Orden de Trabajo''. Si no, fin CU.}\\
-    \hline
-\end{longtable}
-
-%LO RESETEAMOS A 0
-\resetinc
-\raya
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar empleado}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario, esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Se actualiza el registro del empleado dado de alta con sus nuevos datos}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Empleado modificado}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el Jefe de Taller decide modificar un empleado& \\
-        \hline
-        \inc El Jefe de Taller le pide al sistema buscar un empleado por su nombre & \\
-        \hline
-        & \inc El sistema busca el empleado \\
-        \hline
-        & \inc El sistema muestra los datos del empleado \\
-        \hline
-        \inc El Jefe de Taller decide si: &  \\
-            \begin{enumerate}[label=(\alph*)]
-                \item Si desea asignarle un nuevo rol, ir a sección \textit{Asignar rol a empleado}
-                \item Si desea revocarle un rol, ir a sección \textit{Eliminar rol a empleado}
-                \item Si desea modificar información personal, ir a sección \textit{Modificar información de empleado}
-            \end{enumerate}        & \\
-        \hline
-        \inc Repetir paso 5 hasta que el Jefe de Taller no desee modificar más los datos del empleado &\\
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Agregar Empleado''. Si desea reintentar el ingreso, volver al paso 2 del curso normal. Si no, fin CU.}\\
-    \hline
-    %\multicolmn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-    %\hline
-    %\multicomn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-    %\hline	
-\end{longtable}
-
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Asignar rol a empleado}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc El Jefe de Taller le pide al sistema buscar un rol de empleado por su nombre& \\
-        \hline
-        & \inc El sistema busca el rol ingresado \\
-        \hline
-        & \inc El sistema muestra los datos del rol de empleado \\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema vincular el rol de empleado con el empleado &\\
-        \hline
-        & \inc El sistema vincula el rol con el empleado\\
-        \hline
-        \inc Fin Sección. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el empleado ya está vinculado con el rol de empleado ingresado. Si el Jefe de taller desea reintentar el ingreso, volver al paso 1. Si no, fin sección}\\
-    \hline
-\end{longtable}
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar tipo de tarea}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea un nuevo tipo de tarea, indicando los tipos de equipos para los cuales se podrá realizar, en qué tipo de servicio podrá ser incluído, y creando tarifas con el tipo de tarea}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tipo de tarea creado}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller desea agregar un nuevo tipo de tarea & \\
+			\hline
+            \inc El Jefe de Taller ingresa un nombre y una descripción del tipo de tarea a dar de alta y le solicita al sistema que lo cree & \\
+			\hline
+			& \inc Crea el tipo de tarea \\
+			\hline
+			& \inc Muestra los datos del tipo de tarea creado\\
+			\hline
 
 
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Eliminar rol de un empleado}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc El Jefe de Taller le pide al sistema buscar un rol de empleado por su nombre& \\
-        \hline
-        & \inc El sistema busca el rol ingresado \\
-        \hline
-        & \inc El sistema muestra los datos del rol de empleado \\
-        \hline
-        \inc El Jefe de Taller le solicita al sistema eliminar el rol de empleado del empleado &\\
-        \hline
-        & \inc El sistema eliminar el rol de empleado del empleado\\
-        \hline
-        \inc Fin Sección. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el rol de empleado ingresado no existe. Si el Jefe de Taller desea ingresarlo, includes: ``Crear Rol de Empleado''. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3a. }El sistema informa que el rol de empleado no está vinculado con el empleado. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3b. }El sistema informa que no se puede realizar la eliminación debido a que el empleado está asignado a un ítem con una actividad que requiere ese rol de empleado. Si desea reintentar el ingreso, volver al paso 1. Si no, fin sección.}\\
-    \hline
-\end{longtable}
-
-\resetinc
-
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Modificar Información de Empleado}\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc El Jefe de Taller ingresa la nueva información del empleado.& \\
-        \hline
-        & \inc El sistema muestra la información\\
-        \hline
-        \inc El Jefe de Taller confima el ingreso de la nueva información &\\
-        \hline
-        & \inc El sistema vincula la nueva información con el empleado.\\
-        \hline
-        \inc Fin Sección. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{3. }El Jefe de Taller no confirma la información. Si desea reingresar el ingreso, volver al paso 1. Si no, fin sección.}\\
-    \hline
-\end{longtable}
+			\inc El Jefe de Taller ingresa el nombre de un tipo de equipo para indicar que el tipo de tarea se podrá realizar para ese tipo de equipo & \\
+			\hline
+			& \inc Busca el tipo de equipo \\
+			\hline
+            & \inc Vincula el tipo de equipo con el tipo de tarea \\
+			\hline
+            & \inc Muestra los datos del tipo de tarea\\
+			\hline
 
 
-\begin{longtable}{ |p{8cm}|p{8cm}| }
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Empleado}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Encargado [Gerente | Jefe de Taller], Empleado}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente o Jefe de Taller agrega un nuevo empleado al sistema, si el Jefe de Taller lo desea, le puede agregar tareas que pueda realizar.}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: - }\\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-    \hline
-    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-    \hline
-        \inc Este CU comienza cuando el Encargado desea agregar un nuevo empleado.& \\
-        \hline
-        \inc  El Encargado le solicita el numero de documento al nuevo empleado, el empleado se lo da. Le solicita agregar el empleado ingresando su número de documento.& \\
-        \hline
-        & \inc  Busca al empleado.\\
-        \hline
-        & \inc  Crea un nuevo empleado.\\
-        \hline
-        \inc El Encargado le solicita el resto de sus datos: Nombre y Apellido completos, número de teléfono, domicilio y correo electrónico. Los ingresa en el sistema y le solicita que los guarde.& \\
-        \hline
-        & Registra los datos del empleado.\inc  \\
-        \hline
-        \inc El Encargado ingresa un Tipo de Tarea al sistema indicando su nombre y le solicita al sistema que la busque.& \\
-        \hline
-        & \inc Busca la Tarea. \\
-        \hline
-        & \inc  Muestra los datos de la Tipo de Tarea.\\
-        \hline
-        \inc El Encargado ingresa el nombre del Tipo de Equipo para el Tipo de Tarea & \\
-        \hline
-        & \inc Busca el Tipo de Equipo.\\
-        \hline
-        & \inc Muestra los datos del Tipo de Equipo\\
-        \hline
-        \inc El Encargado ingresa el nombre del Tipo de Servicio en el que realizar ese Tipo de Tarea y le solicita al sistema que lo busque.& \\
-        \hline
-        \inc El Encargado le solicita al sistema agregar al nuevo Empleado ese Tipo de Tarea del Tipo de Equipo.& \\
-        \hline
-        \inc Fin CU. & \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-    \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-    \hline	
-\end{longtable}
+            \inc Repetir pasos 5 a 8 hasta que el Jefe de Taller no desee indicar más tipos de equipo para el tipo de tarea&\\
+			\hline
+			\inc El Jefe de Taller ingresa el nombre de un tipo de servicio para indicar que el tipo de tarea se podrá realizar dentro de ese tipo de servicio & \\
+			\hline
+			& \inc Busca el tipo de servicio \\
+			\hline
+            & \inc Vincula el tipo de servicio con el tipo de tarea \\
+			\hline
 
 
-%LO RESETEAMOS A 0
-\setcounter{step}{0}
+            & \inc Muestra los datos del tipo de tarea\\
+			\hline
+            \inc Repetir pasos 9 a 13 hasta que el Jefe de Taller no desee indicar más tipos de servicio para el tipo de tarea&\\
+			\hline
+            %creamos tarifas PASO 15
+			\inc El Jefe de Taller ingresa el nombre de un tipo de equipo para agregar a una tarifa & \\
+			\hline
+			& \inc Busca el tipo de equipo \\
+			\hline
 
-\noindent\rule{169mm}{0.8mm}\\
-%LA LINEA SEPARA CU, NO SECCIONES
+
+            & \inc Muestra los datos del tipo de equipo\\
+			\hline
+            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio para agregar a la tarifa&\\
+			\hline
+            & \inc Busca el tipo de servicio \\
+			\hline
+            & \inc Muestra los datos del tipo de servicio\\
+			\hline
+
+
+            \inc El Jefe de Taller ingresa un precio para la tarifa &\\
+			\hline
+            & \inc Crea la tarifa con el tipo de tarea, tipo de equipo, tipo de serivicio y el precio ingresados\\
+			\hline
+            & \inc Muestra los datos de la tarifa creada\\
+			\hline
+            \inc Repetir pasos 15 al 23 hasta que el Jefe de Taller no desee crear más tarifas para el tipo de tarea creado& \\
+			\hline
+
+
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de tarea ingresado ya existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de equipo ingresado no existe. Ir al paso 9}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el tipo de equipo y el tipo de tarea ya están vinculados. Ir al paso 9}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{12. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que el tipo de servicio y el tipo de tarea ya están vinculados. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{18a. }El sistema informa que el tipo de equipo ingresado no existe. Ir al paso 24}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{18b. }El sistema informa que el tipo de tarea no se puede realizar para el tipo de equipo ingresado. Ir al paso 24}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{20a. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 24}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{20b. }El sistema informa que el tipo de tarea no se puede realizar bajo el tipo de servicio ingresado. Ir al paso 24}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{23. }El sistema informa que ya existe una tarifa con el tipo de tarea, tipo de equipo y tipo de servicio ingresados. Ir al paso 24}\\
+		\hline	
+	\end{longtable}
+
+    \finCU{}
+
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Crear tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea una nueva tarifa indicando qué tipo de incluirá, para qué tipo de equipo, bajo qué tipo de servicio, y un precio.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa creada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+
+			\inc Este CU comienza cuando el Jefe de Taller desea crear una tarifa& \\
+			\hline
+            \inc El Jefe de Taller ingresa el nombre de un tipo de equipo para agregar a la tarifa & \\
+			\hline
+            & \inc Busca el tipo de equipo \\
+			\hline
+			& \inc Muestra los datos del tipo de equipo \\
+			\hline
+
+
+			\inc El Jefe de Taller ingresa el nombre un tipo de tarea para agregar a la tarifa & \\
+			\hline
+			& \inc Busca el tipo de tarea \\
+			\hline
+			& \inc Muestra los datos del tipo de tarea \\
+			\hline
+            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio para vincular con la tarifa &\\
+			\hline
+
+
+            & \inc Busca el tipo de servicio \\
+			\hline
+			& \inc Muestra los datos del tipo de servicio \\
+			\hline
+            \inc El Jefe de Taller ingresa un precio para la tarifa&\\
+			\hline
+            & \inc Crea la tarifa con el tipo de tarea, tipo de equipo, tipo de serivicio y el precio ingresados\\
+			\hline
+
+
+            & \inc Muestra los datos de la tarifa creada\\
+			\hline
+            \inc Repetir pasos 5 al 13 hasta que el Jefe de Taller no desee crear más tarifas para el tipo de equipo ingresado & \\
+			\hline
+			\inc Fin CU. & \\
+
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo ingresado no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que el tipo de tarea ingresado no se puede realizar para el tipo de equipo ingresado. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el tipo de tarea ingresado no se puede realizar bajo el tipo de servicio ingresado. Ir al paso 14}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que ya existe una tarifa con el tipo de tarea, tipo de equipo, y tipo de servicio ingresados. Ir al paso 14}\\
+		\hline	
+	\end{longtable}
+
+
+    \finCU{}
+
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller ingresa el tipo de equipo, tipo de tarea, y tipo de servicio de una tarifa para modificar su precio.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa modificada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+
+			\inc Este CU comienza cuando el Jefe de Taller desea modificar una tarifa& \\
+			\hline
+            \inc El Jefe de Taller ingresa el nombre del tipo de equipo de la tarifa & \\
+			\hline
+            & \inc Busca el tipo de equipo \\
+			\hline
+			& \inc Muestra los datos del tipo de equipo \\
+			\hline
+
+
+			\inc El Jefe de Taller ingresa el nombre del tipo de tarea de la tarifa & \\
+			\hline
+			& \inc Busca el tipo de tarea \\
+			\hline
+			& \inc Muestra los datos del tipo de tarea \\
+			\hline
+            \inc El Jefe de Taller ingresa el nombre del tipo de servicio de la tarifa &\\
+			\hline
+
+
+            & \inc Busca el tipo de servicio \\
+			\hline
+			& \inc Muestra los datos del tipo de servicio \\
+			\hline
+            \inc El Jefe de Taller ingresa un nuevo precio para la tarifa&\\
+			\hline
+            & \inc Busca la tarifa \\
+			\hline
+
+
+            & \inc Modifica la tarifa \\
+			\hline
+            \inc Repetir pasos 5 al 13 hasta que el Jefe de Taller no desee modificar más tarifas para el tipo de equipo ingresado & \\
+			\hline
+			\inc Fin CU. & \\
+
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo ingresado no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que la tarifa no existe. Ir al paso 14}\\
+		\hline	
+	\end{longtable}
+
+
+    \finCU{}
+
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Secundario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller ingresa un tipo de equipo, tipo de tarea, y tipo de servicio que constituyan una tarifa. El sistema da de baja la tarifa}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa eliminada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+
+			\inc Este CU comienza cuando el Jefe de Taller desea eliminar una tarifa& \\
+			\hline
+            \inc El Jefe de Taller ingresa el nombre del tipo de equipo de la tarifa & \\
+			\hline
+            & \inc Busca el tipo de equipo \\
+			\hline
+			& \inc Muestra los datos del tipo de equipo \\
+			\hline
+
+
+			\inc El Jefe de Taller ingresa el nombre del tipo de tarea de la tarifa & \\
+			\hline
+			& \inc Busca el tipo de tarea \\
+			\hline
+			& \inc Muestra los datos del tipo de tarea \\
+			\hline
+            \inc El Jefe de Taller ingresa el nombre del tipo de servicio de la tarifa &\\
+			\hline
+
+
+            & \inc Busca el tipo de servicio \\
+			\hline
+			& \inc Muestra los datos del tipo de servicio \\
+			\hline
+            & \inc Busca la tarifa \\
+			\hline
+            & \inc Elimina la tarifa \\
+
+
+			\hline
+            \inc Repetir pasos 5 al 12 hasta que el Jefe de Taller no desee eliminar más tarifas para el tipo de equipo ingresado & \\
+			\hline
+			\inc Fin CU. & \\
+
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo ingresado no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 13}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 13}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{12a. }El sistema informa que la tarifa no existe. Ir al paso 13}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{12b. }El sistema informa que la tarifa está presente en un presupuesto de una \OT{} sin finalizar. Ir al paso 13}\\
+		\hline	
+	\end{longtable}
+
+
+    \finCU{}
+
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Asignar Tarea a Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller registra en el sistema que un técnico puede realizar ciertas tareas.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea asignada a un Técnico.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este Caso de Uso comienza cuando el Jefe de Taller desea agregar una Tarea a un Técnico.& \\
+			\hline
+			\inc  El Jefe de Taller le solicita al sistema buscar al Técnico ingresando su nombre.& \\
+			\hline
+			& \inc Busca al Técnico. \\
+			\hline
+            & \inc Muestra los datos personales del Técnico. \\
+			\hline
+
+
+			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre. & \\
+			\hline
+			& \inc Busca el Tipo de Tarea. \\
+			\hline
+			& \inc Muestra los datos del Tipo de Tarea. \\
+			\hline
+			\inc  El Jefe de Taller le solicita al sistema buscar un Tipo de Equipo ingresando su nombre. & \\
+			\hline
+
+
+			& \inc Busca el Tipo de Equipo.\\
+			\hline
+			& \inc Muestra los datos del Tipo de Equipo. \\
+			\hline
+			\inc  El Jefe de Taller le solicita al sistema agregar ese Tipo de Tarea para ese Tipo de Equipo al Técnico. & \\
+			\hline
+			& \inc Agrega el Tipo de Tarea para el Tipo de Equipo al Técnico. \\
+			\hline
+
+
+			\inc  Repetir pasos 5 a 12 hasta que el Jefe de Taller no desee agregar más tareas al Técnico. & \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el Técnico no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El Sistema informa que el Tipo de Tarea no existe. Ir al paso 13}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El Sistema informa que el Tipo de Equipo no existe. Ir al paso 13}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El Sistema informa que el Tipo de Tarea ingresado no se puede realizar para el Tipo de Equipo ingresado. Ir al paso 13.}\\
+		\hline	
+	\end{longtable}
+
+    \finCU{}
+
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Remover Tarea de un Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al sistema remover uno o más Tipos de Tarea para un Tipo de Equipo de un Técnico en particular.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tipo de Tarea removida de un técnico.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este Caso de Uso comienza el Jefe de Taller decide remover de un técnico un Tipo de Tarea de los Tipos de Tarea está capacitado para realizar.& \\
+			\hline
+			\inc El Jefe de Taller se solicita al sistema buscar un Técnico ingresando su nombre. & \\
+			\hline
+			& \inc Busca el Técnico.\\
+			\hline
+			& \inc Muestra los datos personales del Técnico.\\
+			\hline
+
+
+			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre & \\
+			\hline
+			& \inc Busca el Tipo de Tarea. \\
+			\hline
+			& \inc Muestra los datos del Tipo de Tarea. \\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Equipo, ingresando su nombre.& \\
+			\hline
+
+
+			& \inc Busca el Tipo de Equipo.\\
+			\hline
+			& \inc Muestra los datos del Tipo de Equipo.\\
+			\hline
+			\inc El Jefe de Taller le solicita al sistema que remueva del Técnico el Tipo de Tarea para el Tipo de Equipo ingresados. & \\
+			\hline
+			& \inc Elimina el Tipo de Tarea para el Tipo de Equipo de las Tareas que puede realizar el Técnico.\\
+			\hline
+
+
+			& \inc Muestra los datos del técnico.\\
+			\hline
+			\inc Repetir pasos 5 a 13 hasta que el Jefe de Taller no desee remover más Tipos de Tareas asignados a un Técnico.&\\
+			\hline
+			\inc Fin CU.& \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el técnico no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el Tipo de Tarea ingresado no existe. Ir al paso 14.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el Tipo de Equipo ingresado no existe. Ir al paso 14. }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el Tipo de Tarea ingresado no se puede realizar para el Tipo de Equipo ingresado. Ir al paso 14. }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que el técnico no está capacitado para realizar el Tipo de Tarea ingresado para el Tipo de Equipo ingresado, por lo tanto no puede realizar la eliminación. Ir al paso 14.}\\
+		\hline
+	\end{longtable}
+
+
+    \finCU{}
+
+
+
+%\begin{longtable}{ |p{8cm}|p{8cm}| }
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Registrar Pago diferido de Factura}\\
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable, Cliente}\\
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El cliente realiza el pago de una factura}\\
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Una o más facturas pagas}\\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+%    \hline
+%    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+%    \hline
+%        \inc Este CU comienza cuando el cliente se acerca al local para pagar una factura.& \\
+%        \hline
+%        \inc El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta el número de factura. & \\
+%        \hline
+%        \inc El Operario Contable le solicita al sistema que busque la factura. & \\
+%        \hline
+%        & \inc El sistema busca la factura. \\
+%        \hline
+%        & \inc El sistema muestra los datos de la factura. \\
+%        \hline
+%        & \inc El sistema busca el cliente que figura en la factura.\\
+%        \hline
+%        \inc El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
+%            \begin{enumerate}[label=(\alph*)]
+%                \item Pagar en efectivo: ir a sección \textit{Pago en Efectivo}.
+%                \item Pagar con Nota de Crédito: ir a sección \textit{Pago con Nota de Crédito}.
+%                \item Pagar con Transferencia Bancaria: ir a sección \textit{Pago con Transferencia Bancaria}.
+%                \item Pagar con Cheque: ir a sección \textit{Pago con Cheque}.
+%                \item No paga. Ir al paso 8.
+%            \end{enumerate}
+%        & \\
+%        \hline
+%        & \inc El sistema muestra el subtotal de lo pagado y el total de lo adeudado.\\
+%        \hline
+%        & \inc Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
+%        \hline
+%        \inc El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
+%        \hline
+%        & \inc El sistema calcula y almacena el saldo actual del cliente que figura en la factura.\\
+%        \hline
+%        \inc El Operario Contable le extiende al cliente un comprobante de pago & \\
+%        \hline
+%        & \inc Si la factura fue pagada en su totalidad, el sistema la marca como pagada. Si no, el sistema la marca como pagada parcialmente.\\
+%        \hline
+%        \inc Fin CU. & \\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{5a. } El sistema informa que la factura no existe, fin CU.}\\
+%    \hline	
+%    \multicolumn{2}{|p{16cm}|}{\textbf{5b. } El sistema informa que la factura ya fue pagada, fin CU.}\\
+%    \hline	
+%    \multicolumn{2}{|p{16cm}|}{\textbf{9. } El sistema le informa al Operario Contable que el cliente dispone de saldo a favor en su cuenta corriente. El Operario Contable genera una Nota de Crédito a nombre del Cliente con dicho saldo. Se la entrega al Cliente. Continuar con el paso 14 del Curso Normal.}\\
+%    \hline	
+%\end{longtable}
+%
+%%LO RESETEAMOS A 0
+%\resetinc
+%
+%\begin{longtable}{ |p{8cm}|p{8cm}| }
+%    \hline
+%    
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago en efectivo}\\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+%    \hline
+%    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+%    \hline
+%        \inc  El cliente da un pago en efectivo& \\
+%        \hline
+%        \inc  El Operario Contable le solicita al sistema el registro del cobro del importe a pagar ingresando el monto del efectivo entregado por el cliente& \\
+%        \hline
+%        & \inc  El sistema registra el pago en efectivo\\
+%        \hline
+%        & \inc  El sistema calcula y muestra el vuelto\\
+%        \hline
+%        \inc  El Operario Contable deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
+%        \hline
+%        \inc Fin Sección. & \\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{1. } El cliente no tiene suficiente efectivo como para pagar el importe. Ir a paso 5 del curso principal de CU.}\\
+%    \hline
+%\end{longtable}
+%
+%%LO RESETEAMOS A 0
+%\resetinc
+%
+%\begin{longtable}{ |p{8cm}|p{8cm}| }
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Nota de Crédito}\\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+%    \hline
+%    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+%    \hline
+%        \inc  El cliente le entrega al Operario Contable la Nota de Crédito con la que desea abonar.& \\
+%        \hline
+%        \inc  El Operario Contable contable busca en el sistema la Nota de Crédito, ingresando su número.& \\
+%        \hline
+%        & \inc  El sistema busca la Nota de Crédito.\\
+%        \hline
+%        & \inc  El sistema muestra los datos de la Nota de Crédito.\\
+%        \hline
+%        \inc  El Operario Contable registra en el sistema el uso de la Nota de Credito como cobro del importe a pagar.&\\
+%        \hline
+%        & \inc El Sistema registra el pago con el monto de la Nota de Crédito.\\
+%        \hline
+%        & \inc El sistema marca la nota de crédito como ya usada.\\
+%        \hline
+%        \inc Fin Sección.&\\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{4a. } La Nota de Crédito no existe. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
+%        
+%        \begin{itemize}
+%            \item Si desea usar otra Nota de Crédito, ir a paso 1.
+%            \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
+%        \end{itemize}}\\
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{4b. } La Nota de Crédito ya fue usada. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
+%    
+%        \begin{itemize}
+%            \item Si desea usar otra Nota de Crédito, ir a paso 1.
+%            \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
+%        \end{itemize}}\\
+%    \hline
+%\end{longtable}
+%
+%%LO RESETEAMOS A 0
+%\resetinc
+%
+%\begin{longtable}{ |p{8cm}|p{8cm}| }
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Cheque}\\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+%    \hline
+%    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+%        \hline
+%        \inc  El Cliente le entrega al Operario Contable el cheque con el que desea abonar & \\
+%        \hline
+%        \inc  El Operario Contable solicita al sistema el registro del cobro del importe a pagar con el monto que figura en el cheque &  \\
+%        \hline
+%        & \inc El sistema registra el pago con monto del cheque. \\
+%        \hline
+%        \inc Fin Sección. & \\
+%        \hline
+%    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+%    \hline
+%\end{longtable}
+%
+%%LO RESETEAMOS A 0
+%\resetinc
+%
+%\begin{longtable}{ |p{8cm}|p{8cm}| }
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Transferencia Bancaria}\\
+%    \hline
+%    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+%    \hline
+%    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+%        \hline
+%        \inc El cliente le entrega el comprobante de la Transferencia Bancaria al Operario Contable& \\
+%        \hline
+%        \inc El Operario contable busca en el registro de la organización la transferencia &\\
+%        \hline
+%        \inc El Operario Contable confirma la acreditación de la transferencia & \\
+%        \hline
+%        \inc El Operario Contable solicita al sistema que registre el cobro del importe a pagar con el monto que figura en la Transferencia& \\
+%        \hline
+%        & \inc  El sistema registra el pago con monto de la transferencia\\
+%        \hline
+%        \inc Fin Sección &\\
+%        \hline
+%    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+%    \hline
+%    \multicolumn{2}{|p{16cm}|}{\textbf{3. } La transferencia no se ha acreditado. El Operario Contable le infoma la situación al Cliente y le da la posibilidad de elegir otra forma de pago. El cliente decide:
+%    \begin{enumerate}[label=(\alph*)]
+%        \item Indicar otra transferencia. Ir a paso 1.
+%        \item Elegir otra forma de pago. Ir al paso 5 del Curso Normal de CU. 
+%    \end{enumerate}}\\
+%    \hline
+%\end{longtable}
+
+
 
 
 
