@@ -47,7 +47,7 @@
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar cliente}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Esencial, primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller da de baja un cliente, de modo que no se abrirán nuevas órdenes de trabajo a su nombre.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
@@ -63,11 +63,11 @@
 			\hline
 			& \inc Busca al cliente. \\
 			\hline
-			& \inc Muestra los datos del cliente. \\
-			\hline
-			\inc El Jefe de Taller le solicita al sistema eliminar al cliente.&\\
-			\hline
 			& \inc Verifica el estado de la cuenta del cliente. \\
+			\hline
+
+
+            & \inc Verifica que no tenga \OTs{} sin finalizar a su nombre. \\
 			\hline
 			& \inc Da de baja al cliente. \\
 			\hline
@@ -77,7 +77,9 @@
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el cliente no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el cliente posee deuda. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el cliente posee deuda. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{6. }El sistema informa que el cliente tiene \OTs{} sin finalizar a su nombre. Fin CU.}\\
 		\hline	
 	\end{longtable}
 
