@@ -38,58 +38,62 @@
     \hline
     \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Técnico}\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Encargado [Gerente | Jefe de Taller], Técnico}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente o Jefe de Taller agrega un nuevo Técnico al sistema, si el Jefe de Taller lo desea, le puede agregar tareas que pueda realizar.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente, Técnico}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente agrega un nuevo Técnico al sistema, y si lo desea, le indica al sistema las tareas que está capacitado para realizar.}\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: - }\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Técnico creado}\\
     \hline
     \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
     \hline
     \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
     \hline
-        \inc Este CU comienza cuando el Encargado desea agregar un nuevo Técnico.& \\
+        \inc Este CU comienza cuando el Gerente desea agregar un nuevo Técnico.& \\
         \hline
-        \inc  El Encargado le solicita el numero de documento al nuevo Técnico, el Técnico se lo da. Le solicita al Sistema agregar el Técnico ingresando su número de documento.& \\
+        \inc  El Gerente le solicita el numero de documento al nuevo Técnico, el Técnico se lo da. El Gerente le solicita al Sistema agregar el Técnico ingresando su número de documento.& \\
         \hline
         & \inc  Crea un nuevo Técnico.\\
         \hline
         & \inc  Muestra los datos del Técnico.\\
         \hline
-        \inc El Encargado le solicita el resto de sus datos: Nombre y Apellido completos, número de teléfono, domicilio y correo electrónico. Los ingresa en el sistema y le solicita que los guarde.& \\
+
+
+        \inc El Gerente le solicita el resto de sus datos: nombre y apellido completos, número de teléfono, domicilio y correo electrónico. Los ingresa en el sistema y le solicita que los guarde.& \\
         \hline
         & \inc Registra los datos del Técnico.\\
         \hline
-        \inc El Encargado ingresa un Tipo de Tarea al sistema indicando su nombre y le solicita al sistema que la busque.& \\
+        \inc El Gerente ingresa un Tipo de Tarea al sistema indicando su nombre y le solicita al sistema que lo busque.& \\
         \hline
-        & \inc Busca la Tarea. \\
+        & \inc Busca el Tipo de Tarea. \\
         \hline
-        & \inc  Muestra los datos del Tipo de Tarea.\\
+
+
+        & \inc Muestra los datos del Tipo de Tarea.\\
         \hline
-        \inc El Encargado ingresa el nombre del Tipo de Equipo para el Tipo de Tarea & \\
+        \inc El Gerente ingresa el nombre del Tipo de Equipo para el Tipo de Tarea & \\
         \hline
         & \inc Busca el Tipo de Equipo.\\
         \hline
         & \inc Muestra los datos del Tipo de Equipo\\
         \hline
-        \inc El Encargado le solicita al sistema agregar al nuevo Técnico ese Tipo de Tarea para ese Tipo de Equipo.& \\
+
+
+        \inc El Gerente le solicita al sistema agregar al nuevo Técnico ese Tipo de Tarea para ese Tipo de Equipo.& \\
         \hline
         & \inc Agrega al nuevo Técnico ese tipo de Tarea para ese Tipo de Equipo\\
         \hline
-        \inc Repetir pasos x a x hasta que el Encargado no desee agregar más Tareas al Técnico.& \\
-        \hline
-        & \inc Muestra los datos personales del Técnico junto con sus nuevas tareas asociadas (si las hubiese).\\
+        \inc Repetir pasos 7 a 14 hasta que el Gerente no desee agregar más Tareas al Técnico.& \\
         \hline
         \inc Fin CU. & \\
     \hline
     \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico ya existe. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el Técnico ya existe. Fin CU.}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{9a. } El Sistema informa que el Tipo de Tarea no existe. Si el Encargado desea ingresar un nuevo Tipo de Tarea, ir a paso x. Si no, ir a paso x.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{9. }El Sistema informa que el Tipo de Tarea no existe. Ir a paso 15.}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{12a. } El Sistema informa que el Tipo de Equipo no existe. Si el encargado desea ingresar un nuevo Tipo de Equipo, ir a paso x. Si no, ir a paso x.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{12a. }El Sistema informa que el Tipo de Equipo no existe. Ir a paso 15.}\\
     \hline	
-    \multicolumn{2}{|p{16cm}|}{\textbf{12b. } El Sistema informa que el Tipo de Equipo no se encuentra en ninguna tarifa con el Tipo de Tarea seleccionada. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{12b. }El Sistema informa que el Tipo de Tarea no se puede realizar para el Tipo de Equipo ingresado. Ir al paso 15.}\\
     \hline	
 \end{longtable}
 
