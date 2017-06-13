@@ -37,11 +37,11 @@
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Asignar Tarea a Técnico}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller le solicita al Sistema agregar nuevos Tipo de Tareas a un Técnico, pudiendo después ser elegido para Servicios que contengan Tareas de este tipo.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller registra en el sistema que un técnico puede realizar ciertas tareas.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Nueva Tarea Asignada a un Técnico.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea asignada a un Técnico.}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
@@ -55,6 +55,8 @@
 			\hline
             & \inc Muestra los datos personales del Técnico. \\
 			\hline
+
+
 			\inc El Jefe de Taller le solicita al sistema buscar un Tipo de Tarea ingresando su nombre. & \\
 			\hline
 			& \inc Busca el Tipo de Tarea. \\
@@ -63,6 +65,8 @@
 			\hline
 			\inc  El Jefe de Taller le solicita al sistema buscar un Tipo de Equipo ingresando su nombre. & \\
 			\hline
+
+
 			& \inc Busca el Tipo de Equipo.\\
 			\hline
 			& \inc Muestra los datos del Tipo de Equipo. \\
@@ -71,57 +75,21 @@
 			\hline
 			& \inc Agrega el Tipo de Tarea para el Tipo de Equipo al Técnico. \\
 			\hline
+
+
 			\inc  Repetir pasos 5 a 12 hasta que el Jefe de Taller no desee agregar más tareas al Técnico. & \\
 			\hline
-			& \inc Muestra los nuevos Tipos Tareas para Tipos de Equipos agregados al Técnico. \\
-			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico no existe. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el Técnico no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7. } El Sistema informa que el Tipo de Tarea no existe. Si el Jefe de Taller desea ingresar otra Tarea, ir a paso 5. Si no, Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El Sistema informa que el Tipo de Tarea no existe. Ir al paso 13}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{10a. } El Sistema informa que el Tipo de Equipo no existe. Si el Jefe de Taller desea ingresar otro, ir a paso 8. Si no, Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El Sistema informa que el Tipo de Equipo no existe. Ir al paso 13}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10b. } El Sistema informa que el Tipo de Equipo no corresponde con el Tipo de Tarea ingresado anteriormente. Si el Jefe de Taller desea ingresar otro, ir a paso 8. Si no, Fin CU.}\\
-		\hline	
-	\end{longtable}
-
-    \resetinc
-\noindent\rule{169mm}{0.8mm}\\
-
-	\begin{longtable}{ |p{8cm}|p{8cm}| }
-		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}:}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}:  }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: }\\
-		\hline
-		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
-		\hline
-		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
-		\hline
-			\inc  & \inc   \\
-			\hline
-			\inc  & \inc   \\
-			\hline
-			\inc & \inc   \\
-			\hline
-			\inc Fin CU. & \\
-		\hline
-		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
-		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El Sistema informa que el Tipo de Tarea ingresado no se puede realizar para el Tipo de Equipo ingresado. Ir al paso 13.}\\
 		\hline	
 	\end{longtable}
-
-
 \end{document}
