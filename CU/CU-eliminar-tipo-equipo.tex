@@ -39,43 +39,39 @@
 
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar proveedor}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar Tipo de Equipo}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Esencial, primario}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller da de baja un proveedor, de modo que no pueden hacerse nuevos pedidos a éste.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller decide eliminar un tipo de equipo, ingresando su nombre.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Proveedor dado de baja.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tipo de Equipo dado de baja.}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-			\inc Este CU comienza cuando el Jefe de Taller decide dar de baja un proveedor.& \\
+			\inc Este caso de uso comienza cuando el Jefe de Taller decide eliminar un tipo de equipo. & \\
 			\hline
-			\inc  El Jefe de Taller le solicita al sistema buscar al proveedor, ingresando su CUIT. & \\
+			\inc El Jefe de Taller ingresando el nombre y le pide al sistema que lo busque. & \\
 			\hline
-			& \inc Busca al proveedor.\\
+			& \inc Busca el tipo de equipo.\\
 			\hline
-			& \inc Busca los pedidos pendientes de entrega. \\
+			& \inc Muestra los datos del tipo de equipo. \\
 			\hline
-			& \inc Muestra los datos del proveedor. \\
+			\inc El Jefe de Taller le solicita al sistema eliminar el tipo de equipo.&\\
 			\hline
-			\inc El Jefe de Taller le solicita al sistema eliminar al proveedor.&\\
+			& \inc Verifica que no existan tareas asociadas al tipo de equipo.\\
 			\hline
-      & \inc Verifica que el proveedor no esté asociado a algún producto. \\
-      \hline
-			& \inc Da de baja al proveedor.\\
+      & \inc Da de baja el tipo de equipo.\\
 			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el proveedor no existe. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el proveedor tiene pedidos pendientes de entrega. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de equipo tiene tareas asociadas. Fin CU.}\\
 		\hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el proveedor está actualmente asociado a algún producto. Fin CU.}\\
-    \hline
 	\end{longtable}
 
     %LO RESETEAMOS A 0
