@@ -1,0 +1,83 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\begin{document}
+	%DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    %LO RESETEAMOS A 0
+    \newcommand\resetinc{\setcounter{step}{0}}
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Registrar Pedido a Proveedor}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Operario contable registra un pedido a un proveedor en el sistema, con el código interno de referencia y la cantidad de los productos pedido.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Pedido registrado.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+
+			\inc Este CU comienza cuando el Operario Contable decide registrar un pedido realizado a un proveedor.& \\
+			\hline
+            \inc El Operario Contable le solicita al sistema buscar un proveedor ingresando su nombre.& \\
+			\hline
+            & \inc Busca el Proveedor.\\
+			\hline
+			& \inc Muestra los datos del proveedor\\
+			\hline
+
+            \inc El Operario Contable ingresa el código interno de referencia de un producto.&\\
+			\hline
+            & \inc Busca el producto.\\
+			\hline
+			& \inc Muestra los datos del producto.\\
+			\hline
+            \inc El Operario Contable le solicita al sistema agregar el producto e ingresa la cantidad pedida.&\\
+			\hline
+
+            & \inc Agrega el producto al pedido.\\
+			\hline
+            & \inc Muestra los productos incluídos en el pedido\\
+			\hline
+            \inc Repetir pasos 5 al 12 hasta que el Operario Contable no desee incluir más productos en el pedido& \\
+			\hline
+			\inc El Operario contable le solicita al sistema crear un nuevo pedido con ese proveedor con los productos seleccionados.& \\
+			\hline
+            
+			& \inc Crea el pedido.\\
+			\hline
+            & \inc Muestra el pedido completo\\
+			\hline
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el Proveedor no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9a. }El Sistema informa que el Producto no existe. Ir a paso 13.}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{9b. }El Sistema informa que el Producto no es proveído por el Proveedor. Ir a paso 13.}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{14. }El Sistema informa que el Pedido no contiene ningún producto y elimina el pedido. Ir a paso 15}\\
+		\hline	
+	\end{longtable}
+    \resetinc{}
+    \raya{}
+\end{document}
