@@ -47,52 +47,74 @@
     \hline
     \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
     \hline
-        \inc Este CU comienza cuando un Cliente .&\\
+        \inc Este CU comienza cuando un Cliente se contacta con la empresa para requerir un servicio.&\\
         \hline
-        \inc  El Encargado le solicita el numero de documento al nuevo Técnico, el Técnico se lo da. Le solicita al Sistema agregar el Técnico ingresando su número de documento.& \\
+        \inc El Técnico le solicita el nombre al cliente y este se lo da. El técnico le solicita al Sistema buscar al cliente ingresando el nombre.& \\
         \hline
-        & \inc  Crea un nuevo Técnico.\\
+        & \inc Busca el cliente.\\
         \hline
-        & \inc  Muestra los datos del Técnico.\\
+        & \inc Verifica que el cliente no sea moroso.\\
         \hline
-        \inc El Encargado le solicita el resto de sus datos: Nombre y Apellido completos, número de teléfono, domicilio y correo electrónico. Los ingresa en el sistema y le solicita que los guarde.& \\
+
+        & \inc Muestra los datos personales del Cliente.\\
         \hline
-        & \inc Registra los datos del Técnico.\\
+        \inc El Técnico le solicita al Sistema crear una \OT{} a nombre del cliente y se designa a sí mismo como encargado.& \\
         \hline
-        \inc El Encargado ingresa un Tipo de Tarea al sistema indicando su nombre y le solicita al sistema que la busque.& \\
+        & \inc Crea la \OT{}.\\
         \hline
-        & \inc Busca la Tarea. \\
+        \inc El técnico ingresa el número de serie del equipo para incorporarlo a la \OT{}.& \\
         \hline
-        & \inc  Muestra los datos del Tipo de Tarea.\\
+        
+        & \inc Busca el equipo. \\
         \hline
-        \inc El Encargado ingresa el nombre del Tipo de Equipo para el Tipo de Tarea & \\
+        & \inc Incorpora el equipo a la \OT{}.\\
         \hline
-        & \inc Busca el Tipo de Equipo.\\
+        \inc El Técnico le solicita al cliente una descripción de problema del equipo. El Cliente se la da. El técnico ingresa en el sistema la descripción y le solicita al Sistema que la incorpore a la \OT{}& \\
         \hline
-        & \inc Muestra los datos del Tipo de Equipo\\
+        & \inc Incorpora la descripción del problema a la \OT{}\\
         \hline
-        \inc El Encargado le solicita al sistema agregar al nuevo Técnico ese Tipo de Tarea para ese Tipo de Equipo.& \\
+
+        \inc El técnico le solicita el Sistema calcular el monto de RDyP para el tipo de equipo del equipo ingresado.& \\
         \hline
-        & \inc Agrega al nuevo Técnico ese tipo de Tarea para ese Tipo de Equipo\\
+        & \inc Calcula el importe.\\
         \hline
-        \inc Repetir pasos x a x hasta que el Encargado no desee agregar más Tareas al Técnico.& \\
+        & \inc Muestra el importe.\\
         \hline
-        & \inc Muestra los datos personales del Técnico junto con sus nuevas tareas asociadas (si las hubiese).\\
+        \inc El Técnico le comunica al Cliente el monto a pagar por la RDyP.&\\
+        \hline
+
+        \inc El Cliente abona en efectivo el importe de RDyP.& \\
+        \hline
+        \inc El Técnico le solicita al sistema el registro del cobro del importe a pagar ingresando el monto del efectivo entregado por el cliente& \\
+        \hline
+        & \inc Registra el pago del importe.\\
+        \hline
+        & \inc Calcula y muestra el vuelto.\\
+        \hline
+
+        \inc El Técnico deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
+        \hline
+        \inc El Técnico le solicita al Sistema imprimir la factura por el importe abonado y el comprobante de la \OT{}& \\
+        \hline
+        & \inc Imprime la factura y el comprobante de la \OT{}.\\
+        \hline
+        \inc El Técnico le entrega al Cliente la factura junto con el comprobante de la \OT{}.&\\
+
         \hline
         \inc Fin CU. & \\
     \hline
     \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Técnico ya existe. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Cliente no existe. Fin CU.}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{9a. } El Sistema informa que el Tipo de Tarea no existe. Si el Encargado desea ingresar un nuevo Tipo de Tarea, ir a paso x. Si no, ir a paso x.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{5. } El Sistema informa que el cliente es moroso. El Técnico consulta con el gerente si prestarle o no servicio al Cliente. Si se decide que sí, ir a paso x. Si no, fin CU.}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{12a. } El Sistema informa que el Tipo de Equipo no existe. Si el encargado desea ingresar un nuevo Tipo de Equipo, ir a paso x. Si no, ir a paso x.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{8. } El Técnico ve que es la primera vez que ingresa el equipo al taller, includes "Agregar Equipo". Ir a paso x.}\\
     \hline	
-    \multicolumn{2}{|p{16cm}|}{\textbf{12b. } El Sistema informa que el Tipo de Equipo no se encuentra en ninguna tarifa con el Tipo de Tarea seleccionada. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{13. } El Sistema informa que el Tipo de Equipo del Equipo no existe. El Técnico consulta un valor de RDyP con el Jefe de Taller para ese Tipo de Equipo. El Jefe de Taller se lo comunica al técnico. El Técnico lo detalla en la \OT{} y se lo comunica al Cliente. Ir a paso x.}\\
+    \hline	
+    \multicolumn{2}{|p{16cm}|}{\textbf{17. } El Cliente decide no abonar el importe de RDyP. Fin CU.}\\
     \hline	
 \end{longtable}
-
-
 
 \end{document}
