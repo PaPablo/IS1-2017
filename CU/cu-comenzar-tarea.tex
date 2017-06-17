@@ -1,0 +1,74 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\begin{document}
+	%DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    %LO RESETEAMOS A 0
+    \newcommand\resetinc{\setcounter{step}{0}}
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Comenzar Tarea}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Técnico asignado a una Tarea decide comenzarla, marca su comienzo en el sistema.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea marcada como comenzada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+
+			\inc Este CU comienza cuando un Técnico decide comenzar a trabajar en una Tarea& \\
+			\hline
+            \inc El Técnio le solicita al sistema buscar la \OT{} en la que se encuentra la Tarea, ingresando su número.& \\
+			\hline
+            & \inc Busca la \OT{}\\
+			\hline
+			& \inc Muestra los datos de la \OT{}\\
+			\hline
+			\inc El Técnico le solicita al sistema buscar la Tarea que desea comenzar, ingresando el número de Tarea& \\
+			\hline
+			& \inc Busca la Tarea\\
+			\hline
+			& \inc Muestra los datos de la Tarea\\
+			\hline
+            \inc El técnico le solicita al sistema marcar registrar el comienzo de la Tarea.&\\
+			\hline
+            & \inc Marca la tarea como comenzada, registrando la fecha y hora actual.\\
+			\hline
+			& \inc Muestra los datos de la Tarea comenzada.\\
+			\hline
+			\inc Fin CU. & \\
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El sistema informa que la \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que la \OT{} no posee Tareas pendientes de realización. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que la Tarea no pertenece a la \OT{}. Si el Técnico desea ingresar otra Tarea, ir a paso 5.}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El Sistema informa que la Tarea ya se encuentra en proceso de ejecuición. Fin CU}\\
+		\hline	
+	\end{longtable}
+
+    \resetinc{}
+    \raya{}
+\end{document}

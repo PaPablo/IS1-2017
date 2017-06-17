@@ -1,0 +1,93 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\begin{document}
+	%DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    %LO RESETEAMOS A 0
+    \newcommand\resetinc{\setcounter{step}{0}}
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Finalizar Tarea}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Técnico asignado a una Tarea decide finalizarla, agrega una observación y luego el sistema la marca como finalizada.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea marcada finalizada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando un Técnico decide finalizar una Tarea& \\
+            \hline
+            \inc El Técnio le solicita al sistema buscar la \OT{} en la que se encuentra la Tarea, ingresando su número.& \\
+            \hline
+            & \inc Busca la \OT{}\\
+            \hline
+            & \inc Muestra los datos de la \OT{}\\
+            \hline
+
+            \inc El Técnico le solicita al sistema buscar la Tarea pertenciente a la \OT{} que desea finalizar, ingresando el número de Tarea& \\
+            \hline
+            & \inc Busca la Tarea\\
+            \hline
+            & \inc Muestra los datos de la Tarea\\
+            \hline
+            \inc El Técnico le solicita al Sistema buscar un repuesto asociado a la Tarea para marcarlo como usado, ingresando su código& \\
+            \hline
+
+            & \inc Busca el repuesto.\\
+            \hline
+            & \inc Marca el repuesto como utilizado.\\
+            \hline
+            & \inc Muestra el los repuestos asignados a la Tarea.\\
+            \hline
+            \inc Repetir pasos x al x mientras el Técnico desee registrar la utilización de respuestos asociados a la Tarea& \\
+            \hline
+            
+            % Mas o menos por acá hay que ver qué hacemos con los repuestos asignados a la OT
+            \inc El técnico le solicita al sistema marcar la Tarea como finalizada, agregando además una observación sobre el desarrollo de dicha tarea.&\\
+            \hline
+            & \inc Marca la tarea como finalizada, registrando su fecha y hora de comienzo, y agregando la observación realizada.\\
+            \hline
+            & \inc Muestra los datos de la tarea finalizada.\\
+            \hline
+            \inc Fin CU. & \\
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El Sistema informa que le \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El Sistema informa que la \OT{} no posee Tareas por finalizar. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El Sistema informa que la Tarea no existe. Ir al paso 12}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El Sistema informa que la Tarea no pela Tarea no existe. Ir al paso 12}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El Sistema informa que el repuesto no existe. Ir al paso 12}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El Sistema informa que el repuesto no está asignado a la Tarea. Ir al paso 12}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10c. }El Sistema informa que el respuesto ya fue marcado como utilizado. Ir al paso 12}\\
+		\hline	
+	\end{longtable}
+
+    \resetinc{}
+    \raya{}
+\end{document}
