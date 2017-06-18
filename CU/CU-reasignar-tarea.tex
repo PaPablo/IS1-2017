@@ -1,0 +1,78 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Reasignar tarea a técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller decide darle una tarea de una \OT{} a un técnico distinto del ya asignado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea asignada a otro técnico}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Jefe de Taller decide asignar otro técnico a una tarea& \\
+			\hline
+            \inc El Jefe de Taller ingresa el número de una \OT{} y le solicita al sistema que la busque& \\
+			\hline
+            & \inc Busca la \OT{} \\
+			\hline
+            & \inc Muestra los datos de la \OT{}  \\
+			\hline
+
+
+			\inc El Jefe de Taller ingresa un número de tarea y le solicita al sistema que la busque. \\
+			\hline
+			& \inc Busca la tarea \\
+			\hline
+			& \inc Muestra los datos de la tarea\\
+			\hline
+			\inc El Jefe de Taller ingresa el nombre de un técnico y le solicita al sistema que asigne ese técnico como nuevo técnico de la tarea& \\
+			\hline
+
+
+			& \inc Busca el técnico\\
+			\hline
+			& \inc Asigna al técnico como nuevo técnico de la tarea\\
+			\hline
+            \inc  Repetir pasos 5 al 10 hasta que el Jefe de Taller no cambiar el técnico de otras tareas de la \OT{} & \\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El sistema informa que la \OT{} ingresada no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que la \OT{} ingresada no se puede modificar. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que la tarea ingresada no existe. Ir al paso 11.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que la tarea ingresada no pertenece a la \OT{} ingresada. Ir al paso 11.}\\
+		\hline 
+        \multicolumn{2}{|p{16cm}|}{\textbf{7c. }El sistema informa que la tarea ingresada no se puede modificar. Ir al paso 11.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el técnico ingresado no existe. Ir al paso 11.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el técnico ingresado no está capacitado para llevar a cabo la tarea. Ir al paso 11.}\\
+		\hline
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
