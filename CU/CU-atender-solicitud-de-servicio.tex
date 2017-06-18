@@ -39,8 +39,8 @@
     \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Atender solicitud de servicio}\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico, Cliente}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Un Cliente se comunica con la empresa para solicitar un servicio de reparación. El Técnico crea una \OT{} para atender las solicitud.}\\
-    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Un Cliente se comunica con la empresa para solicitar un servicio de reparación. El Técnico crea una \OT{} para atender la solicitud.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
     \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: \OT{} creada\\
     \hline
     \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
@@ -56,6 +56,7 @@
         & \inc Verifica que el cliente no sea moroso.\\
         \hline
 
+
         & \inc Muestra los datos personales del Cliente.\\
         \hline
         \inc El Técnico le solicita al Sistema crear una \OT{} a nombre del cliente y se designa a sí mismo como encargado.& \\
@@ -65,6 +66,7 @@
         \inc El técnico ingresa el número de serie del equipo para incorporarlo a la \OT{}.& \\
         \hline
         
+
         & \inc Busca el equipo. \\
         \hline
         & \inc Incorpora el equipo a la \OT{}.\\
@@ -74,7 +76,8 @@
         & \inc Incorpora la descripción del problema a la \OT{}\\
         \hline
 
-        \inc El técnico le solicita el Sistema calcular el monto de RDyP para el tipo de equipo del equipo ingresado.& \\
+
+        \inc El técnico le solicita al Sistema calcular el monto de RDyP para el tipo de equipo del equipo ingresado.& \\
         \hline
         & \inc Calcula el importe.\\
         \hline
@@ -82,6 +85,7 @@
         \hline
         \inc El Técnico le comunica al Cliente el monto a pagar por la RDyP.&\\
         \hline
+
 
         \inc El Cliente abona en efectivo el importe de RDyP.& \\
         \hline
@@ -92,6 +96,7 @@
         & \inc Calcula y muestra el vuelto.\\
         \hline
 
+
         \inc El Técnico deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
         \hline
         \inc El Técnico le solicita al Sistema imprimir la factura por el importe abonado y el comprobante de la \OT{}& \\
@@ -100,20 +105,22 @@
         \hline
         \inc El Técnico le entrega al Cliente la factura junto con el comprobante de la \OT{}.&\\
 
+
+
         \hline
         \inc Fin CU. & \\
     \hline
     \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{4. } El Sistema informa que el Cliente no existe. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el Cliente no existe. Fin CU.}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{5. } El Sistema informa que el cliente es moroso. El Técnico consulta con el gerente si prestarle o no servicio al Cliente. Si se decide que sí, ir a paso x. Si no, fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{5. }El Sistema informa que el cliente es moroso. El Técnico consulta con el Gerente si prestarle o no servicio al Cliente. Si se decide que sí, ir a paso 6. Si no, fin CU.}\\
     \hline
-    \multicolumn{2}{|p{16cm}|}{\textbf{8. } El Técnico ve que es la primera vez que ingresa el equipo al taller, includes "Agregar Equipo". Ir a paso x.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{9. }El Técnico ve que es la primera vez que ingresa el equipo al taller, includes "Agregar Equipo". Ir a paso 10.}\\
     \hline	
-    \multicolumn{2}{|p{16cm}|}{\textbf{13. } El Sistema informa que el Tipo de Equipo del Equipo no existe. El Técnico consulta un valor de RDyP con el Jefe de Taller para ese Tipo de Equipo. El Jefe de Taller se lo comunica al técnico. El Técnico lo detalla en la \OT{} y se lo comunica al Cliente. Ir a paso x.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{14. }El Sistema informa que el Tipo de Equipo del Equipo no existe. El Técnico consulta un valor de RDyP con el Jefe de Taller para ese Tipo de Equipo. El Jefe de Taller se lo comunica al técnico. El Técnico lo detalla en la \OT{} y se lo comunica al Cliente. Ir a paso 15.}\\
     \hline	
-    \multicolumn{2}{|p{16cm}|}{\textbf{17. } El Cliente decide no abonar el importe de RDyP. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{17. }El Cliente decide no abonar el importe de RDyP. Fin CU.}\\
     \hline	
 \end{longtable}
 
