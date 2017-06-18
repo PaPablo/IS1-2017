@@ -1,0 +1,87 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\begin{document}
+	%DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    %LO RESETEAMOS A 0
+    \newcommand\resetinc{\setcounter{step}{0}}
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Cancelar Tarea}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Técnico asignado a una Tarea decide cancelarla, eliminando todas las reservas de producto que tenga la tarea.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea cancelada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando un Técnico decide cancelar una Tarea& \\
+            \hline
+            \inc El Técnico le solicita al sistema buscar la \OT{} en la que se encuentra la Tarea, ingresando su número.& \\
+            \hline
+            & \inc Busca la \OT{}\\
+            \hline
+            & \inc Muestra los datos de la \OT{}\\
+            \hline
+
+
+            \inc El Técnico le solicita al sistema buscar la Tarea de la \OT{} a cancelar, ingresando el número de Tarea& \\
+            \hline
+            & \inc Busca la Tarea\\
+            \hline
+            & \inc Incrementa los stocks de los productos de la tarea (cancela las reservas).\\
+            \hline
+            & \inc Muestra los datos de la tarea.\\
+            \hline
+
+
+            & \inc Cancela la Tarea, registrando hora y fecha de cancelación\\
+            \hline
+            & \inc Muestra los datos de la \OT{}\\
+            \hline
+            & \inc Repetir pasos 5 al 10 hasta que el técnico no desee cancelar más tareas de la \OT{} ingresada\\
+            \hline
+            \inc Fin CU. & \\
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El Sistema informa que le \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El Sistema informa que la \OT{} no posee Tareas que se puedan cancelar. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El Sistema informa que la Tarea no existe. Ir al paso 11}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El Sistema informa que la Tarea no pertenece a la \OT{}. Ir al paso 11}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{8. }La tarea no tiene repuestos reservados. Ir al paso 11}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{9a. }La tarea ya está cancelada, no se puede cancelar. Ir al paso 11}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{9a. }La tarea ya está finalizada, no se puede cancelar. Ir al paso 11}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{9a. }La tarea ya está comenzada, no se puede cancelar. Ir al paso 11}\\
+		\hline	
+	\end{longtable}
+
+    \resetinc{}
+    \raya{}
+\end{document}
