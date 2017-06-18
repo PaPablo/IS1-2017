@@ -24,11 +24,11 @@
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Comenzar Tarea}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Técnico asignado a una Tarea decide comenzarla, marca su comienzo en el sistema.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea marcada como comenzada}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea comenzada}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
@@ -37,12 +37,14 @@
 
 			\inc Este CU comienza cuando un Técnico decide comenzar a trabajar en una Tarea& \\
 			\hline
-            \inc El Técnio le solicita al sistema buscar la \OT{} en la que se encuentra la Tarea, ingresando su número.& \\
+            \inc El Técnico le solicita al sistema buscar la \OT{} en la que se encuentra la Tarea, ingresando su número.& \\
 			\hline
             & \inc Busca la \OT{}\\
 			\hline
 			& \inc Muestra los datos de la \OT{}\\
-			\hline
+			\hlineo
+
+
 			\inc El Técnico le solicita al sistema buscar la Tarea que desea comenzar, ingresando el número de Tarea& \\
 			\hline
 			& \inc Busca la Tarea\\
@@ -51,6 +53,8 @@
 			\hline
             \inc El técnico le solicita al sistema marcar registrar el comienzo de la Tarea.&\\
 			\hline
+
+
             & \inc Marca la tarea como comenzada, registrando la fecha y hora actual.\\
 			\hline
 			& \inc Muestra los datos de la Tarea comenzada.\\
@@ -63,9 +67,17 @@
 		\hline
         \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que la \OT{} no posee Tareas pendientes de realización. Fin CU.}\\
 		\hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que la Tarea no pertenece a la \OT{}. Si el Técnico desea ingresar otra Tarea, ir a paso 5.}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que la Tarea no existe. Fin CU.}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El Sistema informa que la Tarea ya se encuentra en proceso de ejecuición. Fin CU}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que la Tarea no pertenece a la \OT{}. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7c. }El sistema informa que la Tarea no le corresponde al técnico. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7d. }El sistema informa que el técnico no está capacitado para llevar a cabo la Tarea. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7e. }El sistema informa que no se cuenta con el stock necesario del producto a utilizar en la tarea. Fin CU.}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El Sistema informa que la Tarea se encuentra en un estado distinto de "Pendiente de comienzo". Fin CU}\\
 		\hline	
 	\end{longtable}
 
