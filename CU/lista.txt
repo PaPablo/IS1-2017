@@ -1,6 +1,5 @@
 Clientes
 1. Agregar Cliente
-Equipos
 2. Modificar Cliente
 3. Eliminar Cliente  ---
 4. Listar Clientes 
@@ -16,8 +15,9 @@ Empleados
 12. Eliminar Empleado ---
 13. Listar Empleados 
 14. Asignar tarea a empleado  ---
-15. Remover tarea de empleado 
+15. Remover tarea de empleado ---
 16. Consultar Tipo tarea asignadas aempleado
+Equipos
 17. Agregar tipo de Equipo ---
 18. Modificar tipo de Empleado
 19. Eliminar tipo de Equipo
@@ -32,11 +32,10 @@ Productos
 27. Agregar Proveedor a un producto
 28. Eliminar Proveedor de producto
 29. Ver detalle de producto
-30. Actualizar stock
+30. Actualizar stock ---
 Tipo servicios
 31. Agregar Tipo servicio ---
 32. Modificar Tipo servicio 
-Orden de Trabajo
 33. Eliminar Tipo servicio
 34. Listar Tipo tarea de un Tipo servicio
 35. Listar Tipo servicios
@@ -46,10 +45,9 @@ Tipo tarea
 38. Eliminar tipo tarea
 39. Listar Tipo tarea
 40. Crear tarifa ---
-41. Modificar tarifa
+41. Modificar tarifa ---
 Órdenes de trabajo
 42. Atender solicitud de servicio
-Pedidos a proveedores
 43. Comenzar revisión
 45. Reasignar tarea a técnico
 46. Confirmar presupuesto
@@ -70,6 +68,7 @@ Facturas, Cobros y Ventas
 60. Listar facturas
 61. Registrar pago de factura
 62. Generar Nota de Crédito
+Pedidos a proveedores
 63. Registrar pedido a proveedor
 44. Finalizar revisión
 64. Modificar pedido
@@ -77,3 +76,12 @@ Facturas, Cobros y Ventas
 66. Listar pedidos
 67. Registrar recepción de pedido
 68. Registrar pago a proveedor
+
+A medio hacer
+¿Cómo vamos a trabajar con los repuestos asignados a una tarea?
+    - El respuesto está asignado y se puede marcar su uso durante la realización de la tarea (por ejemplo al momento de agregar una observación) o sólo se marca como usado al momento de finalizarla.
+    - Comenzar Tarea queda como breve? Siendo que sólo se marca como "comenzada" y no se hace ningún enlace con nada más. En tal caso, Comenzar Revisión también, porque sólo se está marcando como comenzada la revisión.
+    - Idea: el encargado de la OT es el que se va a tener que encargar de la RDyP, si el Jefe de Taller quiere que la haga otro, va a tener que cambiar al encargado. Podría quedar así porque como es el primero que ve el equipo tiene una visión más amplia de lo que se quiere hacer en la repan.
+    - Idea: el encargado de la OT es el que se va a tener que encargar de la RDyP, si el Jefe de Taller quiere que la haga otro, va a tener que cambiar al encargado. Podría quedar así porque como es el primero que ve el equipo tiene una visión más amplia de lo que se quiere hacer en la reparación
+    YAFUE: el repuesto se marca como usado al momento de finalizar la Tarea, por lo tanto
+    - Podría estar el CU de usar repuesto asignado, en el que se marque el respuesto que se usó y se deje una observación. Por lo tanto al finalizar la Tarea los repuestos sin usar se marcan directamente como no usados y fue. Esto podría traer problemas porque capaz que se olvidan de hacer el marcado y la Tarea se con menos repuestos marcados como usados de los que realmente se usaron.

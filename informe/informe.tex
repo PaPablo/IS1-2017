@@ -207,6 +207,8 @@
 
     La información propia de un producto puede ser vista por cualquier integrante de la organización, pero sólo puede ser modificada por el Gerente. También es el único que puede agregar o eliminar un producto si se considera necesario, caso este último en el cual ya no podrá formar parte de un pedido a proveedor (ver sección 2.4), de un presupuesto, ni de detalles de trabajos a realizar.
     
+    Una gran mayoría de los artículos tienen sus precios dolarizados, por lo tanto el Gerente mantiene la lista de precios actualizada en base a la valuación del dólar. Con respecto a los productos con precios no dolarizados, el Gerente realiza una actualización mensual de sus precios.
+
     \subsection{Proveedores}
     Los productos que maneja la organización son provistos por diferentes empresas. El stock se actualiza cuando es necesario (on-demand). Sin embargo, se intenta mantener una cantidad básica de cada uno de los elementos.\\
 
@@ -247,7 +249,6 @@
 
     Si algún integrante de la organización encuentra un producto roto o en mal estado, se lo debe notificar al Gerente para que éste actualice el stock de forma manual.
 
-    Una gran mayoría de los artículos tienen sus precios dolarizados, por lo tanto el Gerente mantiene la lista de precios actualizada en base a la valuación del dólar. Con respecto a los productos con precios no dolarizados, el Gerente realiza una actualización mensual de sus precios.
     
     %ACA FALTA HABLAR DE LA DOCUMENTACION - ESCANEAR REMITO PROVEEDOR Y HOJA DE CALCULO 
     
@@ -303,18 +304,18 @@
 
 
     \subsection{Servicios Ofrecidos}
-    La organización cuenta con un \textit{tarifario}, en el cual se establecen los precios para las distintas tareas requeridas para completar los servicios brindados. Se detallan los tipos de equipo con los que trabaja la empresa (están tipificados en el sistema, pudiendo ser PC, notebook, Tablet, impresora láser, etc.) y un precio de \textit{Revisión, Diagnóstico, y Presupuesto} (de ahora en más \textit{RDyP}). Por cada tipo de equipo, se incluyen las tareas que se le pueden realizar.
+    La organización cuenta con un \textit{tarifario}, en el cual se establecen los precios de las distintas tareas requeridas para realizar los diferentes servicios brindados para los tipos de equipo con los que trabaja la empresa (están tipificados, pudiendo ser PC, notebook, Tablet, impresora láser, etc.) y, además un precio de \textit{Revisión, Diagnóstico, y Presupuesto} (de ahora en más \textit{RDyP}) por cada uno. También se especifica para cada tipo de equipo las tareas que se pueden realizar y sus precios.
 
     \subsubsection{Reparación de Equipos}
-    El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. El técnico que atiende al cliente verifica si está cargado en el sistema; si no es así, se le toman los datos y se lo registra. Si el cliente ya estaba cargado y era moroso se debe considerar prestar o no el servicio \footnote{Decisión tomada por el Gerente}.
+    El proceso de reparación comienza cuando se acerca un cliente a la oficina de la empresa con algún equipo a reparar. El técnico que atiende al cliente verifica si ya está registrado; si no es así, se le toman los datos y se lo registra. Si el cliente ya estaba registrado y es moroso se debe considerar prestar o no el servicio \footnote{Decisión tomada por el Gerente}.
     
    El técnico abre una \OT{} y se asigna a sí mismo como el que atendió la solicitud y como encargado de la \OT{} creada (de cualquier manera, el Jefe de Taller puede cambiar el encargado mientras no se comience a trabajar en la misma). La \OT{} se encuentra en estado \textit{Asignada} \footnote{Para ver los distintos estados de una \OT{}, ver Anexo 2}. 
 
-    El técnico toma el equipo y verifica si se encuentra registrado en el sistema. Un cliente puede tener asociado varios equipos, contando cada uno con su historial de reparaciones. Si el equipo no se encuentra cargado, lo da de alta indicando tipo de equipo, marca y modelo, y le asigna un número de serie único generado automáticamente por el sistema. El técnico asienta, entonces, los datos del equipo en la \OT{}.
+    El técnico toma el equipo y verifica si se encuentra registrado. Un cliente puede tener asociado varios equipos, contando cada uno con su historial de reparaciones. Si el equipo no se encuentra registrado, lo da de alta indicando tipo de equipo, marca y modelo, y le asigna un número de serie único (generado automáticamente). El técnico asienta, entonces, los datos del equipo en la \OT{}.
 
-    Los datos pertenecientes a un equipo pueden ser modificados por cualquier empleado en cualquier momento. No obstante, sólo el Jefe de Taller puede dar de baja un equipo (sin perder su historial), de modo que ya no puedan abrirse \OTs{} para éste.
+    Los datos pertenecientes a un equipo pueden ser modificados por cualquier empleado en cualquier momento. No obstante, sólo el Jefe de Taller puede dar de baja un equipo, de modo que ya no puedan abrirse \OTs{} para éste.
    
-    En la \OT{} también se va a registrar:
+    En la \OT{} también va a registrar:
     \begin{itemize}
         \item La fecha de solicitud de servicio
         \item El cliente solicitante

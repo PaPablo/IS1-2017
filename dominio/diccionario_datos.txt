@@ -1,0 +1,89 @@
+* Cliente
+ 	- Nombre o Razón Social
+ 	- DNI/CUIT/CUIL
+ 	- Dirección de facturación
+ 	- Teléfono
+ 	- Correo electrónico
+ 	- Contacto/s
+ 		- Nombre
+ 		- Teléfono
+ 			- interno
+ 		- Correo eléctronico (más de uno en clientes comerciales o empresariales)
+
+* Comercial
+
+* Componente
+
+* Detalle Factura
+
+* Detalle Orden
+    - Fecha Inicio
+    - Fecha Fin
+    - Estado
+
+* Detalle Pedido
+
+* Detalle Presupuesto
+
+* Empresarial
+
+* Equipo
+    - Nro de Serie
+    - Marca
+
+* Factura
+    - Nro de Factura
+    - Fecha
+
+* Método de Pago
+    - Nombre
+    - Descripción
+
+* Nota de Crédito
+    - Fecha Emisión
+
+* Orden de Trabajo
+    - Fecha creación
+    - Descripción del Problema
+    - Fecha Cierre
+
+* Pago
+    - Fecha
+    - Monto
+
+* Parte
+
+* Particular
+
+* Pedido
+    - Fecha de pedido
+    - Fecha estimada
+    - Fecha llegada
+
+* Presupuesto
+    - Fecha de emisión
+
+* Producto
+    - Nombre
+    - Descripción
+    - Stock
+    - Stock Mínimo
+    - Marca
+    - Código interno de referencia
+    - Precios
+
+* Proveedor
+
+* Reserva
+
+* Tarifa
+
+* Técnico
+
+* Tipo de Equipo
+
+* Tipo Tarea
+
+* Tipo Servicio
+
+* Uso

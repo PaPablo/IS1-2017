@@ -1,0 +1,78 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Confirmar Presupuesto}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico, Cliente}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Técnico le comunica al cliente el Presupuesto de su \OT{} y el cliente confirma las tareas que se realizarán.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Presupuesto confirmado y Tareas creadas en la \OT{}}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando el Técnico se comunica con el Cliente para confirmar el presupuesto de su \OT{}& \\
+			\hline
+            \inc  El Técnico ingresa el número de \OT{} y le solicita al Sistema que busque su presupuesto.& \\
+			\hline
+            & \inc Busca la \OT{}.\\
+			\hline
+			& \inc Busca el presupuesto.\\
+			\hline
+
+
+			& \inc Muestra los datos del presupuesto. \\
+			\hline
+			\inc El Técnico le informa al Cliente la tarea a realizar, los repuestos necesarios, y el precio total.& \\
+			\hline
+			\inc El Cliente confirma la tarea&  \\
+			\hline
+            \inc El Técnico confirma el detalle del presupuesto & \\
+			\hline
+
+
+            & \inc Crea un detalle en la \OT{} vinculándolo con el detalle del presupuesto. \\
+			\hline
+            & \inc Asigna el técnico encargado de la \OT{} como técnico del detalle de \OT{}. \\
+			\hline
+            & \inc Repetir pasos 6 al 10 hasta que no haya más detalles de presupuestos por confirmar\\
+			\hline
+            & \inc Muestra datos de la \OT{}\\
+			\hline
+
+
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que la \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{5a. }El sistema informa que la \OT{} no fue presupuestada. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{5b. }El sistema informa que el presupuesto de la \OT{} ya fue confirmado. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El Cliente no confirma la tarea. El Técnico cancela el detalle del presupuesto. Ir al paso 11}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{12. }El Cliente no confirmó ninguna de las tarea presupuestadas. El sistema marca la \OT{} como \textit{No se repara}. Fin CU.}\\
+		\hline
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES

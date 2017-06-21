@@ -1,0 +1,89 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Finalizar Revisión}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El técnico le solicita al Sistema finalizar la RDyP. El Técnico indica las tareas necesarias para completar el trabajo y los repuestos que hagan falta, el Sistema genera el presupuesto correspondiente.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: }\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: \OT{} revisada y prespuesto creado.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Técnico desea dar por finalizada la revisión de un Equipo.& \\
+			\hline
+            \inc  El Técnico ingresa el número de \OT{} y le solicita al Sistema que la busque.& \\
+			\hline
+            & \inc Busca la \OT{} \\
+			\hline
+            & \inc Muestra los datos de la \OT{}\\
+			\hline
+
+            \inc El Técnico le solicita al Sistema crear un presupuesto.& \\
+			\hline
+             & \inc Crea el presupuesto y lo vincula con la \OT{}.\\
+			\hline
+            \inc El Técnico ingresa un Tipo de Tarea al Sistema y le solicita que lo vincule con un nuevo detalle de Presupuesto.& \\
+			\hline
+            & \inc Busca la Tarifa correspondiente al Tipo de Tarea ingresado, el Tipo de Equipo y el Tipo de Servicio de la \OT{}.\\
+			\hline
+
+            & \inc Crea el detalle del Presupuesto y le incluye la Tarifa.\\
+			\hline
+            & \inc El Técnico ingresa un código de repuesto y su cantidad y le solicita al Sistema agregarlo al detalle de Presupuesto.\\
+			\hline
+            & \inc Busca el Repuesto.\\
+			\hline
+            & \inc Agrega el Respuesto al detalle del presupuesto.\\
+			\hline
+
+            \inc Repetir pasos 7 al 12 hasta que no desee ingresar mas Tareas a la \OT{} &\\
+			\hline
+            \inc El Técnico le solicita al Sistema finalizar la RDyP de la \OT{}& \\
+			\hline
+            &\inc Marca como finalizada la RDyP de la \OT{}\\
+			\hline
+            & \inc Imprime el Presupuesto.\\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. } El Sistema informa que la \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. } El Sistema informa que la \OT{} ya fue presupuestada. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4c. } El Sistema informa que el Técnico no es el Técnico encargado de la \OT{}. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{5. } El Técnico no desea crear un presupuesto para la \OT{}. El Sistema finaliza la RDyP y marca la \OT{} como \textit{No se repara}. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9a. } El Sistema informa que el Tipo de Tarea no existe. Ir al paso 13.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9b. } El Sistema informa que la Tarifa no existe. Ir al paso 13.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. } El Técnico no agrega Repuestos al detalle del presupuesto. Ir al paso 13.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{12. } El Sistema informa que el Repuesto no existe. Ir al paso 13.}\\
+		\hline	
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
