@@ -26,7 +26,7 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Crear tarifa}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller crea una nueva tarifa indicando qué tipo de incluirá, para qué tipo de equipo, bajo qué tipo de servicio, y un precio.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller registra una nueva tarifa indicando tipo de tarea, tipo de servicio, y un precio. El sistema crea la tarifa con su precio y genera los vínculos necesarios}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarifa creada}\\
 		\hline
@@ -37,38 +37,34 @@
 
 			\inc Este CU comienza cuando el Jefe de Taller desea crear una tarifa& \\
 			\hline
-            \inc El Jefe de Taller ingresa el nombre de un tipo de equipo para agregar a la tarifa & \\
+            \inc El Jefe de Taller ingresa el nombre de un tipo de equipo y un tipo de tarea& \\
 			\hline
             & \inc Busca el tipo de equipo \\
 			\hline
-			& \inc Muestra los datos del tipo de equipo \\
-			\hline
-
-
-			\inc El Jefe de Taller ingresa el nombre un tipo de tarea para agregar a la tarifa & \\
-			\hline
 			& \inc Busca el tipo de tarea \\
 			\hline
+
+
 			& \inc Muestra los datos del tipo de tarea \\
 			\hline
-            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio para vincular con la tarifa &\\
+            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio para la tarifa &\\
 			\hline
-
-
             & \inc Busca el tipo de servicio \\
 			\hline
 			& \inc Muestra los datos del tipo de servicio \\
 			\hline
+
+
             \inc El Jefe de Taller ingresa un precio para la tarifa&\\
 			\hline
-            & \inc Crea la tarifa con el tipo de tarea, tipo de equipo, tipo de serivicio y el precio ingresados\\
+            & \inc Crea la tarifa con el tipo de tarea, tipo de serivicio y el precio ingresado\\
 			\hline
-
-
             & \inc Muestra los datos de la tarifa creada\\
 			\hline
-            \inc Repetir pasos 5 al 13 hasta que el Jefe de Taller no desee crear más tarifas para el tipo de equipo ingresado & \\
+            \inc Repetir pasos 5 al 11 hasta que el Jefe de Taller no desee crear más tarifas para el tipo de tarea ingresado & \\
 			\hline
+
+
 			\inc Fin CU. & \\
 
         \hline
@@ -76,15 +72,11 @@
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo ingresado no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que el tipo de tarea ingresado no existe. Ir al paso 14}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el tipo de tarea ingresado no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 12}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que el tipo de tarea ingresado no se puede realizar para el tipo de equipo ingresado. Ir al paso 14}\\
-		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El sistema informa que el tipo de servicio ingresado no existe. Ir al paso 14}\\
-		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El sistema informa que el tipo de tarea ingresado no se puede realizar bajo el tipo de servicio ingresado. Ir al paso 14}\\
-		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{13. }El sistema informa que ya existe una tarifa con el tipo de tarea, tipo de equipo, y tipo de servicio ingresados. Ir al paso 14}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{11. }El sistema informa que ya existe una tarifa para ese tipo de tarea y tipo de servicio. Ir al paso 12}\\
 		\hline	
 	\end{longtable}
 
