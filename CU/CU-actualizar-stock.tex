@@ -16,9 +16,9 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Actualizar stock}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: el Gerente modifica el stock de un producto manualmente}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: el Gerente ingresa el cambio de stock de un producto. El sistema registra la actualización del stock}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Stock de un producto modificado}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Stock de un producto actualizado}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
@@ -34,11 +34,11 @@
 			\hline
 
 
-			\inc El Gerente ingresa una nueva cantidad de stock para el producto & \\
+			\inc El Gerente ingresa una nueva cantidad para modificar el stock del producto & \\
 			\hline
 			& \inc Registra la nueva cantidad en el producto\\
 			\hline
-			\inc  Repetir pasos 2 al 6 hasta que no desee actualizar más stocks de productos& \\
+			& \inc Muestra los datos del producto\\
 			\hline
 			\inc Fin CU. & \\
 
@@ -46,7 +46,9 @@
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el producto no existe. Ir al paso 7}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el producto no existe. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que se decrementó el stock del producto más allá de lo disponible. Fin CU.}\\
 		\hline
 	\end{longtable}
 
