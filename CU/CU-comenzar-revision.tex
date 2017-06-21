@@ -1,0 +1,54 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Comenzar revisión}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El técnico encargado de una \OT{} da comienzo a la \textit{RDyP} de la misma}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: \textit{RDyP} de una \OT{} comenzada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando el técnico encargado de una \OT{} decide comenzar la revisión de la misma& \\
+			\hline
+            \inc El técnico ingresa un número de \OT{} y le solicita al sistema que la busque para comenzar su \textit{RDyP}& \\
+			\hline
+            & \inc Busca la \OT{}  \\
+			\hline
+            & \inc Inicia la tarea de \textit{RDyP} de la \OT{} \\
+			\hline
+
+
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. }El sistema informa que el técnico no es el técnico encargado de la \OT{} ingresada. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El sistema informa que la \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que la \OT{} ya fue revisada. Fin CU.}\\
+		\hline
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
