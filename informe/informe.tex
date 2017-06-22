@@ -169,6 +169,7 @@
 
     Si por alguna razón se debiera eliminar un cliente, el Jefe de Taller o el Gerente pueden darlo de baja en el sistema, y no se podrán realizar trabajos a su nombre. La baja de un cliente se podrá realizar sólo para aquellos clientes que no registren deudas ni notas de crédito a su favor.
     
+    Generalmente los clientes se comunican con la organización en caso de requerir un servicio o para chequear el estado de algún trabajo. Si el cliente tiene un equipo en taller puede llamar para verificar si tiene arreglo o no; suele darse que los clientes se comuniquen cuando las reparaciones tardan más de lo habitual. Dicha consulta por parte del cliente se deja asentada en la orden de trabajo asociada al requerimiento de ese servicio. (Ver Sección 2.5.1)\\
     \subsubsection{Cuenta Corriente}
         Los clientes poseen cuenta corriente dentro de la organización donde se detallan las facturas y notas de crédito emitidas a su nombre y los pagos que realizó.\\
         Para ello se registra:
@@ -325,17 +326,16 @@
 
     El cliente abona en efectivo y por adelantado el importe de la tarifa de \textit{RDyP} según el tipo de equipo que se trate. El técnico que lo esté atendiendo le entrega el comprobante de la \OT{} (ver Anexo 1, Figura 2) y un recibo por el pago de la \textit{RDyP} (ver Anexo 1, Figura 3). 
 
-    Generalmente los clientes se comunican con la organización en caso de requerir un servicio o para chequear el estado de algún trabajo. Si el cliente tiene un equipo en taller puede llamar para verificar si tiene arreglo o no; suele darse que los clientes se comuniquen cuando las reparaciones tardan más de lo habitual. Dicha consulta por parte del cliente se deja asentada en la orden de trabajo asociada al requerimiento de ese servicio.\\
 
     La \OT{} queda en espera de ser revisada por su técnico encargado para luego ser cotizada (si es que se puede reparar).
     Cuando un técnico revisa el equipo de una \OT{}, indica las tareas que cree necesarias para realizar la reparación y también los repuestos que se requerirán para completar cada tarea, en caso de ser necesario. En este momento, la \OT{} se encuentra en estado \textit{Revisada}. Las tareas también tienen estados, y al anotarse en la \OT{} inicialmente, se encuentran en estado \textit{No empezada}.
     
-    Los repuestos indicados por el técnico son reservados del stock (la cantidad del artículo disminuye virtualmente). Los artículos reservados todavía no dejan de existir en el stock, pero no se los puede considerar para otros trabajos. Cuando el técnico utiliza los artículos reservados, deja constancia en el campo de observaciones de la \OT{}.  Llegado el caso de que un repuesto reservado del stock no se utilice en el trabajo, se detalla en las observaciones de la \OT{}, se cancela la reserva del stock, y no se factura.
-
-    Realizada esta revisión, se confecciona un presupuesto sumando los valores de las tareas a realizar y los valores de los posibles repuestos a utilizar. En caso de que se esté trabajando con un tipo de equipo que no esté presente en el tarifario, el Jefe de Taller decide el precio a cotizar por el equipo. La \OT{} se pasa a estado \textit{Cotizada}.
+    Los repuestos indicados por el técnico son reservados del stock (la cantidad del artículo disminuye virtualmente). Los artículos reservados todavía no dejan de existir en el stock, pero no se los puede considerar para otros trabajos.     
     
-    El técnico se contacta con el cliente para informar el diagnóstico del equipo, si va a ser posible una reparación, y en caso de que lo sea, un presupuesto del trabajo. Una vez comunicado el presupuesto al cliente, la \OT{} se pasa a estado \textit{Notificada de cotización}. En caso de que el equipo no se pueda reparar, el técnico le informa al cliente que no será posible llevar a cabo la reparación y queda a disposición del cliente retirar el equipo del local (la \OT{} pasa a estado ``No se repara'').
-  
+    Realizada esta revisión, el Técnico engargado confecciona un presupuesto sumando los valores de las tareas a realizar (según lo especificado en el tarifario) y los valores de los posibles repuestos a utilizar. En caso de que se esté trabajando con un tipo de equipo que no esté presente en el tarifario, el Jefe de Taller decide el precio a cotizar por el equipo. La \OT{} se pasa a estado \textit{Cotizada}.
+    
+    El técnico se contacta con el cliente para informar el diagnóstico del equipo, si va a ser posible una reparación, y en caso de que lo sea, el presupuesto del trabajo. Una vez comunicado el presupuesto al cliente, la \OT{} se pasa a estado \textit{Notificada de cotización}. En caso de que el equipo no se pueda reparar, el técnico le informa al cliente que no será posible llevar a cabo la reparación y queda a disposición del cliente retirar el equipo del local (la \OT{} pasa a estado ``No se repara'').
+ %TODO Definir bien la diferencia en nombre de estados para cuando no se repara porque no puedo, porque el cliente no quiere y porque me di cuenta a mitad de camino que no va 
     Si el cliente acepta el presupuesto, la \OT{} queda en espera de comienzo de trabajo; se cambia a estado \textit{Presupuesto aceptado}. En caso contrario se le notifica al cliente que debe pasar a retirar el equipo del local (se pasa al estado \textit{No se repara}), y la \OT{} se cierra, imposibilitando agregar nuevas tareas.
 
     El orden en que se van a ir trabajando las \OTs{} depende de varios factores. Uno de ellos es el \textbf{tipo de cliente}; el Jefe de Taller le da mayor prioridad a las \OTs{} de clientes empresariales o comerciales que a las de clientes particulares.
@@ -347,7 +347,7 @@
 
     Otro factor importante para la priorización de trabajos es el \textbf{vencimiento} de la \OT{}\footnote{La organización mantiene un listado con las órdenes listadas por vencimiento.}. 
     
-    Una vez que el técnico asociado comenzó a trabajar en una de sus \OT{}, pasa al estado \textit{En trámite}. Llegado el caso de que los repuestos que se estipularon necesarios para realizar el trabajo no se encuentren en existencia en ese momento, se le notifica al Gerente sobre la situación y la \OT{} pasa a estado \textit{Espera de repuestos} (se prosigue de la misma manera descripta en la sección 2.4.1).
+    Una vez que el técnico asociado comenzó a trabajar en una de sus \OT{}, pasa al estado \textit{En trámite}. Cuando el técnico utiliza los artículos reservados, deja constancia en el campo de observaciones de la \OT{}.  Llegado el caso de que un repuesto reservado del stock no se utilice en el trabajo, se detalla en las observaciones de la \OT{}, se cancela la reserva del stock, y no se factura. Llegado el caso de que los repuestos que se estipularon necesarios para realizar el trabajo no se encuentren en existencia en ese momento, se le notifica al Gerente sobre la situación y la \OT{} pasa a estado \textit{Espera de repuestos} (se realiza un pedido según lo descripto en Sección 2.4).
 
     A lo largo de la realización del trabajo, el técnico encargado se vale del campo de observaciones que tiene la \OT{} para registrar la evolución de las tareas realizadas, a modo de bitácora. A su vez, puede requerir ayuda de otros técnicos; su participación también se registra en el campo de observaciones (ver Anexo 1, Figura 12). Mientras se realiza una tarea, la misma pasa a estado \textit{En curso}. Al completarse con éxito, pasa al estado \textit{Realizada}.
     
@@ -367,7 +367,7 @@
 
     Luego de completadas las tareas de la \OT{}, la reparación tiene una garantía de 30 días. Si dentro de ese plazo el equipo da señales de que la reparación no fue realizada con éxito, el equipo se puede reingresar sin cargo; se abre una nueva \OT{}, referenciando la \OT{} anterior con su número de identificación (ver Anexo 1, Figura 12). En caso de que la nueva \OT{} requiera un repuesto, sí se va a facturar el repuesto (en caso de que, efectivamente se utilice), pero no la mano de obra. \\
     
-    Cuando un equipo se considera SCRAP o abandonado, el Jefe de Taller lo da de baja en el sistema; el equipo ya no puede formar parte de ninguna nueva \OT{}. De cualquier manera, no se pierde su historial en \OTs{} anteriores.
+    Si pasados los 60 días de la finalización del trabajo, el Cliente no retira su equipo, se lo considera SCRAP o abandonado, el Jefe de Taller lo da de baja en el sistema; el equipo ya no puede formar parte de ninguna nueva \OT{}. De cualquier manera, no se pierde su historial en \OTs{} anteriores.
 
     Estas bajas se pueden deshacer, para subsanar errores en el uso del sistema.
 
@@ -450,7 +450,7 @@
 
     %Falta incorporar cómo se cotizan y facturan  los traslados para las visitas
 
-    La facturación es realizada por el Operario Contable, en base a las tareas detalladas en las OTs{} cerradas (en estado ``pendiente de facturación''), y los repuestos utilizados. El Operario Contable debe calcular el importe total de cada factura en función de los valores de las reparaciones hechas, los repuestos utilizados, los traslados, las instalaciones, y cualquier otra actividad involucrada en los servicios que se van a facturar. Todos estos valores se encuentran especificados en el tarifario.
+    La facturación es realizada por el Operario Contable, en base a las tareas detalladas en las OTs{} cerradas (en estado ``pendiente de facturación''), y los repuestos utilizados. El Operario Contable debe calcular el importe total de cada factura en función de los valores de las tareas realizadas y los repuestos utilizados. Todos estos valores se encuentran especificados en el tarifario y la lista de productos.
     
     Los precios de las tareas que correspondan a una reparación dentro del taller se encuentran establecidas en el tarifario de la organización. Para las visitas, la tarifa del traslado de los técnicos se considera una tarea más, y como tal se encuentra también especificada en el tarifario.
 
@@ -458,15 +458,15 @@
     
     En el caso de los clientes particulares, se confecciona una factura por trabajo realizado (es decir, una factura contiene sólo una \OT{}). El Operario Contable se comunica con el cliente para avisarle que su factura ya está confeccionada y que deberá acercarse al local de la organización para abonarla.
    
-    Cada factura se registra en la Cuenta Corriente del cliente titular como un movimiento de crédito. \\
+    Cada factura se registra en la Cuenta Corriente del cliente titular. \\
 
     \subsubsection*{Notas de Crédito}
     Existe la posibilidad de que el cliente solicite a la organización responder ante determinados reclamos sobre uno o más trabajos realizados, si sucede que no está conforme o hay algún inconveniente con el equipo. En estos casos, y a criterio del Gerente, el Operario Contable podrá confeccionar una Nota de Crédito a nombre del cliente, en respuesta a su reclamo. Este documento refleja la devolución de un monto determinado, adicionando la siguiente información: \\
     \begin{itemize}
         \item Fecha de emisión
         \item Monto
-        \item Número de orden de trabajo facturada
-        \item Número de factura relacionada
+        \item Número de \OT{}
+        \item Número de factura asociada a la \OT{}
     \end{itemize}
 
 	En casos donde la nota de crédito responda a la devolución de algún producto a la organización, este reingreso deberá reacomodar el stock de dicho producto.
