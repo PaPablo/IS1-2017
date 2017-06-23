@@ -15,6 +15,8 @@
 * Componente
 
 * Detalle Factura
+    - Cantidad
+    - Precio Unitario
 
 * Detalle Orden
     - Fecha Inicio
@@ -22,8 +24,11 @@
     - Estado
 
 * Detalle Pedido
+    - Cantidad
+    - Precio
 
 * Detalle Presupuesto
+    - Precio
 
 * Empresarial
 
@@ -73,17 +78,39 @@
     - Precios
 
 * Proveedor
+    - Nombre / Razón Social
+    - DNI/CUIT/CUIL
+    - Dirección de facturación
+    - Teléfonos
+    - Correo Electrónico
+ 	- Contacto/s
+ 		- Nombre
+ 		- Teléfono
+ 			- interno
+ 		- Correo eléctronico (más de uno en clientes comerciales o empresariales)
 
 * Reserva
+    - Cantidad Reservada
+    - Cantidad Usada
 
 * Tarifa
+    - Precio
 
 * Técnico
+    - Nombre y Apellido
+    - DNI / CUIT / CUIL
+    - Dirección
+    - Teléfono
+    - Correo Electrónico
 
 * Tipo de Equipo
+    - Nombre
+    - Descripción
 
 * Tipo Tarea
+    - Nombre
+    - Descripción
 
 * Tipo Servicio
-
-* Uso
+    - Nombre
+    - Descripción
