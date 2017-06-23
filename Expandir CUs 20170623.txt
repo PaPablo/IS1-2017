@@ -1,0 +1,44 @@
+﻿EXPANDIDOS PENDIENTES: 28
+
+Equipos (5)
+- Agregar tipo de equipo
+- Eliminar tipo de equipo
+- Crear RDyP
+- Modificar RDyP
+- Eliminar RDyP
+
+Productos (5)
+- Agregar producto
+- Modificar producto
+- Eliminar producto
+- Agregar proveedores a producto
+- Eliminar proveedores de un producto
+
+Tipos de servicio (1)
+- Eliminar tipo de servicio
+
+Tipos de tarea (4)
+- Agregar tipo de tarea
+- Eliminar tipo de tarea
+- Crear tarifa
+- Eliminar tarifa
+
+Órdenes de Trabajo (10)
+- Atender solicitud de servicio
+- Comenzar revisión
+- Finalizar revisión
+- Reasignar tarea a técnico
+- Confirmar presupuesto
+- Comenzar tarea
+- Finalizar tarea
+- Cancelar tarea
+- Cerrar Orden de Trabajo
+- Finalizar Orden de Trabajo
+
+Facturas, Cobros y Ventas (1)
+- Generar factura
+
+Pedidos a proveedores (2)
+- Registrar pedido a proveedor
+- Registrar recepción de pedido
+- Registrar pago a proveedor
