@@ -44,7 +44,7 @@
             \hline
 
 
-            \inc El Técnico le solicita al sistema buscar la Tarea pertenciente a la \OT{} que desea finalizar, ingresando el número de Tarea& \\
+            \inc El Técnico le solicita al sistema buscar la Tarea que desea finalizar, ingresando el número de Tarea& \\
             \hline
             & \inc Busca la Tarea\\
             \hline
@@ -66,7 +66,9 @@
             % Mas o menos por acá hay que ver qué hacemos con los repuestos asignados a la OT
             \inc El técnico le solicita al sistema marcar la Tarea como finalizada, agregando además una observación sobre el desarrollo de dicha tarea.&\\
             \hline
-            & \inc Marca la tarea como finalizada, registrando su fecha y hora de finalización, y agregando la observación realizada, y .\\
+            & \inc Marca la tarea como finalizada, registrando su fecha y hora de finalización, y agregando la observación realizada.\\
+            \hline
+            & \inc Muestra las tareas pendientes de la \OT{}.\\
             \hline
             \inc Fin CU. & \\
         \hline
@@ -76,11 +78,7 @@
 		\hline
         \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El Sistema informa que la \OT{} no posee Tareas por finalizar. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El Sistema informa que la Tarea no existe. Ir al paso 12}\\
-		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El Sistema informa que la Tarea no pertenece a la \OT{}. Ir al paso 12}\\
-		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{7c. }El Sistema informa que la cantidad de repuesto ingresada excede la cantidad reservada. Ir al paso 12}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El Sistema informa que la Tarea no existe. Fin CU.}\\
 		\hline	
         \multicolumn{2}{|p{16cm}|}{\textbf{8a. }La Tarea no incluye repuestos. Ir al paso 13}\\
 		\hline	
@@ -88,9 +86,11 @@
 		\hline	
 		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El Sistema informa que el repuesto no existe. Ir al paso 12}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El Sistema informa que el repuesto no está asignado a la Tarea. Ir al paso 12}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{11a. }El Sistema informa que el repuesto no está asignado a la Tarea. Ir al paso 12}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10c. }El Sistema informa que el respuesto ya fue marcado como utilizado. Ir al paso 12}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{11b. }El Sistema informa que el respuesto ya fue marcado como utilizado. Ir al paso 12}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{11c. }El Sistema informa que la cantidad de repuesto ingresada excede la cantidad reservada. Ir al paso 12}\\
 		\hline	
 	\end{longtable}
 
