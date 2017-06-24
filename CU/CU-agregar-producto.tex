@@ -1,56 +1,56 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\begin{document}
+	%DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    %LO RESETEAMOS A 0
+    \newcommand\resetinc{\setcounter{step}{0}}
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+
 \begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar producto}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}:Gerente }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente agrega al sistema un nuevo producto. El sistema le asigna un Código de Referencia Interno y lo vincula con el proveedor}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: producto creado}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente agrega al sistema un nuevo producto, ingresando su nombre, descripción, marca, stock mínimo, y uno o más márgenes de ganancia. El sistema le asigna un Código de Referencia Interno y guarda los datos.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Producto creado con uno o más márgenes de ganancia.}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-			\inc Este CU comienza cuando el Gerente desea agregar un producto & \\
+			\inc Este CU comienza cuando el Gerente desea agregar un nuevo producto a la lista de producto.&\\
 			\hline
-			\inc El Gerente le spide crear un nuevo producto y le pide al sistema que lo Cree &   \\
+			\inc El Gerente ingresa el nombre del nuevo producto y le solicita al sistema crearlo.&\\
 			\hline
-			& \inc Creea el Codigo Interno de Referencia  \\
+			& \inc Genera un código único y crea un nuevo producto con el nombre ingresado.\\
 			\hline
-			& \inc Muestra que el producto fue Creado  \\
+			\inc El Gerente ingresa Descripcion, Marca, y Stock Minimo del producto y le solicita al sistema que agregue los datos. &\\
 			\hline
-
-
-			\inc El Gerente ingresa Nombre, Descripcion,  Marca, Stock, Stock Minimo del productos y le pide al sistema que agregue los datos &   \\
+			& \inc Agrega los datos del producto.\\
 			\hline
-			& \inc Agrega los datos del producto \\
+			\inc El Gerente ingresa un margen de ganancia y su descripción, y le solicita al sistema anexarlo al producto.&\\
 			\hline
-			\inc EL Gerente Ingresa un margen de ganancia Para el Producto y le pide al sistema que agregue los datos &   \\
+			& \inc Agrega el margen de ganancia al producto. \\
 			\hline
-			& \inc Agrega los datos del producto \\
+			\inc Repetir 6 a 7 mientras el Gerente desee ingresar más márgenes de ganancia para el producto.&\\
 			\hline
-			\inc Repetir del 7 al 8 hasta que el Gerente no desea ingresar mas margenes de ganancias para el producto &  \\
-			\hline
-			\inc  El Jefe de Taller Ingresa el cuil del proveedor y le pide al sistema que lo busque  &    \\
-			\hline
-			& \inc Busca al proveedor  \\
-			\hline
-			& \inc  Vincula el producto con el proovedor  \\
-			\hline
-			\inc El Gerente ingresa Codigo Propio, Garantia y precio del productos que estan relacionados con el proveedor y le pide al sistema que los agregue  &   \\
-			\hline
-			& \inc  Agrega los datos del producto   \\
-			\hline
-			\inc Repetir de 10 al 14 Hasta que el Gerente desea vincular mas el Producto con los Proveedores &  \\
+			& \inc Muestra los datos del producto creado. \\
 			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }11_ el sistema informa que el proveedor no existe ir al paso 15 Del curso normal }\\
-		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-		\hline	
 	\end{longtable}
+
+	    \resetinc{}
+	    \raya{}
+	\end{document}
