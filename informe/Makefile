@@ -1,8 +1,9 @@
-SRC=informe.tex
+SRC=informe
 
-all: pdf pdf
+all: 2pdf
 
-pdf: 
-	pdflatex $(SRC)
+2pdf: 
+	pdflatex $(SRC) && pdflatex $(SRC)
+
 clean: 
 	rm *.aux *.log *.out *.dvi *.toc
