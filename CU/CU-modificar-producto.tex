@@ -1,0 +1,125 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\begin{document}
+	%DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    %LO RESETEAMOS A 0
+    \newcommand\resetinc{\setcounter{step}{0}}
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Modificar producto}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente modifica la información de un producto existente, ingresando su código interno de referencia. El sistema lo busca y muestra su información. El Gerente ingresa la nueva información y le solicita al sistema actualizarla. El sistema guarda la nueva información del producto}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: - }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Producto con información actualizada.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Gerente desea modificar un producto de la lista de productos.&\\
+			\hline
+			\inc El Gerente ingresa el código del producto y le solicita al sistema que lo busque.&\\
+			\hline
+			& \inc Busca el producto.\\
+			\hline
+      & \inc Muestra la información del producto.\\
+      \hline
+			\inc El Gerente elige qué información del producto modificar:
+        \\begin{itemize}
+          \item Si desea modificar datos básicos, ver Sección \textit{Modificar Datos básicos}.
+          \item Si desea agregar márgenes de ganancia, ver Sección \textit{Agregar Márgenes de Ganancia}.
+          \item Si desea quitar márgenes de ganancia, ver Sección \textit{Quitar Márgenes de Ganancia}.
+        \end{itemize}
+      &\\
+      \hline
+      & \inc Muestra los datos del producto y sus márgenes de ganancia.
+			\hline
+			\inc Repetir 5 a 6 mientras el Gerente desee realizar modificaciones.
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el producto no existe. Fin CU.}\\
+	\end{longtable}
+	    \resetinc{}
+
+      \begin{longtable}{ |p{8cm}|p{8cm}| }
+      		\hline
+      		\multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Modificar Datos básicos}\\
+      		\hline
+      		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+      		\hline
+      		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+      		\hline
+      			\inc El gerente ingresa un nuevo nombre, descripción, marca y stock mínimo, y le solicita al sistema actualizar la información del producto.&\\
+      			\hline
+      			& \inc Actualiza los datos del producto.\\
+            \hline
+      			\inc Fin Sección. & \\
+      		\hline
+      		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+      		\hline
+      	\end{longtable}
+      	    \resetinc{}
+
+            \begin{longtable}{ |p{8cm}|p{8cm}| }
+            		\hline
+            		\multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Agregar Márgenes de Ganancia}\\
+            		\hline
+            		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+            		\hline
+            		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            		\hline
+            			\inc El Gerente ingresa un márgen de ganancia con su descripción y le solicita al sistema agregarlo al producto.&\\
+            			\hline
+            			& \inc Agrega el márgen de ganancia al producto.\\
+                  \hline
+                  \inc Repetir 1 a 2 mientras el Gerente desee agregar más márgenes de ganancia.
+                  \hline
+            			\inc Fin Sección. & \\
+            		\hline
+            		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+            		\hline
+            	\end{longtable}
+            	    \resetinc{}
+
+                  \begin{longtable}{ |p{8cm}|p{8cm}| }
+                  		\hline
+                  		\multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Quitar Márgenes de Ganancia}\\
+                  		\hline
+                  		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+                  		\hline
+                  		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+                  		\hline
+                  			\inc El Gerente ingresa un márgen de ganancia y le solicita al sistema quitarlo.&\\
+                  			\hline
+                  			& \inc Busca el márgen de ganancia al producto.\\
+                        \hline
+                        & \inc Elimina el márgen de ganancia del producto.\\
+                        \hline
+                        \inc Repetir 1 a 2 mientras el Gerente desee quitar más márgenes de ganancia.
+                        \hline
+                  			\inc Fin Sección. & \\
+                  		\hline
+                  		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+                  		\hline
+                      \multicolumn{2}{|p{16cm}|}{\textbf{3. }El Sistema informa que el márgen de ganancia no existe. Ir a 3.}\\
+                      \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que no hay márgenes de ganancia para eliminar. Fin Sección.}\\
+                      \hline
+                  	\end{longtable}
+                  	    \resetinc{}
+
+	    \raya{}
+	\end{document}
