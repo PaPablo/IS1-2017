@@ -1,0 +1,76 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Generar factura}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Operario Contable le solicita al sistema generar la factura correspondiente para una \OT{}. El sistema crea la factura.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Factura creada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando el Operario Contable desea facturar una \OT{}& \\
+			\hline
+            \inc El Operario Contable ingresa el número de \OT{} y le solicita al sistema que la facture&\\
+			\hline
+            & \inc Busca la \OT{}\\
+			\hline
+            & \inc Crea una nueva factura y la vincula con la \OT{}\\
+			\hline
+
+
+            & \inc Toma un detalle de la \OT{} y busca su detalle del presupuesto correspondiente.  \\
+			\hline
+            & \inc Toma la tarifa de la tarea correspondiente al detalle del presupuesto y el precio del repuesto asociado y su cantidad utilizada \\
+			\hline
+            & \inc Calcula el precio final del detalle de la \OT{} multiplicando el precio del repuesto asociado por la cantidad utilizada y lo sumándolo al precio de la tarifa de la tarea.\\
+			\hline
+            & \inc Crea un nuevo detalle de factura y lo vincula con el detalle de la \OT{} y con la factura\\
+			\hline
+
+
+            & \inc Incorpora al detalle de factura el precio final del detalle de la \OT{}\\
+			\hline
+            & \inc Repetir pasos 5 al 9 hasta que no haya más detalles de la \OT{} por facturar.\\
+			\hline
+            & \inc Imprime la factura.\\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El sistema informa que la \OT{} ingresada no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que la \OT{} ingresada ya fue facturada. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4c. }El sistema informa que la \OT{} ingresada todavía tiene tareas por realizar. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{6a. }El detalle de la \OT{} fue cancelado. Ir al paso 10.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{6b. }El detalle de la \OT{} ya fue facturado. Ir al paso 10.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{7. }El detalle de la \OT{} no incluye repuestos. El precio final del detalle es el valor de la tarifa de la tarea. Ir al paso 8.}\\
+		\hline
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES
