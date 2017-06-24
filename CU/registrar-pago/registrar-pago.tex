@@ -43,17 +43,17 @@
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-			\textbf{1. }Este CU comienza cuando el cliente se acerca al local para pagar una factura.& \\
+			\inc Este CU comienza cuando el cliente se acerca al local para pagar una factura.& \\
             \hline
-			\textbf{2. }El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta cuál. & \\
+			\inc El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta cuál. & \\
             \hline
-			\textbf{3. }El Operario Contable le solicita al sistema que busque la factura. & \\
+			\inc El Operario Contable le solicita al sistema que busque la factura. & \\
             \hline
-			& \textbf{3. }El sistema busca la factura. \\
+			& \inc El sistema busca la factura. \\
             \hline
-			& \textbf{4. }El sistema muestra los datos de la factura. \\
+			& \inc El sistema muestra los datos de la factura. \\
             \hline
-			\textbf{5. }El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
+			\inc El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
                 \begin{enumerate}[label=(\alph*)]
                     \item Pagar en efectivo: ir a sección \textit{Pago en Efectivo}.
                     \item Pagar con Nota de Crédito: ir a sección \textit{Pago con Nota de Crédito}.
@@ -63,25 +63,25 @@
                 \end{enumerate}
             & \\
             \hline
-            & \textbf{6. }El sistema muestra el subtotal de lo pagado y el total de lo adeudado.\\
+            & \inc El sistema muestra el subtotal de lo pagado y el total de lo adeudado.\\
             \hline
-            & \textbf{7. }Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
+            & \inc Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
             \hline
-			\textbf{8. }El Operario Contable solicita al sistema buscar el Cliente que figura en la factura.& \\
+			\inc El Operario Contable solicita al sistema buscar el Cliente que figura en la factura.& \\
             \hline
-            & \textbf{9. }El sistema busca el cliente.\\
+            & \inc El sistema busca el cliente.\\
             \hline
-            & \textbf{10. }El sistema muestra los datos del cliente.\\
+            & \inc El sistema muestra los datos del cliente.\\
             \hline
-            \textbf{11. }El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
+            \inc El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
             \hline
-            & \textbf{12. }El sistema calcula y almacena el saldo actual del cliente que figura en la factura.\\
+            & \inc El sistema calcula y almacena el saldo actual del cliente que figura en la factura.\\
             \hline
-			\textbf{13. }El Operario Contable le extiende al cliente un comprobante de pago & \\
+			\inc El Operario Contable le extiende al cliente un comprobante de pago & \\
             \hline
-            & \textbf{14. }Si la factura fue pagada en su totalidad, el sistema la marca como pagada. Si no, el sistema la marca como pagada parcialmente.\\
+            & \inc Si la factura fue pagada en su totalidad, el sistema la marca como pagada. Si no, el sistema la marca como pagada parcialmente.\\
             \hline
-			\textbf{15. }Fin CU. & \\
+			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
@@ -103,17 +103,17 @@
         \hline
         \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
         \hline
-            \textbf{1. } El cliente da un pago en efectivo& \\
+            \inc  El cliente da un pago en efectivo& \\
             \hline
-            \textbf{2. } El Operario Contable le solicita al sistema el registro del cobro del importe a pagar ingresando el monto del efectivo entregado por el cliente& \\
+            \inc  El Operario Contable le solicita al sistema el registro del cobro del importe a pagar ingresando el monto del efectivo entregado por el cliente& \\
             \hline
-            & \textbf{3. } El sistema registra el pago en efectivo\\
+            & \inc  El sistema registra el pago en efectivo\\
             \hline
-            & \textbf{4. } El sistema calcula y muestra el vuelto\\
+            & \inc  El sistema calcula y muestra el vuelto\\
             \hline
-            \textbf{5. } El Operario Contable deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
+            \inc  El Operario Contable deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
             \hline
-            \textbf{6. }Fin Sección. & \\
+            \inc Fin Sección. & \\
         \hline
         \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
         \hline
@@ -129,21 +129,21 @@
         \hline
         \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
         \hline
-            \textbf{1. } El cliente le entrega al Operario Contable la Nota de Crédito con la que desea abonar.& \\
+            \inc  El cliente le entrega al Operario Contable la Nota de Crédito con la que desea abonar.& \\
             \hline
-            \textbf{2. } El Operario Contable contable busca en el sistema la Nota de Crédito, ingresando su número.& \\
+            \inc  El Operario Contable contable busca en el sistema la Nota de Crédito, ingresando su número.& \\
             \hline
-            & \textbf{3. } El sistema busca la Nota de Crédito.\\
+            & \inc  El sistema busca la Nota de Crédito.\\
             \hline
-            & \textbf{4. } El sistema muestra los datos de la Nota de Crédito.\\
+            & \inc  El sistema muestra los datos de la Nota de Crédito.\\
             \hline
-            \textbf{4. } El Operario Contable registra en el sistema el uso de la Nota de Credito como cobro del importe a pagar.&\\
+            \inc  El Operario Contable registra en el sistema el uso de la Nota de Credito como cobro del importe a pagar.&\\
             \hline
-            & \textbf{6. }El Sistema registra el pago con el monto de la Nota de Crédito.\\
+            & \inc El Sistema registra el pago con el monto de la Nota de Crédito.\\
             \hline
-            & \textbf{7. }El sistema marca la nota de crédito como ya usada.\\
+            & \inc El sistema marca la nota de crédito como ya usada.\\
             \hline
-            \textbf{8. }Fin Sección.&\\
+            \inc Fin Sección.&\\
         \hline
         \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
         \hline
@@ -170,13 +170,13 @@
         \hline
         \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
             \hline
-            \textbf{1. } El Cliente le entrega al Operario Contable el cheque con el que desea abonar & \\
+            \inc  El Cliente le entrega al Operario Contable el cheque con el que desea abonar & \\
             \hline
-            \textbf{2. } El Operario Contable solicita al sistema el registro del cobro del importe a pagar con el monto que figura en el cheque &  \\
+            \inc  El Operario Contable solicita al sistema el registro del cobro del importe a pagar con el monto que figura en el cheque &  \\
             \hline
-            & \textbf{4. }El sistema registra el pago con monto del cheque. \\
+            & \inc El sistema registra el pago con monto del cheque. \\
             \hline
-            \textbf{5. }Fin Sección. & \\
+            \inc Fin Sección. & \\
             \hline
         \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
         \hline
@@ -189,17 +189,17 @@
         \hline
         \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
             \hline
-            \textbf{1. }El cliente le entrega el comprobante de la Transferencia Bancaria al Operario Contable& \\
+            \inc El cliente le entrega el comprobante de la Transferencia Bancaria al Operario Contable& \\
             \hline
-            \textbf{2. }El Operario contable busca en el registro de la organización la transferencia &\\
+            \inc El Operario contable busca en el registro de la organización la transferencia &\\
             \hline
-            \textbf{3. }El Operario Contable confirma la acreditación de la transferencia & \\
+            \inc El Operario Contable confirma la acreditación de la transferencia & \\
             \hline
-            \textbf{4. }El Operario Contable solicita al sistema que registre el cobro del importe a pagar con el monto que figura en la Transferencia& \\
+            \inc El Operario Contable solicita al sistema que registre el cobro del importe a pagar con el monto que figura en la Transferencia& \\
             \hline
-            & \textbf{5. } El sistema registra el pago con monto de la transferencia\\
+            & \inc  El sistema registra el pago con monto de la transferencia\\
             \hline
-            \textbf{6. }Fin Sección &\\
+            \inc Fin Sección &\\
             \hline
         \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
         \hline
