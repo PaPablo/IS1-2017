@@ -34,45 +34,43 @@
     \newcounter{step}
     \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
     \newcommand\resetinc{\setcounter{step}{0}}
-    
+
     \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
 
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar empleado}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Esencial, primario}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller da de baja un empleado, de modo que no pueda asignársele nuevas tareas, o tomar nuevas órdenes de trabajo.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente decide eliminar un técnico que ya no trabaja para la organización, ingresa su DNI y le solicita al sistema efectuar la baja. El sistema lo busca y lo da de baja.}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Empleado dado de baja.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Técnico dado de baja.}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-			\inc Este CU comienza cuando el Jefe de Taller decide dar de baja un empleado.& \
+			\inc Este CU comienza cuando el Gerente decide dar de baja un técnico. & \
 			\hline
-			\inc  El Jefe de Taller le solicita al sistema buscar al empleado, ingresando su DNI. & \\
+			\inc El Gerente ingresa el DNI del técnico y le solicita al sistema que lo dé de baja. & \\
 			\hline
-			& \inc Busca al empleado.\\
+			& \inc Busca al técnico.\\
 			\hline
 			& \inc Busca las órdenes de trabajo abiertas. \\
 			\hline
 			& \inc Busca las tareas pendientes. \\
 			\hline
-			& \inc Muestra los datos del empleado. \\
-			\hline
-			\inc El Jefe de Taller le solicita al sistema eliminar al empleado.&\\
-			\hline
-			& \inc Da de baja al empleado.\\
+			& \inc Da de baja al técnico.\\
 			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el empleado no existe. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el técnico no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{6. }El sistema informa que el empleado posee tareas pendientes. Fin CU.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{5. }El sistema informa que el técnico es encargado de alguna Orden de Trabajo abierta. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{6. }El sistema informa que el técnico posee tareas pendientes. Fin CU.}\\
 		\hline
 	\end{longtable}
 
