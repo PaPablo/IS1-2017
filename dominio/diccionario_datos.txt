@@ -64,25 +64,34 @@
     - Fecha de emisión
 
 * Producto
+    - Código de referencia
     - Nombre
     - Descripción
     - Stock
     - Stock Mínimo
     - Marca
-    - Código interno de referencia
-    - Precios
 
 * Proveedor
 
+* Provision
+    - Codigo Interno
+    - Precio
+    - Garantia
+
 * Reserva
+
+* Rubro
 
 * Tarifa
 
 * Técnico
+    - DNI
+    - Nombre y Apellido
+    - Telefono
+    - Domicilio
+    - e-mail
 
-* Tipo de Equipo
-
-* Tipo Tarea
+* Tarea
 
 * Tipo Servicio
 
