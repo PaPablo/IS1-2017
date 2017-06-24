@@ -36,7 +36,7 @@
 		\hline
             \inc Este CU comienza cuando un Técnico decide finalizar una Tarea& \\
             \hline
-            \inc El Técnico le solicita al sistema buscar la \OT{} en la que se encuentra la Tarea, ingresando su número.& \\
+            \inc El Técnico le solicita al sistema buscar la \OT{} ingresando su número.& \\
             \hline
             & \inc Busca la \OT{}\\
             \hline
@@ -50,13 +50,13 @@
             \hline
             & \inc Muestra los datos de la Tarea\\
             \hline
-            \inc El Técnico le solicita al Sistema buscar un repuesto asociado a la Tarea para marcarlo como usado, ingresando su código& \\
+            \inc El Técnico le solicita al Sistema buscar un repuesto asociado a la Tarea para marcarlo como usado, ingresando su código y cantidad& \\
             \hline
 
 
             & \inc Busca el repuesto.\\
             \hline
-            & \inc Marca el repuesto como utilizado.\\
+            & \inc Disminuye el stock del repuesto según la cantidad ingresada e incrementa el stock del producto (cancela el remanente reservado) en caso de ser necesario.\\
             \hline
             & \inc Muestra los datos de la Tarea\\
             \hline
@@ -66,7 +66,7 @@
             % Mas o menos por acá hay que ver qué hacemos con los repuestos asignados a la OT
             \inc El técnico le solicita al sistema marcar la Tarea como finalizada, agregando además una observación sobre el desarrollo de dicha tarea.&\\
             \hline
-            & \inc Marca la tarea como finalizada, registrando su fecha y hora de finalización, y agregando la observación realizada.\\
+            & \inc Marca la tarea como finalizada, registrando su fecha y hora de finalización, y agregando la observación realizada, y .\\
             \hline
             \inc Fin CU. & \\
         \hline
@@ -79,6 +79,8 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El Sistema informa que la Tarea no existe. Ir al paso 12}\\
 		\hline	
         \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El Sistema informa que la Tarea no pertenece a la \OT{}. Ir al paso 12}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7c. }El Sistema informa que la cantidad de repuesto ingresada excede la cantidad reservada. Ir al paso 12}\\
 		\hline	
         \multicolumn{2}{|p{16cm}|}{\textbf{8a. }La Tarea no incluye repuestos. Ir al paso 13}\\
 		\hline	
