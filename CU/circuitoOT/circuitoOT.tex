@@ -1,0 +1,620 @@
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\usepackage{url}
+\usepackage[a4paper]{geometry}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\begin{document}
+
+
+    %DEFINIMOS UN CONTADOR
+    \newcounter{step}
+    \newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+    \newcommand\resetinc{\setcounter{step}{0}}
+    
+    \newcommand\raya{\noindent\rule{169mm}{0.8mm}\\}
+
+    \newcommand\OT{\textit{Orden de Trabajo}}
+    \newcommand\OTs{\textit{Órdenes de Trabajo}}
+    \section{ Circuito de la \OT{} }
+
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: \textbf{47}. Atender solicitud de servicio}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico, Cliente}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: Un Cliente se comunica con la empresa para solicitar un servicio de reparación. El Técnico crea una \OT{} para atender la solicitud.}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+    \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: \OT{} creada.}\\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+    \hline
+    \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+    \hline
+        \inc Este CU comienza cuando un Cliente se contacta con la empresa para requerir un servicio.&\\
+        \hline
+        \inc El Técnico le solicita el nombre al Cliente y este se lo da. El técnico le solicita al Sistema buscar al Cliente ingresando el nombre.& \\
+        \hline
+        \inc El técnico le solicita al Sistema buscar al Cliente ingresando su nombre.& \\
+        \hline
+        & \inc Busca el Cliente.\\
+        \hline
+
+
+        & \inc Verifica que el Cliente no sea moroso.\\
+        \hline
+        & \inc Muestra los datos personales del Cliente.\\
+        \hline
+        \inc El Técnico le solicita al Sistema crear una \OT{} a nombre del Cliente y se designa a sí mismo como encargado de la \OT{}.& \\
+        \hline
+        & \inc Crea la \OT{}.\\
+        \hline
+
+
+        \inc El técnico ingresa el número de serie del equipo y le solicita al sistema que lo incorpore a la \OT{}.& \\
+        \hline
+        & \inc Busca el equipo. \\
+        \hline
+        & \inc Incorpora el equipo a la \OT{}.\\
+        \hline
+        \inc El Técnico le solicita al Cliente una descripción de problema del equipo. El Cliente se la da. El técnico ingresa en el sistema la descripción y le solicita al Sistema que la incorpore a la \OT{}& \\
+        \hline
+
+
+        \inc El técnico ingresa en el sistema la descripción y le solicita al Sistema que la incorpore a la \OT{}& \\
+        \hline
+        & \inc Incorpora la descripción del problema a la \OT{}\\
+        \hline
+        \inc El técnico ingresa un tipo de servicio y le indica al sistema que la \OT{} se realizará bajo ese tipo de servicio. &\\
+        \hline
+        & \inc Busca el tipo de servicio.\\
+        \hline
+
+
+        & \inc Incorpora el tipo de servicio a la \OT{}.\\
+        \hline
+        \inc El técnico le solicita al Sistema calcular el monto de \textit{RDyP} para el rubro al cual pertenece el equipo.& \\
+        \hline
+        & \inc Busca el precio de \textit{RDyP}.\\
+        \hline
+        & \inc Muestra el importe.\\
+        \hline
+
+
+        \inc El Técnico le comunica al Cliente el monto a pagar por la \textit{RDyP}.&\\
+        \hline
+        \inc El Cliente abona en efectivo el importe de \textit{RDyP}.& \\
+        \hline
+        \inc El Técnico le solicita al sistema registrar el pago del \textit{RDyP} ingresando el monto entregado por el Cliente& \\
+        \hline
+        & \inc Registra el pago del importe.\\
+        \hline
+
+
+        & \inc Calcula y muestra el vuelto.\\
+        \hline
+        \inc El Técnico deposita el efectivo recibido, extrae la diferencia y se la entrega al Cliente (de ser necesario)&\\
+        \hline
+        \inc El Técnico le solicita al Sistema imprimir la factura por el importe abonado y el comprobante de la \OT{}& \\
+        \hline
+        & \inc Imprime la factura y el comprobante de la \OT{}.\\
+        \hline
+
+
+        \inc El Técnico le entrega al Cliente la factura junto con el comprobante de la \OT{}.&\\
+        \hline
+        \inc Fin CU. & \\
+    \hline
+
+
+    \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{4. }El Sistema informa que el Cliente no existe. Fin CU.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{5. }El Sistema informa que el Cliente es moroso. El Técnico consulta con el Gerente si prestarle o no servicio al Cliente. Si se decide que sí, ir a paso 6. Si no, fin CU.}\\
+    \hline
+    \multicolumn{2}{|p{16cm}|}{\textbf{9. }El Técnico ve que es la primera vez que ingresa el equipo al taller. El técnico ingresa en el sistema el rubro del equipo, marca y modelo. El sistema lo registra y genera automáticamente un número de serie para el equipo. Ir a paso 10.}\\
+    \hline	
+    \multicolumn{2}{|p{16cm}|}{\textbf{15. }El Sistema informa que el Tipo de servicio ingresado no existe. Fin CU.}\\
+    \hline	
+    \multicolumn{2}{|p{16cm}|}{\textbf{18. }El Sistema informa que no existe un precio de \textit{RDyP} para el rubro al cual pertenece el equipo. El Técnico consulta un valor de \textit{RDyP} con el Jefe de Taller para ese rubro. El Jefe de Taller se lo comunica al técnico. El Técnico lo detalla en la \OT{} y se lo comunica al Cliente. Ir a paso 16.}\\
+    \hline	
+    \multicolumn{2}{|p{16cm}|}{\textbf{21. }El Cliente decide no abonar el importe de \textit{RDyP}. Fin CU.}\\
+    \hline	
+\end{longtable}
+
+\resetinc{}
+\raya{}
+
+
+    \textbf{Caso de uso}: \textbf{48}. Comenzar revisión\\
+    \textbf{Tipo}: Primario Esencial\\
+    \textbf{Actores}: Técnico\\
+    \textbf{Descripción}: El técnico encargado de una \OT{} da comienzo a la \textit{RDyP} de la misma. El sistema registra el comienzo de la revisión\\
+    \textbf{Precondiciones}: La \OT{} existe y no tiene presupuestos sin confirmar. El Técnico es el Técnico encargado de la \OT{}
+    \textbf{Postcondiciones}: \textit{RDyP} de una \OT{} comenzada\\
+    
+ \resetinc{}
+ \raya{}
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: \textbf{49}. Finalizar Revisión}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El técnico le solicita al Sistema crear un presupuesto para una \OT{}. El Técnico indica las tareas necesarias para completar el trabajo y los repuestos que hagan falta. El Sistema genera el presupuesto correspondiente.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: \OT{} revisada y prespuesto creado.}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando el Técnico desea dar por finalizada la revisión de una \OT{}.& \\
+			\hline
+            \inc El Técnico ingresa el número de \OT{} y le solicita al Sistema que cree un presupuesto para dicha \OT{}.& \\
+			\hline
+            & \inc Busca la \OT{} \\
+			\hline
+             & \inc Crea el presupuesto y lo vincula con la \OT{}.\\
+			\hline
+
+
+            \inc El Técnico ingresa una Tarea al Sistema y le solicita que la vincule con un detalle de Presupuesto.& \\
+			\hline
+            & \inc Busca la Tarea ingresada en el Rubro de la \OT{}.\\
+			\hline
+            & \inc Busca la Tarifa de la Tarea en el Tipo de Servicio de la \OT{}.\\
+			\hline
+            & \inc Crea el detalle del Presupuesto y le incluye la Tarifa.\\
+			\hline
+
+
+            & \inc El Técnico ingresa un código de repuesto y su cantidad y le solicita al Sistema agregarlo al detalle de Presupuesto.\\
+			\hline
+            & \inc Busca el Repuesto.\\
+			\hline
+            & \inc Agrega el Respuesto al detalle del presupuesto.\\
+			\hline
+            \inc Repetir pasos 5 al 11 hasta que no desee ingresar más Tareas al Presupuesto&\\
+			\hline
+
+
+            & \inc Imprime el Presupuesto.\\
+			\hline
+			\inc Fin CU. & \\
+
+
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El Sistema informa que la \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El Sistema informa que el Técnico no es el Técnico encargado de la \OT{}. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4c. }El Sistema informa que la \OT{} ingresada está cerrada y no se le pueden generar nuevos presupuestos. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{5. }El Técnico no desea crear un presupuesto para la \OT{}. El Sistema marca la \OT{} como \textit{No se repara}. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El Sistema informa que la Tarea no existe. Ir al paso 12.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El Sistema informa que no existe una Tarifa para el Tipo de Servicio de la \OT{} y la tarea ingresada. Ir al paso 12.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{9. }El Técnico no agrega Repuestos al detalle del presupuesto. Ir al paso 12.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{11. }El Sistema informa que el Repuesto no existe. Ir al paso 12.}\\
+		\hline	
+	\end{longtable}
+
+\resetinc{}
+\raya{}
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: \textbf{53}. Comenzar Tarea}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Técnico asignado a una Tarea decide comenzarla, marca su comienzo en el sistema.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea comenzada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+
+			\inc Este CU comienza cuando un Técnico decide comenzar a trabajar en una Tarea& \\
+			\hline
+            \inc El Técnico le solicita al sistema buscar la \OT{} ingresando su número.& \\
+			\hline
+            & \inc Busca la \OT{}\\
+			\hline
+			& \inc Muestra los datos de la \OT{}\\
+			\hline
+
+
+			\inc El Técnico le solicita al sistema buscar la Tarea que desea comenzar, ingresando el número de Tarea& \\
+			\hline
+			& \inc Busca la Tarea\\
+			\hline
+			& \inc Muestra los datos de la Tarea\\
+			\hline
+            \inc El Técnico le solicita al sistema registrar el comienzo de la Tarea.&\\
+			\hline
+
+
+            & \inc Marca la Tarea como comenzada, registrando la fecha y hora actual.\\
+			\hline
+			& \inc Muestra los datos de la Tarea comenzada.\\
+			\hline
+			\inc Fin CU. & \\
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El sistema informa que la \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que la \OT{} no posee Tareas pendientes de realización. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que la Tarea no existe. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que el Técnico no es el asignado para la Tarea. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7c. }El sistema informa que el Técnico no está capacitado para llevar a cabo la Tarea. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{7d. }El sistema informa que no se cuenta con el stock necesario de productos a utilizar en la Tarea. Fin CU.}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10. }El Sistema informa que la Tarea ya ha sido comenzada. Fin CU}\\
+		\hline	
+	\end{longtable}
+
+    \resetinc{}
+    \raya{}
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: \textbf{54}. Finalizar Tarea}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Técnico}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Técnico asignado a una Tarea decide finalizarla, agrega una observación y luego el sistema la marca como finalizada.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Tarea finalizada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando un Técnico decide finalizar una Tarea& \\
+            \hline
+            \inc El Técnico le solicita al sistema buscar la \OT{} ingresando su número.& \\
+            \hline
+            & \inc Busca la \OT{}\\
+            \hline
+            & \inc Muestra los datos de la \OT{}\\
+            \hline
+
+
+            \inc El Técnico le solicita al sistema buscar la Tarea que desea finalizar, ingresando el número de Tarea& \\
+            \hline
+            & \inc Busca la Tarea\\
+            \hline
+            & \inc Muestra los datos de la Tarea\\
+            \hline
+            \inc El Técnico le solicita al Sistema buscar un repuesto asociado a la Tarea para marcarlo como usado, ingresando su código y cantidad& \\
+            \hline
+
+
+            & \inc Busca el repuesto.\\
+            \hline
+            & \inc Disminuye el stock del repuesto según la cantidad ingresada e incrementa el stock del producto (cancela el remanente reservado) en caso de ser necesario.\\
+            \hline
+            & \inc Muestra los datos de la Tarea\\
+            \hline
+            \inc Repetir pasos 8 al 11 mientras el Técnico desee registrar más repuestos utilizados en la Tarea& \\
+            \hline
+            
+            % Mas o menos por acá hay que ver qué hacemos con los repuestos asignados a la OT
+            \inc El Técnico le solicita al sistema marcar la Tarea como finalizada, agregando además una observación sobre el desarrollo de dicha tarea.&\\
+            \hline
+            & \inc Marca la tarea como finalizada, registrando su fecha y hora de finalización, y agregando la observación realizada.\\
+            \hline
+            & \inc Muestra las tareas pendientes de la \OT{}.\\
+            \hline
+            \inc Fin CU. & \\
+        \hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El Sistema informa que le \OT{} no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El Sistema informa que la \OT{} no posee Tareas por finalizar. Fin CU.}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El Sistema informa que la Tarea no existe. Fin CU.}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{7b. }El Sistema informa que el Técnico no es el Técnico encargado de la Tarea. Fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{8a. }La Tarea no incluye repuestos. Ir al paso 13}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{8b. }El Técnico no utilizó ninguno de los repuestos reservados. El sistema incrementa el stock de los productos (cancela las respectivas reservas). Ir al paso 13}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El Sistema informa que el repuesto no existe. Ir al paso 12}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{11a. }El Sistema informa que el repuesto no está asignado a la Tarea. Ir al paso 12}\\
+		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{11b. }El Sistema informa que el respuesto ya fue marcado como utilizado. Ir al paso 12}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{11c. }El Sistema informa que la cantidad de repuesto ingresada excede la cantidad reservada. Ir al paso 12}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{15. }La tarea cerrada fue la última por cerrar de la \OT{}. El Sistema marca comom cerrada la \OT{}. Fin CU.}\\
+		\hline	
+	\end{longtable}
+
+\resetinc{}
+\raya{}
+
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: \textbf{63}. Generar factura}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Operario Contable le solicita al sistema generar la factura correspondiente para una \OT{}. El sistema crea la factura.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Factura creada}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+            \inc Este CU comienza cuando el Operario Contable desea facturar una \OT{}& \\
+			\hline
+            \inc El Operario Contable ingresa el número de \OT{} y le solicita al sistema que la facture&\\
+			\hline
+            & \inc Busca la \OT{}\\
+			\hline
+            & \inc Crea una nueva factura y la vincula con la \OT{}\\
+			\hline
+
+
+            & \inc Toma un detalle de la \OT{} y busca su detalle del presupuesto correspondiente.  \\
+			\hline
+            & \inc Toma la tarifa de la tarea correspondiente al detalle del presupuesto y el precio del repuesto asociado y su cantidad utilizada \\
+			\hline
+            & \inc Calcula el precio final del detalle de la \OT{} multiplicando el precio del repuesto asociado por la cantidad utilizada y lo sumándolo al precio de la tarifa de la tarea.\\
+			\hline
+            & \inc Crea un nuevo detalle de factura y lo vincula con el detalle de la \OT{} y con la factura\\
+			\hline
+
+
+            & \inc Incorpora al detalle de factura el precio final del detalle de la \OT{}\\
+			\hline
+            & \inc Repetir pasos 5 al 9 hasta que no haya más detalles de la \OT{} por facturar.\\
+			\hline
+            & \inc Imprime la factura.\\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. }El sistema informa que la \OT{} ingresada no existe. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que la \OT{} ingresada ya fue facturada. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4c. }El sistema informa que la \OT{} ingresada todavía tiene tareas por realizar. Fin CU.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{6a. }El detalle de la \OT{} fue cancelado. Ir al paso 10.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{6b. }El detalle de la \OT{} ya fue facturado. Ir al paso 10.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{7. }El detalle de la \OT{} no incluye repuestos. El precio final del detalle es el valor de la tarifa de la tarea. Ir al paso 8.}\\
+		\hline
+	\end{longtable}
+
+\resetinc{}
+\raya{}
+    
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: \textbf{64}. Registrar Pago de Factura}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Operario Contable, Cliente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El cliente realiza el pago de una factura}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Una o más facturas pagas}\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el cliente se acerca al local para pagar una factura.& \\
+            \hline
+			\inc El Operario Contable le pregunta al cliente qué factura desea pagar. El cliente le contesta cuál. & \\
+            \hline
+			\inc El Operario Contable le solicita al sistema que busque la factura. & \\
+            \hline
+			& \inc El sistema busca la factura. \\
+            \hline
+			& \inc El sistema muestra los datos de la factura. \\
+            \hline
+			\inc El Operario le informa al cliente el importe indicado en el total de la factura. El cliente decide:
+                \begin{enumerate}[label=(\alph*)]
+                    \item Pagar en efectivo: ir a sección \textit{Pago en Efectivo}.
+                    \item Pagar con Nota de Crédito: ir a sección \textit{Pago con Nota de Crédito}.
+                    \item Pagar con Transferencia Bancaria: ir a sección \textit{Pago con Transferencia Bancaria}.
+                    \item Pagar con Cheque: ir a sección \textit{Pago con Cheque}.
+                    \item No paga. Ir al paso 8.
+                \end{enumerate}
+            & \\
+            \hline
+            & \inc El sistema muestra el subtotal de lo pagado y el total de lo adeudado.\\
+            \hline
+            & \inc Repetir pasos 5 al 6 hasta que se registre el cobro total del importe a pagar.\\
+            \hline
+			\inc El Operario Contable solicita al sistema buscar el Cliente que figura en la factura.& \\
+            \hline
+            & \inc El sistema busca el cliente.\\
+            \hline
+            & \inc El sistema muestra los datos del cliente.\\
+            \hline
+            \inc El Operario Contable registra el pago realizado en la Cuenta Corriente del cliente de la factura.&\\
+            \hline
+            & \inc El sistema calcula y almacena el saldo actual del cliente que figura en la factura.\\
+            \hline
+			\inc El Operario Contable le extiende al cliente un comprobante de pago & \\
+            \hline
+            & \inc Si la factura fue pagada en su totalidad, el sistema la marca como pagada. Si no, el sistema la marca como pagada parcialmente.\\
+            \hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4a. } El sistema informa que la factura no existe, fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. } El sistema informa que la factura ya fue pagada, fin CU.}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{12. } El sistema le informa al Operario Contable que el cliente dispone de saldo a favor en su cuenta corriente. El Operario Contable genera una Nota de Crédito a nombre del Cliente con dicho saldo. Se la entrega al Cliente. Continuar con el Curso Normal.}\\
+		\hline	
+	\end{longtable}
+
+
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago en efectivo}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+        \hline
+            \inc  El cliente da un pago en efectivo& \\
+            \hline
+            \inc  El Operario Contable le solicita al sistema el registro del cobro del importe a pagar ingresando el monto del efectivo entregado por el cliente& \\
+            \hline
+            & \inc  El sistema registra el pago en efectivo\\
+            \hline
+            & \inc  El sistema calcula y muestra el vuelto\\
+            \hline
+            \inc  El Operario Contable deposita el efectivo recibido, extrae la diferencia y se la entrega al cliente (de ser necesario)&\\
+            \hline
+            \inc Fin Sección. & \\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{1. } El cliente no tiene suficiente efectivo como para pagar el importe. Ir a paso 5 del curso principal de CU.}\\
+        \hline
+    \end{longtable}
+    
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Nota de Crédito}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+        \hline
+            \inc  El cliente le entrega al Operario Contable la Nota de Crédito con la que desea abonar.& \\
+            \hline
+            \inc  El Operario Contable contable busca en el sistema la Nota de Crédito, ingresando su número.& \\
+            \hline
+            & \inc  El sistema busca la Nota de Crédito.\\
+            \hline
+            & \inc  El sistema muestra los datos de la Nota de Crédito.\\
+            \hline
+            \inc  El Operario Contable registra en el sistema el uso de la Nota de Credito como cobro del importe a pagar.&\\
+            \hline
+            & \inc El Sistema registra el pago con el monto de la Nota de Crédito.\\
+            \hline
+            & \inc El sistema marca la nota de crédito como ya usada.\\
+            \hline
+            \inc Fin Sección.&\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4a. } La Nota de Crédito no existe. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
+            
+            \begin{itemize}
+                \item Si desea usar otra Nota de Crédito, ir a paso 1.
+                \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
+            \end{itemize}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{4b. } La Nota de Crédito ya fue usada. El Operario se lo informa al cliente y le da la posibilidad de elegir otra forma de pago, el cliente decide:
+        
+            \begin{itemize}
+                \item Si desea usar otra Nota de Crédito, ir a paso 1.
+                \item Si desea utilizar otra forma de pago, ir a paso 5 del curso principal de CU.
+            \end{itemize}}\\
+        \hline
+    \end{longtable}
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Cheque}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+            \inc  El Cliente le entrega al Operario Contable el cheque con el que desea abonar & \\
+            \hline
+            \inc  El Operario Contable solicita al sistema el registro del cobro del importe a pagar con el monto que figura en el cheque &  \\
+            \hline
+            & \inc El sistema registra el pago con monto del cheque. \\
+            \hline
+            \inc Fin Sección. & \\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+    \end{longtable}
+    \begin{longtable}{ |p{8cm}|p{8cm}| }
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{Sección}: Pago con Transferencia Bancaria}\\
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+        \hline
+        \textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+            \hline
+            \inc El cliente le entrega el comprobante de la Transferencia Bancaria al Operario Contable& \\
+            \hline
+            \inc El Operario contable busca en el registro de la organización la transferencia &\\
+            \hline
+            \inc El Operario Contable confirma la acreditación de la transferencia & \\
+            \hline
+            \inc El Operario Contable solicita al sistema que registre el cobro del importe a pagar con el monto que figura en la Transferencia& \\
+            \hline
+            & \inc  El sistema registra el pago con monto de la transferencia\\
+            \hline
+            \inc Fin Sección &\\
+            \hline
+        \multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+        \hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{3. } La transferencia no se ha acreditado. El Operario Contable le infoma la situación al Cliente y le da la posibilidad de elegir otra forma de pago. El cliente decide:
+        \begin{enumerate}[label=(\alph*)]
+            \item Indicar otra transferencia. Ir a paso 1.
+            \item Elegir otra forma de pago. Ir al paso 5 del Curso Normal de CU. 
+        \end{enumerate}}\\
+        \hline
+    \end{longtable}
+
+    \resetinc{}
+    \raya{}
+
+    \textbf{Caso de uso}: \textbf{66}. Retirar Equipo\\
+    \textbf{Tipo}: Primario Esencial\\
+    \textbf{Actores}: Técnico\\
+    \textbf{Descripción}: Un cliente desea retirar su equipo del taller. El empleado le devuelve su equpo y le solicita al sistema registrar la salida del mismo.\\
+    \textbf{Precondiciones}: Cliente existe. Equipo se encuentra en el taller. OT que tenga el equipo cerrada (y pagada si el cliente es particular)\\
+    \textbf{Postcondiciones}: Equipo retirado
+\end{document}

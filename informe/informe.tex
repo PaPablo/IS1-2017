@@ -484,103 +484,64 @@
     \begin{multicols}{2}
     \begin{enumerate}	
         \subsubsection*{Clientes}
-            %As you can see, las notificaciones volaron a la goma
             \item Agregar Cliente
             \item Modificar Cliente
             \item Eliminar Cliente
             \item Listar Clientes
             \item Consultar saldo del Cliente
+            \item Eliminar equipo
+            \item Listar equipos
+            \item Retirar equipo
         \subsubsection*{Proveedores}
             \item Agregar Proveedor
             \item Modificar Proveedor
             \item Eliminar Proveedor
             \item Listar Proveedores	
-        \subsubsection*{Empleados}
-            \item Agregar Empleado
-            \item Modificar Empleado
-            \item Eliminar Empleado
-            \item Listar Empleados	
-            \item Asignar tarea a empleado
-            \item Remover tarea de empleado
-            \item Listar las tareas que puede realizar un empleado
-        \subsubsection*{Equipos}
-            \item Agregar tipo de Equipo
-            \item Modificar tipo de Empleado
-            \item Eliminar tipo de Equipo
-            \item Listar tipo de Equipo
-            \item Agregar \textit{RDyP} para un tipo de equipo
-            %\item Registrar salida de Equipo
-                %tiene que verificar que el equipo esté en el taller (jeje)
-                %y que la OT en la que aparezca esté cerrada (pendiente de facturación)
-            %\item Agregar Equipo
-            \item Eliminar Equipo
-            \item Listar Equipos
+        \subsubsection*{Técnicos}
+            \item Agregar Técnico
+            \item Modificar Técnico
+            \item Eliminar Técnico
+            \item Listar Técnicos	
+            \item Asignar tarea a Técnico
+            \item Remover tarea de Técnico
+            \item Listar las tareas que puede realizar un Técnico
+        \subsubsection*{Rubro}
+            \item Agregar Rubro
+            \item Modificar Rubro 
+            \item Eliminar Rubro
+            \item Listar Rubros
+            \item Agregar \textit{RDyP}
+            \item Modificar precio de \textit{RDyP}
+            \item Eliminar \textit{RDyP}
+            \item Agregar Tarea
+            \item Modificar Tarea
+            \item Eliminar Tarea
+            \item Listar Tareas
+            \item Crear Tarifa
+            \item Modificar precio de Tarifa
+            \item Eliminar Tarifa
         \subsubsection*{Productos}
             \item Agregar producto
             \item Modificar producto
             \item Eliminar producto
             \item Listar productos
             \item Agregar Proveedor a un producto
-            %\item Modificar Proveedor de un producto - Llega mal es de menos o no llega
-            \item Eliminar Proveedor de producto
-            \item Ver detalle de producto
+            \item Eliminar Proveedor de un producto
+            \item Ver proveedores de un producto
             \item Actualizar stock
-                %se actualizan valores a manopla
         \subsubsection*{Tipo servicios}
             \item Agregar Tipo servicio
             \item Modificar Tipo servicio
             \item Eliminar Tipo servicio
-            \item Listar Tipo tarea de un Tipo servicio
-            \item Listar Tipo servicios
-        \subsubsection*{Tipo tarea}
-            \item Agregar tipo tarea
-            \item Modificar tipo tarea
-            \item Eliminar tipo tarea
-            \item Listar Tipo tarea
-            \item Crear tarifa
-            \item Modificar tarifa
-            \item Eliminar tarifa
+            \item Listar tarifario de un tipo de servicio
+            \item Listar tipos de servicios
         \subsubsection*{Órdenes de trabajo}
-
-            %Bueno, a ver, acá vamos a tener que tomar una decisión sobre qué hacer con el tema del "detalle orden"
-            %Si seguir nombrándolo "ítem" o cambiarle el nombre
-            %Lo que sí sabemos, es que la OT va a tener tod o lo que ya dijimos en el informe
-            %(técnico encargado, cliente, vencimiento, bla bla).
-            %Por otro lado, el "detalle orden" o "ítem" va a tener también un técnico que lo lleve a cabo (puede o no ser
-            %el mismo que el técnico encargado de la OT),
-            %una tarea (la tarea a su vez va a hacer referencia a un Tipo servicio y un tipo de equipo; ya tiene su tarifa),
-            %y posibles repuestos
-
-            %las Tipo tarea que se van a poder agregar a una OT, van a ser las del tipo de equipo correspondiente al
-            %equipo que tenga la OT?? (si se trata de una reparación), o se van a poder agregar cualquier tipo de tarea
-            %en la OT?? Porque en el informe y en los CUs de tipo de equipo  veniamos diciendo que los tipo 
-            %de equipo son los que tienen las Tipo tarea. Así que, bueno, al momento de vincular una tarea
-            %con un ítem en una OT, habría que verificar eso? (tipo de equipo del equipo de la OT 
-            %sea igual al tipo de equipo de la tarea)
-
-            %los posibles repuestos de un ítem quedaban libres a elección
-            %del usuario, las verificaciones que hay que hacer van a ser con respecto del stock y así.
-
-            %Hay que ver también qué onda con lo que decía Marta de los estados que puede tener un ítem
-            %Podríamos tener algo así como "En espera", "Comenzado", "Espera repuestos", "Finalizado", qué sé yo, se me
-            %ocurren ahora. No se va a poder cambiar de técnico a un ítem si ya se comenzó, ni modificar para nada 
-            %si ya está finalizado (algunas consideraciones que se me ocurren nomás)
-
-            %bueno después el tema de las observaciones del ítem podrían quedar o volar, a revisar también, seguro
-            %que quedan. Lo que sí está feo, es que el CU "Modificar ítem" quede tan gigantesco, se debería desglosar
-            %en CUs más pequeños
-
-            %Otra cosa que se me ocurre, la cotización del ítem va a ser automática, porque la tarea que tiene
-            %asociada ya tiene un precio (la tarifa), y después es cuestión de sumar esa tarifa con la de los repuestos 
-            %utilizados (si es que se utilizaron)
-
-            %Los listados y ver detalles deberían quedar, capaz cambiarles el nombre o agregar algún otro
-            %si vemos que hace falta
 			\item Atender solicitud de servicio            
             \item Comenzar revisión
             \item Finalizar revisión
             \item Reasignar tarea a técnico
             \item Confirmar presupuesto
+            \item Cancelar \OT{}
             \item Comenzar tarea 
             \item Finalizar tarea
             \item Cancelar tarea
@@ -589,12 +550,9 @@
             \item Cambiar encargado de \OT{}
             \item Agregar observación a una tarea
             \item Eliminar observación en una tarea
-            \item Cerrar \OT{}
-            \item Finalizar \OT{}
-            \item Ver detalle de Orden de Trabajo
-            \item Ver detalle de una tarea
+            \item Listar tareas de una \OT{}
+            \item Consultar detalle de una tarea de una \OT{}
         \subsubsection*{Facturas, Cobros y Ventas}
-                %estos CU me parece que estarían bien, la onda sería escribirlos bien después jeje
             \item Generar factura 
             \item Listar facturas
             \item Registrar pago de factura

@@ -69,13 +69,12 @@
     - Fecha de emisión
 
 * Producto
+    - Código de referencia
     - Nombre
     - Descripción
     - Stock
     - Stock Mínimo
     - Marca
-    - Código interno de referencia
-    - Precios
 
 * Proveedor
     - Nombre / Razón Social
@@ -89,9 +88,21 @@
  			- interno
  		- Correo eléctronico (más de uno en clientes comerciales o empresariales)
 
+* Provision
+    - Codigo Interno
+    - Precio
+    - Garantia
+
+* RDyP
+    - Precio
+
 * Reserva
     - Cantidad Reservada
     - Cantidad Usada
+
+* Rubro
+    - Nombre
+    - Descripción
 
 * Tarifa
     - Precio
@@ -103,11 +114,8 @@
     - Teléfono
     - Correo Electrónico
 
-* Tipo de Equipo
-    - Nombre
-    - Descripción
 
-* Tipo Tarea
+* Tarea
     - Nombre
     - Descripción
 

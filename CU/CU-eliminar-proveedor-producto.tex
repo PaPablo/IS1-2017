@@ -1,40 +1,39 @@
 \begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}:Eliminar Proveedor de Producto }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}:Primario }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}:Jefe deTaller }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}:El Gerente elimina del sistema los proveedores de un producto }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}:el producto no posee vinculacion con los proveedores seleccionados }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar proveedores de un Producto }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente decide eliminar uno o más proveedores de un producto, ingresando primero su código de referencia. El sistema busca el producto y muestra sus datos. El Gerente ingresa entonces uno o más proveedores por su CUIT/CUIL, y el sistema elimina su vinculación con el producto. }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Producto con uno o más proveedores desvinculados. }\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-			\inc Este CU comienza cuando el Gerente desea eliminar un Proveedor de un Producto & \\
+			\inc Este CU comienza cuando el Gerente decide desvincular uno o más proveedores de un producto & \\
 			\hline
-			\inc El Gerente ingresa el Codigo Interno de Referencia de un producto y le pide al sistema que lo busque & \\
+			\inc El Gerente ingresa el código de referencia del producto y le solicita al sistema que lo busque.& \\
 			\hline
-			& \inc Busca el Producto \\
+			& \inc Busca el producto. \\
 			\hline
-			& \inc Muestra los datos del producto \\
+			& \inc Muestra los datos del producto. \\
 			\hline
-			\inc El Gerente Ingresa el Cuil de un Proveedor y le pide al sistema que desvincule al Proveedor del Producto & \\
+			\inc El Gerente ingresa el CUIT/CUIL de un proveedor y le solicita al sistema desvincularlo del producto. & \\
 			\hline
-			& \inc Busca al Proveedor \\
+			& \inc Busca el proveedor. \\
 			\hline
-			& \inc Desvincula al Proveedor del Producto \\
+			& \inc Desvincula al proveedor del producto. \\
 			\hline
-			\inc Repetir pasos 5 al 7 hasta que Gerente no desee hacer mas desvincualciones  & \\
+			\inc Repetir 5 a 7 mientras el Gerente desee desvincular más proveedores del producto. & \\
 			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }4_El sistema Informa que el Producto no existe Fin CU}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el producto no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }7_EL sistema informa que el Proveedor ingresado no existe Ir al caso 7 del Curso Normal}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el proveedor ingresado no está asociado al producto. Ir a 8.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-		\hline	
+		\multicolumn{2}{|p{16cm}|}{\textbf{8. }El sistema informa que el producto no tiene proveedores asociados. Fin CU.}\\
 	\end{longtable}

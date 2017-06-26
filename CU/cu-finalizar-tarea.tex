@@ -36,7 +36,7 @@
 		\hline
             \inc Este CU comienza cuando un Técnico decide finalizar una Tarea& \\
             \hline
-            \inc El Técnico le solicita al sistema buscar la \OT{} en la que se encuentra la Tarea, ingresando su número.& \\
+            \inc El Técnico le solicita al sistema buscar la \OT{} ingresando su número.& \\
             \hline
             & \inc Busca la \OT{}\\
             \hline
@@ -44,19 +44,19 @@
             \hline
 
 
-            \inc El Técnico le solicita al sistema buscar la Tarea pertenciente a la \OT{} que desea finalizar, ingresando el número de Tarea& \\
+            \inc El Técnico le solicita al sistema buscar la Tarea que desea finalizar, ingresando el número de Tarea& \\
             \hline
             & \inc Busca la Tarea\\
             \hline
             & \inc Muestra los datos de la Tarea\\
             \hline
-            \inc El Técnico le solicita al Sistema buscar un repuesto asociado a la Tarea para marcarlo como usado, ingresando su código& \\
+            \inc El Técnico le solicita al Sistema buscar un repuesto asociado a la Tarea para marcarlo como usado, ingresando su código y cantidad& \\
             \hline
 
 
             & \inc Busca el repuesto.\\
             \hline
-            & \inc Marca el repuesto como utilizado.\\
+            & \inc Disminuye el stock del repuesto según la cantidad ingresada e incrementa el stock del producto (cancela el remanente reservado) en caso de ser necesario.\\
             \hline
             & \inc Muestra los datos de la Tarea\\
             \hline
@@ -64,9 +64,11 @@
             \hline
             
             % Mas o menos por acá hay que ver qué hacemos con los repuestos asignados a la OT
-            \inc El técnico le solicita al sistema marcar la Tarea como finalizada, agregando además una observación sobre el desarrollo de dicha tarea.&\\
+            \inc El Técnico le solicita al sistema marcar la Tarea como finalizada, agregando además una observación sobre el desarrollo de dicha tarea.&\\
             \hline
             & \inc Marca la tarea como finalizada, registrando su fecha y hora de finalización, y agregando la observación realizada.\\
+            \hline
+            & \inc Muestra las tareas pendientes de la \OT{}.\\
             \hline
             \inc Fin CU. & \\
         \hline
@@ -76,19 +78,23 @@
 		\hline
         \multicolumn{2}{|p{16cm}|}{\textbf{4b. }El Sistema informa que la \OT{} no posee Tareas por finalizar. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El Sistema informa que la Tarea no existe. Ir al paso 12}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El Sistema informa que la Tarea no existe. Fin CU.}\\
 		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El Sistema informa que la Tarea no pertenece a la \OT{}. Ir al paso 12}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7b. }El Sistema informa que el Técnico no es el Técnico encargado de la Tarea. Fin CU.}\\
 		\hline	
         \multicolumn{2}{|p{16cm}|}{\textbf{8a. }La Tarea no incluye repuestos. Ir al paso 13}\\
 		\hline	
-        \multicolumn{2}{|p{16cm}|}{\textbf{8b. }El técnico no utilizó ninguno de los repuestos reservados. El sistema incrementa el stock del producto (cancela la reserva del producto). Ir al paso 13}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{8b. }El Técnico no utilizó ninguno de los repuestos reservados. El sistema incrementa el stock de los productos (cancela las respectivas reservas). Ir al paso 13}\\
 		\hline	
 		\multicolumn{2}{|p{16cm}|}{\textbf{10a. }El Sistema informa que el repuesto no existe. Ir al paso 12}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10b. }El Sistema informa que el repuesto no está asignado a la Tarea. Ir al paso 12}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{11a. }El Sistema informa que el repuesto no está asignado a la Tarea. Ir al paso 12}\\
 		\hline	
-		\multicolumn{2}{|p{16cm}|}{\textbf{10c. }El Sistema informa que el respuesto ya fue marcado como utilizado. Ir al paso 12}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{11b. }El Sistema informa que el respuesto ya fue marcado como utilizado. Ir al paso 12}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{11c. }El Sistema informa que la cantidad de repuesto ingresada excede la cantidad reservada. Ir al paso 12}\\
+		\hline	
+        \multicolumn{2}{|p{16cm}|}{\textbf{15. }La tarea cerrada fue la última por cerrar de la \OT{}. El Sistema marca comom cerrada la \OT{}. Fin CU.}\\
 		\hline	
 	\end{longtable}
 

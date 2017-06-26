@@ -1,0 +1,44 @@
+\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Proveedores a un producto }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente decide agregar proveedores a un producto, ingresando primero su código de referencia. El sistema busca el producto y muestra sus datos. El Gerente ingresa entonces uno o más proveedores por su CUIT/CUIL, con los datos de código interno, precio y garantía, y el sistema los asocia al producto. }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Producto con uno o más proveedores asociados. }\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el Gerente decide vincular uno o más proveedores con un producto & \\
+			\hline
+			\inc El Gerente ingresa el código interno del producto y le solicita al sistema que lo busque. &   \\
+			\hline
+			& \inc Busca el producto. \\
+			\hline
+			& \inc Muestra los datos del Producto. \\
+			\hline
+			\inc El Gerente ingresa el CUIT/CUIL de un proveedor, el código del producto para ese proveedor, un precio y el tiempo de garantía, y le solicita al sistema crear la asociación. &  \\
+			\hline
+			& \inc Busca el proveedor. \\
+			\hline
+			& \inc Asocia el producto con el proveedor. \\
+			\hline
+			& \inc Agrega los datos a la asociación. \\
+			\hline
+			& \inc Muestra los datos de la asociación del proveedor. \\
+			\hline
+			\inc Repetir del 4 al 8 mientras el Gerente desee agregar más proveedores al producto. &\\
+			\hline
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el producto no existe. Fin CU. }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que el proveedor no existe. Ir a 9. }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que el producto ya está asociado con el proveedor. Ir a 9. }\\
+		\hline
+	\end{longtable}

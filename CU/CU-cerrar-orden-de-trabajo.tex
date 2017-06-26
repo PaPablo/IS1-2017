@@ -1,0 +1,68 @@
+
+	%DEFINIMOS UN CONTADOR
+    %\newcounter{step}
+    %\newcommand\inc{\stepcounter{step}\textbf{\thestep. }}
+
+
+%/******************************************************/
+	%/*PLANTILLA PARA CU EXPANDIDO**************************/
+	%/*IR ELIMINANDO LOS \inc QUE NO CORRESPONDAN*/
+    %/*para copiar la tabla, hay que copiar desde el
+    %\begin{longtable} hasta el \setcounter que esta al final*/
+	%/*el \inc es el contador que está definido en el informe
+	%/******************************************************/
+	\begin{longtable}{ |p{8cm}|p{8cm}| }
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar Proveedor}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Escencial}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: }\\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
+		\hline
+		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
+		\hline
+			\inc Este CU comienza cuando el jefe de taller se dispone a dar de alta un proveedor& \\
+			\hline
+			\inc  El gerente ingresa el CUIT del proveedor y le solicita al sistema que lo busque y lo cree& \inc  \\
+			\hline
+			\inc  & El sistema busca el proveedor\inc  \\
+			\hline
+			\inc  & El sistema crea el proveedor\inc  \\
+			\hline
+			\inc El gerente ingresa la razón social, dirección, localidad, e-mail y observaciones y le solicita al sistema que los guarde  & \inc  \\
+			\hline
+			\inc  & El sistema guarda los datos\inc  \\
+			\hline
+			\inc El gerente ingresa el número de telefono del proveedor y le solicita al sistema que lo guarde& \inc  \\
+			\hline
+			\inc  & Guarda el número de telefono\inc  \\
+			\hline
+			\inc  Repetir pasos ..... al .... hasta que no desee ingresar mas números de teléfono& \inc  \\
+			\hline
+			\inc El gerente ingresa el código de un producto y le solicita al sistema que lo vincule con el proveedor  & \inc   \\
+			\hline
+			\inc  & El sistema busca el producto \inc   \\
+			\hline
+			\inc  & El sistema vincula el producto con el proveedor\inc   \\
+			\inc Repetir pasos ..... al ..... hasta que el gerente no desee agregar mas productos & \inc   \\
+			\inc Fin CU. & \\
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline
+		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
+		\hline	
+	\end{longtable}
+
+
+    %LO RESETEAMOS A 0
+    \setcounter{step}{0}
+
+    \noindent\rule{169mm}{0.8mm}\\
+    %LA LINEA SEPARA CU, NO SECCIONES

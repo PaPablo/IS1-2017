@@ -3,9 +3,9 @@
 		\multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar Producto }\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario }\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Gerente }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente elimina un producto del sistema }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: }\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}:  El producto es eliminado del sistema  }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Gerente decide eliminar un producto del sistema, ingresando su código interno. El sistema busca el producto y lo da de baja. }\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: Producto dado de baja. }\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
@@ -13,26 +13,18 @@
 		\hline
 			\inc Este CU comienza cuando el Gerente decide eliminar un Producto & \\
 			\hline
-			\inc El Gerente ingresa el El Codigo Interno de Referencia y le pide al sistema que lo busque &  \\
+			\inc El Gerente ingresa el código interno de referencia y le pide al sistema que lo elimine.&\\
 			\hline
-			& \inc Busca el Codigo Interno de Referencia \\
+			& \inc Busca el producto.\\
 			\hline
-			& \inc Muestra los Datos del Producto \\
-			\hline
-			\inc El Gerente decide eliminar el Producto y le pide al sistema que lo elimine &\\
-			\hline
-			& \inc Elimina el Producto \\
-			\hline
-			& \inc Muestra que el Producto fue eliminado \\
+			& \inc Da de baja el producto.\\
 			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }4_El sistema Informa que el Codigo Inteno del Producto no existe Fin CU}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4a. }El sistema informa que el producto no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }7_El sitema informa que el Producto esta relacionado con un Proveedor Fin CU}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4b. }El sistema informa que el producto tiene proveedores asociados. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{1. }Bla bla }\\
-		\hline	
 	\end{longtable}
