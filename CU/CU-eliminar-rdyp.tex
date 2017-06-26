@@ -13,48 +13,52 @@
 	%/******************************************************/
 	\begin{longtable}{ |p{8cm}|p{8cm}| }
 		\hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Agregar \textit{RDyP} para un tipo de equipo}\\
-		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Primario Esencial}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Caso de uso}: Eliminar \textit{RDyP}}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{Tipo}: Secundario Esencial}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Actores}: Jefe de Taller}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller registra un precio de \textit{RDyP} para un tipo de equipo. El sistema crea el nuevo \textit{RDyP}}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Descripción}: El Jefe de Taller elimina una \textit{RDyP} (no se podrá trabajar más con un rubro en un tipo de servicio). El sistema elimina la \texit{RDyP} y los vínculos correspondientes}\\
 		\multicolumn{2}{|p{16cm}|}{\textbf{Precondiciones}: -}\\
-        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: \textit{RDyP} creado}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{Postcondiciones}: \textit{RDyP} eliminada}\\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Curso normal de los eventos}}\\
 		\hline
 		\textbf{Acción de los actores} & \textbf{Respuesta del sistema}\\
 		\hline
-            \inc Este CU comienza cuando el Jefe de Taller se dispone a registrar un nuevo \textit{RDyP} para un tipo de equipo& \\
+            \inc Este CU comienza cuando el Jefe de Taller se dispone a eliminar una \textit{RDyP}& \\
 			\hline
-			\inc El Jefe de Taller ingresa el nombre de un tipo de equipo y le solicita al sistema que lo busque& \\
+			\inc El Jefe de Taller ingresa el nombre de un rubro y le solicita al sistema que lo busque& \\
 			\hline
-			& \inc Busca el tipo de equipo  \\
+			& \inc Busca el rubro \\
 			\hline
-			& \inc Muestra los datos del tipo de equpo \\
+			& \inc Muestra los datos del rubro \\
 			\hline
 
 
-            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio y el precio de \textit{RDyP} para el tipo de equipo en ese tipo de servicio& \\
+            \inc El Jefe de Taller ingresa el nombre de un tipo de servicio y el le solicita al sistema eliminar la \textit{RDyP} del rubro y el tipo de servicio& \\
 			\hline
 			& \inc Busca el tipo de servicio \\
 			\hline
-            & \inc Crea la \textit{RDyP} \\
+            & \inc Busca la \textit{RDyP} del rubro en el tipo de servicio\\
 			\hline
-            & \inc Muestra los datos de la \textit{RDyP} \\
+            & \inc Elimina la \textit{RDyP} \\
 			\hline
 
 
-            \inc Repetir pasos 5 al 8 hasta que el Jefe de Taller no desee agregar más precios de \textit{RDyP} para el tipo de equipo& \\
+            & \inc Muestra los datos del rubro\\
+			\hline
+            \inc Repetir pasos 5 al 9 hasta que el Jefe de Taller no desee eliminar más precios de \textit{RDyP} para el rubro& \\
 			\hline
 			\inc Fin CU. & \\
 		\hline
 		\multicolumn{2}{|c|}{\textbf{Cursos alternos}}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el tipo de equipo no existe. Fin CU.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{4. }El sistema informa que el rubro no existe. Fin CU.}\\
 		\hline
-		\multicolumn{2}{|p{16cm}|}{\textbf{7a. }El sistema informa que el tipo de servicio no existe. Ir al paso 9.}\\
+		\multicolumn{2}{|p{16cm}|}{\textbf{7. }El sistema informa que el tipo de servicio no existe. Ir al paso 10.}\\
 		\hline
-        \multicolumn{2}{|p{16cm}|}{\textbf{7b. }El sistema informa que el tipo de equipo ya tiene un precio de \textit{RDyP} para ese tipo de servicio. Ir al paso 9.}\\
+        \multicolumn{2}{|p{16cm}|}{\textbf{8a. }El sistema informa que no existe una \texit{RDyP} para el tipo de servicio y el rubro. Ir al paso 10.}\\
+		\hline
+        \multicolumn{2}{|p{16cm}|}{\textbf{8b. }El sistema informa que hay \OTs{} abiertas con la \textit{RDyP} ingresada, por lo tanto no se puede eliminar. Ir al paso 10.}\\
 		\hline
 	\end{longtable}
 
